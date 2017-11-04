@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  instrument: "Soprano"
+  url: MyString
+  song: one
+
+two:
+  instrument: "Alto"
+  url: MyString
+  song: two
