@@ -4,3 +4,13 @@
            class: "btn btn-primary" do 
     %span.glyphicon.glyphicon-plus
     Add New Song
+.row
+  .col-sm-10.col-sm-offset-1
+    %ul 
+      -@songs.each do |song|
+        %li
+          = song.title
+          (
+          = song.sheet_musics.count
+          )
+          =link_to "Edit", edit_admin_song_path(song)

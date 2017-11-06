@@ -14,7 +14,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "bootstrap-datepicker3";
-
+@import 'jquery-ui/sortable';
 
 #error-explanation {
   color: red;
@@ -28,5 +28,19 @@
   @extend .has-error;
   .form-control {
     color: $state-danger-text;
+  }
+}
+
+.ui-state-highlight{
+  border: 1px solid #ddd;
+  background: #e6e6e6;
+  margin-bottom: 20px;
+  
+  &.sheet-music-highlight{
+    height: 89px;
+  }
+  
+  &.audio-highlight{
+    height: 146px;
   }
 }

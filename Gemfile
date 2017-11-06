@@ -20,11 +20,13 @@ gem 'jbuilder',                '2.7.0'
 gem 'devise'
 gem 'haml'
 gem 'bootstrap-datepicker-rails'
+gem 'cocoon'
+gem 'jquery-ui-rails'
+gem 'paperclip'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
   gem 'byebug',  '9.0.6', platform: :mri
-  gem 'erb2haml'
 end
 
 group :development do
@@ -32,6 +34,7 @@ group :development do
   gem 'listen',                '3.0.8'
   gem 'spring',                '2.0.2'
   gem 'spring-watcher-listen', '2.0.1'
+  gem 'erb2haml'
 end
 
 group :test do

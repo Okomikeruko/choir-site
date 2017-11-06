@@ -1,6 +1,8 @@
 class Admin::SongsController < AdminController
-  def index
+  before_action :set_song, only: [:edit, :update, :destroy]
   
+  def index
+    @songs = Song.all
   end
   
   def new 
@@ -9,18 +11,54 @@ class Admin::SongsController < AdminController
   
   def create
     @song = Song.new(song_params)
+    @song.performance_date = Date.strptime(params[:song][:performance_date], "%m/%d/%Y")
     if @song.save
       flash[:success] = "Song added successfully."
-      redirect_to admin_songs_path
+      redirect_to edit_admin_song_path(@song)
     else
       flash[:danger] = "There was an error creating the song."
       render 'new'
     end
   end
   
+  def edit 
+  end 
+  
+  def update
+    @song.performance_date = Date.strptime(params[:song][:performance_date], "%m/%d/%Y")
+    if @song.update_attributes(song_params)
+      flash[:success] = "Song updated successfully."
+      redirect_to edit_admin_song_path(@song)
+    else
+      flash[:danger] = "There was an error updating the song."
+      render 'edit'
+    end
+  end
+  
+  def destroy
+    @song.destroy 
+    redirect_to admin_songs_path
+  end
+  
   private
+    def set_song
+      @song = Song.joins(:sheet_musics).where("id" => params[:id]).first
+    end
+    
     def song_params
       params.require(:song).permit(:title,
-                                   :performance_date)
+                                   :sheet_musics_attributes => 
+                                     [:id,
+                                      :instrument,
+                                      :pdf,
+                                      :position,
+                                      :_destroy ],
+                                   :audios_attributes => 
+                                     [:id,
+                                      :instrument,
+                                      :midi,
+                                      :mp3,
+                                      :position,
+                                      :_destroy])
     end
 end
