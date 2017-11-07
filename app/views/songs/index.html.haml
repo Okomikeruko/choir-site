@@ -26,7 +26,7 @@
                   %tr
                     -song.sheet_musics.each do |sheet_music|
                       %td.text-center
-                        =link_to sheet_music.pdf.url, 
+                        =link_to sheet_music.pdf.url(:original, false), 
                                  title: sheet_music.pdf_file_name, 
                                  target: "_blank" do
                           =image_tag "pdf-icon.png", size: 24
@@ -44,13 +44,13 @@
                   %tr
                     -song.audios.each do |audio|
                       %td.text-center
-                        =link_to audio.midi.url, 
+                        =link_to audio.midi.url(:original, false), 
                                  title: audio.midi_file_name, 
                                  target: "_blank" do
                           =image_tag "MIDI.png", size: 24
                           MIDI
                       %td.text-center
-                        =link_to audio.mp3.url,
+                        =link_to audio.mp3.url(:original, false),
                                  title: audio.mp3_file_name, 
                                  target: "_blank" do 
                           =image_tag "MP3.png", size: 24
