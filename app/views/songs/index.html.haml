@@ -14,9 +14,9 @@
           -songs.each_with_index do |song, index|
             %h4=song.title
             -if song.sheet_musics.any?
-              %table.table.table-condensed
+              %table.table.table-condensed.table-bordered
                 %thead
-                  %tr
+                  %tr.active
                     %th.text-center{colspan: "#{song.sheet_musics.count}"}
                       Sheet Music
                   %tr
@@ -27,13 +27,14 @@
                     -song.sheet_musics.each do |sheet_music|
                       %td.text-center
                         =link_to sheet_music.pdf.url, 
-                                 title: sheet_music.pdf_file_name do 
+                                 title: sheet_music.pdf_file_name, 
+                                 target: "_blank" do
                           =image_tag "pdf-icon.png", size: 24
-                          Download PDF
+                          PDF
             -if song.audios.any?
-              %table.table.table-condensed
+              %table.table.table-condensed.table-bordered
                 %thead
-                  %tr
+                  %tr.active
                     %th.text-center{colspan: "#{song.audios.count * 2}"}
                       Audio Files
                   %tr
@@ -44,12 +45,14 @@
                     -song.audios.each do |audio|
                       %td.text-center
                         =link_to audio.midi.url, 
-                                 title: audio.midi_file_name do 
+                                 title: audio.midi_file_name, 
+                                 target: "_blank" do
                           =image_tag "MIDI.png", size: 24
                           MIDI
                       %td.text-center
                         =link_to audio.mp3.url,
-                                 title: audio.mp3_file_name do 
+                                 title: audio.mp3_file_name, 
+                                 target: "_blank" do 
                           =image_tag "MP3.png", size: 24
                           MP3
               -unless songs.count - (index + 1) == 0
