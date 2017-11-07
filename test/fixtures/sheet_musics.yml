@@ -2,10 +2,8 @@
 
 one:
   instrument: "Soprano"
-  url: MyString
   song: one
 
 two:
   instrument: "Alto"
-  url: MyString
   song: two

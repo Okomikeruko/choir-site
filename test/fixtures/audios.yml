@@ -2,12 +2,8 @@
 
 one:
   instrument: "Soprano"
-  midi: MyString
-  mp3: MyString
   song: one
 
 two:
   instrument: "Alto"
-  midi: MyString
-  mp3: MyString
   song: two

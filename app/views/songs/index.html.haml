@@ -1,2 +1,56 @@
-%h1 Songs#index
-%p Find me in app/views/songs/index.html.erb
+%h1 
+  Choir Music
+  %span.small
+    for the Cascade 6th Ward
+.row
+  .col-sm-12
+    -@grouped_songs.each do |date, songs|
+      .panel.panel-default
+        .panel-heading
+          %h4
+            =date.strftime("%-m/%-d/%Y")
+            %span.small Performance Date
+        .panel-body
+          -songs.each_with_index do |song, index|
+            %h4=song.title
+            -if song.sheet_musics.any?
+              %table.table.table-condensed
+                %thead
+                  %tr
+                    %th.text-center{colspan: "#{song.sheet_musics.count}"}
+                      Sheet Music
+                  %tr
+                    -song.sheet_musics.each do |sheet_music|
+                      %th.text-center=sheet_music.instrument
+                %tbody
+                  %tr
+                    -song.sheet_musics.each do |sheet_music|
+                      %td.text-center
+                        =link_to sheet_music.pdf.url, 
+                                 title: sheet_music.pdf_file_name do 
+                          =image_tag "pdf-icon.png", size: 24
+                          Download PDF
+            -if song.audios.any?
+              %table.table.table-condensed
+                %thead
+                  %tr
+                    %th.text-center{colspan: "#{song.audios.count * 2}"}
+                      Audio Files
+                  %tr
+                    -song.audios.each do |audio|
+                      %th.text-center{colspan: 2}=audio.instrument
+                %tbody
+                  %tr
+                    -song.audios.each do |audio|
+                      %td.text-center
+                        =link_to audio.midi.url, 
+                                 title: audio.midi_file_name do 
+                          =image_tag "MIDI.png", size: 24
+                          MIDI
+                      %td.text-center
+                        =link_to audio.mp3.url,
+                                 title: audio.mp3_file_name do 
+                          =image_tag "MP3.png", size: 24
+                          MP3
+              -unless songs.count - (index + 1) == 0
+                %hr
