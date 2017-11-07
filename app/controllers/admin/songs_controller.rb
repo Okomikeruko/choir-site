@@ -42,7 +42,7 @@ class Admin::SongsController < AdminController
   
   private
     def set_song
-      @song = Song.joins(:sheet_musics).where("id" => params[:id]).first
+      @song = Song.find(params[:id])
     end
     
     def song_params

@@ -1,4 +1,6 @@
 class Song < ApplicationRecord
+  default_scope { order(performance_date: :desc) }
+  
   has_many :sheet_musics, inverse_of: :song, dependent: :destroy
   accepts_nested_attributes_for :sheet_musics, 
                   reject_if: :all_blank,
