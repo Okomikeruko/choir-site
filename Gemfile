@@ -23,7 +23,7 @@ gem 'bootstrap-datepicker-rails'
 gem 'cocoon'
 gem 'jquery-ui-rails'
 gem 'paperclip'
-gem 'aws-sdk'
+gem 'aws-sdk',              "~> 2.3"
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
