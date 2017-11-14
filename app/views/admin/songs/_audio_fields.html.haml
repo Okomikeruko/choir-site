@@ -20,7 +20,9 @@
               =link_to f.object.midi.url do
                 =image_tag "MIDI.png", size: "16x20"
                 =f.object.midi_file_name
-          =f.file_field :midi, class: "form-control"
+          =f.file_field :midi, 
+                        accept: "audio/midi",
+                        class: "form-control"
         .col-sm-5.field
           %span{style: "white-space: nowrap;"}
             =f.label :mp3, "MP3"
@@ -28,4 +30,6 @@
               =link_to f.object.mp3.url do
                 =image_tag "MP3.png", size: "16x20"
                 =f.object.mp3_file_name
-          =f.file_field :mp3, class: "form-control"
+          =f.file_field :mp3, 
+                        accept: "audio/mp3",
+                        class: "form-control"

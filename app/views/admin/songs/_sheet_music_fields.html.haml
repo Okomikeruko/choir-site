@@ -15,7 +15,9 @@
               =link_to f.object.pdf.url do
                 =image_tag "pdf-icon.png", size: "16x20"
                 =f.object.pdf_file_name
-          =f.file_field :pdf, class: "form-control"
+          =f.file_field :pdf, 
+                        accept: "application/pdf"
+                        class: "form-control"
         .col-sm-1
           %br{style: "line-height: 1.95em;"}
           =link_to_remove_association f, class: "btn btn-danger btn-sm pull-right" do
