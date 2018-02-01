@@ -44,3 +44,18 @@
     height: 146px;
   }
 }
+
+.panel-title .glyphicon{
+  transition: all 333ms linear;
+}
+
+a.collapsed .glyphicon{
+  transform: rotate(-180deg);
+}
+
+.panel-group .panel{
+  margin: {
+    top: 15px;
+    bottom: 15px;
+  }
+}
