@@ -1,6 +1,10 @@
 class SongsController < ApplicationController
   def index
-    @current_year = params[:year].to_i || DateTime.now.year
+    if params[:year].present?
+      @current_year = params[:year].to_i
+    else
+      @current_year = DateTime.now.year.to_i
+    end
     
     @years = Song.all.map{|i| i.performance_date.year }.uniq
     
