@@ -19,16 +19,17 @@
         -i += 1
         .panel.panel-default
           .panel-heading{ :role => "tab",
-                          :id => "heading#{i}" }
-            %h4.panel-title
-              %a{ :class => "#{'collapsed' unless i == 1}",
-                  :role => "button",
-                  :data => { :toggle => "collapse", 
-                             :parent => "#accordion"  },
-                  :href => "#collapse#{i}",
-                  :aria => { :expanded => "false", 
-                             :controls => "collapse#{i}" } }
-                =date.strftime("%-m/%-d/%Y")
+                          :id => "heading#{i}", 
+                          :style => "padding: 0;" }
+            %a{ :class => "#{'collapsed' unless i == 1} btn btn-lg btn-link btn-block",
+                :role => "button",
+                :data => { :toggle => "collapse", 
+                           :parent => "#accordion"  },
+                :href => "#collapse#{i}",
+                :aria => { :expanded => "false", 
+                           :controls => "collapse#{i}" } }
+              %h4.panel-title.clearfix
+                %span.pull-left=date.strftime("%-m/%-d/%Y")
                 %span.pull-right.glyphicon.glyphicon-chevron-up
           .panel-collapse.collapse{ :class => "#{'in' if i == 1}",
                                     :id => "collapse#{i}",
@@ -36,48 +37,54 @@
                                     :aria => { :labelledby => "heading#{i}" } }
             .panel-body
               -songs.each_with_index do |song, index|
-                %h4=song.title
-                -if song.sheet_musics.any?
-                  %table.table.table-condensed.table-bordered
-                    %thead
-                      %tr.active
-                        %th.text-center{colspan: "#{song.sheet_musics.count}"}
-                          Sheet Music
-                      %tr
-                        -song.sheet_musics.each do |sheet_music|
-                          %th.text-center=sheet_music.instrument
-                    %tbody
-                      %tr
-                        -song.sheet_musics.each do |sheet_music|
-                          %td.text-center
-                            =link_to sheet_music.pdf.url(:original, false), 
-                                     title: sheet_music.pdf_file_name, 
-                                     target: "_blank" do
-                              =image_tag "pdf-icon.png", size: 24
-                              PDF
-                -if song.audios.any?
-                  %table.table.table-condensed.table-bordered
-                    %thead
-                      %tr.active
-                        %th.text-center{colspan: "#{song.audios.count * 2}"}
-                          Audio Files
-                      %tr
-                        -song.audios.each do |audio|
-                          %th.text-center{colspan: 2}=audio.instrument
-                    %tbody
-                      %tr
-                        -song.audios.each do |audio|
-                          %td.text-center
-                            =link_to audio.midi.url(:original, false), 
-                                     title: audio.midi_file_name, 
-                                     target: "_blank" do
-                              =image_tag "MIDI.png", size: 24
-                              MIDI
-                          %td.text-center
-                            =link_to audio.mp3.url(:original, false),
-                                     title: audio.mp3_file_name, 
-                                     target: "_blank" do 
-                              =image_tag "MP3.png", size: 24
-                              MP3
-                  -unless songs.count - (index + 1) == 0
-                    %hr
+                .row
+                  .col-sm-10.col-sm-offset-1
+                    %h4
+                      =song.title
+                .row
+                  -if song.sheet_musics.any?
+                    .col-sm-4.col-sm-offset-1
+                      %table.table.table-bordered.table-hover
+                        %thead
+                          %tr.active
+                            %th.text-center{colspan: "2"}
+                              Sheet Music
+                        %tbody
+                          -song.sheet_musics.each do |sheet_music|
+                            %tr
+                              %th.text-left
+                                =sheet_music.instrument
+                              %td.text-center
+                                =link_to sheet_music.pdf.url(:original, false), 
+                                         title: sheet_music.pdf_file_name, 
+                                         target: "_blank" do
+                                  =image_tag "pdf-icon.png", size: 24
+                                  PDF
+                  -if song.audios.any?
+                    .col-sm-6
+                      %table.table.table-bordered.table-hover
+                        %thead
+                          %tr.active
+                            %th.text-center{colspan: "3"}
+                              Audio Files
+                        %tbody
+                          -song.audios.each do |audio|
+                            %tr
+                              %th.text-left
+                                =audio.instrument
+                              %td.text-center
+                                =link_to audio.midi.url(:original, false), 
+                                         title: audio.midi_file_name, 
+                                         target: "_blank" do
+                                  =image_tag "MIDI.png", size: 24
+                                  MIDI
+                              %td.text-center
+                                =link_to audio.mp3.url(:original, false),
+                                         title: audio.mp3_file_name, 
+                                         target: "_blank" do 
+                                  =image_tag "MP3.png", size: 24
+                                  MP3
+                -unless index == songs.count - 1
+                  .row
+                    .col-sm-10.col-sm-offset-1
+                      %hr
