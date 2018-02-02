@@ -25,22 +25,22 @@
               -i += 1
               .panel.panel-default
                 .panel-heading{ :role => "tab",
-                                :id => "heading#{i}", 
+                                :id => "heading-#{year}-#{i}", 
                                 :style => "padding: 0;" }
                   %a{ :class => "#{'collapsed' unless i == 1} btn btn-lg btn-link btn-block",
                       :role => "button",
                       :data => { :toggle => "collapse", 
                                  :parent => "#accordion#{year}"  },
-                      :href => "#collapse#{i}",
+                      :href => "#collapse-#{year}-#{i}",
                       :aria => { :expanded => "false", 
-                                 :controls => "collapse#{i}" } }
+                                 :controls => "collapse-#{year}-#{i}" } }
                     %h4.panel-title.clearfix
                       %span.pull-left=date.strftime("%-m/%-d/%Y")
                       %span.pull-right.glyphicon.glyphicon-chevron-up
                 .panel-collapse.collapse{ :class => "#{'in' if i == 1}",
-                                          :id => "collapse#{i}",
+                                          :id => "collapse-#{year}-#{i}",
                                           :role => "tabpanel",
-                                          :aria => { :labelledby => "heading#{i}" } }
+                                          :aria => { :labelledby => "heading-#{year}-#{i}" } }
                   .panel-body
                     -songs.each_with_index do |song, index|
                       .row
