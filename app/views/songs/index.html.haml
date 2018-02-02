@@ -12,7 +12,6 @@
         =year 
 
 .tab-content
-  -i = 0
   -@songs_by_year.each do |year, songs_by_date|
     .tab-pane.fade{ :id => "#{year}tab",
                     :class => "#{'in active' if year == DateTime.now.year.to_i}"}
@@ -21,6 +20,7 @@
           .panel-group{ :id => "accordion#{year}",
                         :role => "tablist", 
                         :aria => { :multiselectable => "true" } }
+            -i = 0
             -songs_by_date.each do |date, songs|
               -i += 1
               .panel.panel-default
