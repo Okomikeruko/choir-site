@@ -1,0 +1,22 @@
+.nav-tabs.song-sorting {
+  border-bottom-color: darken($brand-primary, 10);
+  
+  & > li {
+    & > a {
+      border-color: darken($brand-secondary, 10);
+      border-bottom-width: 0px;
+      margin-bottom: 1px;
+      background-color: $brand-secondary;
+      color: white;
+      padding: 3px;
+    }
+    &.active > a,
+    & > a:hover,
+    & > a:focus {
+      border-color: darken($brand-primary, 10);
+      background-color: $brand-primary;
+      border-bottom-width: 0px;
+      color: white;
+    }
+  }
+}

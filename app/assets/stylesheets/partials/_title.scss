@@ -1,7 +1,9 @@
 /* Title */
 
 .title_holder{
+  background-color: $brand-secondary;
   width: 100%;
+  
   @media #{$xs-screen} {height: 140px;}
   @media #{$sm-screen} {height: 298px;}
   @media #{$md-screen} {height: 390px;}

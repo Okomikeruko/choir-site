@@ -11,4 +11,6 @@
   %body
     = render "layouts/title"
     .container
+      .breadcrumbs
+        = render_breadcrumbs :tag => :span, :seperator => " >> "
       = yield

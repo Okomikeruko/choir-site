@@ -24,6 +24,7 @@ gem 'cocoon'
 gem 'jquery-ui-rails'
 gem 'paperclip'
 gem 'aws-sdk',              "~> 2.3"
+gem 'breadcrumbs_on_rails'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'

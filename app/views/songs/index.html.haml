@@ -1,16 +1,20 @@
 -provide :title, "Music"
-%h1 
-  Choir Music
-  %span.small
-    for the Cascade 6th Ward
 
-%ul.nav.nav-tabs
-  -@songs_by_year.each do |year, songs|
-    %li{:role => "presentation",
-        :class => "#{ 'active' if year == DateTime.now.year.to_i }" }
-      %a{:data => { :toggle => "tab" },
-         :href => "##{year}tab"}
-        =year 
+%ul.nav.nav-tabs.song-sorting
+  %li{:role => "presentation",
+      :class => "active"} 
+    %a{:href => "#titletab",
+       :data => { toggle: "tab" } } 
+      By Title
+  %li{:role => "presentation"} 
+    %a{:href => "#pendingtab",
+       :data => { toggle: "tab" } } 
+      Upcoming Dates
+  %li{:role => "presentation"} 
+    %a{:href => "#historytab",
+       :data => { toggle: "tab" } } 
+      Performance History
+
 
 .tab-content
   -@songs_by_year.each do |year, songs_by_date|

@@ -11,6 +11,7 @@
  * It is generally better to create a new file per style scope.
  */
 
+@import "modules/colors";
 @import "modules/media";
 
 @import "bootstrap-sprockets";
@@ -18,6 +19,8 @@
 @import "bootstrap-datepicker3";
 @import 'jquery-ui/sortable';
 
+@import "partials/breadcrumbs";
+@import "partials/music";
 @import "partials/title";
 @import "partials/typography";
 
