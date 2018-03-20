@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   devise_for :users
   
+  resources :music, controller: "songs", only: [:index, :show]
+  
   resources :admin, only: [:index]
   namespace :admin do 
     resources :songs

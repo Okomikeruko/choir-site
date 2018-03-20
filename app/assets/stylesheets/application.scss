@@ -11,10 +11,15 @@
  * It is generally better to create a new file per style scope.
  */
 
+@import "modules/media";
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "bootstrap-datepicker3";
 @import 'jquery-ui/sortable';
+
+@import "partials/title";
+@import "partials/typography";
 
 #error-explanation {
   color: red;

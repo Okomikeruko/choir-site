@@ -1,0 +1,35 @@
+/* Title */
+
+.title_holder{
+  width: 100%;
+  @media #{$xs-screen} {height: 140px;}
+  @media #{$sm-screen} {height: 298px;}
+  @media #{$md-screen} {height: 390px;}
+  @media #{$lg-screen} {height: 558px;}
+  
+  .title_image{
+    height: 100%;
+    background: {
+      size: cover;
+      position: center top;
+    }
+    
+    .title_overlay {
+      background-color: rgba(0, 0, 0, 0.5); //50% Transparent Black
+      display: table;
+      height: 100%;
+      width: 100%;
+      
+      h1{
+        color: white;
+        display: table-cell;
+        text: {
+          align: center;
+          transform: uppercase;
+        }
+        vertical-align: middle;
+      }
+    }
+  }
+  
+}
