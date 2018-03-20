@@ -20,6 +20,15 @@ class SongTest < ActiveSupport::TestCase
     assert_not @song.valid?
   end
   
+  test "sort_order should be set before save" do 
+    @song.title = "The Long and Winding Road"
+    @song.save 
+    assert_equal @song.sort_order, "Long and Winding Road, The"
+  end
   
-  
+  test "slug should be set before save" do 
+    @song.title = "The Long and Winding Road"
+    @song.save 
+    assert_equal @song.slug, "the-long-and-winding-road"
+  end
 end

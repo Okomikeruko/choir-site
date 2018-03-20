@@ -1,4 +1,6 @@
 class Song < ApplicationRecord
+  before_save :set_slug, :set_sort_order
+  
   default_scope { order(performance_date: :desc) }
   
   has_many :sheet_musics, inverse_of: :song, dependent: :destroy
@@ -12,4 +14,19 @@ class Song < ApplicationRecord
   
   validates :title, presence: true,
                     length: { maximum: 60 }
+                    
+  private
+    def set_slug
+      self.slug = title.parameterize
+    end
+    
+    def set_sort_order
+      unless title.starts_with?("The ", "A ", "An ")
+        self.sort_order = title
+      else
+        word = title.partition(" ").first
+        self.sort_order = title["#{word} ".size..-1].concat(", #{word}")
+      end
+    end
+    
 end
