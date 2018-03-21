@@ -7,11 +7,11 @@ class SongsController < ApplicationController
     @songs = Song.all 
     @songs_by_title = @songs.sort_by {|s| s.sort_order}
                             .group_by {|s| s.sort_order.chr}
-    @songs_pending = @songs.where("performance_date > :d", :d => DateTime.now)
+    @songs_pending = @songs.select { |s| !s.performance_date.past? }
                            .sort_by {|s| s.performance_date}
                            .group_by {|s| s.performance_date.beginning_of_month}
                            .group_by {|d| d[0].year}
-    @song_history = @songs.where("performance_date <= :d", :d => DateTime.now)
+    @song_history = @songs.select { |s| s.performance_date.past? }
                            .sort_by {|s| s.performance_date}
                            .reverse!
                            .group_by {|s| s.performance_date.beginning_of_month}

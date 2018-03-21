@@ -35,7 +35,8 @@
         .letter-links.text-center
           -@songs_by_title.each do |letter|
             = " | " unless letter == @songs_by_title.first
-            =link_to letter[0], "#heading-#{letter[0]}"
+            =link_to letter[0], "#heading-#{letter[0]}", 
+                     :data => { turbolinks: false }
         -@songs_by_title.each do |letter|
           .letter-block
             .letter-header{:id => "heading-#{letter[0]}" }
