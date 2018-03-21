@@ -20,3 +20,18 @@
     }
   }
 }
+
+.letter-links{
+  padding: 20px 0;
+  border-bottom: 2px solid $brand-secondary;
+}
+
+.letter-block{
+  border-bottom: 2px solid $brand-secondary;
+  padding-bottom: 20px;
+  
+  .letter-header{
+    border-bottom: 1px solid $brand-primary;
+    margin-bottom: 20px;
+  }
+}

@@ -24,6 +24,10 @@
 @import "partials/title";
 @import "partials/typography";
 
+body{
+  padding-bottom: 60px;
+}
+
 #error-explanation {
   color: red;
   ul {

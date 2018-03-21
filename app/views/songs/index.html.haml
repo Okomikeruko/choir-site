@@ -1,54 +1,82 @@
 -provide :title, "Music"
+-provide :bg, "pexels-photo-164821.jpeg"
 
-%ul.nav.nav-tabs.song-sorting
+%ul.nav.nav-tabs.song-sorting{:role => "tablist"}
   %li{:role => "presentation",
       :class => "active"} 
-    %a{:href => "#titletab",
-       :data => { toggle: "tab" } } 
+    %a{:role => "tab",
+       :aria => { controls: "title" },
+       :data => { toggle: "tab" },
+       :href => "#title" } 
       By Title
   %li{:role => "presentation"} 
-    %a{:href => "#pendingtab",
-       :data => { toggle: "tab" } } 
+    %a{:role => "tab",
+       :aria => { controls: "pending" },
+       :data => { toggle: "tab" },
+       :href => "#pending" } 
       Upcoming Dates
   %li{:role => "presentation"} 
-    %a{:href => "#historytab",
-       :data => { toggle: "tab" } } 
+    %a{:role => "tab",
+       :aria => { controls: "history" },
+       :data => { toggle: "tab" },
+       :href => "#history" } 
       Performance History
 
-
-%ul
-  %li 
-    !! By Title !!
-    %ul
-      -@songs_by_title.each do |letter|
-        %li
-          = letter[0]
-          %ul
+.tab-content
+  .tab-pane.fade.in.active#title{:role => "tabpanel"}
+    .row
+      .col-md-10.col-md-offset-1
+        .letter-links.text-center
+          -@songs_by_title.each do |letter|
+            = " | " unless letter == @songs_by_title.first
+            =link_to letter[0], "#heading-#{letter[0]}"
+        -@songs_by_title.each do |letter|
+          .letter-block
+            .letter-header{:id => "heading-#{letter[0]}" }
+              %h2= letter[0]
             -letter[1].each do |song|
-              %li= song.sort_order
-  %li 
-    !! Upcoming Dates !!
-    %ul
-      -@songs_pending.each do |year|
-        %li
-          = year[0]
-          %ul
-            - year[1].each do |date|
-              %li
-                = date[0].strftime("%b")
-                %ul 
-                  -date[1].each do |song|
-                    %li=song.sort_order
-  %li 
-    !! Performance History !!
-    %ul
-      -@song_history.each do |year|
-        %li
-          = year[0]
-          %ul
-            - year[1].each do |date|
-              %li
-                = date[0].strftime("%b")
-                %ul 
-                  -date[1].each do |song|
-                    %li=song.sort_order
+              =link_to music_path(song), class: "secondary" do
+                %h3= song.sort_order
+              %span.date= song.performance_date.strftime("%m/%d/%Y")
+  .tab-pane.fade#pending{:role => "tabpanel"}
+    .row
+      .col-md-10.col-md-offset-1
+        %h2 Pending
+        %ul
+          %li 
+            !! Upcoming Dates !!
+            %ul
+              -@songs_pending.each do |year|
+                %li
+                  = year[0]
+                  %ul
+                    - year[1].each do |date|
+                      %li
+                        = date[0].strftime("%b")
+                        %ul 
+                          -date[1].each do |song|
+                            %li=song.sort_order
+  .tab-pane.fade#history{:role => "tabpanel"}
+    .row
+      .col-md-10.col-md-offset-1
+        %h2 History
+        %ul
+          %li 
+            !! Performance History !!
+            %ul
+              -@song_history.each do |year|
+                %li
+                  = year[0]
+                  %ul
+                    - year[1].each do |date|
+                      %li
+                        = date[0].strftime("%b")
+                        %ul 
+                          -date[1].each do |song|
+                            %li=song.sort_order
+
+:javascript
+  $('.nav-tabs a').click(function (e) {
+    e.preventDefault();
+    $(this).tab('show');
+  });
