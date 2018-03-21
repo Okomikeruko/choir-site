@@ -1,4 +1,8 @@
 $xs-screen: "only screen and (max-width : 767px)";
 $sm-screen: "only screen and (min-width : 768px) and (max-width : 991px)";
+$sm-screen-up: "only screen and (min-width : 768px)";
+$sm-screen-down: "only screen and (max-width : 991px)";
 $md-screen: "only screen and (min-width : 992px) and (max-width : 1199px)";
+$md-screen-up: "only screen and (min-width : 992px)";
+$md-screen-down: "only screen and (max-width : 1199px)";
 $lg-screen: "only screen and (min-width : 1200px)";

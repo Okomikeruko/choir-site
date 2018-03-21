@@ -1,0 +1,34 @@
+/* Header */
+
+header{
+  background-color: $brand-secondary;
+  @media #{$xs-screen} {height: 40px; padding: 0 10px;}
+  @media #{$sm-screen} {height: 60px; padding: 0 20px;}
+  @media #{$md-screen-up} {height: 80px; padding: 0 30px;}
+  width: 100%;
+  display: table;
+  
+  a{
+    display: table-cell;
+    vertical-align: middle;
+  }
+  
+  h1{
+    margin: 0;
+    color: white;
+    text-transform: uppercase;
+    @media #{$xs-screen} {font-size: 18px;}
+    @media #{$sm-screen} {font-size: 30px;}
+    @media #{$md-screen-up} {font-size: 36px;}
+  
+    .choir{
+      font-family: "Tangerine", sans-serif;
+      color: $brand-primary;
+      text-transform: none;
+      font:{
+        size: 1.1em;
+        weight: 700;
+      }
+    }
+  }
+}
