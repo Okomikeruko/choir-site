@@ -66,5 +66,15 @@
   audio{
     margin-top: 20px;
     width: 100%;
+  
+    &::-webkit-media-controls-volume-slider,
+    &::-webkit-media-controls-timeline{
+      -webkit-filter: hue-rotate($hue-rotate)
+                      saturate($hue-saturate)
+                      brightness($hue-lightness*1.372);
+      filter: hue-rotate($hue-rotate)
+              saturate($hue-saturate)
+              brightness($hue-lightness*1.372);
+    }
   }
 }

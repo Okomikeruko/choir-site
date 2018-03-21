@@ -1,2 +1,16 @@
 $brand-primary: #CBA250; 
 $brand-secondary: #424242;
+
+$original-blue: #4688f1;
+
+$p: hue($brand-primary);
+$o: hue($original-blue);
+$hue-rotate: $p - $o;
+
+$s1: saturation($brand-primary);
+$s2: saturation($original-blue);
+$hue-saturate: $s1 / ($s2 / 100%); 
+
+$b1: lightness($brand-primary);
+$b2: lightness($original-blue);
+$hue-lightness: $b1 / ($b2 / 100%);
