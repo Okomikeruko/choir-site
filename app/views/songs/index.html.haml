@@ -1,6 +1,12 @@
 -provide :title, "Music"
 -provide :bg, "pexels-photo-164821.jpeg"
 
+%p
+  Below you will find a complete list of all the songs and performances of the 
+  Cascade Sixth Ward's Choir sorted alphabetically, by our performance history, 
+  and a listing of our upcoming performance dates with the songs we will be 
+  singing.
+
 %ul.nav.nav-tabs.song-sorting{:role => "tablist"}
   %li{:role => "presentation",
       :class => "active"} 
@@ -41,40 +47,55 @@
   .tab-pane.fade#pending{:role => "tabpanel"}
     .row
       .col-md-10.col-md-offset-1
-        %h2 Pending
-        %ul
-          %li 
-            !! Upcoming Dates !!
-            %ul
-              -@songs_pending.each do |year|
-                %li
-                  = year[0]
-                  %ul
-                    - year[1].each do |date|
-                      %li
-                        = date[0].strftime("%b")
-                        %ul 
-                          -date[1].each do |song|
-                            %li=song.sort_order
+        .year-links.text-center
+          %ul.nav.nav-pills
+            -@songs_pending.each do |year|
+              %li{:role => "presentation",
+                  :class => "#{ 'active' if year == @songs_pending.first }"}
+                %a{:role => "tab",
+                   :aria => { controls: "pending-#{year[0]}" },
+                   :data => { toggle: "tab" },
+                   :href => "#pending-#{year[0]}" }
+                  =year[0]
+        .tab-content
+          -@songs_pending.each do |year|
+            .tab-pane.fade{:role => "tabpanel",
+                           :id => "pending-#{year[0]}",
+                           :class => "#{ 'active in' if year == @songs_pending.first}" }
+              -year[1].each do |month|
+                .letter-block
+                  .letter-header
+                    %h2=month[0].strftime("%b")
+                  -month[1].each do |song|
+                    =link_to music_path(song), class: "secondary" do 
+                      %h3= song.title
+                    %span.date= song.performance_date.strftime("%m/%d/%Y")
   .tab-pane.fade#history{:role => "tabpanel"}
     .row
       .col-md-10.col-md-offset-1
-        %h2 History
-        %ul
-          %li 
-            !! Performance History !!
-            %ul
-              -@song_history.each do |year|
-                %li
-                  = year[0]
-                  %ul
-                    - year[1].each do |date|
-                      %li
-                        = date[0].strftime("%b")
-                        %ul 
-                          -date[1].each do |song|
-                            %li=song.sort_order
-
+        .year-links.text-center
+          %ul.nav.nav-pills
+            -@song_history.each do |year|
+              %li{:role => "presentation",
+                  :class => "#{ 'active' if year == @song_history.first }"}
+                %a{:role => "tab",
+                   :aria => { controls: "history-#{year[0]}" },
+                   :data => { toggle: "tab" },
+                   :href => "#history-#{year[0]}" }
+                  =year[0]
+        .tab-content
+          -@song_history.each do |year|
+            .tab-pane.fade{:role => "tabpanel",
+                           :id => "history-#{year[0]}",
+                           :class => "#{ 'active in' if year == @song_history.first}" }
+              -year[1].each do |month|
+                .letter-block
+                  .letter-header
+                    %h2=month[0].strftime("%b")
+                  -month[1].each do |song|
+                    =link_to music_path(song), class: "secondary" do 
+                      %h3= song.title
+                    %span.date= song.performance_date.strftime("%m/%d/%Y")
 :javascript
   $('.nav-tabs a').click(function (e) {
     e.preventDefault();

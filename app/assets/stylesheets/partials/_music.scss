@@ -35,3 +35,24 @@
     margin-bottom: 20px;
   }
 }
+
+.year-links{
+  @extend .letter-links;
+  .nav-pills{
+    display: inline-block;
+    
+    & > li > a{
+      color: white;
+      background-color: $brand-secondary;
+      padding: 3px 8px;
+      margin: 0px 4px;
+      
+      &:focus, &:hover{
+        background-color: $brand-primary;
+      }
+    }
+    & > li.active > a {
+        background-color: $brand-primary;
+    }
+  }
+}
