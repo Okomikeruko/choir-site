@@ -1,0 +1,57 @@
+-provide :title, @song.title
+-provide :bg, "pexels-photo-164821.jpeg"
+
+.row
+  .col-sm-6.col-md-8
+    %h2=@song.title
+    %p=@song.description
+  .col-sm-6.col-md-4
+    %h3{:style => "margin: 5px 0;"}
+      %span.glyphicon.glyphicon-calendar
+      Performance Dates
+    =@song.performance_date.strftime("%b %e, %Y")
+    -if @song.performance_date.future?
+      \-
+      %em= "Coming Soon" 
+.row{:style => "margin-top: 20px;"}
+  .col-md-8
+    %h2 Parts
+    -@song.sheet_musics.each do |part|
+      -audio = @song.audios.find { |a| a.instrument == part.instrument } 
+      .song-listing
+        .clearfix
+          %h3.pull-left=part.instrument
+          .dropdown.pull-right
+            %button{ :class => "btn btn-secondary dropdown-toggle",
+                     :type => "button",
+                     :id => "downloads#{audio.id}",
+                     :data => { toggle: "dropdown" },
+                     :aria => { haspopup: "true",
+                                expanded: "true" } }
+              Download
+              %span.caret
+            %ul.dropdown-menu{:aria => { labelledby: "downloads#{audio.id}" } }
+              %li
+                %a{:href => part.pdf.url,
+                   :download => part.pdf_file_name }
+                  Sheet Music - PDF
+              -unless audio.blank?  
+                %li.divider{:role => "separator"} 
+                -if audio.mp3.exists?
+                  %li 
+                    %a{:href => audio.mp3.url,
+                       :download => audio.mp3_file_name }
+                      Audio File - MP3
+                -if audio.midi.exists?
+                  %li 
+                    %a{:href => audio.midi.url,
+                       :download => audio.midi_file_name }
+                      Audio File - MIDI
+        -unless audio.blank?  
+          %audio{:controls => "controls",
+                 :controlsList => "nodownload"}
+            %source{:type => audio.mp3_content_type,
+                    :src => audio.mp3.url }
+  .col-md-4
+    %h2 Rehearsals
+    %p Coming Soon

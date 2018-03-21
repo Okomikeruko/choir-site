@@ -17,4 +17,12 @@ class SongsController < ApplicationController
                            .group_by {|s| s.performance_date.beginning_of_month}
                            .group_by {|d| d[0].year}
   end
+  
+  def show
+    @song = Song.includes(:sheet_musics, :audios)
+                .find_by(:slug => params[:slug])
+                
+    
+    add_breadcrumb @song.title, music_path(@song.slug)
+  end
 end

@@ -1,0 +1,13 @@
+/* Buttons */
+
+.btn-secondary{
+  background-color: $brand-secondary;
+  border-color: darken($brand-secondary, 10);
+  color: white;
+  
+  &:hover, &:active, &:focus {
+    background-color: darken($brand-secondary, 10);
+    border-color: darken($brand-secondary, 20);
+    color: white;
+  }
+}

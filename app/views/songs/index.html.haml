@@ -41,7 +41,7 @@
             .letter-header{:id => "heading-#{letter[0]}" }
               %h2= letter[0]
             -letter[1].each do |song|
-              =link_to music_path(song), class: "secondary" do
+              =link_to music_path(song.slug), class: "secondary" do
                 %h3= song.sort_order
               %span.date= song.performance_date.strftime("%m/%d/%Y")
   .tab-pane.fade#pending{:role => "tabpanel"}
@@ -67,7 +67,7 @@
                   .letter-header
                     %h2=month[0].strftime("%b")
                   -month[1].each do |song|
-                    =link_to music_path(song), class: "secondary" do 
+                    =link_to music_path(song.slug), class: "secondary" do 
                       %h3= song.title
                     %span.date= song.performance_date.strftime("%m/%d/%Y")
   .tab-pane.fade#history{:role => "tabpanel"}
@@ -93,7 +93,7 @@
                   .letter-header
                     %h2=month[0].strftime("%b")
                   -month[1].each do |song|
-                    =link_to music_path(song), class: "secondary" do 
+                    =link_to music_path(song.slug), class: "secondary" do 
                       %h3= song.title
                     %span.date= song.performance_date.strftime("%m/%d/%Y")
 :javascript

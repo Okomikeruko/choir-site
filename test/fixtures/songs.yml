@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
+  title: "The Long and Winding Road"
   performance_date: 2017-11-04 14:38:31
+  slug: "the-long-and-winding-road"
+  sort_order: "Long and Winding Road, The"
 
 two:
-  title: MyString
+  title: "The Last Unicorn"
   performance_date: 2017-11-04 14:38:31
+  slug: "the-last-unicorn"
+  sort_order: "Last Unicorn, The"

@@ -6,5 +6,12 @@ class SongsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_template "songs/index"
   end
+  
+  test "should get show" do
+    song = songs :one
+    get music_path(song.slug)
+    assert_response :success
+    assert_template "songs/show"
+  end
 
 end

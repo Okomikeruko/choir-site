@@ -56,3 +56,15 @@
     }
   }
 }
+
+.song-listing{
+  display: block;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $brand-primary;
+  margin-top: 20px;
+  
+  audio{
+    margin-top: 20px;
+    width: 100%;
+  }
+}
