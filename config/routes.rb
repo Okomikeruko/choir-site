@@ -8,6 +8,8 @@ Rails.application.routes.draw do
             only: [:index, :show],
             param: :slug
   
+  get "about-us", to: "static_pages#about_us"
+  
   resources :admin, only: [:index]
   namespace :admin do 
     resources :songs

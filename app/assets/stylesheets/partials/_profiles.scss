@@ -1,0 +1,35 @@
+/* Profiles */
+
+.profile-block{
+  
+  padding-bottom: 10px;
+  border-bottom: 1px solid $brand-primary;
+  margin-bottom: 30px;
+  
+  h2{
+    @media #{$xs-screen} {
+      text-align: center;
+      small{
+        display: block;
+        margin-top: 10px;
+      }
+    }
+  }
+  
+  img{
+    border: 1px solid $brand-secondary;
+    height: auto;
+    max-width: 300px;
+    margin: {
+      top: 10px;
+      bottom: 20px;
+      right: 10px;
+    }
+    @media #{$xs-screen} {max-width: 100%;}
+    
+    @media #{$sm-screen-up} {float: left;}
+  }
+  p:first-of-type{
+    @media #{$sm-screen-up} {margin-top: 20px;}
+  }
+}
