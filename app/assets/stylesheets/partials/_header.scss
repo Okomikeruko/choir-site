@@ -32,3 +32,61 @@ header{
     }
   }
 }
+
+.icon-bar{
+  background-color: white;
+}
+
+.navbar-toggle{
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: table-cell;
+  height: 100%;
+  vertical-align: middle;
+  float: right;
+  
+  @media #{$sm-screen-up} {display: none;}
+}
+
+#navbarCollapse{
+  background-color: $brand-primary;
+  position: absolute;
+  top: 40px;
+  width: 120px;
+  border: 1px solid darken($brand-primary, 10);
+  border-top-width: 0px;
+  @media #{$sm-screen-down}{
+    right: 0px;
+  }
+  
+  @media #{$sm-screen-up} {
+    top: 60px;
+    border-bottom-left-radius: 10px;
+    width: auto;
+  }
+  
+  @media #{$md-screen-up} {
+    top: 80px;
+    border-bottom-right-radius: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  a{
+    color: $brand-secondary;
+    
+    &:hover, &:focus, &:active{
+      background-color: darken($brand-primary, 10);
+      color: $brand-secondary;
+    }
+  }
+}
+
+.navbar-nav > li > a {
+  padding: {
+    top: 5px;
+    bottom: 5px;
+  }
+}
+
+   
