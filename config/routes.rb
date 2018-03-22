@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'songs#index'
+  root to: 'static_pages#home'
 
   devise_for :users
   
