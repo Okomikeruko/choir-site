@@ -12,6 +12,11 @@ class Song < ApplicationRecord
                   reject_if: :all_blank,
                   allow_destroy: true
   
+  has_many :instruments, inverse_of: :song, dependent: :destroy 
+  accepts_nested_attributes_for :instruments,
+                  reject_if: :all_blank,
+                  allow_destroy: true
+  
   validates :title, presence: true,
                     length: { maximum: 60 }
                     

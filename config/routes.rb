@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   
   resources :admin, only: [:index]
   namespace :admin do 
-    resources :songs
+    resources :songs, except: [:show]
   end
 end

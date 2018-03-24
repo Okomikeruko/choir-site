@@ -16,42 +16,40 @@
 .row{:style => "margin-top: 20px;"}
   .col-md-8
     %h2 Parts
-    -@song.sheet_musics.each do |part|
-      -audio = @song.audios.find { |a| a.instrument == part.instrument } 
+    -@song.instruments.each do |instrument|
       .song-listing
         .clearfix
-          %h3.pull-left=part.instrument
+          %h3.pull-left=instrument.name
           .dropdown.pull-right
             %button{ :class => "btn btn-secondary dropdown-toggle",
                      :type => "button",
-                     :id => "downloads#{audio.id}",
+                     :id => "downloads#{instrument.id}",
                      :data => { toggle: "dropdown" },
                      :aria => { haspopup: "true",
                                 expanded: "true" } }
               Download
               %span.caret
-            %ul.dropdown-menu{:aria => { labelledby: "downloads#{audio.id}" } }
+            %ul.dropdown-menu{:aria => { labelledby: "downloads#{instrument.id}" } }
               %li
-                %a{:href => part.pdf.url,
-                   :download => part.pdf_file_name }
-                  Sheet Music - PDF
-              -unless audio.blank?  
-                %li.divider{:role => "separator"} 
-                -if audio.mp3.exists?
-                  %li 
-                    %a{:href => audio.mp3.url,
-                       :download => audio.mp3_file_name }
-                      Audio File - MP3
-                -if audio.midi.exists?
-                  %li 
-                    %a{:href => audio.midi.url,
-                       :download => audio.midi_file_name }
-                      Audio File - MIDI
-        -unless audio.blank?  
+                %a{:href => instrument.pdf.url,
+                   :download => instrument.pdf_file_name }
+                  Sheet Music - PDF  
+              %li.divider{:role => "separator"} 
+              -if instrument.mp3.exists?
+                %li 
+                  %a{:href => instrument.mp3.url,
+                     :download => instrument.mp3_file_name }
+                    Audio File - MP3
+              -if instrument.midi.exists?
+                %li 
+                  %a{:href => instrument.midi.url,
+                     :download => instrument.midi_file_name }
+                    Audio File - MIDI
+        -unless instrument.mp3.blank?  
           %audio{:controls => "controls",
                  :controlsList => "nodownload"}
-            %source{:type => audio.mp3_content_type,
-                    :src => audio.mp3.url }
+            %source{:type => instrument.mp3_content_type,
+                    :src => instrument.mp3.url }
   .col-md-4
     %h2 Rehearsals
     %p Coming Soon

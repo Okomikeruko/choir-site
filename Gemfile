@@ -25,6 +25,7 @@ gem 'jquery-ui-rails'
 gem 'paperclip'
 gem 'aws-sdk',              "~> 2.3"
 gem 'breadcrumbs_on_rails'
+gem 'multipart-post'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
@@ -47,7 +48,7 @@ group :test do
 end
 
 group :production do
-  gem 'pg', '0.20.0'
+  gem 'pg', '~> 0.20'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

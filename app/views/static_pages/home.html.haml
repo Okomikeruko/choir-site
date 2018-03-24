@@ -10,14 +10,18 @@
   .col-sm-5.col-sm-push-7.col-md-4.col-md-push-8.col-lg-3.col-lg-push-9
     .performance-block
       %strong Next Performance:
-      =link_to music_path(@song.slug), class: "secondary" do
-        %h2= @song.title
-      %span.date= @song.performance_date.strftime("%m/%d/%Y")
-      -unless @song.audios.first.blank?
-        %audio{:controls => "controls",
-               :controlsList => "nodownload"}
-          %source{:type => @song.audios.first.mp3_content_type,
-                  :src => @song.audios.first.mp3.url }
+      -unless @song.blank?
+        =link_to music_path(@song.slug), class: "secondary" do
+          %h2= @song.title
+        %span.date= @song.performance_date.strftime("%m/%d/%Y")
+        -unless @instrument.blank?
+          %audio{:controls => "controls",
+                 :controlsList => "nodownload"}
+            %source{:type => @instrument.mp3_content_type,
+                    :src => @instrument.mp3.url }
+      -else
+        %p
+          There are no scheduled peformances at this time.
       .clearfix
         =link_to music_index_path, class: "pull-right" do
           More Music&hellip;

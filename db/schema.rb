@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180321124243) do
+ActiveRecord::Schema.define(version: 20180324034344) do
 
   create_table "audios", force: :cascade do |t|
     t.string "instrument"
@@ -27,6 +27,27 @@ ActiveRecord::Schema.define(version: 20180321124243) do
     t.datetime "mp3_updated_at"
     t.integer "position"
     t.index ["song_id"], name: "index_audios_on_song_id"
+  end
+
+  create_table "instruments", force: :cascade do |t|
+    t.string "name"
+    t.integer "position"
+    t.integer "song_id"
+    t.string "pdf_file_name"
+    t.string "pdf_content_type"
+    t.integer "pdf_file_size"
+    t.datetime "pdf_updated_at"
+    t.string "mp3_file_name"
+    t.string "mp3_content_type"
+    t.integer "mp3_file_size"
+    t.datetime "mp3_updated_at"
+    t.string "midi_file_name"
+    t.string "midi_content_type"
+    t.integer "midi_file_size"
+    t.datetime "midi_updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["song_id"], name: "index_instruments_on_song_id"
   end
 
   create_table "sheet_musics", force: :cascade do |t|

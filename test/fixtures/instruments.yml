@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+soprano:
+  name: "Soprano"
+  position: 1
+  song: one
+
+alto:
+  name: "Alto"
+  position: 2
+  song: one
+
+tenor:
+  name: "Tenor"
+  position: 3
+  song: one
+  
+bass:
+  name: "Bass"
+  position: 4
+  song: one
