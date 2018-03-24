@@ -28,5 +28,6 @@
           %li{ :class => "#{'active' if controller_name == 'news'}" }
             =link_to "News", "#"
           %li 
-            =link_to 'Logout', destroy_user_session_path, method: :delete
-            
+            =link_to 'Logout', 
+                     destroy_user_session_path, 
+                     method: :delete
