@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180324174943) do
+ActiveRecord::Schema.define(version: 20180324220649) do
 
   create_table "audios", force: :cascade do |t|
     t.string "instrument"
@@ -84,6 +84,10 @@ ActiveRecord::Schema.define(version: 20180324174943) do
     t.string "slug"
     t.string "sort_order"
     t.text "description"
+    t.string "lilypond_file_name"
+    t.string "lilypond_content_type"
+    t.integer "lilypond_file_size"
+    t.datetime "lilypond_updated_at"
   end
 
   create_table "users", force: :cascade do |t|

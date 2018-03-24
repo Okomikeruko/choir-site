@@ -11,14 +11,17 @@ class Song < ApplicationRecord
   accepts_nested_attributes_for :audios,
                   reject_if: :all_blank,
                   allow_destroy: true
-  
   has_many :instruments, inverse_of: :song, dependent: :destroy 
   accepts_nested_attributes_for :instruments,
                   reject_if: :all_blank,
                   allow_destroy: true
   
+  has_attached_file :lilypond
+  
   validates :title, presence: true,
                     length: { maximum: 60 }
+                    
+  do_not_validate_attachment_file_type :lilypond
                     
   private
     def set_slug

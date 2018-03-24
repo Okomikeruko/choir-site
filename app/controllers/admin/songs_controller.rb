@@ -48,6 +48,7 @@ class Admin::SongsController < AdminController
     def song_params
       params.require(:song).permit(:title,
                                    :description,
+                                   :lilypond,
                                    :sheet_musics_attributes => 
                                      [:id,
                                       :instrument,

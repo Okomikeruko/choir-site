@@ -17,6 +17,10 @@ class Profile < ApplicationRecord
   
   private
     def set_position
-      self.position ||= Profile.last.position.to_i + 1
+      if Profile.any?
+        self.position ||= Profile.last.position.to_i + 1
+      else
+        self.position = 1
+      end
     end
 end

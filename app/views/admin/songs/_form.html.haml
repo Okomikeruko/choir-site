@@ -24,6 +24,14 @@
         %br
         =f.label :description
         =f.text_area :description, class: "form-control"
+        %br
+        %span{style: "white-space: nowrap;"}
+          =f.label :lilypond, "Lilypond File"
+          -if f.object.lilypond.exists?
+            =link_to f.object.lilypond.url do 
+              =f.object.lilypond_file_name
+        =f.file_field :lilypond, 
+                      class: "form-control"
       %br
       %fieldset 
         %legend Instruments
