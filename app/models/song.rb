@@ -16,6 +16,9 @@ class Song < ApplicationRecord
                   reject_if: :all_blank,
                   allow_destroy: true
   
+  has_many :performance_songs
+  has_many :performances, through: :performance_songs
+  
   has_attached_file :lilypond
   
   validates :title, presence: true,

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  venue: "Church"
+  date: <%= 2.weeks.from_now %>
+  details: "Lee is conducting"
+
+two:
+  venue: "Church"
+  date: <%= 3.days.ago %>
+  details: "Sid is conducting"
