@@ -1,0 +1,32 @@
+%header 
+  %nav.navbar.navbar-inverse
+    .container-fluid
+      .navbar-header
+        %button{ :type => "button",
+                 :class => "navbar-toggle collapsed",
+                 :data => { toggle: "collapse",
+                            target: "#admin-menu" },
+                 :aria => { expanded: false } }
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        =link_to "#", :class => "navbar-brand" do
+          Cascade Sixth Choir
+      #admin-menu.collapse.navbar-collapse
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            =link_to "Main Site", root_path
+          %li{ :class => "#{'active' if controller_name == 'songs'}" }
+            =link_to "Songs", admin_songs_path
+          %li{ :class => "#{'active' if controller_name == 'rehearsals'}" }
+            =link_to "Rehearsals", "#"
+          %li{ :class => "#{'active' if controller_name == 'performances'}" }
+            =link_to "Performances", "#"
+          %li{ :class => "#{'active' if controller_name == 'profiles'}" }
+            =link_to "Profiles", "#"
+          %li{ :class => "#{'active' if controller_name == 'news'}" }
+            =link_to "News", "#"
+          %li 
+            =link_to 'Logout', destroy_user_session_path, method: :delete
+            
