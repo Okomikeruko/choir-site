@@ -47,6 +47,7 @@ class Admin::SongsController < AdminController
     
     def song_params
       params.require(:song).permit(:title,
+                                   :description,
                                    :sheet_musics_attributes => 
                                      [:id,
                                       :instrument,
@@ -59,6 +60,14 @@ class Admin::SongsController < AdminController
                                       :midi,
                                       :mp3,
                                       :position,
+                                      :_destroy],
+                                   :instruments_attributes =>
+                                     [:id,
+                                      :name,
+                                      :position,
+                                      :midi,
+                                      :mp3,
+                                      :pdf,
                                       :_destroy])
     end
 end

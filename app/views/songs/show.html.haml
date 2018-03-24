@@ -34,7 +34,8 @@
                 %a{:href => instrument.pdf.url,
                    :download => instrument.pdf_file_name }
                   Sheet Music - PDF  
-              %li.divider{:role => "separator"} 
+              -if instrument.mp3.exists? || instrument.midi.exists?
+                %li.divider{:role => "separator"} 
               -if instrument.mp3.exists?
                 %li 
                   %a{:href => instrument.mp3.url,

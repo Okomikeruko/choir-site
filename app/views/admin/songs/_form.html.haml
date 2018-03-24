@@ -27,64 +27,41 @@
                         value: (@song.performance_date.strftime("%m/%d/%Y") unless @song.performance_date.blank?),
                         class: "form-control"
           .input-group-addon
-            %span.glyphicon.glyphicon-th 
+            %span.glyphicon.glyphicon-th
+        %br
+        =f.label :description
+        =f.text_area :description, class: "form-control"
       %br
-      %fieldset
-        %legend Sheet Music
-        .sheet_musics
-          =f.fields_for :sheet_musics do |sheet_music|
-            =render "sheet_music_fields", f: sheet_music
+      %fieldset 
+        %legend Instruments
+        .instruments
+          =f.fields_for :instruments do |instruments|
+            =render "instrument_fields", f: instruments
           .links
-            =link_to_add_association f, :sheet_musics, class: "btn btn-primary" do 
+            =link_to_add_association f, :instruments, class: "btn btn-primary" do 
               %span.glyphicon.glyphicon-plus
-              Add Sheet Music
-      %br
-      %fieldset
-        %legend Audio
-        .audios
-          =f.fields_for :audios do |audio|
-            =render 'audio_fields', f: audio 
-          .links
-            =link_to_add_association f, :audios, class: "btn btn-primary" do
-              %span.glyphicon.glyphicon-plus
-              Add Audio
+              Add Instrument
 :javascript
+  function update_positions(){
+    var index = 0;
+    $.each( $(".instruments .panel"), function(index, panel){
+      $(panel).find("input[id$='_position']").val(index);
+    });
+  }
+  
   $( function() {
-    $('.sheet_musics').sortable({
+    $('.instruments').sortable({
       handle: ".handle",
       placeholder: "ui-state-highlight sheet-music-highlight",
       update: function(event, ui) { update_positions() }
     });
-    $('.audios').sortable({
-      handle: ".handle",
-      placeholder: "ui-state-highlight audio-highlight",
-      update: function(event, ui) { update_positions() }
-    });
   });
   
-  $(".sheet_musics").on('cocoon:after-insert', function() {
+  $(".instruments").on('cocoon:after-insert', function() {
     update_positions();
   })
 
-  $(".sheet_musics").on('cocoon:after-remove', function() {
-    update_positions();
-  })
-
-  $(".audios").on('cocoon:after-insert', function() {
-    update_positions();
-  })
-
-  $(".audios").on('cocoon:after-remove', function() {
+  $(".instruments").on('cocoon:after-remove', function() {
     update_positions();
   })
   
-  function update_positions(){
-    var index = 0;
-    $.each( $(".sheet_musics .panel"), function(index, panel){
-      $(panel).find("input[id$='_position']").val(index);
-    });
-    
-    $.each( $(".audios .panel"), function(index, panel){
-      $(panel).find("input[id$='_position']").val(index);
-    });
-  }

@@ -2,12 +2,12 @@
 
 one:
   title: "The Long and Winding Road"
-  performance_date: 2017-11-04 14:38:31
+  performance_date: <%= 5.weeks.from_now %>
   slug: "the-long-and-winding-road"
   sort_order: "Long and Winding Road, The"
 
 two:
   title: "The Last Unicorn"
-  performance_date: 2017-11-04 14:38:31
+  performance_date: <%= 2.days.ago %>
   slug: "the-last-unicorn"
   sort_order: "Last Unicorn, The"
