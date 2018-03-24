@@ -19,10 +19,12 @@ gem 'jbuilder',                '2.7.0'
 
 gem 'devise'
 gem 'haml'
+gem 'haml-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'cocoon'
 gem 'jquery-ui-rails'
 gem 'paperclip'
+gem "delayed_paperclip"
 gem 'aws-sdk',              "~> 2.3"
 gem 'breadcrumbs_on_rails'
 gem 'multipart-post'

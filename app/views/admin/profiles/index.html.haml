@@ -1,0 +1,44 @@
+.clearfix 
+  %h1 Profiles
+  =link_to new_admin_profile_path,
+           class: "btn btn-primary" do 
+    %span.glyphicon.glyphicon-plus
+    Add New Profile
+%br
+  .profiles
+    -@profiles.each do |profile|
+      =render profile 
+:javascript
+  function update_positions(){
+    var index = 1;
+    var updated_order = [];
+    $.each( $(".profiles .panel"), function(index, panel){
+      $(panel).attr("data-pos", index);
+      updated_order.push({id: $(panel).data('id'), position: index+1 })
+    });
+    
+    $.ajax({
+      type: "PUT",
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
+      },
+      url: "/admin/profiles/sort",
+      data: { order: updated_order }
+    });
+  }
+  
+  $( function() {
+    $('.profiles').sortable({
+      handle: ".handle",
+      placeholder: "ui-state-highlight sheet-music-highlight",
+      update: function(event, ui) { update_positions() }
+    });
+  });
+  
+  $(".profiles").on('cocoon:after-insert', function() {
+    update_positions();
+  })
+
+  $(".profiles").on('cocoon:after-remove', function() {
+    update_positions();
+  })

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root to: 'static_pages#home'
 
   devise_for :users, controllers: {
@@ -14,6 +15,11 @@ Rails.application.routes.draw do
   
   resources :admin, only: [:index]
   namespace :admin do 
-    resources :songs, except: [:show]
+    with_options except: [:show] do 
+      resources :songs
+      resources :profiles do
+        put :sort, on: :collection
+      end
+    end
   end
 end
