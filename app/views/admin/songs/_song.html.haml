@@ -1,8 +1,7 @@
 %tr
   %td= song.performance_date.strftime("%-m/%-d/%Y")
   %td= song.title
-  %td= song.sheet_musics.count
-  %td= song.audios.count
+  %td= song.instruments.count
   %td.text-right
     = link_to edit_admin_song_path(song), 
               class: "btn btn-default btn-xs",
