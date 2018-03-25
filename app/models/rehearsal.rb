@@ -32,7 +32,7 @@ class Rehearsal < ApplicationRecord
     songs.map{ |s| 
       ActionController::Base.helpers.link_to(
         s.title, 
-        Rails.application.routes.url_helpers.admin_song_path(s) )
+        Rails.application.routes.url_helpers.music_path(s.slug) )
       }.to_sentence.html_safe
     
   end
