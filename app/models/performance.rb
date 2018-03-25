@@ -9,6 +9,8 @@ class Performance < ApplicationRecord
   
   
   def self.get_next
-    Performance.where("date > :d", :d => DateTime.now).first
+    Performance.where(
+      "date > :d", :d => DateTime.now.in_time_zone("Mountain Time (US & Canada)")
+    ).first
   end
 end

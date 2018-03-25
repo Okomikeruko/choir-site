@@ -1,0 +1,13 @@
+%tr
+  %td=performance.date.strftime("%m/%d/%Y")
+  %td=performance.venue
+  %td=performance.songs.map { |song| song.title}.to_sentence
+  %td.text-right
+    =link_to edit_admin_performance_path(performance),
+             class: "btn btn-default btn-xs" do
+      %span.glyphicon.glyphicon-pencil
+    =link_to admin_performance_path(performance),
+             method: :delete,
+             data: { confirm: "Are you sure?" },
+             class: "btn btn-danger btn-xs" do 
+      %span.glyphicon.glyphicon-remove

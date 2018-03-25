@@ -1,8 +1,7 @@
 class StaticPagesController < ApplicationController
   
   def home
-    @song = Song.where("performance_date > :date", :date => DateTime.now).first
-    @instrument = @song.instruments.detect {|i| i.mp3.exists? } unless @song.blank?
+    @performance = Performance.get_next
   end
   
   def about_us

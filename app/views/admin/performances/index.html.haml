@@ -1,0 +1,19 @@
+.clearfix
+  %h1 Performances
+  =link_to new_admin_performance_path,
+           class: "btn btn-primary" do
+    %span.glyphicon.glyphicon-plus 
+    Add New Performance
+.row
+  .col-sm-12
+    %table.table
+      %thead
+        %tr
+          %th Performance Date
+          %th Venue
+          %th Songs
+          %th.text-right
+            Controls
+      %tbody
+        -@performances.each do |performance|
+          =render performance

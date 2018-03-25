@@ -7,14 +7,14 @@ class SongsController < ApplicationController
     @songs = Song.all 
     @songs_by_title = @songs.sort_by {|s| s.sort_order}
                             .group_by {|s| s.sort_order.chr}
-    @songs_pending = @songs.select { |s| !s.performance_date.past? }
-                           .sort_by {|s| s.performance_date}
-                           .group_by {|s| s.performance_date.beginning_of_month}
+    @songs_pending = @songs.select { |s| !s.performances.last.date.past? }
+                           .sort_by {|s| s.performances.last.date}
+                           .group_by {|s| s.performances.last.date.beginning_of_month}
                            .group_by {|d| d[0].year}
-    @song_history = @songs.select { |s| s.performance_date.past? }
-                           .sort_by {|s| s.performance_date}
+    @song_history = @songs.select { |s| s.performances.last.date.past? }
+                           .sort_by {|s| s.performances.last.date}
                            .reverse!
-                           .group_by {|s| s.performance_date.beginning_of_month}
+                           .group_by {|s| s.performances.last.date.beginning_of_month}
                            .group_by {|d| d[0].year}
   end
   

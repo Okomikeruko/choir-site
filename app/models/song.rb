@@ -25,7 +25,13 @@ class Song < ApplicationRecord
                     length: { maximum: 60 }
                     
   do_not_validate_attachment_file_type :lilypond
-                    
+  
+  
+  def primary_instrument
+    instruments.detect {|i| i.mp3.exists? }
+  end
+  
+  
   private
     def set_slug
       self.slug = title.parameterize

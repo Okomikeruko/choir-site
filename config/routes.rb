@@ -16,10 +16,11 @@ Rails.application.routes.draw do
   resources :admin, only: [:index]
   namespace :admin do 
     with_options except: [:show] do 
-      resources :songs
+      resources :performances
       resources :profiles do
         put :sort, on: :collection
       end
+      resources :songs
     end
   end
 end

@@ -1,0 +1,32 @@
+.row
+  .col-sm-8.col-sm-offset-2
+    =form_for [:admin, @performance] do |f|
+      =render "shared/error_messages", object: @performance
+      .clearfix
+        =f.submit "Save", class: "btn btn-primary pull-right"
+        =link_to "Cancel",
+                 admin_performances_path,
+                 class: "btn btn-default pull-right",
+                 style: "margin-right: 15px;"
+      .row
+        .col-sm-6
+          %fieldset
+            %legend Main Info 
+            =f.label :venue
+            =f.text_field :venue, class: "form-control"
+            %br
+            =f.label :date
+            .input-group.date{data: {provide: "datepicker",
+                                     date: { format: "mm/dd/yyyy" } } }
+              =f.text_field :date, 
+                            value: (@performance.date.strftime("%m/%d/%Y") unless @performance.date.blank?),
+                            class: "form-control"
+              .input-group-addon
+                %span.glyphicon.glyphicon-th
+            %br
+            =f.label :details
+            =f.text_area :details, class: "form-control"
+        .col-sm-6
+          %fieldset
+            %legend Songs
+            =f.collection_check_boxes(:song_ids, Song.all, :id, :title) 
