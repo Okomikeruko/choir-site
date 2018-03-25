@@ -1,0 +1,3 @@
+=link_to music_path(song.slug), class: "secondary" do 
+  %h3= song.title
+%span.date= song.performances.last.date.strftime("%m/%d/%Y")

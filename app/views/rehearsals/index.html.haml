@@ -1,0 +1,19 @@
+-provide :title, "Rehearsals"
+-provide :bg, "pexels-photo-257904.jpg"
+
+%p
+  Here you can download and listen to all the previous rehearsals you may have 
+  missed so you can practice along and get the notes and changes to the songs 
+  you need to know before the next peformance.
+%p
+  Rehersals are sorted by date and links to the music we practiced are listed 
+  in the description.
+
+.row
+  -@rehearsals.each do |rehearsal|
+    .col-sm-4.col-md-3
+      =render rehearsal
+
+=will_paginate @rehearsals, 
+               :previous_label => "«",
+               :next_label => "»"

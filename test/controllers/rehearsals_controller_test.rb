@@ -1,0 +1,10 @@
+require 'test_helper'
+
+class RehearsalsControllerTest < ActionDispatch::IntegrationTest
+  test "should get index" do
+    get rehearsals_path
+    assert_response :success
+    assert_template "rehearsals/index"
+  end
+
+end

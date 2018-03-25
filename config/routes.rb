@@ -11,6 +11,9 @@ Rails.application.routes.draw do
             only: [:index, :show],
             param: :slug
   
+  resources :rehearsals,
+            only: [:index]
+  
   get "about-us", to: "static_pages#about_us"
   
   resources :admin, only: [:index]

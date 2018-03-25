@@ -10,7 +10,7 @@
                  style: "margin-right: 25px;"
       .row
         .col-sm-6
-          %fieldset
+          %fieldset{style: "margin-bottom: 30px;"}
             %legend Scheduling
             =f.label :host
             =f.text_field :host, class: "form-control"
@@ -30,7 +30,7 @@
             =f.label :time
             =f.text_field :time, class: "form-control"
         .col-sm-6
-          %fieldset
+          %fieldset{style: "margin-bottom: 30px;"}
             %legend Events
             =f.label :audio
             =f.file_field :audio, class: "form-control"

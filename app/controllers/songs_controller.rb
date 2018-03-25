@@ -4,19 +4,22 @@ class SongsController < ApplicationController
   
   
   def index
-    @songs = Song.all 
-    @songs_by_title = @songs.sort_by {|s| s.sort_order}
-                            .group_by {|s| s.sort_order.chr}
-    @songs_pending = @songs.select { |s| !s.performances.last.date.past? }
+    songs = Song.includes(:performances).all 
+    @songs_by_title = songs.sort_by {|s| s.sort_order}
+                           .group_by {|s| s.sort_order.chr}
+    @songs_pending  = songs.select { |s| s.performances.any? }
+                           .select { |s| !s.performances.last.date.past? }
                            .sort_by {|s| s.performances.last.date}
                            .group_by {|s| s.performances.last.date.beginning_of_month}
                            .group_by {|d| d[0].year}
-    @song_history = @songs.select { |s| s.performances.last.date.past? }
+    @song_history   = songs.select { |s| s.performances.any? }
+                           .select { |s| s.performances.last.date.past? }
                            .sort_by {|s| s.performances.last.date}
                            .reverse!
                            .group_by {|s| s.performances.last.date.beginning_of_month}
                            .group_by {|d| d[0].year}
   end
+
   
   def show
     @song = Song.includes(:instruments, 

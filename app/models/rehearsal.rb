@@ -16,6 +16,12 @@ class Rehearsal < ApplicationRecord
   
   attr_accessor :date_holder
   
+  def self.all_past
+    Rehearsal.where(
+      "date < :d", :d => DateTime.now.in_time_zone("Mountain Time (US & Canada)")
+    ).reverse
+  end
+  
   def self.get_next
     Rehearsal.where(
       "date > :d", :d => DateTime.now.in_time_zone("Mountain Time (US & Canada)")
@@ -23,9 +29,7 @@ class Rehearsal < ApplicationRecord
   end
   
   def self.get_most_recent
-    Rehearsal.where(
-      "date < :d", :d => DateTime.now.in_time_zone("Mountain Time (US & Canada)")
-    ).reverse.first
+    Rehearsal.all_past.first
   end
   
   def song_list 
