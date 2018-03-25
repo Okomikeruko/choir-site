@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180324224537) do
+ActiveRecord::Schema.define(version: 20180325013129) do
 
   create_table "audios", force: :cascade do |t|
     t.string "instrument"
@@ -78,6 +78,28 @@ ActiveRecord::Schema.define(version: 20180324224537) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "position"
+  end
+
+  create_table "rehearsals", force: :cascade do |t|
+    t.datetime "date"
+    t.integer "duration"
+    t.string "venue"
+    t.string "host"
+    t.string "audio_file_name"
+    t.string "audio_content_type"
+    t.integer "audio_file_size"
+    t.datetime "audio_updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rehersal_songs", force: :cascade do |t|
+    t.integer "rehersal_id"
+    t.integer "song_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["rehersal_id"], name: "index_rehersal_songs_on_rehersal_id"
+    t.index ["song_id"], name: "index_rehersal_songs_on_song_id"
   end
 
   create_table "sheet_musics", force: :cascade do |t|

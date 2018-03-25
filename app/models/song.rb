@@ -19,6 +19,9 @@ class Song < ApplicationRecord
   has_many :performance_songs
   has_many :performances, through: :performance_songs
   
+  has_many :rehearsal_songs
+  has_many :rehersals, through: :rehearsal_songs
+  
   has_attached_file :lilypond
   
   validates :title, presence: true,

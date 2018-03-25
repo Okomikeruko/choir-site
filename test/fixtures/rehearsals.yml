@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: <%= 1.week.ago %>
+  duration: <%= 1.hour %>
+  venue: "My house"
+  host: "Me"
+
+two:
+  date: <%= 1.week.from_now %>
+  duration: <%= 1.hour %>
+  venue: "My house"
+  host: "Me"

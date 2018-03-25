@@ -5,8 +5,6 @@ class Profile < ApplicationRecord
   
   has_attached_file :image, default_url: "portrait-placeholder.jpg"
   
-  process_in_background :image
-  
   with_options presence: true do 
     validates :name,  length: { maximum: 60 }
     validates :title, length: { maximum: 60 }
