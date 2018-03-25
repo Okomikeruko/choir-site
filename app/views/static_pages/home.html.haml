@@ -3,7 +3,7 @@
   %span.nobreak Cascade 6th Ward Choir's
   %span.nobreak Web Archive
 %p{style: "margin-bottom: 20px;"}
-  Here you can find music planed for the Cascade Sixth Ward Choir's upcoming
+  Here you can find music planned for the Cascade Sixth Ward Choir's upcoming
   performances, listen to individualized parts, print off sheet music, and 
   listen to past performances and rehearsals.
 .row
@@ -30,16 +30,16 @@
       %strong Next Rehearsal:
       %table
         %tr
-          %td.text-primary 03/25/2018
-          %td.text-right Bro. Whittaker's Home
+          %td.text-primary= @next_rehearsal.date.strftime("%m/%d/%Y")
+          %td.text-right= @next_rehearsal.host
         %tr 
-          %td.text-primary 1:00 PM - 2:00 PM
-          %td.text-right 715 East 200 North
+          %td.text-primary= @next_rehearsal.time
+          %td.text-right= @next_rehearsal.venue
       %strong Last Rehearsal:
       %table
         %tr 
-          %td.text-primary 03/18/2018
-          %td.text-right This song and this song.
+          %td.text-primary= @last_rehearsal.date.strftime("%m/%d/%Y")
+          %td.text-right= @last_rehearsal.song_list
       .clearfix
         =link_to "#", class: "pull-right" do 
           More Rehearsals&hellip;

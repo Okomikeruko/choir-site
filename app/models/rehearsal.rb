@@ -16,6 +16,27 @@ class Rehearsal < ApplicationRecord
   
   attr_accessor :date_holder
   
+  def self.get_next
+    Rehearsal.where(
+      "date > :d", :d => DateTime.now.in_time_zone("Mountain Time (US & Canada)")
+    ).first
+  end
+  
+  def self.get_most_recent
+    Rehearsal.where(
+      "date < :d", :d => DateTime.now.in_time_zone("Mountain Time (US & Canada)")
+    ).reverse.first
+  end
+  
+  def song_list 
+    songs.map{ |s| 
+      ActionController::Base.helpers.link_to(
+        s.title, 
+        Rails.application.routes.url_helpers.admin_song_path(s) )
+      }.to_sentence.html_safe
+    
+  end
+  
   private
     def set_date
       unless date_holder.blank?
