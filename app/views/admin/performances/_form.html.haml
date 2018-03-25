@@ -29,4 +29,9 @@
         .col-sm-6
           %fieldset
             %legend Songs
-            =f.collection_check_boxes(:song_ids, Song.all, :id, :title) 
+            =f.label :songs 
+            %br
+            =f.collection_check_boxes(:song_ids, Song.all, :id, :title) do |s|
+              =s.label { s.check_box } 
+              =s.object.title
+              %br

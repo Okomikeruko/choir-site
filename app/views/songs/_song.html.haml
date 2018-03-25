@@ -1,3 +1,7 @@
 =link_to music_path(song.slug), class: "secondary" do 
   %h3= song.title
-%span.date= song.performances.last.date.strftime("%m/%d/%Y")
+%span.date
+  -if song.performances.any?
+    = song.performances.last.date.strftime("%m/%d/%Y")
+  -else
+    No scheduled performances yet.
