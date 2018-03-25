@@ -19,7 +19,9 @@ class SongsController < ApplicationController
   end
   
   def show
-    @song = Song.includes(:sheet_musics, :audios)
+    @song = Song.includes(:instruments, 
+                          :rehearsals, 
+                          :performances)
                 .find_by(:slug => params[:slug])
                 
     

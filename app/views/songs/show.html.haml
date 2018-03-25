@@ -55,4 +55,18 @@
                     :src => instrument.mp3.url }
   .col-md-4
     %h2 Rehearsals
-    %p Coming Soon
+    -if @song.rehearsals.any?
+      .row
+        -@song.rehearsals.each do |rehearsal|
+          .col-sm-4.col-md-12
+            .rehearsal-block.download-block
+              .row
+                .col-xs-6.col-sm-12
+                  %h3=rehearsal.date.strftime("%m/%d/%Y")
+                  %p=rehearsal.song_list
+                .col-xs-6.col-sm-12
+                  =link_to "Download",
+                           rehearsal.audio.url,
+                           class: "btn btn-secondary btn-lg"
+    -else
+      %p No rehearsals yet.

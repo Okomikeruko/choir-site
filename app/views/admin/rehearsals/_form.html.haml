@@ -35,5 +35,9 @@
             =f.label :audio
             =f.file_field :audio, class: "form-control"
             %br 
-            =f.label :songs
-            =f.collection_check_boxes(:song_ids, Song.all, :id, :title) 
+            =f.label :songs 
+            %br
+            =f.collection_check_boxes(:song_ids, Song.all, :id, :title) do |s|
+              =s.label { s.check_box } 
+              =s.object.title
+              %br
