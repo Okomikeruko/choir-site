@@ -1,0 +1,2 @@
+module Admin::RehearsalsHelper
+end

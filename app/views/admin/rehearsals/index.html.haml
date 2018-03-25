@@ -1,0 +1,21 @@
+.clearfix
+  %h1 Rehearsals
+  =link_to new_admin_rehearsal_path,
+           class: "btn btn-primary" do 
+    %span.glyphicon.glyphicon-plus
+    Add New Rehearsal
+.row
+  .col-sm-12
+    %table.table
+      %thead
+        %tr
+          %th Date
+          %th Time
+          %th Host
+          %th Venue
+          %th Songs
+          %th Audio
+          %th.text-right Controls
+      %tbody
+        -@rehearsals.each do |rehearsal|
+          =render rehearsal

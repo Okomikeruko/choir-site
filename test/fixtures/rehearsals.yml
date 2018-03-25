@@ -2,12 +2,12 @@
 
 one:
   date: <%= 1.week.ago %>
-  duration: <%= 1.hour %>
+  time: "1:00 PM - 2:00 PM"
   venue: "My house"
   host: "Me"
 
 two:
   date: <%= 1.week.from_now %>
-  duration: <%= 1.hour %>
+  time: "1:00 PM - 2:00 PM"
   venue: "My house"
   host: "Me"

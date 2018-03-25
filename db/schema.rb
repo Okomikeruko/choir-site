@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180325013129) do
+ActiveRecord::Schema.define(version: 20180325033537) do
 
   create_table "audios", force: :cascade do |t|
     t.string "instrument"
@@ -80,9 +80,17 @@ ActiveRecord::Schema.define(version: 20180325013129) do
     t.integer "position"
   end
 
+  create_table "rehearsal_songs", force: :cascade do |t|
+    t.integer "rehearsal_id"
+    t.integer "song_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["rehearsal_id"], name: "index_rehearsal_songs_on_rehearsal_id"
+    t.index ["song_id"], name: "index_rehearsal_songs_on_song_id"
+  end
+
   create_table "rehearsals", force: :cascade do |t|
     t.datetime "date"
-    t.integer "duration"
     t.string "venue"
     t.string "host"
     t.string "audio_file_name"
@@ -91,15 +99,7 @@ ActiveRecord::Schema.define(version: 20180325013129) do
     t.datetime "audio_updated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "rehersal_songs", force: :cascade do |t|
-    t.integer "rehersal_id"
-    t.integer "song_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["rehersal_id"], name: "index_rehersal_songs_on_rehersal_id"
-    t.index ["song_id"], name: "index_rehersal_songs_on_song_id"
+    t.string "time"
   end
 
   create_table "sheet_musics", force: :cascade do |t|

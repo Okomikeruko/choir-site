@@ -1,0 +1,17 @@
+%tr
+  %td= rehearsal.date.strftime("%m/%d/%Y")
+  %td= rehearsal.time.to_s
+  %td= rehearsal.host
+  %td= rehearsal.venue
+  %td= rehearsal.songs.count
+  %td= rehearsal.audio.exists? ? "Yes" : "No"
+  %td.text-right
+    =link_to edit_admin_rehearsal_path(rehearsal),
+             class: "btn btn-default btn-xs",
+             style: "margin-right: 1em;" do
+      %span.glyphicon.glyphicon-pencil
+    =link_to admin_rehearsal_path(rehearsal),
+             method: :delete,
+             data: { confirm: "Are you sure?" },
+             class: "btn btn-danger btn-xs" do 
+      %span.glyphicon.glyphicon-remove

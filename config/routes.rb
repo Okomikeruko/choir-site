@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       resources :profiles do
         put :sort, on: :collection
       end
+      resources :rehearsals
       resources :songs
     end
   end

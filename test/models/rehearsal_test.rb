@@ -14,8 +14,13 @@ class RehearsalTest < ActiveSupport::TestCase
     assert_not @rehearsal.valid?
   end
   
-  test "should have a positive duration" do 
-    @rehearsal.duration = 0
+  test "should have a time" do 
+    @rehearsal.time = ""
+    assert_not @rehearsal.valid?
+  end
+  
+  test "time should not be too long" do 
+    @rehearsal.time = "a" * 21
     assert_not @rehearsal.valid?
   end
   

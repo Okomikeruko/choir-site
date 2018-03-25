@@ -17,10 +17,12 @@
         %ul.nav.navbar-nav.navbar-right
           %li
             =link_to "Main Site", root_path
+          %li
+            =link_to "Dashboard", "%"
           %li{ :class => "#{'active' if controller_name == 'songs'}" }
             =link_to "Songs", admin_songs_path
           %li{ :class => "#{'active' if controller_name == 'rehearsals'}" }
-            =link_to "Rehearsals", "#"
+            =link_to "Rehearsals", admin_rehearsals_path
           %li{ :class => "#{'active' if controller_name == 'performances'}" }
             =link_to "Performances", admin_performances_path
           %li{ :class => "#{'active' if controller_name == 'profiles'}" }
