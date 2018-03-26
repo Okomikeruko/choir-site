@@ -16,10 +16,10 @@ class Song < ApplicationRecord
                   reject_if: :all_blank,
                   allow_destroy: true
   
-  has_many :performance_songs
+  has_many :performance_songs, dependent: :destroy 
   has_many :performances, through: :performance_songs
   
-  has_many :rehearsal_songs
+  has_many :rehearsal_songs, dependent: :destroy
   has_many :rehearsals, through: :rehearsal_songs
   
   has_attached_file :lilypond

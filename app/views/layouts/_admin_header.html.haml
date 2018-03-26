@@ -18,7 +18,7 @@
           %li
             =link_to "Main Site", root_path
           %li
-            =link_to "Dashboard", "%"
+            =link_to "Dashboard", "#"
           %li{class: "#{'active' if ['songs', 'rehearsals', 'performances'].include?(controller_name)}" }
             =link_to "#", 
                      class:"dropdown-toggle",
@@ -44,7 +44,7 @@
               %span.caret
               %ul.dropdown-menu
                 %li
-                  =link_to "Articles", "#"
+                  =link_to "Articles", admin_articles_path
                 %li
                   =link_to "Categories", admin_categories_path
                 %li

@@ -1,6 +1,6 @@
 class Tag < ApplicationRecord
 
-  has_many :article_tag
+  has_many :article_tag, dependent: :destroy 
   has_many :articles, through: :article_tag
             
   with_options( presence: true,

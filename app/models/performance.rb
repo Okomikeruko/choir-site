@@ -1,5 +1,5 @@
 class Performance < ApplicationRecord
-  has_many :performance_songs
+  has_many :performance_songs, dependent: :destroy 
   has_many :songs, through: :performance_songs
   
   validates :date,    presence: true

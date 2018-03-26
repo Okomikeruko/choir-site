@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :admin, only: [:index]
   namespace :admin do 
     with_options except: [:show] do 
+      resources :articles
       resources :performances
       resources :profiles do
         put :sort, on: :collection

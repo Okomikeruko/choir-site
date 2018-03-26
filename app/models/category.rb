@@ -7,7 +7,7 @@ class Category < ApplicationRecord
             class_name: "Category",
             foreign_key: "category_id"
   
-  has_many :article_categories
+  has_many :article_categories, dependent: :destroy
   has_many :articles, through: :article_categories
             
   with_options( presence: true,

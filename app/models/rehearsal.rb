@@ -3,7 +3,7 @@ class Rehearsal < ApplicationRecord
   
   default_scope { order(date: :desc) }
   
-  has_many :rehearsal_songs
+  has_many :rehearsal_songs, dependent: :destroy 
   has_many :songs, through: :rehearsal_songs
   
   validates :date,  presence: true

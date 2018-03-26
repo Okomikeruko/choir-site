@@ -3,9 +3,9 @@ class Article < ApplicationRecord
              class_name: "User",
              foreign_key: "user_id"
   
-  has_many :article_categories
+  has_many :article_categories, dependent: :destroy
   has_many :categories, through: :article_categories
-  has_many :article_tags
+  has_many :article_tags, dependent: :destroy 
   has_many :tags, through: :article_tags
   
   with_options presence: true do 
@@ -14,8 +14,20 @@ class Article < ApplicationRecord
     validates :author
   end
   
+  def is_published?
+    self.published
+  end
+  
   def status
     published ? "Published" : "Draft"
+  end
+  
+  def list_categories
+    categories.map {|c| c.name}.to_sentence
+  end
+  
+  def list_tags
+    tags.map {|t| t.name}.to_sentence
   end
   
   def self.all_published

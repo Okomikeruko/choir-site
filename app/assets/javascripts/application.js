@@ -17,4 +17,5 @@
 //= require cocoon
 //= require jquery-ui/widgets/sortable
 //= require turbolinks
+//= require bootstrap-wysihtml5
 //= require_tree .

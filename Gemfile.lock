@@ -60,6 +60,8 @@ GEM
       sass (>= 3.3.4)
     bootstrap-will_paginate (1.0.0)
       will_paginate
+    bootstrap-wysihtml5-rails (0.3.3.8)
+      railties (>= 3.0)
     breadcrumbs_on_rails (3.0.1)
     builder (3.2.3)
     byebug (9.0.6)
@@ -431,6 +433,7 @@ DEPENDENCIES
   bootstrap-datepicker-rails
   bootstrap-sass (= 3.3.7)
   bootstrap-will_paginate (= 1.0.0)
+  bootstrap-wysihtml5-rails
   breadcrumbs_on_rails
   byebug (= 9.0.6)
   carrierwave (= 1.1.0)
