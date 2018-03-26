@@ -25,6 +25,9 @@ Rails.application.routes.draw do
       end
       resources :rehearsals
       resources :songs
+      with_options except: [:new, :edit] do 
+        resources :tags
+      end
     end
   end
 end

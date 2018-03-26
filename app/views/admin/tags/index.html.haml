@@ -1,0 +1,23 @@
+%h1 Article Tags
+
+.row
+  .col-sm-6
+    %fieldset
+      %legend Tags
+      %table.table.table-hover
+        %thead
+          %tr
+            %th Name
+            %th Slug
+            %th Uses
+            %th.text-right Controls
+        %tbody
+          -@tags.each do |tag|
+            =render tag 
+  .col-sm-6
+    %fieldset 
+      %legend New Tag
+      =render "form", tag: @new_tag 
+.modals
+  -@tags.each do |tag|
+    =render "modal", tag: tag

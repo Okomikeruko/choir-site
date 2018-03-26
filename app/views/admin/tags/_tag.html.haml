@@ -1,0 +1,16 @@
+%tr
+  %td= tag.name
+  %td= tag.slug
+  %td= tag.articles.count
+  %td.text-right
+    %button{ type:"button",
+             data: { toggle: "modal",
+                     target: "#tag-#{tag.id}" },
+             class: "btn btn-default btn-xs"}
+      %span.glyphicon.glyphicon-pencil
+    &nbsp;
+    =link_to admin_tag_path(tag),
+             method: :delete,
+             data: { confirm: "Are you sure?" },
+             class: "btn btn-danger btn-xs" do 
+      %span.glyphicon.glyphicon-remove
