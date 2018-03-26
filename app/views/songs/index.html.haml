@@ -72,7 +72,6 @@
     .row
       .col-md-10.col-md-offset-1
         -if @song_history.any?
-          -p @song_history
           .year-links.text-center
             %ul.nav.nav-pills
               -@song_history.each do |year|

@@ -10,7 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180325033537) do
+ActiveRecord::Schema.define(version: 20180326031740) do
+
+  create_table "article_categories", force: :cascade do |t|
+    t.integer "article_id"
+    t.integer "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_article_categories_on_article_id"
+    t.index ["category_id"], name: "index_article_categories_on_category_id"
+  end
+
+  create_table "article_tags", force: :cascade do |t|
+    t.integer "article_id"
+    t.integer "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_article_tags_on_article_id"
+    t.index ["tag_id"], name: "index_article_tags_on_tag_id"
+  end
+
+  create_table "articles", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "published", default: false, null: false
+    t.index ["user_id"], name: "index_articles_on_user_id"
+  end
 
   create_table "audios", force: :cascade do |t|
     t.string "instrument"
@@ -27,6 +55,15 @@ ActiveRecord::Schema.define(version: 20180325033537) do
     t.datetime "mp3_updated_at"
     t.integer "position"
     t.index ["song_id"], name: "index_audios_on_song_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.string "slug"
+    t.integer "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_categories_on_category_id"
   end
 
   create_table "instruments", force: :cascade do |t|
@@ -129,6 +166,13 @@ ActiveRecord::Schema.define(version: 20180325033537) do
     t.datetime "lilypond_updated_at"
   end
 
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.string "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -142,6 +186,7 @@ ActiveRecord::Schema.define(version: 20180325033537) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

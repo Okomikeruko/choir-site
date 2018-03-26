@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: "Cats"
+  slug: "cats"
+
+two:
+  name: "Dogs"
+  slug: "dogs"

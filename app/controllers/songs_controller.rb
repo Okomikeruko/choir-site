@@ -27,7 +27,6 @@ class SongsController < ApplicationController
                           :performances)
                 .find_by(:slug => params[:slug])
                 
-    
     add_breadcrumb @song.title, music_path(@song.slug)
   end
 end

@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: "Songs"
+  slug: "songs"
+
+two:
+  name: "Also Songs"
+  slug: "also-songs"
