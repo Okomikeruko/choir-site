@@ -1,0 +1,23 @@
+%h1 Article Categories 
+
+.row
+  .col-sm-6
+    %fieldset
+      %legend Categories 
+      %table.table.table-hover 
+        %thead 
+          %tr 
+            %th Name 
+            %th Slug 
+            %th Uses 
+            %th.text-right Controls 
+        %tbody 
+          -@categories.each do |category|
+            =render category 
+  .col-sm-6
+    %fieldset
+      %legend New Category 
+      =render "form", category: @new_category 
+.modals 
+  -@categories.each do |category|
+    =render "modal", category: category 

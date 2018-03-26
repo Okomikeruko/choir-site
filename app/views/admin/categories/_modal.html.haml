@@ -1,0 +1,15 @@
+.modal.fade{tabindex: "-1", 
+            role: "dialog",
+            id: "category-#{category.id}" }
+  .modal-dialog{role: "document"}
+    .modal-content
+      .modal-header
+        %button.close{type: "button",
+                      data: { dismiss: "modal" },
+                      aria: { label: "Close" } }
+          %span{ aria: { hidden: "true" } }
+            &times;
+        %h4.modal-title
+          Edit Category 
+      .modal-body
+        =render "form", category: category
