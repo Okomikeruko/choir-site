@@ -19,5 +19,7 @@ module Choir
       g.javascripts = false
       g.skip_routes = true
     end
+    
+    config.serve_static_assets = true
   end
 end
