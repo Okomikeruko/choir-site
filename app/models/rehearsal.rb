@@ -13,6 +13,7 @@ class Rehearsal < ApplicationRecord
   validates :host,  length: {maximum:  60}
   
   has_attached_file :audio
+  validates_attachment :audio,  :content_type => { content_type: %w(audio/mpeg audio/mp3) }
   
   attr_accessor :date_holder
   
