@@ -27,7 +27,7 @@ class Admin::ArticlesControllerTest < ActionDispatch::IntegrationTest
                  user_id: @admin.id }
       } 
       assert_response :redirect  
-      assert_redirected_to edit_admin_article_path(Article.last)
+      assert_redirected_to edit_admin_article_path(Article.first)
     end
   end
 
