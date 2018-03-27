@@ -26,7 +26,7 @@ gem 'cocoon'
 gem 'jquery-ui-rails'
 gem 'paperclip'
 gem "delayed_paperclip"
-gem 'aws-sdk',              "~> 2.3"
+gem 'aws-sdk'
 gem 'breadcrumbs_on_rails'
 gem 'multipart-post'
 
@@ -52,6 +52,7 @@ end
 
 group :production do
   gem 'pg', '~> 0.20'
+  gem "aws-sdk-s3"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
