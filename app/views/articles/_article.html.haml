@@ -1,0 +1,14 @@
+.row{style: "margin-bottom: 30px;"}
+  .col-xs-12
+    %span.date.hidden-xs.hidden-sm=article.created_at.strftime("%m/%d/%Y")
+    =link_to news_path(article),
+             class: "secondary" do 
+      %h2=article.title 
+    .clearfix
+      %strong.push-left=article.author.name 
+      %span.date.pull-right.hidden-md.hidden-lg=article.created_at.strftime("%m/%d/%Y")
+    %p
+      =truncate article.content, 
+                length: 120,
+                separator: ' '
+      =link_to "Read More", news_path(article), class: "nobreak"

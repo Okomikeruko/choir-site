@@ -1,0 +1,13 @@
+-provide :title, "News"
+-provide :bg, "night-vintage-music-bokeh.jpg"
+
+.row
+  .hidden-xs.col-sm-4.col-md-3.col-lg-2
+    =render "sorters"
+  .col-sm-8.col-md-9.col-lg-10
+    -@articles.each do |article|
+      =render article 
+  
+=will_paginate @articles,
+               :previous_label => "«",
+               :next_label => "»"

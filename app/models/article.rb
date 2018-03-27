@@ -1,4 +1,10 @@
 class Article < ApplicationRecord
+  default_scope { order(created_at: :desc) }
+  
+  scope :month,    -> (date) { where(created_at: DateTime.strptime(date, "%Y-%m-%d").beginning_of_month..DateTime.strptime(date, "%Y-%m-%d").end_of_month) }
+  scope :tag,      -> (slug) { joins(:tags).where(tags: {slug: slug}) }
+  scope :category, -> (slug) { joins(:categories).where(categories: {slug: slug}) }
+  
   belongs_to :author, 
              class_name: "User",
              foreign_key: "user_id"
@@ -12,6 +18,10 @@ class Article < ApplicationRecord
     validates :title,   length: { maximum: 120 }
     validates :content, length: { maximum: 5000 } 
     validates :author
+  end
+  
+  def self.published
+    Article.where(published: true)
   end
   
   def is_published?

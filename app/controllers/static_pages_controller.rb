@@ -4,6 +4,7 @@ class StaticPagesController < ApplicationController
     @performance    = Performance.get_next
     @last_rehearsal = Rehearsal.get_most_recent
     @next_rehearsal = Rehearsal.get_next
+    @articles       = Article.first 3
   end
   
   def about_us

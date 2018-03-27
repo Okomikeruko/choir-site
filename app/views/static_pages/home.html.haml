@@ -46,6 +46,8 @@
   .col-sm-7.col-sm-pull-5.col-md-8.col-md-pull-4.col-md-9.col-lg-pull-3
     .news-block
       %strong Lastest News:
+      -@articles.each do |article|
+        =render article
       .clearfix
         =link_to "#", class: "pull-right" do 
           More News&hellip;

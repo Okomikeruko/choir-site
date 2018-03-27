@@ -1,0 +1,23 @@
+.sort-group
+  %h2 Sort by Month
+  -Article.pluck(:created_at).group_by { |d| d.beginning_of_month }.each do |key, value|
+    =link_to key.strftime("%B %Y") + " (" + value.count.to_s + ")", 
+             params.permit(:month).merge(month: key.strftime("%Y-%m-%d"))
+    %br
+  %h2 Categories
+  -Category.find_each do |cat|
+    =link_to cat.name, 
+             params.permit(:categories).merge(categories: cat.slug),
+             class: "nobreak"
+    %br
+  %h2 Tags
+  -Tag.find_each do |tag|
+    -unless tag == Tag.last
+      = succeed "," do
+        = link_to tag.name, 
+                  params.permit(:tags).merge(tags: tag.slug),
+                  class: "nobreak"
+    -else
+      = link_to tag.name, 
+                params.permit(:tags).merge(tags: tag.slug),
+                class: "nobreak"

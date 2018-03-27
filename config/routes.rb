@@ -11,6 +11,10 @@ Rails.application.routes.draw do
             only: [:index, :show],
             param: :slug
   
+  resources :news,
+            controller: "articles",
+            only: [:index, :show]
+  
   resources :rehearsals,
             only: [:index]
   
