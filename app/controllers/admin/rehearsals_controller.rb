@@ -42,6 +42,7 @@ class Admin::RehearsalsController < AdminController
                                         :venue,
                                         :date_holder,
                                         :time,
+                                        :audio,
                                         :song_ids => []) 
     end
     
