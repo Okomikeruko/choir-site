@@ -1,0 +1,86 @@
+%h1 Admin Dashboard
+
+.row
+  .col-md-6
+    .panel.panel-default
+      .panel-heading.clearfix
+        =link_to new_admin_article_path,
+                 class: "btn btn-primary pull-right" do 
+          %span.glyphicon.glyphicon-plus
+        %h4 News
+      .panel-body
+        -@articles.each do |article|
+          .article-block.clearfix
+            %h4= article.title
+            %p= article.created_at.strftime("%m/%d/%Y")
+            = truncate article.content, 
+                       length: 120,
+                       separator: ' '
+            %br
+            %span.pull-right
+              %strong= article.status
+              |
+              =link_to "View", news_path(article)
+              |
+              =link_to "Edit", edit_admin_article_path(article)
+            %hr
+  .col-md-3
+    .panel.panel-default
+      .panel-heading.clearfix
+        =link_to new_admin_song_path,
+                 class: "btn btn-primary pull-right" do 
+          %span.glyphicon.glyphicon-plus
+        %h4 Songs
+      .panel-body{style: "overflow-y: auto;"}
+        -@songs.each do |song|
+          .song-block.clearfix
+            %h4= song.title
+            %p= song.instruments.map { |i| i.name }.to_sentence
+            %br
+            %span.pull-right
+              =link_to "View", music_path(song.slug)
+              |
+              =link_to "Edit", edit_admin_song_path(song)
+          %hr 
+  .col-md-3
+    .panel.panel-default
+      .panel-heading.clearfix
+        =link_to new_admin_performance_path,
+                 class: "btn btn-primary pull-right" do 
+          %span.glyphicon.glyphicon-plus
+        %h4 Performances
+      .panel-body{style: "overflow-y: auto;"}
+        -@performances.each do |performance|
+          .performance-block.clearfix
+            %h4= performance.date.strftime("%m/%d/%Y")
+            %p= performance.songs.map { |s| s.title }.to_sentence
+            %br
+            %span.pull-right
+              %strong= performance.date.future? ? "Pending" : "Complete"
+              |
+              =link_to "Edit", edit_admin_performance_path(performance)
+          %hr 
+    %br
+    .panel.panel-default
+      .panel-heading.clearfix
+        =link_to new_admin_rehearsal_path,
+                 class: "btn btn-primary pull-right" do 
+          %span.glyphicon.glyphicon-plus
+        %h4 Rehearsals
+      .panel-body{style: "overflow-y: auto;"}
+        -@rehearsals.each do |rehearsal|
+          .performance-block.clearfix
+            %h4= rehearsal.date.strftime("%m/%d/%Y")
+            %p
+              %strong Host:
+              = rehearsal.host
+              %br 
+              %strong Venue
+              = rehearsal.venue
+            %span.pull-right
+              %strong= rehearsal.date.future? ? "Pending" : "Complete"
+              |
+              =link_to "Edit", edit_admin_rehearsal_path(rehearsal)
+          %hr 
+      
+          

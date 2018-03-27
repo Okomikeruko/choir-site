@@ -8,11 +8,11 @@ class AdminControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to new_user_session_path
   end
 
-  test "index should redirect to songs if logged in" do
+  test "should get index if logged in" do
     sign_in users :admin
     get admin_index_path
-    assert_response :redirect 
-    assert_redirected_to admin_songs_path
+    assert_response :success
+    assert_template "admin/index"
   end
   
 end

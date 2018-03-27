@@ -11,14 +11,14 @@
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        =link_to "#", :class => "navbar-brand" do
+        =link_to admin_index_path, :class => "navbar-brand" do
           Cascade Sixth Choir
       #admin-menu.collapse.navbar-collapse
         %ul.nav.navbar-nav.navbar-right
           %li
             =link_to "Main Site", root_path
           %li
-            =link_to "Dashboard", "#"
+            =link_to "Dashboard", admin_index_path
           %li{class: "#{'active' if ['songs', 'rehearsals', 'performances'].include?(controller_name)}" }
             =link_to "#", 
                      class:"dropdown-toggle",
