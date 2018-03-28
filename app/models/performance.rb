@@ -11,7 +11,7 @@ class Performance < ApplicationRecord
   def self.get_next(num = 1)
     Performance.where(
       "date > :d", :d => DateTime.now.in_time_zone("Mountain Time (US & Canada)")
-    ).first(num).sort_by(date: :asc)
+    ).first(num).sort_by { |perf| perf.date }
   end
   
   def self.all_upcoming
