@@ -30,7 +30,7 @@ class Rehearsal < ApplicationRecord
   end
   
   def self.get_most_recent
-    Rehearsal.all_past.first
+    Rehearsal.all_past.last
   end
   
   def song_list 
