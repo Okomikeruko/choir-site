@@ -8,7 +8,7 @@
       %strong.push-left=article.author.name 
       %span.date.pull-right.hidden-md.hidden-lg=article.created_at.strftime("%m/%d/%Y")
     %p
-      =truncate article.content, 
+      =truncate article.content.html_safe, 
                 length: 120,
                 separator: ' '
       =link_to "Read More", news_path(article), class: "nobreak"
