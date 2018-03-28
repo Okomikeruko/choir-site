@@ -8,9 +8,23 @@ class Performance < ApplicationRecord
   validates :details, length: {maximum: 5000}
   
   
-  def self.get_next
+  def self.get_next(num = 1)
     Performance.where(
       "date > :d", :d => DateTime.now.in_time_zone("Mountain Time (US & Canada)")
-    ).first
+    ).first(num).reverse
   end
+  
+  def self.all_upcoming
+    Performance.where(
+      "date > :d", :d => DateTime.now.in_time_zone("Mountain Time (US & Canada)")
+    )
+  end
+  
+  def self.all_history
+    Performance.where(
+      "date < :d", :d => DateTime.now.in_time_zone("Mountain Time (US & Canada)")
+    )
+  end
+  
+  
 end
