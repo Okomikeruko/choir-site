@@ -10,5 +10,6 @@
     %p
       =truncate article.content.html_safe, 
                 length: 120,
-                separator: ' '
+                separator: ' ',
+                escape: false
       =link_to "Read More", news_path(article), class: "nobreak"
