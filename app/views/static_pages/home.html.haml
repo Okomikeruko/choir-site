@@ -32,21 +32,27 @@
           More Music&hellip;
     .rehearsal-block
       %strong Next Rehearsal:
-      %table
-        %tr
-          %td.text-primary= @next_rehearsal.date.strftime("%m/%d/%Y")
-          %td.text-right= @next_rehearsal.host
-        %tr 
-          %td.text-primary= @next_rehearsal.time
-          %td.text-right= @next_rehearsal.venue
+      -unless @next_rehearsal.blank?
+        %table
+          %tr
+            %td.text-primary= @next_rehearsal.date.strftime("%m/%d/%Y")
+            %td.text-right= @next_rehearsal.host
+          %tr 
+            %td.text-primary= @next_rehearsal.time
+            %td.text-right= @next_rehearsal.venue
+      -else 
+        %p The next rehearsal has not yet been scheduled.
       %strong Last Rehearsal:
-      %table
-        %tr{style: "vertical-align: top"} 
-          %td.text-primary= @last_rehearsal.date.strftime("%m/%d/%Y")
-          %td.text-right= @last_rehearsal.song_list
-      =link_to "Download",
-               @last_rehearsal.audio.url,
-               class: "btn btn-secondary btn-lg #{'disabled' unless @last_rehearsal.audio.exists? }"
+      -unless @last_rehearsal.blank?
+        %table
+          %tr{style: "vertical-align: top"} 
+            %td.text-primary= @last_rehearsal.date.strftime("%m/%d/%Y")
+            %td.text-right= @last_rehearsal.song_list
+        =link_to "Download",
+                 @last_rehearsal.audio.url,
+                 class: "btn btn-secondary btn-lg #{'disabled' unless @last_rehearsal.audio.exists? }"
+      -else
+        %p The last rehearsal cannot be found.
       %br
       .clearfix
         =link_to rehearsals_path, class: "pull-right" do 
