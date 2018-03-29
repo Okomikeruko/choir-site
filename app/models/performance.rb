@@ -23,7 +23,7 @@ class Performance < ApplicationRecord
   def self.all_history
     Performance.where(
       "date < :d", :d => DateTime.now.in_time_zone("Mountain Time (US & Canada)")
-    )
+    ).sort_by { |perf| perf.date }.reverse
   end
   
   
