@@ -4,12 +4,14 @@
     =link_to key.strftime("%B %Y") + " (" + value.count.to_s + ")", 
              news_index_path(params.permit(:month).merge(month: key.strftime("%Y-%m-%d")))
     %br
+.sort-group
   %h2 Categories
   -Category.find_each do |cat|
     =link_to cat.name, 
              news_index_path(params.permit(:categories).merge(categories: cat.slug)),
              class: "nobreak"
     %br
+.sort_group
   %h2 Tags
   -Tag.find_each do |tag|
     -unless tag == Tag.last

@@ -8,10 +8,10 @@ class SongsController < ApplicationController
     @songs_by_title = songs.sort_by {|s| s.sort_order}
                            .group_by {|s| s.sort_order.chr}
     @songs_pending  = Performance.all_upcoming
-                        .group_by {|per| per.date}
+                        .group_by {|per| per.date.beginning_of_month}
                         .group_by {|m| m[0].year}
     @song_history   = Performance.all_history
-                        .group_by {|per| per.date}
+                        .group_by {|per| per.date.beginning_of_month}
                         .group_by {|m| m[0].year}
   end
 

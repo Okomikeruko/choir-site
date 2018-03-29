@@ -4,20 +4,23 @@
 .row
   .col-sm-6.col-md-8
     %h2=@song.title
-    %p=@song.description
+    =simple_format @song.description
   .col-sm-6.col-md-4
     %h3{:style => "margin: 5px 0;"}
       %span.glyphicon.glyphicon-calendar
       Performance Dates
     -@song.performances.each do |performance|
+      %br
       =performance.date.strftime("%b %e, %Y")
       -if performance.date.future?
         %span.date
           \-
           %em= "Coming Soon" 
+      =simple_format performance.details
 .row{:style => "margin-top: 20px;"}
   .col-md-8
     %h2 Parts
+    Click on "Downloads" beside each part to fine the Sheet Music, MP3, or MIDI files for that part.
     -@song.instruments.each do |instrument|
       .song-listing
         .clearfix
@@ -29,7 +32,7 @@
                      :data => { toggle: "dropdown" },
                      :aria => { haspopup: "true",
                                 expanded: "true" } }
-              Download
+              Downloads
               %span.caret
             %ul.dropdown-menu{:aria => { labelledby: "downloads#{instrument.id}" } }
               %li

@@ -42,7 +42,7 @@
             .letter-header{:id => "heading-#{letter[0]}" }
               %h2= letter[0]
             -letter[1].each do |song|
-              =render song 
+              =render song, alphabetized: true
   .tab-pane.fade#pending{:role => "tabpanel"}
     .row
       .col-md-10.col-md-offset-1
