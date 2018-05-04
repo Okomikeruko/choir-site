@@ -18,7 +18,7 @@
       =f.label :title
       =f.text_field :title, class: "form-control"
       %br
-      =f.text_area :content, class: "form-control wysihtml5"
+      =f.text_area :content, class: "form-control wysiwyg"
     .col-sm-4
       %br
       %fieldset
@@ -46,9 +46,7 @@
         
 :javascript
   $(document).ready(function(){
-    
-    $('.wysihtml5').each(function(i, elem) {
-      $(elem).wysihtml5();
+    $('.wysiwyg').froalaEditor({
+      height: 300
     });
-    
   })

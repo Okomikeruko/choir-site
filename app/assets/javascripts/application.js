@@ -16,6 +16,9 @@
 //= require bootstrap-datepicker
 //= require cocoon
 //= require jquery-ui/widgets/sortable
+//= require froala_editor.min.js
+//= require plugins/code_beautifier.min.js
+//= require plugins/code_view.min.js
+//= require plugins/link.min.js
 //= require turbolinks
-//= require bootstrap-wysihtml5
 //= require_tree .
