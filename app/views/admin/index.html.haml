@@ -31,7 +31,7 @@
                  class: "btn btn-primary pull-right" do 
           %span.glyphicon.glyphicon-plus
         %h4 Songs
-      .panel-body{style: "overflow-y: auto;"}
+      .panel-body{style: "overflow-y: auto; height: 602px;"}
         -@songs.each do |song|
           .song-block.clearfix
             %h4= song.title
@@ -49,7 +49,7 @@
                  class: "btn btn-primary pull-right" do 
           %span.glyphicon.glyphicon-plus
         %h4 Performances
-      .panel-body{style: "overflow-y: auto;"}
+      .panel-body{style: "overflow-y: auto; height: 250px;"}
         -@performances.each do |performance|
           .performance-block.clearfix
             %h4= performance.date.strftime("%m/%d/%Y")
@@ -67,7 +67,7 @@
                  class: "btn btn-primary pull-right" do 
           %span.glyphicon.glyphicon-plus
         %h4 Rehearsals
-      .panel-body{style: "overflow-y: auto;"}
+      .panel-body{style: "overflow-y: auto; height: 250"}
         -@rehearsals.each do |rehearsal|
           .performance-block.clearfix
             %h4= rehearsal.date.strftime("%m/%d/%Y")
