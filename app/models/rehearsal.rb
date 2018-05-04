@@ -1,7 +1,7 @@
 class Rehearsal < ApplicationRecord
   before_validation :set_date
   
-  default_scope { order(date: :desc) }
+  default_scope { order(date: :asc) }
   
   has_many :rehearsal_songs, dependent: :destroy 
   has_many :songs, through: :rehearsal_songs
@@ -30,7 +30,7 @@ class Rehearsal < ApplicationRecord
   end
   
   def self.get_most_recent
-    Rehearsal.all_past.last
+    Rehearsal.all_past.first
   end
   
   def song_list 

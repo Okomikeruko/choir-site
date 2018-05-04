@@ -13,15 +13,6 @@
         =f.label :title 
         =f.text_field :title, class: "form-control"
         %br
-        =f.label :performance_date
-        .input-group.date{data: {provide: "datepicker",
-                                 date: { format: "mm/dd/yyyy" } } }
-          =f.text_field :performance_date, 
-                        value: (@song.performance_date.strftime("%m/%d/%Y") unless @song.performance_date.blank?),
-                        class: "form-control"
-          .input-group-addon
-            %span.glyphicon.glyphicon-th
-        %br
         =f.label :description
         =f.text_area :description, class: "form-control"
         %br

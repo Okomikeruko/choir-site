@@ -1,25 +1,17 @@
 class Song < ApplicationRecord
   before_save :set_slug, :set_sort_order
   
-  default_scope { order(performance_date: :desc) }
+  default_scope { order(sort_order: :asc) }
   
-  has_many :sheet_musics, inverse_of: :song, dependent: :destroy
-  accepts_nested_attributes_for :sheet_musics, 
-                  reject_if: :all_blank,
-                  allow_destroy: true
-  has_many :audios, inverse_of: :song, dependent: :destroy
-  accepts_nested_attributes_for :audios,
-                  reject_if: :all_blank,
-                  allow_destroy: true
   has_many :instruments, inverse_of: :song, dependent: :destroy 
   accepts_nested_attributes_for :instruments,
                   reject_if: :all_blank,
                   allow_destroy: true
   
-  has_many :performance_songs, dependent: :destroy 
+  has_many :performance_songs, inverse_of: :song, dependent: :destroy 
   has_many :performances, through: :performance_songs
   
-  has_many :rehearsal_songs, dependent: :destroy
+  has_many :rehearsal_songs, inverse_of: :song, dependent: :destroy
   has_many :rehearsals, through: :rehearsal_songs
   
   has_attached_file :lilypond

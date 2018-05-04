@@ -21,8 +21,7 @@ class Admin::SongsControllerTest < ActionDispatch::IntegrationTest
   
   test "should create new entry" do 
     assert_difference "Song.count", 1 do 
-      post admin_songs_path, params: { song: { title: "Praise to the Man",
-                                    performance_date: "1/15/2018" } }
+      post admin_songs_path, params: { song: { title: "Praise to the Man" } }
       assert_response :redirect
       assert_redirected_to edit_admin_song_path(assigns(:song))
     end
@@ -36,13 +35,11 @@ class Admin::SongsControllerTest < ActionDispatch::IntegrationTest
   end
   
   test "should update song" do 
-    patch admin_song_path(@song), params: { song: { title: "New Title",
-                                         performance_date: "1/1/1970" } }
+    patch admin_song_path(@song), params: { song: { title: "New Title" } }
     assert_response :redirect 
     assert_redirected_to edit_admin_song_path(@song)
     @song.reload
     assert_equal "New Title", @song.title
-    assert_equal "1/1/1970",  @song.performance_date.strftime("%-m/%-d/%Y")
   end
   
   test "should delete song" do

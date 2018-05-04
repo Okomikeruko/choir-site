@@ -11,7 +11,6 @@ class Admin::SongsController < AdminController
   
   def create
     @song = Song.new(song_params)
-    @song.performance_date = Date.strptime(params[:song][:performance_date], "%m/%d/%Y")
     if @song.save
       flash[:success] = "Song added successfully."
       redirect_to edit_admin_song_path(@song)
@@ -25,7 +24,6 @@ class Admin::SongsController < AdminController
   end 
   
   def update
-    @song.performance_date = Date.strptime(params[:song][:performance_date], "%m/%d/%Y")
     if @song.update_attributes(song_params)
       flash[:success] = "Song updated successfully."
       redirect_to edit_admin_song_path(@song)
@@ -49,19 +47,6 @@ class Admin::SongsController < AdminController
       params.require(:song).permit(:title,
                                    :description,
                                    :lilypond,
-                                   :sheet_musics_attributes => 
-                                     [:id,
-                                      :instrument,
-                                      :pdf,
-                                      :position,
-                                      :_destroy ],
-                                   :audios_attributes => 
-                                     [:id,
-                                      :instrument,
-                                      :midi,
-                                      :mp3,
-                                      :position,
-                                      :_destroy],
                                    :instruments_attributes =>
                                      [:id,
                                       :name,

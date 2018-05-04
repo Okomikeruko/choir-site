@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180326031740) do
+ActiveRecord::Schema.define(version: 20180425125616) do
 
   create_table "article_categories", force: :cascade do |t|
     t.integer "article_id"
@@ -38,23 +38,6 @@ ActiveRecord::Schema.define(version: 20180326031740) do
     t.datetime "updated_at", null: false
     t.boolean "published", default: false, null: false
     t.index ["user_id"], name: "index_articles_on_user_id"
-  end
-
-  create_table "audios", force: :cascade do |t|
-    t.string "instrument"
-    t.integer "song_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "midi_file_name"
-    t.string "midi_content_type"
-    t.integer "midi_file_size"
-    t.datetime "midi_updated_at"
-    t.string "mp3_file_name"
-    t.string "mp3_content_type"
-    t.integer "mp3_file_size"
-    t.datetime "mp3_updated_at"
-    t.integer "position"
-    t.index ["song_id"], name: "index_audios_on_song_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -137,19 +120,6 @@ ActiveRecord::Schema.define(version: 20180326031740) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "time"
-  end
-
-  create_table "sheet_musics", force: :cascade do |t|
-    t.string "instrument"
-    t.integer "song_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "position"
-    t.string "pdf_file_name"
-    t.string "pdf_content_type"
-    t.integer "pdf_file_size"
-    t.datetime "pdf_updated_at"
-    t.index ["song_id"], name: "index_sheet_musics_on_song_id"
   end
 
   create_table "songs", force: :cascade do |t|
