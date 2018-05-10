@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: "Name One"
+  email: "email@location.com"
+  subject: "Subject"
+  message: "Message body."
+  read: true
+
+two:
+  name: "Name Two"
+  email: "email@location.com"
+  subject: "Message Subject"
+  message: "Boring text"
+  read: false

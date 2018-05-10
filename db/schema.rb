@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180425125616) do
+ActiveRecord::Schema.define(version: 20180510220843) do
 
   create_table "article_categories", force: :cascade do |t|
     t.integer "article_id"
@@ -68,6 +68,16 @@ ActiveRecord::Schema.define(version: 20180425125616) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["song_id"], name: "index_instruments_on_song_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "subject"
+    t.text "message"
+    t.boolean "read", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "performance_songs", force: :cascade do |t|
