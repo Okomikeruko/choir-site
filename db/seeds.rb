@@ -37,34 +37,45 @@
 #   position: 3
 # )
 
-tags = []
+# tags = []
 
-5.times do 
-  name =  Faker::Music.instrument
-  tag = Tag.create(
-    name: name,
-    slug: name.parameterize
-  )
-  tags << tag unless tag.nil?
-end
+# 5.times do 
+#   name =  Faker::Music.instrument
+#   tag = Tag.create(
+#     name: name,
+#     slug: name.parameterize
+#   )
+#   tags << tag unless tag.nil?
+# end
 
-categories = []
+# categories = []
 
-3.times do 
-  name = Faker::Company.buzzword
-  category = Category.create(
-    name: name,
-    slug: name.parameterize
-  )
-  categories << category unless category.nil?
-end
+# 3.times do 
+#   name = Faker::Company.buzzword
+#   category = Category.create(
+#     name: name,
+#     slug: name.parameterize
+#   )
+#   categories << category unless category.nil?
+# end
 
-15.times do 
-  Article.create(
-    title: Faker::Lorem.sentence.titleize,
-    content: Faker::Lorem.paragraph,
-    user_id: User.first.id,
-    category_ids: categories.sample.id,
-    tag_ids: tags.sample(Random.rand(tags.count + 1)).map {|t| t.id}
+# 15.times do 
+#   Article.create(
+#     title: Faker::Lorem.sentence.titleize,
+#     content: Faker::Lorem.paragraph,
+#     user_id: User.first.id,
+#     category_ids: categories.sample.id,
+#     tag_ids: tags.sample(Random.rand(tags.count + 1)).map {|t| t.id}
+#   )
+# end
+
+50.times do 
+  name = Faker::Name.first_name
+  Message.create(
+    name: name + " " + Faker::Name.last_name,
+    email: Faker::Internet.free_email(name),
+    subject: Faker::Lorem.sentence,
+    message: Faker::Lorem.paragraphs.join(" \n "),
+    read: Faker::Boolean.boolean
   )
 end

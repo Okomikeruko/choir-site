@@ -1,0 +1,17 @@
+%h1 Message
+=link_to "Back",
+         admin_messages_path,
+         class: "btn btn-default"
+.row{style: "padding-top: 30px;"}
+  .col-lg-6.col-lg-offset-3.col-sm-8.col-sm-offset-2
+    .panel.panel-default
+      .panel-heading.clearfix
+        %h4.pull-left
+          =@message.name 
+          %span.small
+            =@message.email
+        %h4.pull-right
+          %span.small
+            =@message.created_at.strftime("%l:%M %P - %b %-d, %Y")
+      .panel-body
+        =@message.message 

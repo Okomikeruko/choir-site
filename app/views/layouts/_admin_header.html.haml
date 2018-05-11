@@ -19,6 +19,12 @@
             =link_to "Main Site", root_path
           %li
             =link_to "Dashboard", admin_index_path
+          %li{ class: "#{'active' if controller_name == 'messages'}" }
+            =link_to admin_messages_path do 
+              Messages
+              -if Message.any_unread?
+                %span.label.label-danger
+                  =Message.unread
           %li{class: "#{'active' if ['songs', 'rehearsals', 'performances'].include?(controller_name)}" }
             =link_to "#", 
                      class:"dropdown-toggle",
