@@ -1,4 +1,7 @@
 class Performance < ApplicationRecord
+  
+  default_scope { order(date: :desc) }
+  
   has_many :performance_songs, dependent: :destroy 
   has_many :songs, through: :performance_songs
   
