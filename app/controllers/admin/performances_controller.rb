@@ -46,7 +46,8 @@ class Admin::PerformancesController < AdminController
     def performance_params
       params.require(:performance).permit(:venue,
                                           :details,
-                                          :song_ids => [])
+                                          :audio,
+                                          :song_ids => [] )
     end
     
     def set_performance

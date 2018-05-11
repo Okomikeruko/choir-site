@@ -25,13 +25,25 @@
                 %span.glyphicon.glyphicon-th
             %br
             =f.label :details
-            =f.text_area :details, class: "form-control"
+            =f.text_area :details, rows: "6", class: "form-control"
+          %br
+          %fieldset
+            %legend Audio
+            =f.label :audio, "Recording"
+            - if f.object.audio.exists?
+              =link_to f.object.audio.url do
+                =image_tag "MP3.png", size: "16x20"
+                =f.object.audio_file_name
+            =f.file_field :audio,
+                          accept: "audio/mp3",
+                          class: "form-control"
         .col-sm-6
           %fieldset
             %legend Songs
             =f.label :songs 
             %br
-            =f.collection_check_boxes(:song_ids, Song.all, :id, :title) do |s|
-              =s.label { s.check_box } 
-              =s.object.title
-              %br
+            %div{style: "max-height: 425px; overflow-y: auto;"}
+              =f.collection_check_boxes(:song_ids, Song.all, :id, :title) do |s|
+                =s.label { s.check_box } 
+                =s.object.title
+                %br
