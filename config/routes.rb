@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   resources :rehearsals,
             only: [:index]
   
+  get  "contact", to: "messages#new"
+  post "contact", to: "messages#create"
+  
   get "about-us", to: "static_pages#about_us"
   
   resources :admin, only: [:index]

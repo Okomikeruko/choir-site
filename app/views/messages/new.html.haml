@@ -1,0 +1,30 @@
+-provide :title, "Contact"
+-provide :bg, "phone-dial-old-arrangement-47319.jpeg"
+
+.row 
+  .col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.col-lg-6.col-lg-offset-3
+    %p
+      Do you have a suggestion for a future song?
+      Did you spot an error on the site or in the music?
+      Do you want to lavish us with praises?
+      Do you want a site like this for your own choir?
+      Just want to say 'hi'?
+    %p 
+      Go head. Drop us a line.
+    %br
+    = render "shared/flash_messages"
+    =form_for @message, url: contact_path, method: :post do |f|
+      =render "shared/error_messages", object: f.object
+      =f.label :name, "Full Name"
+      =f.text_field :name, class: "form-control"
+      %br
+      =f.label :email, "Email Address"
+      =f.email_field :email, class: "form-control"
+      %br
+      =f.label :subject 
+      =f.text_field :subject, class: "form-control"
+      %br
+      =f.label :message
+      =f.text_area :message, rows: "6", class: "form-control"
+      %br
+      =f.submit "Send", class: "btn btn-secondary btn-lg pull-right"
