@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180510220843) do
+ActiveRecord::Schema.define(version: 20180511150108) do
 
   create_table "article_categories", force: :cascade do |t|
     t.integer "article_id"
@@ -95,6 +95,10 @@ ActiveRecord::Schema.define(version: 20180510220843) do
     t.text "details"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "audio_file_name"
+    t.string "audio_content_type"
+    t.integer "audio_file_size"
+    t.datetime "audio_updated_at"
   end
 
   create_table "profiles", force: :cascade do |t|
