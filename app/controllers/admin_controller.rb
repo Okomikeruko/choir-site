@@ -4,8 +4,8 @@ class AdminController < ApplicationController
   
   def index
     @articles     = Article.first(3)
-    @performances = Performance.last(5).reverse!
-    @rehearsals   = Rehearsal.last(3) 
-    @songs        = Song.last(5).reverse!
+    @performances = Performance.all_upcoming
+    @rehearsals   = Rehearsal.first(5) 
+    @songs        = Song.all.order(:created_at => :desc).first(5)
   end
 end
