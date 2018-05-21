@@ -18,7 +18,7 @@ class Message < ApplicationRecord
   end
   
   def send_email
-    Message.contact_form(self).deliver_now
+    MessageMailer.contact_form(self).deliver_now
   end
   
   class << self 
