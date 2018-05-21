@@ -67,7 +67,7 @@
                  class: "btn btn-primary pull-right" do 
           %span.glyphicon.glyphicon-plus
         %h4 Rehearsals
-      .panel-body{style: "overflow-y: auto; height: 250"}
+      .panel-body{style: "overflow-y: auto; height: 250px"}
         -@rehearsals.each do |rehearsal|
           .performance-block.clearfix
             %h4= rehearsal.date.strftime("%m/%d/%Y")

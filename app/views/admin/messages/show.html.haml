@@ -14,4 +14,5 @@
           %span.small
             =@message.created_at.strftime("%l:%M %P - %b %-d, %Y")
       .panel-body
+        %h1= @message.subject
         =simple_format @message.message 

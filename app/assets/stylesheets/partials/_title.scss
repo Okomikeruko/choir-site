@@ -4,10 +4,10 @@
   background-color: $brand-secondary;
   width: 100%;
   
-  @media #{$xs-screen} {height: 140px;}
-  @media #{$sm-screen} {height: 298px;}
-  @media #{$md-screen} {height: 390px;}
-  @media #{$lg-screen} {height: 558px;}
+  @media #{ $xs-screen } { height: 140px; }
+  @media #{ $sm-screen } { height: 220px; }
+  @media #{ $md-screen } { height: 280px; }
+  @media #{ $lg-screen } { height: 320px; }
   
   .title_image{
     height: 100%;

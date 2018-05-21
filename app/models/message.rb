@@ -17,6 +17,7 @@ class Message < ApplicationRecord
     update_attribute(:read, true)
   end
   
+  ## Send an email of the message
   def send_email
     MessageMailer.contact_form(self).deliver_now
   end
