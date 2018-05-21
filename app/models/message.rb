@@ -17,6 +17,10 @@ class Message < ApplicationRecord
     update_attribute(:read, true)
   end
   
+  def send_email
+    Message.contact_form(self).deliver_now
+  end
+  
   class << self 
     ## Get count of unread messages
     def unread 

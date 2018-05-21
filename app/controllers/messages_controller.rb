@@ -9,6 +9,7 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     if @message.save
+      @message.send_email
       flash[:success] = "Your message has been sent."
       redirect_to contact_path 
     else
