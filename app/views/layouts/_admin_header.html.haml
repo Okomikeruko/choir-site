@@ -55,6 +55,8 @@
                   =link_to "Categories", admin_categories_path
                 %li
                   =link_to "Tags", admin_tags_path
+          %li{ :class => "#{'active' if controller_name == 'members'}"}
+            =link_to "Members", admin_messages_path
           %li{ :class => "#{'active' if controller_name == 'profiles'}" }
             =link_to "Profiles", admin_profiles_path
           %li 
