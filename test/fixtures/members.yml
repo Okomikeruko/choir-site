@@ -1,0 +1,8 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+lee:
+  name: "Lee Whittaker"
+  email: "whittakerlee81@gmail.com"
+  phone: "(801) 427-8192"
+  talents: "Piano, Violin"
+  vocal_range: ["Bass"]

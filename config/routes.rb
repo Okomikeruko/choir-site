@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   namespace :admin do 
     with_options except: [:show] do 
       resources :articles
+      resources :members
       resources :performances
       resources :profiles do
         put :sort, on: :collection

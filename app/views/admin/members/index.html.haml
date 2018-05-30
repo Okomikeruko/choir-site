@@ -1,0 +1,20 @@
+%h1 Members 
+=link_to new_admin_member_path,
+         class: "btn btn-primary" do 
+  %span.glyphicon.glyphicon-plus
+  Add New Member 
+
+.row 
+  .col-xs-12
+    %table.table.table-hover 
+      %thead 
+        %tr 
+          %th Name 
+          %th Email
+          %th Phone
+          %th Vocal Range 
+          %th Other Musical Talents
+          %th.text-right Controls
+      %tbody 
+        -@members.each do |member|
+          =render member 
