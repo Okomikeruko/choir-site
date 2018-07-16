@@ -1,3 +1,4 @@
 Paperclip.options[:content_type_mappings] = {
-  :ly => "text/plain"
+  :ly => "text/plain",
+  :mp3 => "application/octet-stream"
 }
