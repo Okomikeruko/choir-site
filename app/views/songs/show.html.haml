@@ -58,10 +58,21 @@
                      :download => instrument.midi_file_name }
                     Audio File - MIDI
         -unless instrument.mp3.blank?  
-          %audio{:controls => "controls",
-                 :controlsList => "nodownload"}
-            %source{:type => instrument.mp3_content_type,
-                    :src => instrument.mp3.url }
+          .row
+            .col-xs-10.col-sm-11
+              %audio{:controls     => "controls",
+                     :controlsList => "nodownload",
+                     :id           => "audio-#{instrument.name.parameterize}",
+                     :data         => { repeat: false },
+                     :onended      => "replay(this)"}
+                %source{:type => instrument.mp3_content_type,
+                        :src  => instrument.mp3.url }
+            .col-xs-2.col-sm-1
+              %button{ :class => "btn btn-default btn-repeat",
+                       :data  => { id: "audio-#{instrument.name.parameterize}" },
+                       :style => "margin-top: 20px;",
+                       :title => "Toggle to loop audio continuously" }
+                %span.glyphicon.glyphicon-refresh
   .col-md-4
     %h2 Rehearsals
     -if @song.rehearsals.any?
@@ -71,3 +82,15 @@
             =render rehearsal
     -else
       %p No rehearsals yet.
+:javascript
+  $(".btn-repeat").on("click", function(){
+    var id = $(this).data("id");
+    $(this).toggleClass("active");
+    $("audio#" + id).data("repeat", $(this).hasClass("active"));
+  });
+  
+  function replay(audio){
+    if( $(audio).data("repeat") ){
+      $(audio)[0].play();
+    }
+  }
