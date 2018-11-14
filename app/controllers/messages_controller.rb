@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  invisible_captcha only: [:create], honeypot: :choir_part
+  
   add_breadcrumb "Home", :root_path
   add_breadcrumb "Contact", :contact_path
   

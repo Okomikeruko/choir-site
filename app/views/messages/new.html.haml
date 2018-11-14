@@ -12,9 +12,10 @@
     %p 
       Go head. Drop us a line.
     %br
-    = render "shared/flash_messages"
+    =render "shared/flash_messages"
     =form_for @message, url: contact_path, method: :post do |f|
       =render "shared/error_messages", object: f.object
+      =f.invisible_captcha :choir_part
       =f.label :name, "Full Name"
       =f.text_field :name, class: "form-control"
       %br

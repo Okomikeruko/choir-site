@@ -29,6 +29,7 @@ gem 'aws-sdk'
 gem 'breadcrumbs_on_rails'
 gem 'multipart-post'
 gem "wysiwyg-rails"
+gem "invisible_captcha"
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'

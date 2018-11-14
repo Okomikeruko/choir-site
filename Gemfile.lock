@@ -817,6 +817,8 @@ GEM
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     inflecto (0.0.2)
+    invisible_captcha (0.11.0)
+      rails (>= 3.2.0)
     ipaddress (0.8.3)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -1003,6 +1005,7 @@ DEPENDENCIES
   guard-minitest (= 2.4.6)
   haml
   haml-rails
+  invisible_captcha
   jbuilder (= 2.7.0)
   jquery-rails (= 4.3.1)
   jquery-ui-rails
@@ -1028,4 +1031,4 @@ DEPENDENCIES
   wysiwyg-rails
 
 BUNDLED WITH
-   1.13.5
+   1.16.2
