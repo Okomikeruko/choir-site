@@ -1,7 +1,7 @@
 class Rehearsal < ApplicationRecord
   before_validation :set_date
   
-  default_scope { order(date: :asc) }
+  default_scope { order(date: :desc) }
   
   has_many :rehearsal_songs, dependent: :destroy 
   has_many :songs, through: :rehearsal_songs
@@ -20,7 +20,7 @@ class Rehearsal < ApplicationRecord
   def self.all_past
     Rehearsal.where(
       "date < :d", :d => DateTime.now.in_time_zone("Mountain Time (US & Canada)")
-    ).reverse
+    )
   end
   
   def self.get_next
