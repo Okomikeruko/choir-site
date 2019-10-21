@@ -9,7 +9,7 @@ class Song < ApplicationRecord
                   allow_destroy: true
   
   has_many :performance_songs, inverse_of: :song, dependent: :destroy 
-  has_many :performances, through: :performance_songs
+  has_many :performances, through: :performance_songs, counter_cache: true 
   
   has_many :rehearsal_songs, inverse_of: :song, dependent: :destroy
   has_many :rehearsals, through: :rehearsal_songs
@@ -26,6 +26,11 @@ class Song < ApplicationRecord
     instruments.detect {|i| i.mp3.exists? }
   end
   
+  class << self 
+    def unused
+      where(:performances_count => 0)
+    end
+  end
   
   private
     def set_slug

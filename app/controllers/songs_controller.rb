@@ -13,6 +13,9 @@ class SongsController < ApplicationController
     @song_history   = Performance.all_history
                         .group_by {|per| per.date.beginning_of_month}
                         .group_by {|m| m[0].year}
+    @songs_unused   = songs.unused 
+                           .sort_by {|s| s.sort_order}
+                           .group_by {|s| s.sort_order.chr}
   end
 
   

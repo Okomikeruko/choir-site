@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180529222554) do
+ActiveRecord::Schema.define(version: 20191021151826) do
 
   create_table "article_categories", force: :cascade do |t|
     t.integer "article_id"
@@ -158,6 +158,7 @@ ActiveRecord::Schema.define(version: 20180529222554) do
     t.string "lilypond_content_type"
     t.integer "lilypond_file_size"
     t.datetime "lilypond_updated_at"
+    t.integer "performances_count", default: 0
   end
 
   create_table "tags", force: :cascade do |t|

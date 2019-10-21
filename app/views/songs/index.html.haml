@@ -27,6 +27,13 @@
        :data => { toggle: "tab" },
        :href => "#history" } 
       Performance History
+  %li{:role => "presentation"}
+    %a{:role => "tab",
+       :aria => { controls: "unused" },
+       :data => { toggle: "tab" },
+       :href => "#unused" }
+      Unscheduled Songs
+  
 
 .tab-content
   .tab-pane.fade.in.active#title{:role => "tabpanel"}
@@ -99,6 +106,21 @@
                       =simple_format performance.details
                       -performance.songs.each do |song|
                         =render song
+  .tab-pane.fade#unused{ :role => "tabpanel"}
+    .row
+      .col-md-10.col-md-offset-1
+        .letter-links.text-center
+          -@songs_unused.each do |letter|
+            = " | " unless letter == @songs_unused.first
+            =link_to letter[0], "#heading-#{letter[0]}-unused", 
+                     :data => { turbolinks: false }
+        -@songs_unused.each do |letter|
+          .letter-block
+            .letter-header{:id => "heading-#{letter[0]}-unused" }
+              %h2= letter[0]
+            -letter[1].each do |song|
+              =render song, alphabetized: true
+    
 :javascript
   $('.nav-tabs a').click(function (e) {
     e.preventDefault();
