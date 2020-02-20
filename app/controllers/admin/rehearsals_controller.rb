@@ -1,18 +1,18 @@
 class Admin::RehearsalsController < AdminController
   before_action :get_rehearsal, only: [:edit, :update, :destroy]
-  
+
   def index
     @rehearsals = Rehearsal.all
                            .paginate(page: params[:page], per_page: 20)
   end
 
   def new
-    @rehearsal = Rehearsal.new 
+    @rehearsal = Rehearsal.new
   end
-  
+
   def create
     @rehearsal = Rehearsal.new(rehearsal_params)
-    if @rehearsal.save 
+    if @rehearsal.save
       flash[:success] = "Rehearsal created successfully."
       redirect_to admin_rehearsals_path
     else
@@ -22,7 +22,7 @@ class Admin::RehearsalsController < AdminController
 
   def edit
   end
-  
+
   def update
     if @rehearsal.update_attributes(rehearsal_params)
       flash[:success] = "Rehearsal updated successfully."
@@ -31,12 +31,12 @@ class Admin::RehearsalsController < AdminController
       render "edit"
     end
   end
-  
+
   def destroy
     @rehearsal.destroy
     redirect_to admin_rehearsals_path
   end
-  
+
   private
     def rehearsal_params
       params.require(:rehearsal).permit(:host,
@@ -44,9 +44,9 @@ class Admin::RehearsalsController < AdminController
                                         :date_holder,
                                         :time,
                                         :audio,
-                                        :song_ids => []) 
+                                        :song_ids => [])
     end
-    
+
     def get_rehearsal
       @rehearsal = Rehearsal.find params[:id]
     end

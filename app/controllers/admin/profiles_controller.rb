@@ -1,6 +1,6 @@
 class Admin::ProfilesController < AdminController
   before_action :set_profile, only: [:edit, :update, :destroy]
-  
+
   def index
     @profiles = Profile.all
   end
@@ -8,7 +8,7 @@ class Admin::ProfilesController < AdminController
   def new
     @profile = Profile.new
   end
-  
+
   def create
     @profile = Profile.new(profile_params)
     if @profile.save
@@ -21,8 +21,8 @@ class Admin::ProfilesController < AdminController
 
   def edit
   end
-  
-  def update 
+
+  def update
     if @profile.update_attributes(profile_params)
       flash[:success] = "Profile updated successfully."
       redirect_to admin_profiles_path
@@ -30,23 +30,23 @@ class Admin::ProfilesController < AdminController
       render "edit"
     end
   end
-  
+
   def destroy
     @profile.destroy
     redirect_to admin_profiles_path
   end
-  
+
   def sort
     params[:order].each do |key, value|
       Profile.find(value[:id]).update_attribute(:position, value[:position])
     end
   end
-  
+
   private
     def set_profile
       @profile = Profile.find params[:id]
     end
-  
+
     def profile_params
       params.require(:profile).permit(  :name,
                                         :title,

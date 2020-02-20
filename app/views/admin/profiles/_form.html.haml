@@ -1,7 +1,7 @@
 .row
   .col-xs-12
-    =form_for [:admin, @profile] do |f|
-      =render "shared/error_messages", object: @profile
+    =form_for [:admin, profile] do |f|
+      =render "shared/error_messages", object: f.object
       .clearfix
         =f.submit "Save", class: "btn btn-primary pull-right"
         =link_to "Cancel",
@@ -9,7 +9,7 @@
                   class: "btn btn-default pull-right",
                   style: "margin-right: 15px;"
       %fieldset
-        %legend Profile Info 
+        %legend Profile Info
         =f.label :name
         =f.text_field :name, class: "form-control"
         %br
@@ -21,8 +21,8 @@
         %br
       %fieldset
         %legend Profile Image
-        -if @profile.image.exists?
-          =image_tag @profile.image
-        =f.file_field :image, 
+        -if profile.image.exists?
+          =image_tag profile.image
+        =f.file_field :image,
                       accept: "image/pjpeg, image/x-png",
                       class: "form-control"

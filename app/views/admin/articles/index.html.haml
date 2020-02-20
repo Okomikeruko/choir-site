@@ -1,14 +1,14 @@
 %h1 Articles
 =link_to new_admin_article_path,
-         class: "btn btn-primary" do 
+         class: "btn btn-primary" do
   %span.glyphicon.glyphicon-plus
-  Add New Article 
-  
+  Add New Article
+
 .row
   .col-xs-12
-    %table.table.table-hover 
+    %table.table.table-hover
       %thead
-        %tr 
+        %tr
           %th Title
           %th Date
           %th Status
@@ -18,4 +18,3 @@
       %tbody
         -@articles.each do |article|
           =render article
-        

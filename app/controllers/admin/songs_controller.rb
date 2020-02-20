@@ -1,14 +1,14 @@
 class Admin::SongsController < AdminController
   before_action :set_song, only: [:edit, :update, :destroy]
-  
+
   def index
     @songs = Song.all
   end
-  
-  def new 
+
+  def new
     @song = Song.new
   end
-  
+
   def create
     @song = Song.new(song_params)
     if @song.save
@@ -19,10 +19,10 @@ class Admin::SongsController < AdminController
       render 'new'
     end
   end
-  
-  def edit 
-  end 
-  
+
+  def edit
+  end
+
   def update
     if @song.update_attributes(song_params)
       flash[:success] = "Song updated successfully."
@@ -32,17 +32,17 @@ class Admin::SongsController < AdminController
       render 'edit'
     end
   end
-  
+
   def destroy
-    @song.destroy 
+    @song.destroy
     redirect_to admin_songs_path
   end
-  
+
   private
     def set_song
       @song = Song.find(params[:id])
     end
-    
+
     def song_params
       params.require(:song).permit(:title,
                                    :description,

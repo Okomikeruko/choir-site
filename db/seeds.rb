@@ -39,7 +39,7 @@
 
 # tags = []
 
-# 5.times do 
+# 5.times do
 #   name =  Faker::Music.instrument
 #   tag = Tag.create(
 #     name: name,
@@ -50,7 +50,7 @@
 
 # categories = []
 
-# 3.times do 
+# 3.times do
 #   name = Faker::Company.buzzword
 #   category = Category.create(
 #     name: name,
@@ -59,7 +59,7 @@
 #   categories << category unless category.nil?
 # end
 
-# 15.times do 
+# 15.times do
 #   Article.create(
 #     title: Faker::Lorem.sentence.titleize,
 #     content: Faker::Lorem.paragraph,
@@ -69,7 +69,7 @@
 #   )
 # end
 
-50.times do 
+50.times do
   name = Faker::Name.first_name
   Message.create(
     name: name + " " + Faker::Name.last_name,

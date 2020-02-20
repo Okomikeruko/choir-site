@@ -7,7 +7,7 @@ class Admin::MessagesController < AdminController
     @message = Message.find params[:id]
     @message.mark_as_read
   end
-  
+
   def do_to_all
     @messages = Message.where id: params[:all_messages][:msgs]
     case params[:commit]
@@ -17,7 +17,7 @@ class Admin::MessagesController < AdminController
       @messages.update_all(:read => false)
     when "Delete Messages"
       @messages.destroy_all
-    end  
+    end
     redirect_to admin_messages_path(:page => params[:all_messages][:page])
   end
 end

@@ -19,9 +19,7 @@ module Choir
       g.javascripts = false
       g.skip_routes = true
     end
-    
     config.serve_static_assets = true
-    
     config.time_zone = "Mountain Time (US & Canada)"
     config.active_record.default_timezone = :local
   end

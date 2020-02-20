@@ -1,4 +1,4 @@
-%header 
+%header
   %nav.navbar.navbar-inverse
     .container-fluid
       .navbar-header
@@ -20,18 +20,18 @@
           %li
             =link_to "Dashboard", admin_index_path
           %li{ class: "#{'active' if controller_name == 'messages'}" }
-            =link_to admin_messages_path do 
+            =link_to admin_messages_path do
               Messages
               -if Message.any_unread?
                 %span.label.label-danger
                   =Message.unread
           %li{class: "#{'active' if ['songs', 'rehearsals', 'performances'].include?(controller_name)}" }
-            =link_to "#", 
+            =link_to "#",
                      class:"dropdown-toggle",
                      data: {toggle: "dropdown"},
                      role: "button",
                      aria: {haspopup:"true", expanded: "false"} do
-              Music 
+              Music
               %span.caret
             %ul.dropdown-menu
               %li
@@ -59,7 +59,7 @@
             =link_to "Members", admin_members_path
           %li{ :class => "#{'active' if controller_name == 'profiles'}" }
             =link_to "Profiles", admin_profiles_path
-          %li 
-            =link_to 'Logout', 
-                     destroy_user_session_path, 
+          %li
+            =link_to 'Logout',
+                     destroy_user_session_path,
                      method: :delete

@@ -6,9 +6,9 @@
     =render "sorters"
   .col-sm-8.col-md-9.col-lg-10
     %span.date.hidden-xs.hidden-sm=@article.created_at.strftime("%m/%d/%Y")
-    %h2=@article.title 
+    %h2=@article.title
     .clearfix
-      %strong.push-left=@article.author.name 
+      %strong.push-left=@article.author_name
       %span.date.pull-right.hidden-md.hidden-lg=@article.created_at.strftime("%m/%d/%Y")
     .article-content
       =@article.content.html_safe

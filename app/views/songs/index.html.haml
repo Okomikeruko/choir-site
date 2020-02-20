@@ -2,30 +2,30 @@
 -provide :bg, "pexels-photo-164821.jpeg"
 
 %p
-  Below you will find a complete list of all the songs and performances of the 
-  Cascade Sixth Ward's Choir sorted alphabetically, by our performance history, 
-  and a listing of our upcoming performance dates with the songs we will be 
+  Below you will find a complete list of all the songs and performances of the
+  Cascade Sixth Ward's Choir sorted alphabetically, by our performance history,
+  and a listing of our upcoming performance dates with the songs we will be
   singing.
 
 %ul.nav.nav-tabs.song-sorting{:role => "tablist"}
   %li{:role => "presentation",
-      :class => "active"} 
+      :class => "active"}
     %a{:role => "tab",
        :aria => { controls: "title" },
        :data => { toggle: "tab" },
-       :href => "#title" } 
+       :href => "#title" }
       By Title
-  %li{:role => "presentation"} 
+  %li{:role => "presentation"}
     %a{:role => "tab",
        :aria => { controls: "pending" },
        :data => { toggle: "tab" },
-       :href => "#pending" } 
+       :href => "#pending" }
       Upcoming Dates
-  %li{:role => "presentation"} 
+  %li{:role => "presentation"}
     %a{:role => "tab",
        :aria => { controls: "history" },
        :data => { toggle: "tab" },
-       :href => "#history" } 
+       :href => "#history" }
       Performance History
   %li{:role => "presentation"}
     %a{:role => "tab",
@@ -33,7 +33,6 @@
        :data => { toggle: "tab" },
        :href => "#unused" }
       Unscheduled Songs
-  
 
 .tab-content
   .tab-pane.fade.in.active#title{:role => "tabpanel"}
@@ -42,7 +41,7 @@
         .letter-links.text-center
           -@songs_by_title.each do |letter|
             = " | " unless letter == @songs_by_title.first
-            =link_to letter[0], "#heading-#{letter[0]}", 
+            =link_to letter[0], "#heading-#{letter[0]}",
                      :data => { turbolinks: false }
         -@songs_by_title.each do |letter|
           .letter-block
@@ -112,7 +111,7 @@
         .letter-links.text-center
           -@songs_unused.each do |letter|
             = " | " unless letter == @songs_unused.first
-            =link_to letter[0], "#heading-#{letter[0]}-unused", 
+            =link_to letter[0], "#heading-#{letter[0]}-unused",
                      :data => { turbolinks: false }
         -@songs_unused.each do |letter|
           .letter-block
@@ -120,7 +119,7 @@
               %h2= letter[0]
             -letter[1].each do |song|
               =render song, alphabetized: true
-    
+
 :javascript
   $('.nav-tabs a').click(function (e) {
     e.preventDefault();

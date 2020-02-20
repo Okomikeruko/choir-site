@@ -6,8 +6,8 @@
     =render "sorters"
   .col-sm-8.col-md-9.col-lg-10
     -@articles.each do |article|
-      =render article 
-  
+      =render article
+
 =will_paginate @articles,
                :previous_label => "«",
                :next_label => "»"

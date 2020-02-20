@@ -13,11 +13,11 @@
             %th.text-right Controls
         %tbody
           -@tags.each do |tag|
-            =render tag 
+            =render tag
   .col-sm-6
-    %fieldset 
+    %fieldset
       %legend New Tag
-      =render "form", tag: @new_tag 
+      =render "form", tag: @new_tag
 .modals
   -@tags.each do |tag|
     =render "modal", tag: tag

@@ -15,7 +15,7 @@
       -if performance.date.future?
         %span.date
           \-
-          %em= "Coming Soon" 
+          %em= "Coming Soon"
       =simple_format performance.details
       -unless performance.audio.blank?
         %audio{:controls => "controls",
@@ -25,7 +25,7 @@
 .row{:style => "margin-top: 20px;"}
   .col-md-8
     %h2 Parts
-    Click on "Downloads" to the right of each part to find the Sheet Music, 
+    Click on "Downloads" to the right of each part to find the Sheet Music,
     MP3, or MIDI files for that part.
     -@song.instruments.each do |instrument|
       .song-listing
@@ -44,20 +44,20 @@
               %li
                 %a{:href => instrument.pdf.url,
                    :download => instrument.pdf_file_name }
-                  Sheet Music - PDF  
+                  Sheet Music - PDF
               -if instrument.mp3.exists? || instrument.midi.exists?
-                %li.divider{:role => "separator"} 
+                %li.divider{:role => "separator"}
               -if instrument.mp3.exists?
-                %li 
+                %li
                   %a{:href => instrument.mp3.url,
                      :download => instrument.mp3_file_name }
                     Audio File - MP3
               -if instrument.midi.exists?
-                %li 
+                %li
                   %a{:href => instrument.midi.url,
                      :download => instrument.midi_file_name }
                     Audio File - MIDI
-        -unless instrument.mp3.blank?  
+        -unless instrument.mp3.blank?
           .row
             .col-xs-10.col-sm-11
               %audio{:controls     => "controls",
@@ -88,7 +88,7 @@
     $(this).toggleClass("active");
     $("audio#" + id).data("repeat", $(this).hasClass("active"));
   });
-  
+
   function replay(audio){
     if( $(audio).data("repeat") ){
       $(audio)[0].play();

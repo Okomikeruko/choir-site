@@ -1,16 +1,16 @@
 .row
   .col-xs-12.col-sm-8.col-sm-offset-2
-    =form_for [:admin, @song] do |f|
-      =render "shared/error_messages", object: @song
+    =form_for [:admin, song] do |f|
+      =render "shared/error_messages", object: f.object
       .clearfix
         =f.submit "Save", class: "btn btn-primary pull-right"
-        =link_to "Cancel", 
-                 admin_songs_path, 
+        =link_to "Cancel",
+                 admin_songs_path,
                  class: "btn btn-default pull-right",
                  style: "margin-right: 15px;"
       %fieldset
         %legend Main Info
-        =f.label :title 
+        =f.label :title
         =f.text_field :title, class: "form-control"
         %br
         =f.label :description
@@ -19,18 +19,18 @@
         %span{style: "white-space: nowrap;"}
           =f.label :lilypond, "Lilypond File"
           -if f.object.lilypond.exists?
-            =link_to f.object.lilypond.url do 
+            =link_to f.object.lilypond.url do
               =f.object.lilypond_file_name
-        =f.file_field :lilypond, 
+        =f.file_field :lilypond,
                       class: "form-control"
       %br
-      %fieldset 
+      %fieldset
         %legend Instruments
         .instruments
           =f.fields_for :instruments do |instruments|
             =render "instrument_fields", f: instruments
           .links
-            =link_to_add_association f, :instruments, class: "btn btn-primary" do 
+            =link_to_add_association f, :instruments, class: "btn btn-primary" do
               %span.glyphicon.glyphicon-plus
               Add Instrument
 :javascript
@@ -40,7 +40,7 @@
       $(panel).find("input[id$='_position']").val(index);
     });
   }
-  
+
   $( function() {
     $('.instruments').sortable({
       handle: ".handle",
@@ -48,7 +48,7 @@
       update: function(event, ui) { update_positions() }
     });
   });
-  
+
   $(".instruments").on('cocoon:after-insert', function() {
     update_positions();
   })
@@ -56,4 +56,3 @@
   $(".instruments").on('cocoon:after-remove', function() {
     update_positions();
   })
-  

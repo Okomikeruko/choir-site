@@ -1,7 +1,7 @@
-.clearfix 
+.clearfix
   %h1.pull-left New Song
   =link_to "Back",
            admin_songs_path,
            class: "btn btn-default pull-left",
            style: "margin-top: 23px; margin-left: 20px;"
-=render "form"
+=render "form", song: @song

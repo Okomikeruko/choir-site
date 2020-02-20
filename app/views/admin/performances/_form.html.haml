@@ -1,7 +1,7 @@
 .row
   .col-sm-8.col-sm-offset-2
-    =form_for [:admin, @performance] do |f|
-      =render "shared/error_messages", object: @performance
+    =form_for [:admin, performance] do |f|
+      =render "shared/error_messages", object: performance
       .clearfix
         =f.submit "Save", class: "btn btn-primary pull-right"
         =link_to "Cancel",
@@ -11,15 +11,15 @@
       .row
         .col-sm-6
           %fieldset
-            %legend Main Info 
+            %legend Main Info
             =f.label :venue
             =f.text_field :venue, class: "form-control"
             %br
             =f.label :date
             .input-group.date{data: {provide: "datepicker",
                                      date: { format: "mm/dd/yyyy" } } }
-              =f.text_field :date, 
-                            value: (@performance.date.strftime("%m/%d/%Y") unless @performance.date.blank?),
+              =f.text_field :date,
+                            value: (performance.date.strftime("%m/%d/%Y") if performance.date?),
                             class: "form-control"
               .input-group-addon
                 %span.glyphicon.glyphicon-th
@@ -40,10 +40,10 @@
         .col-sm-6
           %fieldset
             %legend Songs
-            =f.label :songs 
+            =f.label :songs
             %br
             %div{style: "max-height: 425px; overflow-y: auto;"}
               =f.collection_check_boxes(:song_ids, Song.all, :id, :title) do |s|
-                =s.label { s.check_box } 
+                =s.label { s.check_box }
                 =s.object.title
                 %br

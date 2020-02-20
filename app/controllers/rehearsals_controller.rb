@@ -1,7 +1,7 @@
 class RehearsalsController < ApplicationController
   add_breadcrumb "Home", :root_path
   add_breadcrumb "Rehearsals", :rehearsals_path
-  
+
   def index
     @rehearsals = Rehearsal.includes(:songs)
                            .all_past

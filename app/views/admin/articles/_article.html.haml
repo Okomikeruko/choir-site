@@ -1,16 +1,16 @@
 %tr
-  %td= article.title 
+  %td= article.title
   %td= article.created_at.strftime("%m/%d/%Y")
-  %td= article.status 
-  %td= article.list_categories 
+  %td= article.status
+  %td= article.list_categories
   %td= article.list_tags
   %td.text-right
     =link_to edit_admin_article_path(article),
-             class: "btn btn-default btn-xs" do 
+             class: "btn btn-default btn-xs" do
       %span.glyphicon.glyphicon-pencil
     &nbsp;
     =link_to admin_article_path(article),
              method: :delete,
              data: { confirm: "Are you sure?" },
-             class: "btn btn-danger btn-xs" do 
+             class: "btn btn-danger btn-xs" do
       %span.glyphicon.glyphicon-remove

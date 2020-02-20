@@ -10,9 +10,9 @@
   .row
     .col-sm-12
       %table.table.table-hover
-        %thead 
-          %tr 
-            %th 
+        %thead
+          %tr
+            %th
               %input{type: "checkbox",
                      id: "selectAll",
                      value: "selectAll" }
@@ -23,11 +23,11 @@
         %tbody
           -@messages.each do |message|
             %tr.clickable-row{class: "#{'info' unless message.read}",
-                              data: {href: admin_message_url(message) } } 
+                              data: {href: admin_message_url(message) } }
               %td.checkbox-col
                 = hidden_field_tag "all_messages[msgs][]", "0", id: nil
-                = check_box_tag "all_messages[msgs][]", 
-                                message.id, 
+                = check_box_tag "all_messages[msgs][]",
+                                message.id,
                                 false,
                                 id: "all_messages_msgs_" + message.id.to_s
               %td= message.name

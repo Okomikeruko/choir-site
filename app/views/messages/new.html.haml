@@ -1,7 +1,7 @@
 -provide :title, "Contact"
 -provide :bg, "phone-dial-old-arrangement-47319.jpeg"
 
-.row 
+.row
   .col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.col-lg-6.col-lg-offset-3
     %p
       Do you have a suggestion for a future song?
@@ -9,7 +9,7 @@
       Do you want to lavish us with praises?
       Do you want a site like this for your own choir?
       Just want to say 'hi'?
-    %p 
+    %p
       Go head. Drop us a line.
     %br
     =render "shared/flash_messages"
@@ -22,7 +22,7 @@
       =f.label :email, "Email Address"
       =f.email_field :email, class: "form-control"
       %br
-      =f.label :subject 
+      =f.label :subject
       =f.text_field :subject, class: "form-control"
       %br
       =f.label :message

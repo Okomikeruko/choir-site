@@ -1,6 +1,6 @@
 class Admin::PerformancesController < AdminController
   before_action :set_performance, only: [:edit, :update, :destroy]
-  
+
   def index
     @performances = Performance.all
   end
@@ -8,13 +8,13 @@ class Admin::PerformancesController < AdminController
   def new
     @performance = Performance.new
   end
-  
+
   def create
     @performance = Performance.new(performance_params)
     @performance.date = Date.strptime(params[:performance][:date], "%m/%d/%Y")
                             .end_of_day
                             .in_time_zone("Mountain Time (US & Canada)")
-    if @performance.save 
+    if @performance.save
       flash[:success] = "Performance created successfully."
       redirect_to admin_performances_path
     else
@@ -24,7 +24,7 @@ class Admin::PerformancesController < AdminController
 
   def edit
   end
-  
+
   def update
     @performance.date = Date.strptime(params[:performance][:date], "%m/%d/%Y")
                             .end_of_day
@@ -36,12 +36,12 @@ class Admin::PerformancesController < AdminController
       render "edit"
     end
   end
-  
+
   def destroy
     @performance.destroy
     redirect_to admin_performances_path
   end
-  
+
   private
     def performance_params
       params.require(:performance).permit(:venue,
@@ -49,7 +49,7 @@ class Admin::PerformancesController < AdminController
                                           :audio,
                                           :song_ids => [] )
     end
-    
+
     def set_performance
       @performance = Performance.find params[:id]
     end

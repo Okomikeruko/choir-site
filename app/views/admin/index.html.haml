@@ -5,7 +5,7 @@
     .panel.panel-default
       .panel-heading.clearfix
         =link_to new_admin_article_path,
-                 class: "btn btn-primary pull-right" do 
+                 class: "btn btn-primary pull-right" do
           %span.glyphicon.glyphicon-plus
         %h4 News
       .panel-body
@@ -13,7 +13,7 @@
           .article-block.clearfix
             %h4= article.title
             %p= article.created_at.strftime("%m/%d/%Y")
-            = truncate article.content, 
+            = truncate article.content,
                        length: 120,
                        separator: ' '
             %br
@@ -28,7 +28,7 @@
     .panel.panel-default
       .panel-heading.clearfix
         =link_to new_admin_song_path,
-                 class: "btn btn-primary pull-right" do 
+                 class: "btn btn-primary pull-right" do
           %span.glyphicon.glyphicon-plus
         %h4 Songs
       .panel-body{style: "overflow-y: auto; height: 602px;"}
@@ -41,12 +41,12 @@
               =link_to "View", music_path(song.slug)
               |
               =link_to "Edit", edit_admin_song_path(song)
-          %hr 
+          %hr
   .col-md-3
     .panel.panel-default
       .panel-heading.clearfix
         =link_to new_admin_performance_path,
-                 class: "btn btn-primary pull-right" do 
+                 class: "btn btn-primary pull-right" do
           %span.glyphicon.glyphicon-plus
         %h4 Performances
       .panel-body{style: "overflow-y: auto; height: 250px;"}
@@ -59,12 +59,12 @@
               %strong= performance.date.future? ? "Pending" : "Complete"
               |
               =link_to "Edit", edit_admin_performance_path(performance)
-          %hr 
+          %hr
     %br
     .panel.panel-default
       .panel-heading.clearfix
         =link_to new_admin_rehearsal_path,
-                 class: "btn btn-primary pull-right" do 
+                 class: "btn btn-primary pull-right" do
           %span.glyphicon.glyphicon-plus
         %h4 Rehearsals
       .panel-body{style: "overflow-y: auto; height: 250px"}
@@ -74,13 +74,11 @@
             %p
               %strong Host:
               = rehearsal.host
-              %br 
+              %br
               %strong Venue
               = rehearsal.venue
             %span.pull-right
               %strong= rehearsal.date.future? ? "Pending" : "Complete"
               |
               =link_to "Edit", edit_admin_rehearsal_path(rehearsal)
-          %hr 
-      
-          
+          %hr

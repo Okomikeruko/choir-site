@@ -61,8 +61,7 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "choir_#{Rails.env}"
   config.action_mailer.perform_caching = false
-  
-  config.action_mailer.raise_delivery_errors = true 
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   host = ENV["MAILER_HOST"]
   config.action_mailer.default_url_options = { host: host }
@@ -102,7 +101,6 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  
   config.paperclip_defaults = {
     storage: :s3,
     s3_credentials: {

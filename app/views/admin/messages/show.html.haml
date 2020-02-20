@@ -7,7 +7,7 @@
     .panel.panel-default
       .panel-heading.clearfix
         %h4.pull-left
-          =@message.name 
+          =@message.name
           %span.small
             =@message.email
         %h4.pull-right
@@ -15,4 +15,4 @@
             =@message.created_at.strftime("%l:%M %P - %b %-d, %Y")
       .panel-body
         %h1= @message.subject
-        =simple_format @message.message 
+        =simple_format @message.message

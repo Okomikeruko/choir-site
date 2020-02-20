@@ -2,13 +2,13 @@
   =render "shared/error_messages", object: f.object
   .clearfix
     -unless article.is_published?
-      =f.submit "Publish", 
+      =f.submit "Publish",
                 class: "btn btn-primary pull-right",
                 style: "margin-left: 1em;"
-      =f.submit "Save Draft", 
+      =f.submit "Save Draft",
                 class: "btn btn-default pull-right"
     -else
-      =f.submit "Update", 
+      =f.submit "Update",
                 class: "btn btn-primary pull-right",
                 style: "margin-left: 1em;"
       =f.submit "Revert to Draft",
@@ -30,23 +30,23 @@
         =f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |c|
           =c.label { c.check_box }
           =c.object.name
-          %br 
+          %br
       %br
       %fieldset
         %legend.clearfix
           Tags
           =link_to admin_tags_path,
-                   class: "btn btn-primary pull-right" do 
+                   class: "btn btn-primary pull-right" do
             %span.glyphicon.glyphicon-plus
         =f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |t|
           =t.label { t.check_box }
           =t.object.name
           %br
       =f.hidden_field :user_id, value: current_user.id
-        
+
 :javascript
   $(document).ready(function(){
     $('.wysiwyg').froalaEditor({
       height: 300
     });
-  })
+  });

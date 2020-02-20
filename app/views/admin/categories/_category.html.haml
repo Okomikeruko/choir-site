@@ -1,5 +1,5 @@
-%tr 
-  %td= category.name 
+%tr
+  %td= category.name
   %td= category.slug
   %td= category.articles.count
   %td.text-right
@@ -12,5 +12,5 @@
     =link_to admin_category_path(category),
              method: :delete,
              data: { confirm: "Are you sure?" },
-             class: "btn btn-danger btn-xs" do 
+             class: "btn btn-danger btn-xs" do
       %span.glyphicon.glyphicon-remove

@@ -1,8 +1,8 @@
 .row
   .col-md-8.col-md-offset-2
-    =form_for [:admin, @member] do |f|
+    =form_for [:admin, member] do |f|
       =render "shared/error_messages", object: f.object
-      =f.label :name 
+      =f.label :name
       =f.text_field :name, class: "form-control"
       %br
       =f.label :email
@@ -15,14 +15,14 @@
       .row
         -%w[Soprano Alto Tenor Bass].each do |voice|
           .col-sm-3
-            =f.label :"#{voice}" do 
+            =f.label :"#{voice}" do
               =check_box_tag "member[vocal_range][]",
                              voice,
-                             @member.vocal_range.include?(voice),
+                             member.vocal_range.include?(voice),
                              id: "member_vocal_range_#{voice}"
               =voice
       %br
       =f.label :talents, "Other Musical Talents"
       =f.text_field :talents, class: "form-control"
-      %br 
+      %br
       =f.submit "Save", class: "btn btn-primary"

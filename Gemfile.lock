@@ -616,6 +616,8 @@ GEM
       mime-types (>= 1.16)
     climate_control (0.2.0)
     cocoon (1.2.11)
+    code_analyzer (0.5.1)
+      sexp_processor
     coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -902,6 +904,14 @@ GEM
     rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
+    rails_best_practices (1.19.5)
+      activesupport
+      code_analyzer (>= 0.5.1)
+      erubis
+      i18n
+      json
+      require_all (~> 3.0)
+      ruby-progressbar
     rails_serve_static_assets (0.0.5)
     rails_stdout_logging (0.0.5)
     railties (5.1.2)
@@ -919,6 +929,7 @@ GEM
       json (>= 1.8)
       nokogiri (~> 1.5)
       trollop (~> 2.1)
+    require_all (3.0.0)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
@@ -1019,6 +1030,7 @@ DEPENDENCIES
   rails (= 5.1.2)
   rails-controller-testing (= 1.0.2)
   rails_12factor
+  rails_best_practices
   sass-rails (= 5.0.6)
   spring (= 2.0.2)
   spring-watcher-listen (= 2.0.1)
@@ -1031,4 +1043,4 @@ DEPENDENCIES
   wysiwyg-rails
 
 BUNDLED WITH
-   1.16.2
+   1.17.2

@@ -42,6 +42,7 @@ group :development do
   gem 'spring',                '2.0.2'
   gem 'spring-watcher-listen', '2.0.1'
   gem 'erb2haml'
+  gem "rails_best_practices"
 end
 
 group :test do
@@ -54,7 +55,7 @@ end
 group :production do
   gem 'pg', '~> 0.20'
   gem "aws-sdk-s3"
-  gem "rails_12factor" 
+  gem "rails_12factor"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
