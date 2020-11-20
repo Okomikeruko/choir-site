@@ -22,5 +22,7 @@ module Choir
     config.serve_static_assets = true
     config.time_zone = "Mountain Time (US & Canada)"
     config.active_record.default_timezone = :local
+    
+    config.action_view.sanitized_allowed_attributes = 'class', 'id', 'href', 'style', 'target', 'rel'
   end
 end
