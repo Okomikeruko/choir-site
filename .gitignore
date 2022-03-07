@@ -28,3 +28,9 @@
 # Ignore uploaded test images.
 /public/uploads
 /public/system
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity

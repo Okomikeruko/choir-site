@@ -1,10 +1,12 @@
 class Instrument < ApplicationRecord
+  extend PaperclipToActiveStorage
+  
   default_scope { order(position: :asc) }
   belongs_to :song
 
-  has_attached_file :pdf
-  has_attached_file :midi
-  has_attached_file :mp3
+  has_paperclip_attachment_with_active_storage :pdf
+  has_paperclip_attachment_with_active_storage :midi
+  has_paperclip_attachment_with_active_storage :mp3
 
   validates :name, presence: true,
                    length: { maximum: 60 },
