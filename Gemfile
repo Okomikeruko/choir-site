@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby "2.7.5"
 
-gem 'rails',                   '6.0.0.beta1'
+gem 'rails',                   '5.2.6.2'
 gem 'bcrypt',                  '3.1.11'
 gem 'faker',                   '1.7.3'
 gem 'carrierwave',             '1.1.0'
@@ -11,7 +11,7 @@ gem 'will_paginate',           '3.1.5'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'bootstrap-sass',          '3.3.7'
 gem 'puma',                    '3.9.1'
-gem 'sass-rails',              '5.0.6'
+gem 'sass-rails'
 gem 'uglifier',                '3.2.0'
 gem 'coffee-rails',            '4.2.2'
 gem 'jquery-rails',            '4.3.1'
