@@ -23,7 +23,7 @@ class PaperclipToActiveStorageJob < ApplicationJob
       paperclip_attachment = record.public_send(attribute)
       paperclip_attachment.copy_to_local_file(:original, tempfile.path)
       tempfile.rewind
-      record.public_send("active_storage_#{attribute}", {
+      record.public_send("active_storage_#{attribute}=", {
         :io           => tempfile,
         :filename     => paperclip_attachment.original_filename,
         :content_type => paperclip_attachment.content_type,
