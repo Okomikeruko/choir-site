@@ -30,8 +30,9 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :test
   config.action_mailer.perform_caching = false
+  protocol = "https"
   host = "e950a60eb7c74bc58b11cb2f300f1e45.vfs.cloud9.us-west-2.amazonaws.com/"
-  config.action_mailer.default_url_options = { host: host, protocol: "https" }
+  config.action_mailer.default_url_options = { :host => host, :protocol => protocol }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
