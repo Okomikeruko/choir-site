@@ -1,19 +1,23 @@
 class PaperclipToActiveStorageJob < ApplicationJob
   queue_as :default
   
-  def self.records_to_migrate(klass, attribute)
-    klass.left_outer_joins(:"#{attribute}_attachment")
-         .where(active_storage_attachments: {id: nil})
-         .where.not("#{attribute}_file_name" => nil)
-  end
-  
-  def self.generate!(klass, attribute)
-    unless klass.new.respond_to?("active_storage_#{attribute}=") && klass.new.respond_to?("paperclip_#{attribute}=")
-      raise "#{klass}##{attribute} isn't configured to be migrated"
+  class << self 
+    
+    def records_to_migrate(klass, attribute)
+      klass.left_outer_joins(:"#{attribute}_attachment")
+           .where(active_storage_attachments: {id: nil})
+           .where.not("#{attribute}_file_name" => nil)
     end
-    records_to_migrate(klass, attribute).find_each do |record|
-      perform_later(record, attribute)
+    
+    def generate!(klass, attribute)
+      unless klass.new.respond_to?("active_storage_#{attribute}=") && klass.new.respond_to?("paperclip_#{attribute}=")
+        raise "#{klass}##{attribute} isn't configured to be migrated"
+      end
+      records_to_migrate(klass, attribute).find_each do |record|
+        perform_later(record, attribute)
+      end
     end
+    
   end
 
   def perform(record, attribute)

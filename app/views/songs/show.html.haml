@@ -31,33 +31,35 @@
       .song-listing
         .clearfix
           %h3.pull-left=instrument.name
-          .dropdown.pull-right
-            %button{ :class => "btn btn-secondary dropdown-toggle",
-                     :type => "button",
-                     :id => "downloads#{instrument.id}",
-                     :data => { toggle: "dropdown" },
-                     :aria => { haspopup: "true",
-                                expanded: "true" } }
-              Downloads
-              %span.caret
-            %ul.dropdown-menu{:aria => { labelledby: "downloads#{instrument.id}" } }
-              %li
-                %a{:href => instrument.pdf.url,
-                   :download => instrument.pdf_file_name }
-                  Sheet Music - PDF
-              -if instrument.mp3.exists? || instrument.midi.exists?
-                %li.divider{:role => "separator"}
-              -if instrument.mp3.exists?
-                %li
-                  %a{:href => instrument.mp3.url,
-                     :download => instrument.mp3_file_name }
-                    Audio File - MP3
-              -if instrument.midi.exists?
-                %li
-                  %a{:href => instrument.midi.url,
-                     :download => instrument.midi_file_name }
-                    Audio File - MIDI
-        -unless instrument.mp3.blank?
+          - unless instrument.pdf_blob.nil? && instrument.mp3_blob.nil? && instrument.midi_blob.nil?
+            .dropdown.pull-right
+              %button{ :class => "btn btn-secondary dropdown-toggle",
+                       :type => "button",
+                       :id => "downloads#{instrument.id}",
+                       :data => { toggle: "dropdown" },
+                       :aria => { haspopup: "true",
+                                  expanded: "true" } }
+                Downloads
+                %span.caret
+              %ul.dropdown-menu{:aria => { labelledby: "downloads#{instrument.id}" } }
+                - unless instrument.pdf_blob.nil?
+                  %li
+                    %a{:href => rails_blob_path( instrument.pdf_blob ),
+                       :download => true }
+                      Sheet Music - PDF
+                -if !instrument.pdf_blob.nil? && ( !instrument.mp3_blob.nil? || !instrument.midi_blob.nil? )
+                  %li.divider{:role => "separator"}
+                - unless instrument.mp3_blob.nil?
+                  %li
+                    %a{:href => rails_blob_path( instrument.mp3_blob ),
+                       :download => true }
+                      Audio File - MP3
+                -unless instrument.midi_blob.nil?
+                  %li
+                    %a{:href => rails_blob_path( instrument.midi_blob ),
+                       :download => true }
+                      Audio File - MIDI
+        -unless instrument.mp3_blob.nil?
           .row
             .col-xs-10.col-sm-11
               %audio{:controls     => "controls",
@@ -65,8 +67,8 @@
                      :id           => "audio-#{instrument.name.parameterize}",
                      :data         => { repeat: false },
                      :onended      => "replay(this)"}
-                %source{:type => instrument.mp3_content_type,
-                        :src  => instrument.mp3.url }
+                %source{:type => instrument.mp3_blob.content_type,
+                        :src  => rails_blob_url( instrument.mp3_blob )}
             .col-xs-2.col-sm-1
               %button{ :class => "btn btn-default btn-repeat",
                        :data  => { id: "audio-#{instrument.name.parameterize}" },
