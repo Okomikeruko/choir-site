@@ -12,4 +12,3 @@ amazon:
   secret_access_key: <%= ENV["AWS_SECRET_ACCESS_KEY"] %>
   bucket: <%= ENV["S3_BUCKET_NAME"] %>
   region: <%= ENV["AWS_REGION"] %>
-  endpoint: <%= ENV["AWS_ENDPOINT"] %>
