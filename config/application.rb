@@ -9,7 +9,7 @@ Bundler.require(*Rails.groups)
 module Choir
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 5.2
+    config.load_defaults 6.0
     config.autoloader = :classic
 
     # Settings in config/environments/* take precedence over those specified here.
@@ -26,7 +26,8 @@ module Choir
     
     config.action_view.sanitized_allowed_attributes = 'class', 'id', 'href', 'style', 'target', 'rel'
     
-    # config.hosts << "e950a60eb7c74bc58b11cb2f300f1e45.vfs.cloud9.us-west-2.amazonaws.com"
+    config.hosts << "e950a60eb7c74bc58b11cb2f300f1e45.vfs.cloud9.us-west-2.amazonaws.com"
+    config.hosts << ENV.fetch("HOST", '')
     
     config.active_job.queue_adapter = :sidekiq
   end
