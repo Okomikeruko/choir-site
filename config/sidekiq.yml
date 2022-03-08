@@ -11,6 +11,6 @@
   - default
   - action_mailbox_routing
   - action_mailbox_incineration
-  - action_storage_analysis
+  - active_storage_analysis
   - active_storage_purge
   - low
