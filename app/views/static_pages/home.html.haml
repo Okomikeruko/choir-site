@@ -23,7 +23,7 @@
                 %audio{:controls => "controls",
                        :controlsList => "nodownload"}
                   %source{:type => song.primary_instrument.mp3_blob.content_type,
-                          :src => rails_blob_url( song.primary_instrument.mp3_blob ) }
+                          :src => song.primary_instrument.mp3_blob.service_url }
           %br
       -else
         %p

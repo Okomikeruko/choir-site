@@ -44,19 +44,19 @@
               %ul.dropdown-menu{:aria => { labelledby: "downloads#{instrument.id}" } }
                 - unless instrument.pdf_blob.nil?
                   %li
-                    %a{:href => rails_blob_path( instrument.pdf_blob ),
+                    %a{:href => instrument.pdf_blob.service_url,
                        :download => true }
                       Sheet Music - PDF
                 -if !instrument.pdf_blob.nil? && ( !instrument.mp3_blob.nil? || !instrument.midi_blob.nil? )
                   %li.divider{:role => "separator"}
                 - unless instrument.mp3_blob.nil?
                   %li
-                    %a{:href => rails_blob_path( instrument.mp3_blob ),
+                    %a{:href => instrument.mp3_blob.service_url,
                        :download => true }
                       Audio File - MP3
                 -unless instrument.midi_blob.nil?
                   %li
-                    %a{:href => rails_blob_path( instrument.midi_blob ),
+                    %a{:href => instrument.midi_blob.service_url,
                        :download => true }
                       Audio File - MIDI
         -unless instrument.mp3_blob.nil?
@@ -68,7 +68,7 @@
                      :data         => { repeat: false },
                      :onended      => "replay(this)"}
                 %source{:type => instrument.mp3_blob.content_type,
-                        :src  => rails_blob_url( instrument.mp3_blob )}
+                        :src  => instrument.mp3_blob.service_url}
             .col-xs-2.col-sm-1
               %button{ :class => "btn btn-default btn-repeat",
                        :data  => { id: "audio-#{instrument.name.parameterize}" },
