@@ -26,8 +26,8 @@ module Choir
     
     config.action_view.sanitized_allowed_attributes = 'class', 'id', 'href', 'style', 'target', 'rel'
     
-    config.hosts << "e950a60eb7c74bc58b11cb2f300f1e45.vfs.cloud9.us-west-2.amazonaws.com"
-    config.hosts << ENV.fetch("DOMAIN", '')
+    config.hosts << ".vfs.cloud9.us-west-2.amazonaws.com"
+    config.hosts << ENV["DOMAIN"]
     
     config.active_job.queue_adapter = :sidekiq
   end
