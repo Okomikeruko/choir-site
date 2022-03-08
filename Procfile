@@ -1,2 +1,3 @@
 web: bundle exec rails server
-job: sidekiq -q mailer -q default
+job: sidekiq -C config/sidekiq.yml
+release: bundle exec rails db:migrate
