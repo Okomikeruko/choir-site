@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+https://www.tokyodev.com/2021/03/23/paperclip-activestorage/

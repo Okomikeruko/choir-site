@@ -19,10 +19,11 @@
             =link_to music_path(song.slug), class: "secondary" do
               %h2= song.title
             -unless song.primary_instrument.blank?
-              %audio{:controls => "controls",
-                     :controlsList => "nodownload"}
-                %source{:type => song.primary_instrument.mp3_content_type,
-                        :src => song.primary_instrument.mp3.url }
+              -unless song.primary_instrument.mp3_blob.nil?
+                %audio{:controls => "controls",
+                       :controlsList => "nodownload"}
+                  %source{:type => song.primary_instrument.mp3_blob.content_type,
+                          :src => song.primary_instrument.mp3_blob.service_url }
           %br
       -else
         %p

@@ -13,7 +13,7 @@
 //= require rails-ujs
 //= require jquery
 //= require bootstrap-sprockets
-//= require bootstrap-datepicker
+//= require bootstrap-datepicker/core
 //= require cocoon
 //= require jquery-ui/widgets/sortable
 //= require froala_editor.min.js

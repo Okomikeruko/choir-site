@@ -1,4 +1,6 @@
 class Song < ApplicationRecord
+  extend PaperclipToActiveStorage
+  
   before_save :set_slug, :set_sort_order
 
   default_scope { order(sort_order: :asc) }
@@ -14,7 +16,7 @@ class Song < ApplicationRecord
   has_many :rehearsal_songs, inverse_of: :song, dependent: :destroy
   has_many :rehearsals, through: :rehearsal_songs
 
-  has_attached_file :lilypond
+  has_paperclip_attachment_with_active_storage :lilypond
 
   validates :title, presence: true,
                     length: { maximum: 60 }

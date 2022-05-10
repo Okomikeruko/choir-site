@@ -111,4 +111,6 @@ Rails.application.configure do
       s3_host_name:      ENV["AWS_ENDPOINT"]
     }
   }
+  
+  config.active_storage.service = :amazon
 end

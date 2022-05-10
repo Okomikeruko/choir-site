@@ -34,6 +34,5 @@ Rails.application.routes.draw do
     resources :messages, only: [:index, :show] do
       post :do_to_all, on: :collection
     end
-#    post "messages/do_to_all"
   end
 end

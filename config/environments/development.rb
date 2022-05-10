@@ -30,8 +30,9 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :test
   config.action_mailer.perform_caching = false
-  host = "good-mormon-okomikeruko.c9users.io"
-  config.action_mailer.default_url_options = { host: host, protocol: "https" }
+  protocol = "https"
+  host = "e950a60eb7c74bc58b11cb2f300f1e45.vfs.cloud9.us-west-2.amazonaws.com/"
+  config.action_mailer.default_url_options = { :host => host, :protocol => protocol }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -53,6 +54,8 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+  
+  config.active_storage.service = :local
 end
 
 Paperclip.options[:command_path] = "/usr/bin/"
