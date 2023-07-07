@@ -23,6 +23,6 @@ test:
 production:
   <<: *default
   adapter: postgres
-  database: postgres
-  host: <%= ENV.fetch("DATABASE_HOST") %>
+  database: db/postgres
+  host: <%= ENV.fetch("DATABASE_HOST") { } %>
   port: 5432
