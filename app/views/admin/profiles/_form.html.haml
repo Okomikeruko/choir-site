@@ -21,7 +21,7 @@
         %br
       %fieldset
         %legend Profile Image
-        -if profile.image.exists?
+        -if profile.image.attached?
           =image_tag profile.image
         =f.file_field :image,
                       accept: "image/pjpeg, image/x-png",

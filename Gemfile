@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.7.6"
+ruby "2.7.8"
 
 gem 'rails',                   '6.0.0.beta1'
 gem 'bcrypt',                  '3.1.12'
@@ -59,7 +59,6 @@ end
 
 group :production do
   gem 'pg', '~> 0.20'
-  gem "aws-sdk-s3"
   gem "rails_12factor"
 end
 

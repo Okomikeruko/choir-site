@@ -6,8 +6,9 @@
       .col-sm-1
         %span.glyphicon.glyphicon-resize-vertical.handle
       .col-sm-3
-        =image_tag profile.image,
-                   style: "width: 100%;"
+        - url = profile.image.attached? ? profile.image : "portrait-placeholder.jpg"
+        = image_tag url,
+                    style: "width: 100%;"
       .col-sm-6
         %h3=profile.name
         %h4=profile.title

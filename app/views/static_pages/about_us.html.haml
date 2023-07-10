@@ -9,5 +9,8 @@
           =profile.name
           %small
             =profile.title
-        =image_tag profile.image
+        - if profile.image.attached?
+          = image_tag profile.image
+        - else
+          = image_tag "portrait-placeholder.jpg"
         %p=simple_format profile.bio
