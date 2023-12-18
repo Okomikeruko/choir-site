@@ -28,6 +28,7 @@ module Choir
     
     config.action_view.sanitized_allowed_attributes = 'class', 'id', 'href', 'style', 'target', 'rel'
     
+    config.hosts << "localhost"
     config.hosts << ".vfs.cloud9.us-west-2.amazonaws.com"
     config.hosts << ENV["DOMAIN"]
     
