@@ -48,6 +48,7 @@ group :development do
   # gem 'spring-watcher-listen', '2.0.1'
   gem 'erb2haml'
   gem "rails_best_practices"
+  gem 'foreman'
 end
 
 group :test do

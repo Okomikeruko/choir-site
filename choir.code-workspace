@@ -4,5 +4,12 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "terminal.integrated.shellArgs.linux": [
+      "-c",
+      "alias rails='docker exec -it choir_site-app-1 rails'",
+			"alias foreman='docker exec -it choir_site-app-1 foreman"
+    ]
+	}
 }

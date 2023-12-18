@@ -140,6 +140,7 @@ GEM
       nokogiri (>= 1.5.11, < 2.0.0)
     font-awesome-sass (5.15.1)
       sassc (>= 1.11)
+    foreman (0.87.2)
     formatador (1.1.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -373,6 +374,7 @@ DEPENDENCIES
   faker (= 1.7.3)
   fog-aws
   font-awesome-sass (~> 5.15.1)
+  foreman
   guard (= 2.14.1)
   guard-minitest (= 2.4.6)
   haml
