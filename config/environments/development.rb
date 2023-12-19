@@ -60,4 +60,4 @@ Rails.application.configure do
   config.active_storage.service = :local
 end
 
-Paperclip.options[:command_path] = '/usr/bin/'
+# Paperclip.options[:command_path] = '/usr/bin/'

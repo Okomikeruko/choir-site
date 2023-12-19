@@ -15,8 +15,8 @@ class Rehearsal < ApplicationRecord
   validates :venue, length: { maximum: 120 }
   validates :host,  length: { maximum: 60 }
 
-  has_attached_file :audio
-  validates_attachment :audio, content_type: { content_type: %w[audio/mpeg audio/mp3] }
+  has_one_attached :audio
+  validate :correct_mp3_mime_type
 
   attr_accessor :date_holder
 
@@ -55,5 +55,11 @@ class Rehearsal < ApplicationRecord
     self.date = DateTime.strptime(date_holder, '%m/%d/%Y')
                         .end_of_day
                         .in_time_zone('Mountain Time (US & Canada)')
+  end
+
+  def correct_mp3_mime_type
+    if audio.attached? && !mp3.content_type.in?(%w[audio/mpeg audio/mp3])
+      errors.add(:audio, 'Must be an MP3 file')
+    end
   end
 end

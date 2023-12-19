@@ -2,7 +2,7 @@
 
 # Model for Song
 class Song < ApplicationRecord
-  extend PaperclipToActiveStorage
+  # extend PaperclipToActiveStorage
 
   before_save :set_slug, :set_sort_order
 
@@ -19,12 +19,14 @@ class Song < ApplicationRecord
   has_many :rehearsal_songs, inverse_of: :song, dependent: :destroy
   has_many :rehearsals, through: :rehearsal_songs
 
-  paperclip_attachment_with_active_storage :lilypond
+  # paperclip_attachment_with_active_storage :lilypond
+
+  has_one_attached :lilypond
 
   validates :title, presence: true,
                     length: { maximum: 60 }
 
-  do_not_validate_attachment_file_type :lilypond
+  # do_not_validate_attachment_file_type :lilypond
 
   def primary_instrument
     instruments.detect { |i| i.mp3.exists? }

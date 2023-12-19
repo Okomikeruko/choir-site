@@ -7,14 +7,15 @@ class Performance < ApplicationRecord
   has_many :performance_songs, dependent: :destroy
   has_many :songs, through: :performance_songs
 
-  has_attached_file :audio
+  # has_attached_file :audio
+  has_one_attached :audio
 
   validates :date,    presence: true
   validates :venue,   presence: true,
                       length: { maximum: 120 }
   validates :details, length: { maximum: 5000 }
 
-  validates_attachment :audio, content_type: { content_type: %w[audio/mpeg audio/mp3] }
+  validate :correct_mp3_mime_type
 
   class << self
     def find_next(num = 1)
@@ -31,6 +32,14 @@ class Performance < ApplicationRecord
       where(
         'date < :d', d: DateTime.now.in_time_zone('Mountain Time (US & Canada)')
       ).sort_by(&:date).reverse
+    end
+  end
+  
+  private 
+
+  def correct_mp3_mime_type
+    if audio.attached? && !mp3.content_type.in?(%w[audio/mpeg audio/mp3])
+      errors.add(:audio, 'Must be an MP3 file')
     end
   end
 end

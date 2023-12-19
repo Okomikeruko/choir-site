@@ -12,6 +12,6 @@ COPY Gemfile Gemfile.lock ./
 
 RUN bundle install
 
-COPY . /app
+COPY . ./
 
 CMD ["sh"]

@@ -7,17 +7,21 @@ class Instrument < ApplicationRecord
   default_scope { order(position: :asc) }
   belongs_to :song
 
-  paperclip_attachment_with_active_storage :pdf
-  paperclip_attachment_with_active_storage :midi
-  paperclip_attachment_with_active_storage :mp3
+  # paperclip_attachment_with_active_storage :pdf
+  # paperclip_attachment_with_active_storage :midi
+  # paperclip_attachment_with_active_storage :mp3
+
+  has_one_attached :pdf
+  has_one_attached :midi
+  has_one_attached :mp3
 
   validates :name, presence: true,
                    length: { maximum: 60 },
                    uniqueness: { scope: :song, case_sensitive: false }
 
-  validates_attachment :pdf,  content_type: { content_type: %w[application/pdf] }
-  validates_attachment :midi, content_type: { content_type: %w[audio/midi] }
-  validates_attachment :mp3,  content_type: { content_type: %w[audio/mpeg audio/mp3] }
+  validate :correct_pdf_mime_type
+  validate :correct_midi_mime_type
+  validate :correct_mp3_mime_type
 
   def empty?
     pdf_blob.nil? && mp3_blob.nil? && midi_blob.nil?
@@ -44,4 +48,24 @@ class Instrument < ApplicationRecord
   #     end
   #   end
   # end
+  
+  private
+  
+  def correct_pdf_mime_type
+    if pdf.attached? && !pdf.content_type.in?(%w[application/pdf])
+      errors.add(:pdf, 'Must be a PDF file')
+    end
+  end
+  
+  def correct_midi_mime_type
+    if midi.attached? && !midi.content_type.in?(%w[audio/midi])
+      errors.add(:midi, 'Must be a MIDI file')
+    end
+  end
+  
+  def correct_mp3_mime_type
+    if mp3.attached? && !mp3.content_type.in?(%w[audio/mpeg audio/mp3])
+      errors.add(:mp3, 'Must be an MP3 file')
+    end
+  end
 end
