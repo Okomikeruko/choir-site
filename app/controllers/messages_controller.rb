@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
+# Controller for managing messages.
 class MessagesController < ApplicationController
   invisible_captcha only: [:create], honeypot: :choir_part
 
-  add_breadcrumb "Home", :root_path
-  add_breadcrumb "Contact", :contact_path
+  add_breadcrumb 'Home', :root_path
+  add_breadcrumb 'Contact', :contact_path
 
   def new
     @message = Message.new
@@ -12,19 +15,19 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     if @message.save
       @message.send_email
-      flash[:success] = "Your message has been sent."
+      flash[:success] = 'Your message has been sent.'
       redirect_to contact_path
     else
-      render "new"
+      render 'new'
     end
   end
 
   private
-    def message_params
-      params.require(:message).permit(:name,
-                                      :email,
-                                      :subject,
-                                      :message)
-    end
 
+  def message_params
+    params.require(:message).permit(:name,
+                                    :email,
+                                    :subject,
+                                    :message)
+  end
 end

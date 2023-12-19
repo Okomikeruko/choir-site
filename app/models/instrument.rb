@@ -1,20 +1,31 @@
+# frozen_string_literal: true
+
+# Model for Instrument
 class Instrument < ApplicationRecord
   extend PaperclipToActiveStorage
-  
+
   default_scope { order(position: :asc) }
   belongs_to :song
 
-  has_paperclip_attachment_with_active_storage :pdf
-  has_paperclip_attachment_with_active_storage :midi
-  has_paperclip_attachment_with_active_storage :mp3
+  paperclip_attachment_with_active_storage :pdf
+  paperclip_attachment_with_active_storage :midi
+  paperclip_attachment_with_active_storage :mp3
 
   validates :name, presence: true,
                    length: { maximum: 60 },
-                   uniqueness: {scope: :song, case_sensitive: false}
+                   uniqueness: { scope: :song, case_sensitive: false }
 
-  validates_attachment :pdf,  :content_type => { content_type: %w(application/pdf) }
-  validates_attachment :midi, :content_type => { content_type: %w(audio/midi) }
-  validates_attachment :mp3,  :content_type => { content_type: %w(audio/mpeg audio/mp3) }
+  validates_attachment :pdf,  content_type: { content_type: %w[application/pdf] }
+  validates_attachment :midi, content_type: { content_type: %w[audio/midi] }
+  validates_attachment :mp3,  content_type: { content_type: %w[audio/mpeg audio/mp3] }
+
+  def empty?
+    pdf_blob.nil? && mp3_blob.nil? && midi_blob.nil?
+  end
+
+  def has_pdf_and_audio?
+    !pdf_blob.nil? && (!mp3_blob.nil? || !midi_blob.nil?)
+  end
 
   # def self.populate
   #   Song.find_each do |song|
@@ -33,5 +44,4 @@ class Instrument < ApplicationRecord
   #     end
   #   end
   # end
-
 end

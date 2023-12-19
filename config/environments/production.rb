@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -52,7 +54,7 @@ Rails.application.configure do
   config.log_level = :debug
 
   # Prepend all log lines with the following tags.
-  config.log_tags = [ :request_id ]
+  config.log_tags = [:request_id]
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
@@ -63,16 +65,16 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  host = ENV["MAILER_HOST"]
+  host = ENV.fetch('MAILER_HOST', nil)
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
-    :address        => "smtp.sendgrid.net",
-    :port           => "587",
-    :authentication => :plain,
-    :user_name      => ENV["SENDGRID_USERNAME"],
-    :password       => ENV["SENDGRID_PASSWORD"],
-    :domain         => ENV["MAILER_DOMAIN"],
-    :enable_starttls_auto => true
+    address: 'smtp.sendgrid.net',
+    port: '587',
+    authentication: :plain,
+    user_name: ENV.fetch('SENDGRID_USERNAME', nil),
+    password: ENV.fetch('SENDGRID_PASSWORD', nil),
+    domain: ENV.fetch('MAILER_DOMAIN', nil),
+    enable_starttls_auto: true
   }
 
   # Ignore bad email addresses and do not raise email delivery errors.
@@ -87,14 +89,14 @@ Rails.application.configure do
   config.active_support.deprecation = :notify
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
-  config.log_formatter = ::Logger::Formatter.new
+  config.log_formatter = Logger::Formatter.new
 
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
-  if ENV["RAILS_LOG_TO_STDOUT"].present?
-    logger           = ActiveSupport::Logger.new(STDOUT)
+  if ENV['RAILS_LOG_TO_STDOUT'].present?
+    logger           = ActiveSupport::Logger.new($stdout)
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
@@ -104,13 +106,13 @@ Rails.application.configure do
   config.paperclip_defaults = {
     storage: :s3,
     s3_credentials: {
-      bucket:            ENV["S3_BUCKET_NAME"],
-      access_key_id:     ENV["AWS_ACCESS_KEY_ID"],
-      secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],
-      s3_region:         ENV["AWS_REGION"],
-      s3_host_name:      ENV["AWS_ENDPOINT"]
+      bucket: ENV.fetch('S3_BUCKET_NAME', nil),
+      access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID', nil),
+      secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY', nil),
+      s3_region: ENV.fetch('AWS_REGION', nil),
+      s3_host_name: ENV.fetch('AWS_ENDPOINT', nil)
     }
   }
-  
+
   config.active_storage.service = :amazon
 end

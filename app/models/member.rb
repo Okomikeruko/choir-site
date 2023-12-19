@@ -1,27 +1,30 @@
+# frozen_string_literal: true
+
+# Model for Member
 class Member < ApplicationRecord
   serialize :vocal_range
 
   with_options presence: true do
-    validates :name, length: {maximum: 60}
+    validates :name, length: { maximum: 60 }
     validates :vocal_range
   end
 
   validates :email, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX }
 
-  def is_soprano?
+  def soprano?
     vocal_range.include? 'Soprano'
   end
 
-  def is_alto?
+  def alto?
     vocal_range.include? 'Alto'
   end
 
-  def is_tenor?
+  def tenor?
     vocal_range.include? 'Tenor'
   end
 
-  def is_bass?
+  def bass?
     vocal_range.include? 'Bass'
   end
 end

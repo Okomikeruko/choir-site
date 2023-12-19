@@ -1,11 +1,14 @@
+# frozen_string_literal: true
+
+# Controller for managing articles.
 class ArticlesController < ApplicationController
-  add_breadcrumb "Home", :root_path
-  add_breadcrumb "News", :news_index_path
+  add_breadcrumb 'Home', :root_path
+  add_breadcrumb 'News', :news_index_path
 
   def index
     @articles = Article.published
-                .filtered(params)
-                .paginate(page: params[:page], per_page: 8 )
+                       .filtered(params)
+                       .paginate(page: params[:page], per_page: 8)
   end
 
   def show

@@ -1,53 +1,58 @@
-class Admin::RehearsalsController < AdminController
-  before_action :get_rehearsal, only: [:edit, :update, :destroy]
+# frozen_string_literal: true
 
-  def index
-    @rehearsals = Rehearsal.all
-                           .paginate(page: params[:page], per_page: 20)
-  end
+module Admin
+  # Controller for managing rehearsals in the admin section.
+  class RehearsalsController < AdminController
+    before_action :find_rehearsal, only: %i[edit update destroy]
 
-  def new
-    @rehearsal = Rehearsal.new
-  end
-
-  def create
-    @rehearsal = Rehearsal.new(rehearsal_params)
-    if @rehearsal.save
-      flash[:success] = "Rehearsal created successfully."
-      redirect_to admin_rehearsals_path
-    else
-      render "new"
+    def index
+      @rehearsals = Rehearsal.all
+                             .paginate(page: params[:page], per_page: 20)
     end
-  end
 
-  def edit
-  end
-
-  def update
-    if @rehearsal.update_attributes(rehearsal_params)
-      flash[:success] = "Rehearsal updated successfully."
-      redirect_to admin_rehearsals_path
-    else
-      render "edit"
+    def new
+      @rehearsal = Rehearsal.new
     end
-  end
 
-  def destroy
-    @rehearsal.destroy
-    redirect_to admin_rehearsals_path
-  end
+    def create
+      @rehearsal = Rehearsal.new(rehearsal_params)
+      if @rehearsal.save
+        flash[:success] = 'Rehearsal created successfully.'
+        redirect_to admin_rehearsals_path
+      else
+        render 'new'
+      end
+    end
 
-  private
+    def edit; end
+
+    def update
+      if @rehearsal.update(rehearsal_params)
+        flash[:success] = 'Rehearsal updated successfully.'
+        redirect_to admin_rehearsals_path
+      else
+        render 'edit'
+      end
+    end
+
+    def destroy
+      @rehearsal.destroy
+      redirect_to admin_rehearsals_path
+    end
+
+    private
+
     def rehearsal_params
       params.require(:rehearsal).permit(:host,
                                         :venue,
                                         :date_holder,
                                         :time,
                                         :audio,
-                                        :song_ids => [])
+                                        song_ids: [])
     end
 
-    def get_rehearsal
+    def find_rehearsal
       @rehearsal = Rehearsal.find params[:id]
     end
+  end
 end

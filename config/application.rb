@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails/all'
@@ -23,15 +25,15 @@ module Choir
       g.skip_routes = true
     end
     config.serve_static_assets = true
-    config.time_zone = "Mountain Time (US & Canada)"
+    config.time_zone = 'Mountain Time (US & Canada)'
     config.active_record.default_timezone = :local
-    
+
     config.action_view.sanitized_allowed_attributes = 'class', 'id', 'href', 'style', 'target', 'rel'
-    
-    config.hosts << "localhost"
-    config.hosts << ".vfs.cloud9.us-west-2.amazonaws.com"
-    config.hosts << ENV["DOMAIN"]
-    
+
+    config.hosts << 'localhost'
+    config.hosts << '.vfs.cloud9.us-west-2.amazonaws.com'
+    config.hosts << ENV.fetch('DOMAIN', nil)
+
     config.active_job.queue_adapter = :sidekiq
   end
 end

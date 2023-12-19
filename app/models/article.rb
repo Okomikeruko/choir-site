@@ -1,14 +1,19 @@
+# frozen_string_literal: true
+
+# Model for Article
 class Article < ApplicationRecord
   default_scope { order(created_at: :desc) }
 
-  scope :month,    -> (date) { where(created_at: DateTime.strptime(date, "%Y-%m-%d").beginning_of_month..DateTime.strptime(date, "%Y-%m-%d").end_of_month) if date.present?}
-  scope :tag,      -> (slug) { joins(:tags).where(tags: {slug: slug}) if slug.present? }
-  scope :category, -> (slug) { joins(:categories).where(categories: {slug: slug}) if slug.present? }
+  scope :month, lambda { |date|
+    where(created_at: date.all_month) if date.present?
+  }
+  scope :tag,      ->(slug) { joins(:tags).where(tags: { slug: slug }) if slug.present? }
+  scope :category, ->(slug) { joins(:categories).where(categories: { slug: slug }) if slug.present? }
 
   belongs_to :author,
-             class_name: "User",
-             foreign_key: "user_id"
-  delegate :name, :to => :author, :prefix => true
+             class_name: 'User',
+             foreign_key: 'user_id'
+  delegate :name, to: :author, prefix: true
 
   has_many :article_categories, dependent: :destroy
   has_many :categories, through: :article_categories
@@ -28,24 +33,24 @@ class Article < ApplicationRecord
 
     def filtered(params)
       month(params[:month])
-      .tag(params[:tags])
-      .category(params[:category])
+        .tag(params[:tags])
+        .category(params[:category])
     end
   end
 
-  def is_published?
-    self.published
+  def published?
+    published
   end
 
   def status
-    published ? "Published" : "Draft"
+    published ? 'Published' : 'Draft'
   end
 
   def list_categories
-    categories.map {|c| c.name}.to_sentence
+    categories.map(&:name).to_sentence
   end
 
   def list_tags
-    tags.map {|t| t.name}.to_sentence
+    tags.map(&:name).to_sentence
   end
 end

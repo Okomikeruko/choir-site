@@ -31,7 +31,7 @@
       .song-listing
         .clearfix
           %h3.pull-left=instrument.name
-          - unless instrument.pdf_blob.nil? && instrument.mp3_blob.nil? && instrument.midi_blob.nil?
+          - unless instrument.empty?
             .dropdown.pull-right
               %button{ :class => "btn btn-secondary dropdown-toggle",
                        :type => "button",
@@ -47,7 +47,7 @@
                     %a{:href => instrument.pdf_blob.service_url,
                        :download => true }
                       Sheet Music - PDF
-                -if !instrument.pdf_blob.nil? && ( !instrument.mp3_blob.nil? || !instrument.midi_blob.nil? )
+                -if instrument.has_pdf_and_audio?
                   %li.divider{:role => "separator"}
                 - unless instrument.mp3_blob.nil?
                   %li

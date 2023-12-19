@@ -1,51 +1,56 @@
-class Admin::MembersController < AdminController
-  before_action :get_member, only: [:edit, :update, :destroy]
+# frozen_string_literal: true
 
-  def index
-    @members = Member.all
-  end
+module Admin
+  # Controller for managing members in the admin section.
+  class MembersController < AdminController
+    before_action :find_member, only: %i[edit update destroy]
 
-  def new
-    @member = Member.new(:vocal_range => [])
-  end
-
-  def create
-    @member = Member.new(member_params)
-    if @member.save
-      flash[:success] = "Member created successfully."
-      redirect_to admin_members_path
-    else
-      render "new"
+    def index
+      @members = Member.all
     end
-  end
 
-  def edit
-  end
-
-  def update
-    if @member.update_attributes(member_params)
-      flash[:success] = "Member updated successfully."
-      redirect_to admin_members_path
-    else
-      render "edit"
+    def new
+      @member = Member.new(vocal_range: [])
     end
-  end
 
-  def destroy
-    @member.destroy
-    redirect_to admin_members_path
-  end
+    def create
+      @member = Member.new(member_params)
+      if @member.save
+        flash[:success] = 'Member created successfully.'
+        redirect_to admin_members_path
+      else
+        render 'new'
+      end
+    end
 
-  private
+    def edit; end
+
+    def update
+      if @member.update(member_params)
+        flash[:success] = 'Member updated successfully.'
+        redirect_to admin_members_path
+      else
+        render 'edit'
+      end
+    end
+
+    def destroy
+      @member.destroy
+      redirect_to admin_members_path
+    end
+
+    private
+
     def member_params
-      params.require(:member).permit( :name,
-                                      :email,
-                                      :phone,
-                                      :talents,
-                                    { :vocal_range => [] } )
+      params.require(:member).permit(:name,
+                                     :email,
+                                     :phone,
+                                     :talents,
+                                     { vocal_range: [] })
     end
 
-    def get_member
+    def find_member
       @member = Member.find params[:id]
     end
+  end
 end

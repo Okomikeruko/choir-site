@@ -1,21 +1,36 @@
-require File.expand_path('../../config/environment', __FILE__)
+# frozen_string_literal: true
+
+# Load Rails environment and necessary testing libraries
+require File.expand_path('../config/environment', __dir__)
 require 'rails/test_help'
-require "minitest/reporters"
+require 'minitest/reporters'
 Minitest::Reporters.use!
 
-class ActiveSupport::TestCase
-  # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
-  fixtures :all
+# Module for ActiveSupport, providing testing facilities
+module ActiveSupport
+  # Class for TestCase within ActiveSupport, serving as the base class for Rails model tests
+  class TestCase
+    # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
+    fixtures :all
 
-  # Add more helper methods to be used by all tests here...
+    # Add more helper methods to be used by all tests here...
+  end
 end
 
-class ActionController::TestCase
-  include Devise::Test::ControllerHelpers
-  
+# Module for ActionController, providing testing facilities
+module ActionController
+  # Class for TestCase within ActionController, extending ActiveSupport::TestCase with controller testing helpers
+  class TestCase
+    # Include Devise test controller helpers for convenience
+    include Devise::Test::ControllerHelpers
+  end
 end
 
-class ActionDispatch::IntegrationTest
-  include Devise::Test::IntegrationHelpers
-  
+# Module for ActionDispatch, providing integration testing facilities
+module ActionDispatch
+  # Class for IntegrationTest within ActionDispatch, extending ActiveSupport::TestCase with integration testing helpers
+  class IntegrationTest
+    # Include Devise test integration helpers for convenience
+    include Devise::Test::IntegrationHelpers
+  end
 end

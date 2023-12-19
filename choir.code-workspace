@@ -11,5 +11,9 @@
       "alias rails='docker exec -it choir_site-app-1 rails'",
 			"alias foreman='docker exec -it choir_site-app-1 foreman"
     ]
-	}
+	},
+	"extensions.enabled": [
+		"vayan.haml",
+		"bung87.rails"
+	]
 }

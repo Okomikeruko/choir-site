@@ -1,7 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  name: "Lee Whittaker"
-  title: "Web Developer"
-  bio: "This is my bio."
-

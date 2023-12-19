@@ -1,0 +1,25 @@
+AllCops:
+  NewCops: enable
+
+Metrics/BlockLength:
+  Exclude:
+    - 'config/environments/*'
+    - 'config/routes.rb'
+    - 'db/migrate/*'
+    - 'db/schema.rb'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'config/environments/*'
+    - 'db/schema.rb'
+    - 'db/migrate/*'
+
+Style/Documentation:
+  Exclude:
+    - 'config/*'
+    - 'db/schema.rb'
+    - 'db/migrate/*'
+
+Style/MixinUsage:
+  Exclude:
+    - 'bin/*'

@@ -1,22 +1,24 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
+# Test class for MessageMailer
 class MessageMailerTest < ActionMailer::TestCase
-  test "contact_form" do
+  test 'contact_form' do
     @message = messages :one
     mail = MessageMailer.contact_form(@message)
     assert_equal @message.subject, mail.subject
-    assert_equal ["whittakerlee81@gmail.com"], mail.to
+    assert_equal ['whittakerlee81@gmail.com'], mail.to
     assert_equal [@message.email], mail.from
-    assert_match "You have a new message from choir.CascadeSixth.com", 
+    assert_match 'You have a new message from choir.CascadeSixth.com',
                  mail.body.encoded
-    assert_match @message.created_at.strftime("%l:%M %P - %b %-d, %Y"),
+    assert_match @message.created_at.strftime('%l:%M %P - %b %-d, %Y'),
                  mail.body.encoded
     assert_match @message.name,
                  mail.body.encoded
-    assert_match @message.email, 
+    assert_match @message.email,
                  mail.body.encoded
-    assert_match @message.message, 
+    assert_match @message.message,
                  mail.body.encoded
   end
-
 end
