@@ -4,5 +4,4 @@ build:
 run:
   web: bundle exec rails server
 release: 
-  command:
-    - bundle exec rails db:migrate
+  - bundle exec rails db:migrate
