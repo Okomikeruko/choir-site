@@ -3,6 +3,7 @@ FROM ruby:2.7.6
 
 # Install nodejs and yarn
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client yarn
+RUN npx browserslist@latest --update-db
 
 # Set the working directory in the container to /app
 WORKDIR /app
