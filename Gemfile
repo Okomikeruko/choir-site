@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-# ruby "2.7.6"
+ruby "2.7.6"
 
 gem 'bcrypt',                  '~> 3.1.12'
 gem 'bootstrap-sass',          '~> 3.3'
