@@ -3,7 +3,7 @@ build:
     web: Dockerfile
 release: 
   command:
-    bundle exec rails db:migrate
+    - bundle exec rails db:migrate
   image: web
 run:
   web: bundle exec rails server -p $PORT
