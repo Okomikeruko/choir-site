@@ -45,19 +45,19 @@
                 - unless instrument.pdf_blob.nil?
                   %li
                     %a{:href => instrument.pdf_blob.service_url,
-                       :download => true }
+                       :target => "_blank" }
                       Sheet Music - PDF
                 -if instrument.has_pdf_and_audio?
                   %li.divider{:role => "separator"}
                 - unless instrument.mp3_blob.nil?
                   %li
                     %a{:href => instrument.mp3_blob.service_url,
-                       :download => true }
+                       :target => "_blank" }
                       Audio File - MP3
                 -unless instrument.midi_blob.nil?
                   %li
                     %a{:href => instrument.midi_blob.service_url,
-                       :download => true }
+                       :target => "_blank" }
                       Audio File - MIDI
         -unless instrument.mp3_blob.nil?
           .row

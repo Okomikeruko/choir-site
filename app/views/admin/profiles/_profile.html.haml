@@ -1,0 +1,25 @@
+.panel.panel-default{:data => { |
+                      :id => profile.id, |
+                      :pos => profile.position } } |
+  .panel-body
+    .row
+      .col-sm-1
+        %span.glyphicon.glyphicon-resize-vertical.handle
+      .col-sm-3
+        - url = profile.image.attached? ? profile.image : "portrait-placeholder.jpg"
+        = image_tag url,
+                    style: "width: 100%;"
+      .col-sm-6
+        %h3=profile.name
+        %h4=profile.title
+        %p=profile.bio.truncate(50)
+      .col-sm-2
+        =link_to admin_profile_path(profile),
+                 method: :delete,
+                 data: { confirm: "Are you sure?" },
+                 class: "btn btn-danger pull-right" do
+          %span.glyphicon.glyphicon-remove
+        =link_to edit_admin_profile_path(profile),
+                 class: "btn btn-default pull-right",
+                 style: "margin-right: 15px" do
+          %span.glyphicon.glyphicon-pencil

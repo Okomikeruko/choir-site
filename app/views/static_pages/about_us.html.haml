@@ -1,0 +1,16 @@
+-provide :title, "Who We Are"
+-provide :bg, "pexels-photo-210764.jpeg"
+
+.row
+  .col-md-10.col-md-offset-1
+    -@profiles.each do |profile|
+      .profile-block.clearfix
+        %h2
+          =profile.name
+          %small
+            =profile.title
+        - if profile.image.attached?
+          = image_tag profile.image
+        - else
+          = image_tag "portrait-placeholder.jpg"
+        %p=simple_format profile.bio

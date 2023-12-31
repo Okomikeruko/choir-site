@@ -47,4 +47,10 @@ Rails.application.configure do
   InvisibleCaptcha.timestamp_enabled = false
 
   config.active_storage.service = :test
+<<<<<<< HEAD
 end
+=======
+
+  config.hosts << "localhost" << "www.example.com"
+end
+>>>>>>> dd81094369acd42422a5e56e3d73c4c93df1ce4b
