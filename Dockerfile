@@ -1,5 +1,5 @@
 # Use an official Ruby runtime as a parent image
-FROM ruby:2.7.6
+FROM ruby:3.0.0
 
 # Install nodejs and yarn
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client yarn

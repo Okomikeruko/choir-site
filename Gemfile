@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby "2.7.8"
+ruby '3.0.0'
 
 gem 'bcrypt',                  '~> 3.1.12'
 gem 'bootstrap-sass',          '~> 3.3'
@@ -59,13 +59,8 @@ group :test do
 end
 
 group :production do
-<<<<<<< HEAD
-  gem 'rails_12factor'
   gem 'pg'
-=======
-  gem 'pg', '~> 0.20'
   gem "rails_12factor"
->>>>>>> dd81094369acd42422a5e56e3d73c4c93df1ce4b
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
