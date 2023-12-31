@@ -1,6 +1,6 @@
 build:
-  docker:
-    web: Dockerfile
+  languages: 
+    - ruby
 release: 
   command:
     - bundle exec rails db:migrate
