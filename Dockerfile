@@ -14,7 +14,7 @@ COPY . /app
 RUN bundle install --without development test
 
 # Precompile Rails assets
-RUN RAILS_ENV=production bundle exec rake assets:precompile
+# RUN RAILS_ENV=production bundle exec rake assets:precompile
 
 # Provide dummy data to Rails so it can pre-compile assets
 RUN SECRET_KEY_BASE=1 RAILS_ENV=production bundle exec rake assets:precompile
