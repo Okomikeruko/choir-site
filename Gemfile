@@ -39,11 +39,11 @@ gem 'wysiwyg-rails'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'sqlite3'
+  gem 'spring'
 end
 
 group :development do
   gem 'listen'
-  gem 'spring'
   gem 'web-console'
   gem 'erb2haml'
   gem 'foreman'

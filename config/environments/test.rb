@@ -38,6 +38,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'example.com' }
 
   config.hosts << "www.example.com"
+  config.hosts << "localhost"
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
@@ -47,6 +48,4 @@ Rails.application.configure do
   InvisibleCaptcha.timestamp_enabled = false
 
   config.active_storage.service = :test
-
-  config.hosts << "localhost" << "www.example.com"
 end
