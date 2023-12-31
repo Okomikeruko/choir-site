@@ -17,7 +17,9 @@ RUN bundle install --without development test
 # RUN RAILS_ENV=production bundle exec rake assets:precompile
 
 # Provide dummy data to Rails so it can pre-compile assets
-RUN SECRET_KEY_BASE=1 RAILS_ENV=production bundle exec rake assets:precompile
+# RUN SECRET_KEY_BASE=1 RAILS_ENV=production bundle exec rake assets:precompile
+
+EXPOSE 3000
 
 # Run the app when the container launches
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
