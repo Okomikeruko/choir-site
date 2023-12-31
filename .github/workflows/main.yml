@@ -16,14 +16,3 @@ jobs:
       
       - name: Run tests
         run: docker run choir-site bundle exec rails test
-      
-      - name: Login to Heroku Container Registry
-        run: heroku container:login
-      
-      - name: Build and push to Heroku Container Registry
-        run: |
-          heroku container:push web --app ${{secrets.HEROKU_APP_NAME}}
-          heroku container:release web --app ${{secrets.HEROKU_APP_NAME}}
-    
-    env:
-      HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
