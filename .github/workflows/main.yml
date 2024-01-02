@@ -33,11 +33,12 @@ jobs:
         run: |
           docker run -d \
             --name myapp_container \
-            -e POSTGRES_USER=postgres \
-            -e POSTGRES_PASSWORD=password \
-            -e POSTGRES_DB=myapp_test \
+            -e DATABASE_URL=postgres://postgres:password@db:5432/myapp_test \
             myapp
-            
+      
+      - name: Wait for Database
+        run: sleep 10 # wait for database to start
+
       - name: Setup Database
         run: docker exec myapp_container bundle exec rails db:create db:schema:load
 
