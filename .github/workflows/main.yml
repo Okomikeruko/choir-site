@@ -14,8 +14,8 @@ jobs:
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: password
-          POSTGRES_TEST_DB: myapp_test
-          DATABASE_HOST: db
+          POSTGRES_DB: myapp_test
+          DATABASE_HOST: localhost
         ports:
           - 5432:5432
         options: >-
@@ -36,8 +36,8 @@ jobs:
             --name myapp_container \
             -e POSTGRES_USER=postgres \
             -e POSTGRES_PASSWORD=password \
-            -e POSTGRES_TEST_DB=myapp_test \
-            -e DATABASE_HOST=db \
+            -e POSTGRES_DB=myapp_test \
+            -e DATABASE_HOST=localhost \
             myapp
             
       - name: Setup Database
