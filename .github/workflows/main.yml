@@ -27,11 +27,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Build Docker image
-        run: docker build -t myapp .
+      - name: Build And Start Container
+        run: docker-compose up -d --build
       
-      - name: Run Docker container
-        run: docker run --name myapp_container -d -e DATABASE_URL=postgres://postgres:password@db:5432/myapp_test myapp
+      - name: Setup Database
+        run: docker-compose exec web bundle exec rails db:create db:schema:load
       
-      - name: Run Tests
-        run: docker exec myapp_container bundle exec rails test
+      - name: Run Rails Minitests
+        run: docker exec web bundle exec rails test
