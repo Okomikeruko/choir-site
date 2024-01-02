@@ -28,6 +28,11 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build And Start Container
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: password 
+          POSTGRES_DB: myapp_test
+          DATABASE_HOST: db
         run: docker-compose up -d --build
       
       - name: Setup Database
