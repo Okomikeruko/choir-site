@@ -1,3 +1,3 @@
-if Rails.env.production? && defined?(Spring)
-    Spring.stop
-end
+# frozen_string_literal: true
+
+Spring.stop if Rails.env.production? && defined?(Spring)

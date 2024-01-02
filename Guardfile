@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
 
@@ -15,9 +17,9 @@
 #
 # and, you'll have to watch "config/Guardfile" instead of "Guardfile"
 
-guard :minitest, spring: "RAILS_ENV=test rails test:system test" do
+guard :minitest, spring: 'RAILS_ENV=test rails test:system test' do
   # with Minitest::Unit
-  watch(%r{^test/(.*)\/?test_(.*)\.rb$})
+  watch(%r{^test/(.*)/?test_(.*)\.rb$})
   watch(%r{^lib/(.*/)?([^/]+)\.rb$})     { |m| "test/#{m[1]}test_#{m[2]}.rb" }
   watch(%r{^test/test_helper\.rb$})      { 'test' }
 

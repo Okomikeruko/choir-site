@@ -39,14 +39,14 @@ module Admin
     end
 
     test 'should update performance' do
-      patch admin_performance_path(@performance), 
-        params: { 
-          performance: {      
-            venue: 'Here',
-            date: '03/25/2001',
-            details: 'None' 
-          } 
-        }
+      patch admin_performance_path(@performance),
+            params: {
+              performance: {
+                venue: 'Here',
+                date: '03/25/2001',
+                details: 'None'
+              }
+            }
       assert_response :redirect
       assert_redirected_to admin_performances_path
       @performance.reload

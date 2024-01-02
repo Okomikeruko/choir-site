@@ -48,24 +48,24 @@ class Instrument < ApplicationRecord
   #     end
   #   end
   # end
-  
+
   private
-  
+
   def correct_pdf_mime_type
-    if pdf.attached? && !pdf.content_type.in?(%w[application/pdf])
-      errors.add(:pdf, 'Must be a PDF file')
-    end
+    return unless pdf.attached? && !pdf.content_type.in?(%w[application/pdf])
+
+    errors.add(:pdf, 'Must be a PDF file')
   end
-  
+
   def correct_midi_mime_type
-    if midi.attached? && !midi.content_type.in?(%w[audio/midi])
-      errors.add(:midi, 'Must be a MIDI file')
-    end
+    return unless midi.attached? && !midi.content_type.in?(%w[audio/midi])
+
+    errors.add(:midi, 'Must be a MIDI file')
   end
-  
+
   def correct_mp3_mime_type
-    if mp3.attached? && !mp3.content_type.in?(%w[audio/mpeg audio/mp3])
-      errors.add(:mp3, 'Must be an MP3 file')
-    end
+    return unless mp3.attached? && !mp3.content_type.in?(%w[audio/mpeg audio/mp3])
+
+    errors.add(:mp3, 'Must be an MP3 file')
   end
 end

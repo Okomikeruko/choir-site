@@ -34,12 +34,12 @@ class Performance < ApplicationRecord
       ).sort_by(&:date).reverse
     end
   end
-  
-  private 
+
+  private
 
   def correct_mp3_mime_type
-    if audio.attached? && !mp3.content_type.in?(%w[audio/mpeg audio/mp3])
-      errors.add(:audio, 'Must be an MP3 file')
-    end
+    return unless audio.attached? && !mp3.content_type.in?(%w[audio/mpeg audio/mp3])
+
+    errors.add(:audio, 'Must be an MP3 file')
   end
 end

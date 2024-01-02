@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Profile < ApplicationRecord
   before_save :set_position
 
@@ -12,11 +14,12 @@ class Profile < ApplicationRecord
   end
 
   private
-    def set_position
-      if Profile.any?
-        self.position ||= Profile.last.position.to_i + 1
-      else
-        self.position = 1
-      end
+
+  def set_position
+    if Profile.any?
+      self.position ||= Profile.last.position.to_i + 1
+    else
+      self.position = 1
     end
+  end
 end

@@ -37,8 +37,8 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :test
   config.action_mailer.default_url_options = { host: 'example.com' }
 
-  config.hosts << "www.example.com"
-  config.hosts << "localhost"
+  config.hosts << 'www.example.com'
+  config.hosts << 'localhost'
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
