@@ -27,16 +27,22 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Build Container
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: password 
-          POSTGRES_DB: myapp_test
-          DATABASE_HOST: db
+      - name: Build Docker Image
         run: docker build -t myapp .
       
-      - name: Run Container
-        run: docker run -d -p 3000:3000 --name web --link db:db myapp
+      - name: Run Docker Container
+        run: |
+          docker run -d \
+            --name myapp_container \
+            --network container:db \
+            -e POSTGRES_USER=postgres \
+            -e POSTGRES_PASSWORD=password \
+            -e POSTGRES_DB=myapp_test \
+            -e DATABASE_URL=postgres://postgres:password@db:5432/myapp_test \
+            myapp
             
+      - name: Setup Database
+        run: docker exec myapp_container bundle exec rails db:create db:schema:load
+
       - name: Run Rails Minitests
-        run: docker exec web bundle exec rails test
+        run: docker exec myapp_container bundle exec rails test
