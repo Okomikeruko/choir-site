@@ -32,9 +32,6 @@ jobs:
       
       - name: Run Docker container
         run: docker run --name myapp_container -d -e DATABASE_URL=postgres://postgres:password@db:5432/myapp_test myapp
-
-      - name: Setup Database
-        run: docker exec myapp_container bundle exec rails db:create db:schema:load
       
       - name: Run Tests
         run: docker exec myapp_container bundle exec rails test
