@@ -3,30 +3,30 @@ version: '3.8'
 services:
   web:
     build: 
-      dockerfile: Dockerfile
       context: .
-    volumes:
-      - .:/myapp
-      - gem_cache:/usr/local/bundle/gems
+      dockerfile: Dockerfile
+    depends_on:
+      - db
     env_file: .env
     environment:
       - DATABASE_URL=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${DATABASE_HOST}/${POSTGRES_DB}
-    stdin_open: true
     ports:
       - "3000:3000"
+    stdin_open: true
     tty: true
-    depends_on:
-      - db
-  db:
-    image: postgres
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - .:/myapp
+      - gem_cache:/usr/local/bundle/gems
+  db:
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_DB=${POSTGRES_DB}
+    image: postgres
     ports:
       - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
 
 volumes:
   gem_cache:
