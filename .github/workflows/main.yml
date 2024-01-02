@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     services:
-      db:
+      postgres:
         image: postgres 
         env:
           POSTGRES_USER: postgres
@@ -33,7 +33,7 @@ jobs:
         run: |
           docker run -d \
             --name myapp_container \
-            -e DATABASE_URL=postgres://postgres:password@db:5432/myapp_test \
+            -e DATABASE_URL=postgres://postgres:password@localhost:5432/myapp_test \
             myapp
       
       - name: Wait for Database
