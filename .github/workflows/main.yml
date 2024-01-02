@@ -15,6 +15,7 @@ jobs:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: password
           POSTGRES_DB: myapp_test
+          DATABASE_HOST: db
         ports:
           - 5432:5432
         options: >-
