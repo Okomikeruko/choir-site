@@ -9,6 +9,9 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
+      RAILS_ENV: test
+      DOMAIN: localhost
+      PORT: 3000
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
       POSTGRES_DB: myapp_test
@@ -20,4 +23,7 @@ jobs:
       run: docker-compose up --build -d 
     
     - name: Run Tests
-      run: docker-compose exec web bundle exec rails test
+      run: docker-compose exec -T web bundle exec rails test
+
+    - name: Cleanup
+      run: docker-compose down
