@@ -8,11 +8,9 @@ services:
     depends_on:
       - db
     environment:
-      - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=password
       - DATABASE_HOST=db
-      - DATABASE_URL=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${DATABASE_HOST}/${POSTGRES_DB}
     ports:
       - "3000:3000"
     stdin_open: true
@@ -22,9 +20,9 @@ services:
       - gem_cache:/usr/local/bundle/gems
   db:
     environment:
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - DATABASE_HOST=db
     image: postgres
     ports:
       - "5432:5432"
