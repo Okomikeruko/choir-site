@@ -11,11 +11,16 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Build Docker Containers
-      run: docker-compose build
+    - name: Build and Launch Docker Containers
+      run: docker-compose up --build -d
     
+    - name: Prepare Database
+      run: docker-compose run web bundle exec rails db:test:prepare
+
     - name: Run Tests
       run: docker-compose run web bundle exec rails test
 
     - name: Cleanup
-      run: docker-compose rm
+      run: |
+        docker-compose down
+        docker-compose rm
