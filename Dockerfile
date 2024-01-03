@@ -5,7 +5,7 @@ RUN apt-get update -qq && \
     apt-get install -y curl gnupg
 
 # Add NodeSource repository for Node.js and install Node.js and Yarn
-RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - && \
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
     apt-get update -qq && \
@@ -44,6 +44,11 @@ RUN if [ "$RAILS_ENV" = "production" ]; then \
     bundle config set --local without 'production'; \
     fi && \
     bundle install
+
+COPY package.json /myapp/package.json
+COPY yarn.lock /myapp/yarn.lock
+
+RUN yarn install
 
 # Expose the port the app runs on
 EXPOSE 3000
