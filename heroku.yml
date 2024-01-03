@@ -1,9 +1,16 @@
 build:
-  languages: 
-    - ruby
-release: 
-  command:
-    - bundle exec rails db:migrate
+  docker:
+    web: Dockerfile
+  config:
+    BUNDLE_WITHOUT: "development:test"
+    RAILS_ENV: production
+    SECRET_KEY_BASE: <%= ENV['SECRET_KEY_BASE'] %>
+
+release:
   image: web
+  command:
+    - bundle exec rake db:migrate
+    - bundle exec rake assets:precompile
+
 run:
-  web: bundle exec rails server -p $PORT
+  web: bundle exec puma -C config/puma.rb
