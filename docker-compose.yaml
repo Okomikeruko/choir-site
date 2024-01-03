@@ -7,8 +7,11 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - db
-    env_file: .env
     environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - DATABASE_HOST=db
       - DATABASE_URL=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${DATABASE_HOST}/${POSTGRES_DB}
     ports:
       - "3000:3000"

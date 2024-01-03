@@ -3,47 +3,19 @@ name: Rails CI Pipeline
 on:
   push:
     branches: [ master ]
-
-env:
-  POSTGRES_USER: postgres
-  POSTGRES_PASSWORD: password
-  POSTGRES_DB: myapp_test
-
+    
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
-    services:
-      db:
-        image: postgres 
-        env:
-          POSTGRES_PASSWORD: password
-        ports: ['5432:5432']
-        options: >-
-          --health-cmd pg_isready 
-          --health-interval 10s 
-          --health-timeout 5s 
-          --health-retries 5
+    env:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: myapp_test
 
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Build Docker Image
-        run: docker build -t myapp .
-      
-      - name: Run Docker Container
-        run: |
-          docker run -d \
-            --name myapp_container \
-            -e POSTGRES_USER=postgres \
-            -e POSTGRES_PASSWORD=password \
-            -e POSTGRES_DB=myapp_test \
-            -e DATABASE_HOST=db \
-            -e RAILS_ENV=test \
-            -e PORT=3000 \
-            myapp
-
-      - name: Run Rails Minitests
-        run: |
-          docker exec myapp_container bundle exec rails db:schema:load
-          docker exec myapp_container bundle exec rails test
+    - name: Build Docker Image
+      run: docker-compose run --build
+    
+    - name: Run Tests
+      run: docker-compose run web bundle exec rails test
