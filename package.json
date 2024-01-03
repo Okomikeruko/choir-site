@@ -2,7 +2,7 @@
   "name": "choir",
   "private": true,
   "engines": {
-    "node": "16.x"
+    "node": "20.x"
   },
   "dependencies": {
     "@rails/webpacker": "^5.4.3",
