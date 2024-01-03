@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     services:
-      postgres:
+      db:
         image: postgres 
         env:
           POSTGRES_USER: postgres
@@ -35,15 +35,15 @@ jobs:
             --name myapp_container \
             -e POSTGRES_USER=postgres \
             -e POSTGRES_PASSWORD=password \
-            -e POSTGRES_TEST_DB=myapp_test \
-            -e DATABASE_HOST=localhost \
+            -e POSTGRES_DB=myapp_test \
+            -e DATABASE_HOST=db \
             myapp
       
       - name: Wait for Database
         run: sleep 10 # wait for database to start
 
-      # - name: Setup Database
-      #   run: docker exec myapp_container bundle exec rails db:create db:schema:load
+      - name: Setup Database
+        run: docker exec myapp_container bundle exec rails db:create db:schema:load
 
       - name: Run Rails Minitests
         run: docker exec myapp_container bundle exec rails test
