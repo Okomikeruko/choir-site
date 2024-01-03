@@ -7,15 +7,15 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v2
 
-    - name: Build and Launch Docker Containers
-      run: docker-compose up --build -d 
+    - name: Build Docker Containers
+      run: docker-compose build
     
     - name: Run Tests
-      run: docker-compose exec -T web bundle exec rails test
+      run: docker-compose run web bundle exec rails test
 
     - name: Cleanup
       run: docker-compose down
