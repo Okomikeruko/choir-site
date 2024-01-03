@@ -41,12 +41,6 @@ jobs:
             -e PORT=3000 \
             myapp
 
-      - name: Check for Database connection
-        run: |
-          sleep 10
-          docker logs db
-          docker exec myapp_container pg_isready -U postgres -d myapp_test
-
       - name: Setup Database
         run: docker exec myapp_container bundle exec rails db:create db:schema:load
 
