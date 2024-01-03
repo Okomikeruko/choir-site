@@ -15,7 +15,6 @@ jobs:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: password
           POSTGRES_DB: myapp_test
-          DATABASE_HOST: localhost
         ports:
           - 5432:5432
         options: >-
@@ -37,7 +36,7 @@ jobs:
             -e POSTGRES_USER=postgres \
             -e POSTGRES_PASSWORD=password \
             -e POSTGRES_TEST_DB=myapp_test \
-            -e DATABASE_HOST=postgres \
+            -e DATABASE_HOST=localhost \
             myapp
       
       - name: Wait for Database
