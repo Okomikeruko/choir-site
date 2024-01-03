@@ -37,6 +37,8 @@ jobs:
             -e POSTGRES_PASSWORD=password \
             -e POSTGRES_DB=myapp_test \
             -e DATABASE_HOST=db \
+            -e RAILS_ENV=test \
+            -e PORT=3000 \
             myapp
 
       - name: Check for Database connection
