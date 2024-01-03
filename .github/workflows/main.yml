@@ -40,7 +40,9 @@ jobs:
             myapp
 
       - name: Check for Database connection
-        run: docker exec myapp_container pg_isready -h db -p 5432
+        run: |
+          sleep 10
+          docker exec myapp_container pg_isready -h db -p 5432
 
       - name: Setup Database
         run: docker exec myapp_container bundle exec rails db:create db:schema:load
