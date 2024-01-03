@@ -36,11 +36,8 @@ jobs:
             -e POSTGRES_USER=postgres \
             -e POSTGRES_PASSWORD=password \
             -e POSTGRES_DB=myapp_test \
-            -e DATABASE_HOST=db \
+            -e DATABASE_HOST=localhost \
             myapp
-      
-      - name: Wait for Database
-        run: sleep 10 # wait for database to start
 
       - name: Setup Database
         run: docker exec myapp_container bundle exec rails db:create db:schema:load
