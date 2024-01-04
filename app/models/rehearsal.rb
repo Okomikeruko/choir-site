@@ -39,12 +39,13 @@ class Rehearsal < ApplicationRecord
   end
 
   def song_list
-    songs.map do |s|
+    song_names = songs.map do |s|
       ActionController::Base.helpers.link_to(
         s.title,
         Rails.application.routes.url_helpers.music_path(s.slug)
       )
-    end.to_sentence.html_safe
+    end
+    ActionController::Base.helpers.safe_join(song_names, ', ')
   end
 
   private

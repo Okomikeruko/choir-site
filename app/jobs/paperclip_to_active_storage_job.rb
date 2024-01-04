@@ -26,17 +26,16 @@ class PaperclipToActiveStorageJob < ApplicationJob
 
   # Performs the migration for a specific record and attribute.
   def perform(record, attribute)
+    return if record.public_send("#{attribute}_attachment").present?
+
     tempfile = Tempfile.new
 
     record.with_lock do
-      return if record.public_send("#{attribute}_attachment").present?
-
       copy_paperclip_attatchment_to_tempfile(record, attribute, tempfile)
-
       create_active_storage_attachment(record, attribute, tempfile)
     end
   ensure
-    tempfile.close
+    tempfile&.close
   end
 
   private

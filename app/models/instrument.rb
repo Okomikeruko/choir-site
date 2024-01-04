@@ -27,7 +27,7 @@ class Instrument < ApplicationRecord
     pdf_blob.nil? && mp3_blob.nil? && midi_blob.nil?
   end
 
-  def has_pdf_and_audio?
+  def pdf_and_audio?
     !pdf_blob.nil? && (!mp3_blob.nil? || !midi_blob.nil?)
   end
 

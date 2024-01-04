@@ -4,10 +4,12 @@
 class Category < ApplicationRecord
   belongs_to :parent_category,
              class_name: 'Category',
-             optional: true
+             optional: true,
+             inverse_of: :children_categories
   has_many :children_categories,
            class_name: 'Category',
-           foreign_key: 'category_id'
+           dependent: :destroy,
+           inverse_of: :parent_category
   has_many :article_categories, dependent: :destroy
   has_many :articles, through: :article_categories
 

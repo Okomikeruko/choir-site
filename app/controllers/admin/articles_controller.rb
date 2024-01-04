@@ -13,23 +13,23 @@ module Admin
       @article = Article.new
     end
 
+    def edit; end
+
     def create
       @article = Article.new(article_params)
       @article.published = %w[Publish Update].include? params[:commit]
       if @article.save
-        flash[:success] = 'Article created successfully.'
+        flash[:success] = t '.success'
         redirect_to edit_admin_article_path(@article)
       else
         render 'new'
       end
     end
 
-    def edit; end
-
     def update
       @article.published = %w[Publish Update].include? params[:commit]
       if @article.update(article_params)
-        flash[:success] = 'Article updated successfully.'
+        flash[:success] = t '.success'
         redirect_to edit_admin_article_path(@article)
       else
         render 'edit'

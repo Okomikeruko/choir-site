@@ -13,21 +13,21 @@ module Admin
       @member = Member.new(vocal_range: [])
     end
 
+    def edit; end
+
     def create
       @member = Member.new(member_params)
       if @member.save
-        flash[:success] = 'Member created successfully.'
+        flash[:success] = t '.success'
         redirect_to admin_members_path
       else
         render 'new'
       end
     end
 
-    def edit; end
-
     def update
       if @member.update(member_params)
-        flash[:success] = 'Member updated successfully.'
+        flash[:success] = t '.success'
         redirect_to admin_members_path
       else
         render 'edit'

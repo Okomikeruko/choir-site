@@ -15,10 +15,9 @@ module Admin
     def do_to_all
       @messages = Message.where id: params[:all_messages][:msgs]
       case params[:commit]
-      when 'Mark as Read'
-        @messages.update_all(read: true)
-      when 'Mark as Unread'
-        @messages.update_all(read: false)
+      when 'Mark as Read', 'Mark as Unread'
+        read = params[:commit] == 'Mark as Read'
+        @messages.find_each { |message| message.update(read: read) }
       when 'Delete Messages'
         @messages.destroy_all
       end

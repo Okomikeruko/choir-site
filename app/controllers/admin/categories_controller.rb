@@ -12,7 +12,7 @@ module Admin
     def create
       @new_category = Category.new(category_params)
       if @new_category.save
-        flash[:success] = 'Category created successfully.'
+        flash[:success] = t '.success'
         redirect_to admin_categories_path
       else
         render 'index'
@@ -21,9 +21,9 @@ module Admin
 
     def update
       if @category.update(category_params)
-        flash[:success] = 'Categoru updated successfully.'
+        flash[:success] = t '.success'
       else
-        flash[:danger] = 'Something went wrong. The Category was not updated.'
+        flash[:danger] = t '.error'
       end
       redirect_to admin_categories_path
     end

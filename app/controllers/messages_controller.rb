@@ -15,7 +15,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     if @message.save
       @message.send_email
-      flash[:success] = 'Your message has been sent.'
+      flash[:success] = t '.success'
       redirect_to contact_path
     else
       render 'new'

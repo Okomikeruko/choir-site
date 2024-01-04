@@ -9,6 +9,6 @@ class AdminController < ApplicationController
     @articles     = Article.first(3)
     @performances = Performance.all_upcoming
     @rehearsals   = Rehearsal.last(5)
-    @songs        = Song.all.order(created_at: :desc).first(5)
+    @songs        = Song.order(created_at: :desc).first(5)
   end
 end

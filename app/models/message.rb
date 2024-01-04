@@ -16,7 +16,7 @@ class Message < ApplicationRecord
 
   ## Set read to true
   def mark_as_read
-    update_attribute(:read, true)
+    update(read: true)
   end
 
   ## Send an email of the message

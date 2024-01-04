@@ -11,6 +11,7 @@ class Article < ApplicationRecord
   scope :category, ->(slug) { joins(:categories).where(categories: { slug: slug }) if slug.present? }
 
   belongs_to :author,
+             inverse_of: :articles,
              class_name: 'User',
              foreign_key: 'user_id'
   delegate :name, to: :author, prefix: true

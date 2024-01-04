@@ -1,5 +1,9 @@
+require:
+  - rubocop-rails
+
 AllCops:
   NewCops: enable
+  TargetRubyVersion: 3.0
 
 Metrics/BlockLength:
   Exclude:
@@ -12,6 +16,16 @@ Metrics/MethodLength:
   Exclude:
     - 'config/environments/*'
     - 'db/schema.rb'
+    - 'db/migrate/*'
+
+Rails/BulkChangeTable:
+  Enabled: false
+
+Rails/ReversibleMigration:
+  Enabled: false
+
+Rails/SkipsModelValidations:
+  Exclude:
     - 'db/migrate/*'
 
 Style/Documentation:
