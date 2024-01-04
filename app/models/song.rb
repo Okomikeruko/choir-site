@@ -29,7 +29,7 @@ class Song < ApplicationRecord
   # do_not_validate_attachment_file_type :lilypond
 
   def primary_instrument
-    instruments.detect { |i| i.mp3.exists? }
+    instruments.detect { |i| i.mp3.attached? }
   end
 
   class << self
