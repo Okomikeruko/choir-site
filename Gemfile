@@ -20,7 +20,7 @@ gem 'sass-rails'
 gem 'turbolinks',              '~> 5'
 gem 'uglifier',                '3.2.0'
 gem 'webpacker'
-gem 'will_paginate'
+gem 'will_paginate',           '~> 3.1.0'
 
 gem 'aws-sdk-s3', require: false
 gem 'bootstrap-datepicker-rails'
