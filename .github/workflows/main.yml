@@ -30,9 +30,12 @@ jobs:
     - name: Prepare Database
       run: docker-compose run web bundle exec rails db:test:prepare
 
-    - name: Run Tests
+    - name: Run Minitests
       run: docker-compose run web bundle exec rails test
 
+    - name: Run RuboCop
+      run: docker-compose run web bundle exec rubocop
+    
     - name: Cleanup
       run: |
         docker-compose down
