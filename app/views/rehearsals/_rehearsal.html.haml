@@ -6,4 +6,4 @@
     .col-xs-6.col-sm-12
       =link_to "Download",
                rehearsal.audio.url,
-               class: "btn btn-secondary btn-lg #{'disabled' unless rehearsal.audio.exists? }"
+               class: "btn btn-secondary btn-lg #{'disabled' unless rehearsal.audio.attached? }"

@@ -1,5 +1,5 @@
--provide :title, "Rehearsals"
--provide :bg, "pexels-photo-257904.jpg"
+- provide :title, "Rehearsals"
+- provide :bg, "pexels-photo-257904.jpg"
 
 %p
   Here you can download and listen to all the previous rehearsals you may have
@@ -10,10 +10,10 @@
   in the description.
 
 .row
-  -@rehearsals.each do |rehearsal|
+  - @rehearsals.each do |rehearsal|
     .col-sm-4.col-md-3
-      =render rehearsal
+      = render rehearsal
 
-=will_paginate @rehearsals,
-               :previous_label => "«",
-               :next_label => "»"
+= will_paginate @rehearsals,
+                :previous_label => "«",
+                :next_label => "»"
