@@ -13,25 +13,25 @@ module Admin
       @song = Song.new
     end
 
+    def edit; end
+
     def create
       @song = Song.new(song_params)
       if @song.save
-        flash[:success] = 'Song added successfully.'
+        flash[:success] = t '.success'
         redirect_to edit_admin_song_path(@song)
       else
-        flash[:danger] = 'There was an error creating the song.'
+        flash[:danger] = t '.error'
         render 'new'
       end
     end
 
-    def edit; end
-
     def update
       if @song.update(song_params)
-        flash[:success] = 'Song updated successfully.'
+        flash[:success] = t '.success'
         redirect_to edit_admin_song_path(@song)
       else
-        flash[:danger] = 'There was an error updating the song.'
+        flash[:danger] = t '.error'
         render 'edit'
       end
     end

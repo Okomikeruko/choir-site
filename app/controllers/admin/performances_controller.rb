@@ -13,27 +13,27 @@ module Admin
       @performance = Performance.new
     end
 
+    def edit; end
+
     def create
       @performance = Performance.new(performance_params)
       @performance.date = Date.strptime(params[:performance][:date], '%m/%d/%Y')
                               .end_of_day
                               .in_time_zone('Mountain Time (US & Canada)')
       if @performance.save
-        flash[:success] = 'Performance created successfully.'
+        flash[:success] = t '.success'
         redirect_to admin_performances_path
       else
         render 'new'
       end
     end
 
-    def edit; end
-
     def update
       @performance.date = Date.strptime(params[:performance][:date], '%m/%d/%Y')
                               .end_of_day
                               .in_time_zone('Mountain Time (US & Canada)')
       if @performance.update(performance_params)
-        flash[:success] = 'Peformance updated successfully.'
+        flash[:success] = t '.success'
         redirect_to admin_performances_path
       else
         render 'edit'
@@ -48,10 +48,11 @@ module Admin
     private
 
     def performance_params
-      params.require(:performance).permit(:venue,
-                                          :details,
-                                          :audio,
-                                          song_ids: [])
+      params.require(:performance)
+            .permit(:venue,
+                    :details,
+                    :audio,
+                    song_ids: [])
     end
 
     def set_performance

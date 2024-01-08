@@ -7,5 +7,7 @@ class User < ApplicationRecord
   devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :articles, dependent: :destroy
+  has_many :articles,
+           inverse_of: :author,
+           dependent: :destroy
 end

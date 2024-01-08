@@ -23,7 +23,7 @@ module Admin
     end
 
     test 'should mark messages as read' do
-      @message.update_attribute :read, false
+      @message.update read: false
       assert_equal @message.read, false
       post do_to_all_admin_messages_path params: {
         all_messages: { msgs: [@message.id] },
@@ -36,7 +36,7 @@ module Admin
     end
 
     test 'should mark messages as unread' do
-      @message.update_attribute :read, true
+      @message.update read: true
       assert_equal @message.read, true
       post do_to_all_admin_messages_path params: {
         all_messages: { msgs: [@message.id] },

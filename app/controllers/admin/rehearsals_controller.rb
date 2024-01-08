@@ -14,21 +14,21 @@ module Admin
       @rehearsal = Rehearsal.new
     end
 
+    def edit; end
+
     def create
       @rehearsal = Rehearsal.new(rehearsal_params)
       if @rehearsal.save
-        flash[:success] = 'Rehearsal created successfully.'
+        flash[:success] = t '.success'
         redirect_to admin_rehearsals_path
       else
         render 'new'
       end
     end
 
-    def edit; end
-
     def update
       if @rehearsal.update(rehearsal_params)
-        flash[:success] = 'Rehearsal updated successfully.'
+        flash[:success] = t '.success'
         redirect_to admin_rehearsals_path
       else
         render 'edit'

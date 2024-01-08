@@ -4,6 +4,8 @@ services:
   web:
     build: 
       context: .
+      cache_from:
+        - web:latest
       dockerfile: Dockerfile
     depends_on:
       - db

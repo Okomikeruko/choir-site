@@ -12,7 +12,7 @@ module Admin
     def create
       @new_tag = Tag.new(tag_params)
       if @new_tag.save
-        flash[:success] = 'Tag created successfully.'
+        flash[:success] = t '.success'
         redirect_to admin_tags_path
       else
         render 'index'
@@ -21,9 +21,9 @@ module Admin
 
     def update
       if @tag.update(tag_params)
-        flash[:success] = 'Tag updated successfully.'
+        flash[:success] = t '.success'
       else
-        flash[:danger] = 'Something went wrong. The Tag was not updated.'
+        flash[:danger] = t '.error'
       end
       redirect_to admin_tags_path
     end

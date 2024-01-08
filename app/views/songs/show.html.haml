@@ -47,7 +47,7 @@
                     %a{:href => instrument.pdf_blob.service_url,
                        :target => "_blank" }
                       Sheet Music - PDF
-                -if instrument.has_pdf_and_audio?
+                -if instrument.pdf_and_audio?
                   %li.divider{:role => "separator"}
                 - unless instrument.mp3_blob.nil?
                   %li

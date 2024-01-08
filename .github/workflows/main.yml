@@ -9,13 +9,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v1
+      uses: docker/setup-buildx-action@v1.6.0
 
     - name: Cache Docker layers
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       with:
         path: /tmp/.buildx-cache
         key: ${{ runner.os }}-buildx-${{ github.sha }}
@@ -24,15 +24,18 @@ jobs:
 
     - name: Build and Launch Docker Containers
       run: |
-        docker-compose build --pull --build-arg BUILDKIT_INLINE_CACHE=1
+        docker-compose build --pull --build-arg BUILDKIT_INLINE_CACHE=1 --cache-from web:latest
         docker-compose up -d
 
     - name: Prepare Database
       run: docker-compose run web bundle exec rails db:test:prepare
 
-    - name: Run Tests
+    - name: Run Minitests
       run: docker-compose run web bundle exec rails test
 
+    - name: Run RuboCop
+      run: docker-compose run web bundle exec rubocop
+    
     - name: Cleanup
       run: |
         docker-compose down
