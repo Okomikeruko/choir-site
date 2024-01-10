@@ -1,24 +1,26 @@
 FROM ruby:3.0-slim
 
 RUN apt-get update -qq && \
-    apt-get install -y curl gnupg software-properties-common && \
+    apt-get install -y curl build-essential gnupg software-properties-common && \
     curl -sL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - && \
     add-apt-repository "deb https://deb.nodesource.com/node_16.x $(lsb_release -sc) main" && \
+    apt-get update -qq && \
     apt-get install -y nodejs && \
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
+    apt-get update -qq && \
     apt-get install -y yarn postgresql libpq-dev && \
-    apt-get clean && rm -rf /var/lib/apt/lists/*
+    apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Set the working direcory
 WORKDIR /myapp
 
 # Set environment variables
-ENV GEM_HOME=/usr/local/bundle \
-    GEM_PATH=/usr/local/bundle \  
-    BUNDLE_PATH=/usr/local/bundle \
-    BUNDLE_BIN=/usr/local/bundle/bin \
-    PATH="${BUNDLE_BIN}:${PATH}"
+ENV GEM_HOME=/usr/local/bundle
+ENV GEM_PATH=/usr/local/bundle
+ENV BUNDLE_PATH=/usr/local/bundle
+ENV BUNDLE_BIN=/usr/local/bundle/bin
+ENV PATH="${BUNDLE_BIN}:${PATH}"
 
 # Copy Gemfile and Gemfile.lock
 COPY Gemfile* /myapp/
@@ -33,8 +35,6 @@ ARG RAILS_ENV
 # Conditionally install gems based on the environment
 RUN if [ "$RAILS_ENV" = "production" ]; then \
     bundle config set --local without 'development test'; \
-    elif [ "$RAILS_ENV" = "test" ]; then \
-    bundle config set --local without 'development production'; \
     else \
     bundle config set --local without 'production'; \
     fi && \
