@@ -19,4 +19,4 @@ test:
 production:
   <<: *default
   reconnect: true
-  prepared_statements: true
+  prepared_statements: false
