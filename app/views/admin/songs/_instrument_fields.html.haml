@@ -11,30 +11,30 @@
           %br
           %span{style: "white-space: nowrap;"}
             =f.label :pdf, "Sheet Music (PDF)"
-            - if f.object.pdf.exists?
-              =link_to f.object.pdf.url do
+            - if f.object.pdf.attached?
+              =link_to rails_blob_path(f.object.pdf, disposition: "attachment") do
                 =image_tag "pdf-icon.png", size: "16x20"
-                =f.object.pdf_file_name
+                =f.object.pdf.attachment.filename
           =f.file_field :pdf,
                         accept: "application/pdf",
                         class: "form-control"
           %br
           %span{style: "white-space: nowrap;"}
             =f.label :midi, "Audio File (MIDI)"
-            - if f.object.midi.exists?
-              =link_to f.object.midi.url do
+            - if f.object.midi.attached?
+              =link_to rails_blob_path(f.object.midi, disposition: "attachment") do
                 =image_tag "MIDI.png", size: "16x20"
-                =f.object.midi_file_name
+                =f.object.midi.attachment.filename
           =f.file_field :midi,
                         accept: "audio/midi",
                         class: "form-control"
           %br
           %span{style: "white-space: nowrap;"}
             =f.label :mp3, "Audio File (MP3)"
-            - if f.object.mp3.exists?
-              =link_to f.object.mp3.url do
+            - if f.object.mp3.attached?
+              =link_to rails_blob_path(f.object.mp3, disposition: "attachment") do
                 =image_tag "MP3.png", size: "16x20"
-                =f.object.mp3_file_name
+                =f.object.mp3.attachment.filename
           =f.file_field :mp3,
                         accept: "audio/mp3",
                         class: "form-control"
