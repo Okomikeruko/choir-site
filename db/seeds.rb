@@ -9,41 +9,41 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create!(
-  email: "whittakerlee81@gmail.com",
-  password: "P@$$w0rd",
-  password_confirmation: "P@$$w0rd"
+  email: 'whittakerlee81@gmail.com',
+  password: 'P@$$w0rd',
+  password_confirmation: 'P@$$w0rd'
 )
 
-bio = 'Potenti nullam ac tortor vitae. Sed turpis tincidunt id aliquet'\
-  ' risus feugiat in ante metus. Aenean et tortor at risus viverra'\
-  ' adipiscing at in tellus. Mauris a diam maecenas sed enim. Mattis rhoncus'\
-  ' urna neque viverra justo nec. Mauris a diam maecenas sed enim ut sem.'\
-  ' Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra.'\
-  ' Ut aliquam purus sit amet luctus. Velit laoreet id donec ultrices. '\
-  ' \n\n'\
-  ' Ut venenatis tellus in metus vulputate eu scelerisque. Ut tortor pretium'\
-  ' viverra suspendisse. Urna cursus eget nunc scelerisque. Tristique et'\
-  ' egestas quis ipsum suspendisse ultrices. Odio ut sem nulla pharetra.'\
-  ' Donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum'\
-  ' arcu. Lobortis feugiat vivamus at augue.'
+bio = 'Potenti nullam ac tortor vitae. Sed turpis tincidunt id aliquet ' \
+      'risus feugiat in ante metus. Aenean et tortor at risus viverra ' \
+      'adipiscing at in tellus. Mauris a diam maecenas sed enim. Mattis rhoncus ' \
+      'urna neque viverra justo nec. Mauris a diam maecenas sed enim ut sem. ' \
+      'Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. ' \
+      'Ut aliquam purus sit amet luctus. Velit laoreet id donec ultrices.  ' \
+      '\n\n ' \
+      'Ut venenatis tellus in metus vulputate eu scelerisque. Ut tortor pretium ' \
+      'viverra suspendisse. Urna cursus eget nunc scelerisque. Tristique et ' \
+      'egestas quis ipsum suspendisse ultrices. Odio ut sem nulla pharetra. ' \
+      'Donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum ' \
+      'arcu. Lobortis feugiat vivamus at augue.'
 
 Profile.create!(
-  name: "Sid Unrau",
-  title: "Choir Director",
+  name: 'Sid Unrau',
+  title: 'Choir Director',
   bio: bio,
   position: 1
 )
 
 Profile.create!(
-  name: "Lee Whittaker",
-  title: "Assistant Choir Director",
+  name: 'Lee Whittaker',
+  title: 'Assistant Choir Director',
   bio: bio,
   position: 2
 )
 
 Profile.create!(
-  name: "Heather Taylor",
-  title: "Accompanist",
+  name: 'Heather Taylor',
+  title: 'Accompanist',
   bio: bio,
   position: 3
 )
@@ -51,7 +51,7 @@ Profile.create!(
 tags = []
 
 5.times do
-  name =  Faker::Music.instrument
+  name = Faker::Music.instrument
   tag = Tag.create!(
     name: name,
     slug: name.parameterize
@@ -76,7 +76,7 @@ end
     content: Faker::Lorem.paragraph,
     user_id: User.first.id,
     category_ids: categories.sample.id,
-    tag_ids: tags.sample(Random.rand(tags.count + 1)).map {|t| t.id}
+    tag_ids: tags.sample(Random.rand(tags.count + 1)).map(&:id)
   )
 end
 

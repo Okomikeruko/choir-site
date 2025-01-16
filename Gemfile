@@ -46,6 +46,8 @@ group :development do
   gem 'listen'
   gem 'rails_best_practices'
   gem 'rubocop', '~> 1.59'
+  gem 'rubocop-capybara'
+  gem 'rubocop-minitest'
   gem 'rubocop-rails'
   gem 'web-console'
 end
