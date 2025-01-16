@@ -21,4 +21,5 @@
 //= require plugins/code_view.min.js
 //= require plugins/link.min.js
 //= require turbolinks
+//= require effective_datatables
 //= require_tree .

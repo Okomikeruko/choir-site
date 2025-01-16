@@ -1,0 +1,5 @@
+{
+  "dockerComposeFile": "../docker-compose.yaml",
+  "service": "web",
+  "workspaceFolder": "${localWorkspaceFolder}"
+}

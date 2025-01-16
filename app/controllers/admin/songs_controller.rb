@@ -7,6 +7,7 @@ module Admin
 
     def index
       @songs = Song.all
+      @datatable = SongsDatatable.new
     end
 
     def new
