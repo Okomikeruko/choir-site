@@ -1,50 +1,49 @@
 en:
-  controllers:
-    messages_controller:
-      created:
-        success: 'Your message has been sent.'
-    admin:
-      articles_controller:
-        create:
-          success: 'Article was successfully created.'
-        update:
-          success: 'Article was successfully updated.'
-      categories_controller:
-        create:
-          success: 'Category was successfully created.'
-        update:
-          success: 'Category was successfully updated.'
-          error: 'Something went wrong. The category was not updated.'
-      members_controller:
-        create:
-          success: 'Member was successfully created.'
-        update:
-          success: 'Member was successfully updated.'
-      performances_controller:
-        create:
-          success: 'Performance was successfully created.'
-        update:
-          success: 'Performance was successfully updated.'  
-      profiles_controller:
-        create:
-          success: 'Profile was successfully created.'
-        update:
-          success: 'Profile was successfully updated.'
-      rehearsals_controller:
-        create:
-          success: 'Rehearsal was successfully created.'
-        update:
-          success: 'Rehearsal was successfully updated.'
-      songs_controller:
-        create:
-          success: 'Song was successfully created.'
-          error: 'There was an error creating the song. Please try again.'
-        update:
-          success: 'Song was successfully updated.'
-          error: 'There was an error updating the song. Please try again.'
-      tags_controller:
-        create:
-          success: 'Tag was successfully created.'
-        update:
-          success: 'Tags were successfully updated.'
-          error: 'There was an error updating the tags. Please try again.'
+  messages:
+    created:
+      success: 'Your message has been sent.'
+  admin:
+    articles:
+      create:
+        success: 'Article was successfully created.'
+      update:
+        success: 'Article was successfully updated.'
+    categories:
+      create:
+        success: 'Category was successfully created.'
+      update:
+        success: 'Category was successfully updated.'
+        error: 'Something went wrong. The category was not updated.'
+    members:
+      create:
+        success: 'Member was successfully created.'
+      update:
+        success: 'Member was successfully updated.'
+    performances:
+      create:
+        success: 'Performance was successfully created.'
+      update:
+        success: 'Performance was successfully updated.'
+    profiles:
+      create:
+        success: 'Profile was successfully created.'
+      update:
+        success: 'Profile was successfully updated.'
+    rehearsals:
+      create:
+        success: 'Rehearsal was successfully created.'
+      update:
+        success: 'Rehearsal was successfully updated.'
+    songs:
+      create:
+        success: 'Song was successfully created.'
+        error: 'There was an error creating the song. Please try again.'
+      update:
+        success: 'Song was successfully updated.'
+        error: 'There was an error updating the song. Please try again.'
+    tags:
+      create:
+        success: 'Tag was successfully created.'
+      update:
+        success: 'Tags were successfully updated.'
+        error: 'There was an error updating the tags. Please try again.'
