@@ -3,14 +3,14 @@ name: Rails CI Pipeline
 on:
   push:
     branches: [ master ]
-env:
-  POSTGRES_USER: postgres
-  POSTGRES_PASSWORD: password
-  DATABASE_HOST: localhost
 
 jobs:
   lint:
     runs-on: ubuntu-latest
+    env:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      DATABASE_HOST: localhost
     steps:
       - uses: actions/checkout@v4
 
@@ -26,6 +26,10 @@ jobs:
     
   test:
     runs-on: ubuntu-latest
+    env:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      DATABASE_HOST: localhost
     services:
       postgres:
         image: postgres:13
