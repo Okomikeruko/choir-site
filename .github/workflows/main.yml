@@ -69,12 +69,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 3.0.7
-          bundler-cache: true
-      
       - name: Install Heroku CLI
         run: |
           curl https://cli-assets.heroku.com/install.sh | sh
