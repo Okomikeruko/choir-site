@@ -13,7 +13,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.6.10
+          ruby-version: 3.0.7
           bundler-cache: true
 
       - name: Rubocop
@@ -43,7 +43,13 @@ jobs:
           --health-retries 5
     steps:
       - uses: actions/checkout@v4
-
+      
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0.7
+          bundler-cache: true
+          
       - name: Setup test database
         run: |
           bundle exec rails db:create
@@ -60,6 +66,12 @@ jobs:
       - test
     steps:
       - uses: actions/checkout@v4
+      
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0.7
+          bundler-cache: true
       
       - name: Install Heroku CLI
         run: |
