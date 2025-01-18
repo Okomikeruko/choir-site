@@ -5,7 +5,7 @@ class Instrument < ApplicationRecord
   extend PaperclipToActiveStorage
 
   default_scope { order(position: :asc) }
-  belongs_to :song
+  belongs_to :song, counter_cache: true
 
   # paperclip_attachment_with_active_storage :pdf
   # paperclip_attachment_with_active_storage :midi

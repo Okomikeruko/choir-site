@@ -4,17 +4,4 @@
   %span.glyphicon.glyphicon-plus
   Add New Article
 
-.row
-  .col-xs-12
-    %table.table.table-hover
-      %thead
-        %tr
-          %th Title
-          %th Date
-          %th Status
-          %th Categories
-          %th Tags
-          %th.text-right Controls
-      %tbody
-        -@articles.each do |article|
-          =render article
+= render_datatable @datatable

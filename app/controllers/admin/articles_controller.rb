@@ -7,6 +7,7 @@ module Admin
 
     def index
       @articles = Article.all
+      @datatable = ArticlesDatatable.new
     end
 
     def new
