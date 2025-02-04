@@ -8,5 +8,8 @@
     "@rails/webpacker": "^5.4.3",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12"
+  },
+  "scripts": {
+    "dev": "docker-compose -f .docker/compose/development.yml up"
   }
 }

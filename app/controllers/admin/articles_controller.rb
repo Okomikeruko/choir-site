@@ -6,8 +6,10 @@ module Admin
     before_action :find_article, only: %i[edit update destroy]
 
     def index
-      @articles = Article.all
-      @datatable = ArticlesDatatable.new
+      respond_to do |format|
+        format.html
+        format.json { render json: ArticleDatatable.new(params) }
+      end
     end
 
     def new

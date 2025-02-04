@@ -4,4 +4,17 @@
   %span.glyphicon.glyphicon-plus
   Add New Article
 
-= render_datatable @datatable
+.row
+  .col-xs-12
+    %table{ class: "table table-hover",
+            id: "articles-datatable",
+            data: {source: admin_articles_path(format: :json)}}
+      %thead
+        %tr
+          %th Title
+          %th Date
+          %th Status
+          %th Categories
+          %th Tags
+          %th.text-right Controls
+      %tbody
