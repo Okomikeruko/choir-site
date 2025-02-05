@@ -1,0 +1,9 @@
+=link_to edit_path,
+         class: "btn btn-default btn-xs" do
+  %span.glyphicon.glyphicon-pencil
+&nbsp;
+=link_to delete_path,
+         method: :delete,
+         data: { confirm: "Are you sure?" },
+         class: "btn btn-danger btn-xs" do
+  %span.glyphicon.glyphicon-remove

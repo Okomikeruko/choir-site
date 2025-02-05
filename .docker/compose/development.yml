@@ -2,7 +2,7 @@ services:
   web:
     build:
       context: ../..   # Adjust if needed
-      dockerfile: /.docker/development/Dockerfile
+      dockerfile: .docker/development/Dockerfile
     depends_on:
       - db
     environment:
