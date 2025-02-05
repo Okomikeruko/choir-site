@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class AddCountersToSongs < ActiveRecord::Migration[6.1]
   def change
-    add_column :songs,:instruments_count, :integer, default: 0
+    add_column :songs, :instruments_count, :integer, default: 0
   end
 end
