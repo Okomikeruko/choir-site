@@ -1,8 +1,8 @@
-=link_to edit_path,
+=link_to [:edit, :admin, record],
          class: "btn btn-default btn-xs" do
   %span.glyphicon.glyphicon-pencil
 &nbsp;
-=link_to delete_path,
+=link_to [:admin, record],
          method: :delete,
          data: { confirm: "Are you sure?" },
          class: "btn btn-danger btn-xs" do

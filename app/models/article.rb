@@ -2,8 +2,6 @@
 
 # Model for Article
 class Article < ApplicationRecord
-  default_scope { order(created_at: :desc) }
-
   scope :month, lambda { |date|
     where(created_at: date.all_month) if date.present?
   }
@@ -30,6 +28,7 @@ class Article < ApplicationRecord
   class << self
     def published
       where(published: true)
+        .order(created_at: :desc)
     end
 
     def filtered(params)

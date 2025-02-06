@@ -4,7 +4,7 @@
   .col-sm-6
     %fieldset
       %legend Categories
-      %table.table.table-hover
+      %table.table.table-hover#categories-datatable{data: {source: admin_categories_path }}
         %thead
           %tr
             %th Name
@@ -12,8 +12,6 @@
             %th Uses
             %th.text-right Controls
         %tbody
-          -@categories.each do |category|
-            =render category
   .col-sm-6
     %fieldset
       %legend New Category

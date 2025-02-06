@@ -7,7 +7,12 @@ module Admin
     before_action :find_new_category, except: [:create]
     before_action :find_category, only: %i[update destroy]
 
-    def index; end
+    def index
+      respond_to do |format|
+        format.html
+        format.json { render json: CategoryDatatable.new(params, view_context: view_context) }
+      end
+    end
 
     def create
       @new_category = Category.new(category_params)
