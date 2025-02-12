@@ -48,10 +48,14 @@ Profile.create!(
   position: 3
 )
 
+tag_names = []
 tags = []
+while tag_names.length < 5
+  tag_names << Faker::Music.instrument
+  tag_names = tag_names.uniq
+end
 
-5.times do
-  name = Faker::Music.instrument
+tag_names.each do |name|
   tag = Tag.create!(
     name: name,
     slug: name.parameterize
@@ -76,7 +80,7 @@ end
     content: Faker::Lorem.paragraph,
     user_id: User.first.id,
     category_ids: categories.sample.id,
-    tag_ids: tags.sample(Random.rand(tags.count + 1)).map(&:id)
+    tag_ids: tags.sample(Random.rand((tags.count + 1).to_f)).map(&:id)
   )
 end
 

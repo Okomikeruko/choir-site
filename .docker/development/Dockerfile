@@ -23,7 +23,6 @@ ENV GEM_PATH=/usr/local/bundle
 ENV BUNDLE_PATH=/usr/local/bundle
 ENV BUNDLE_BIN=/usr/local/bundle/bin
 ENV PATH="${BUNDLE_BIN}:${PATH}"
-ENV RAILS_ENV=development
 
 # Copy dependency files
 COPY Gemfile* package.json yarn.lock ./
