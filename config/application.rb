@@ -35,5 +35,7 @@ module Choir
     config.hosts << ENV.fetch('DOMAIN', nil)
 
     config.active_job.queue_adapter = :sidekiq
+    
+    config.autoload_paths += Dir["#{config.root}/app/datatables/**/"]
   end
 end

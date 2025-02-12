@@ -1,7 +1,27 @@
 # frozen_string_literal: true
 
-# Model for Article
-class Article < ApplicationRecord
+  # Model for Article
+  class Article < ApplicationRecord
+    include DatatableColumnsConcern
+
+    define_datatable_column :title
+    define_datatable_column :date,
+                            label: 'Date',
+                            searchable: false,
+                            formatter: ->(record) { record.created_at.strftime('%m/%d/%Y') }
+    define_datatable_column :status,
+                            searchable: false,
+                            sortable: false
+    define_datatable_column :categories,
+                            source: "Category.name",
+                            searchable: false,
+                            formatter: ->(record) { record.list_categories }
+    define_datatable_column :tags,
+                            source: "Tag.name",
+                            searchable: false,
+                            formatter: ->(record) { record.list_tags }
+    define_controls_column  formatter: ->(record) { helpers.controls_html(record) }
+
   scope :month, lambda { |date|
     where(created_at: date.all_month) if date.present?
   }
@@ -35,6 +55,10 @@ class Article < ApplicationRecord
       month(params[:month])
         .tag(params[:tags])
         .category(params[:category])
+    end
+    
+    def for_datatable
+      includes(:tags, :categories)
     end
   end
 
