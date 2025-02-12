@@ -1,32 +1,24 @@
 services:
   web:
     build:
-      context: ../..   # Adjust if needed
+      context: ../..
       dockerfile: .docker/development/Dockerfile
-    depends_on:
-      - db
+    command: bundle exec rails server -b 0.0.0.0
     environment:
-      - RAILS_ENV=development
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=password
-      - DATABASE_HOST=db
-    volumes:
-      - ../..:/myapp
-      - gem_cache:/usr/local/bundle/gems
+      - DATABASE_URL=postgres://choir_postgres:password@postgres13:5432
+    networks:
+      - postgres_network
     ports:
       - "3000:3000"
     stdin_open: true
     tty: true
-  db:
-    image: postgres
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=password
-    ports:
-      - "5432:5432"
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - ../..:/myapp
+      - gem_cache:/usr/local/bundle/gems
+
+networks:
+  postgres_network:
+    external: true
 
 volumes:
   gem_cache:
-  pgdata:

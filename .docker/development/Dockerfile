@@ -23,7 +23,6 @@ ENV GEM_PATH=/usr/local/bundle
 ENV BUNDLE_PATH=/usr/local/bundle
 ENV BUNDLE_BIN=/usr/local/bundle/bin
 ENV PATH="${BUNDLE_BIN}:${PATH}"
-ENV RAILS_ENV=development
 
 # Copy dependency files
 COPY Gemfile* package.json yarn.lock ./
@@ -41,4 +40,4 @@ COPY . .
 EXPOSE 3000
 
 # Start development server with hot reload
-CMD ["bash"]
+CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]

@@ -31,7 +31,7 @@ module Admin
                      user_id: @admin.id }
         }
         assert_response :redirect
-        
+
         article = assigns :article
         assert_redirected_to edit_admin_article_path(article)
       end
