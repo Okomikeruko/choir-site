@@ -6,19 +6,6 @@
 
 .row
   .col-xs-12
-    %table.table.table-hover
-      %thead
-        %tr
-          %th Name
-          %th Email
-          %th Phone
-          %th Vocal Range
-          %th Other Musical Talents
-          %th.text-right Controls
-      %tbody
-        -@members.each do |member|
-          =render member
-
     %table{ class: "table table-hover",
             id: "members-datatable",
             data: { source: admin_members_path(format: :json),

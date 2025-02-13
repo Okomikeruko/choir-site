@@ -1,6 +1,6 @@
 %h1 Messages
 
-=will_paginate @messages
+= will_paginate(@messages)
 
 = form_for :all_messages, url: { action: "do_to_all" } do |f|
   =f.hidden_field :page, value: params[:page] || 1

@@ -15,4 +15,15 @@ module DatatableHelper
       format: :html
     )
   end
+
+  def vocal_range(record)
+    [
+      { part: "S", bool: record.soprano? },
+      { part: "A", bool: record.alto?    },
+      { part: "T", bool: record.tenor?   },
+      { part: "B", bool: record.bass?    },
+    ].map do |voice|
+      content_tag(:span, voice[:part], class: "label label-#{voice[:bool] ? 'success' : 'default'}")
+    end.join.html_safe
+  end
 end
