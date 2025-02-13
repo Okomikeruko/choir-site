@@ -18,3 +18,10 @@
       %tbody
         -@members.each do |member|
           =render member
+
+    %table{ class: "table table-hover",
+            id: "members-datatable",
+            data: { source: admin_members_path(format: :json),
+                    columns: Member.javascript_column_config.to_json } }
+      %thead
+        %tr= datatable_headers_for(Member)

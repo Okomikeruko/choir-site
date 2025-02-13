@@ -4,6 +4,10 @@ module DatatableColumnsConcern
   extend ActiveSupport::Concern
 
   class_methods do
+    def for_datatable
+      all
+    end
+    
     def helpers
       helper = ActionController::Base.helpers
       helper.extend(DatatableHelper)
