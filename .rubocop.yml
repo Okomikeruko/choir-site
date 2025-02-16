@@ -42,6 +42,10 @@ Style/Documentation:
     - 'db/schema.rb'
     - 'db/migrate/*'
 
+Style/MissingSuper:
+  Exclude:
+    - 'app/presenters/**/*'
+
 Style/MixinUsage:
   Exclude:
     - 'bin/*'

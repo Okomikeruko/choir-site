@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Model concern for populating DataTable columns.
 module DatatableColumnsConcern
   extend ActiveSupport::Concern
 
@@ -7,17 +8,17 @@ module DatatableColumnsConcern
     def for_datatable
       all
     end
-    
+
     def helpers
       helper = ActionController::Base.helpers
       helper.extend(DatatableHelper)
       helper
     end
-    
+
     def datatable_columns
       @datatable_columns ||= {}
     end
-    
+
     def define_datatable_column(name, options = {})
       defaults = {
         source: "#{self.name}.#{name}",
@@ -27,7 +28,7 @@ module DatatableColumnsConcern
         orderable: true,
         formatter: ->(record) { record.send(name) }
       }
-      
+
       datatable_columns[name] = defaults.merge(options)
     end
 
@@ -39,14 +40,14 @@ module DatatableColumnsConcern
         sortable: false,
         orderable: false,
         className: 'text-right',
-        formatter: ->(_) { nil }
+        formatter: ->(_) {}
       }
 
       datatable_columns[:controls] = defaults.merge(options)
     end
-    
+
     def javascript_column_config
-      datatable_columns.map do |key, config |
+      datatable_columns.map do |key, config|
         {
           data: key.to_s,
           searchable: config[:searchable] != false,

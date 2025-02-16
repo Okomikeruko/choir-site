@@ -6,10 +6,4 @@
 
 .row
   .col-xs-12
-    %table{ class: "table table-hover",
-            id: "articles-datatable",
-            data: { source: admin_articles_path(format: :json),
-                    columns: Article.javascript_column_config.to_json } }
-      %thead
-        %tr= datatable_headers_for(Article)
-      %tbody
+    = datatable_table_for Article

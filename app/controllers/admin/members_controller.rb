@@ -7,14 +7,14 @@ module Admin
 
     def index
       @members = Member.all
-      
+
       respond_to do |format|
         format.html
-        format.json {
+        format.json do
           render json: BaseDatatable.new(params,
                                          model_class: Member,
                                          view_context: view_context)
-        }
+        end
       end
     end
 

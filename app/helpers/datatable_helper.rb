@@ -1,11 +1,37 @@
 # frozen_string_literal: true
 
+# Helper for rendering custom DataTable cells
 module DatatableHelper
   include Rails.application.routes.url_helpers
+  include ActionView::Helpers::TagHelper
+  include ActionView::Helpers::SanitizeHelper
+
+  def datatable_table_for(model_class)
+    content_tag :table,
+                class: 'table table-hover',
+                id: "#{model_class.name.downcase.pluralize}-datatable",
+                data: { columns: model_class.javascript_column_config.to_json,
+                        source: url_for([:admin, model_class, { format: :json }]) } do
+      safe_join(
+        [
+          content_tag(:thead) do
+            content_tag(:tr) do
+              sanitize datatable_headers_for(model_class),
+                       tags: ['th'],
+                       attributes: ['class']
+            end
+          end,
+          content_tag(:tbody, '')
+        ]
+      ) # end safe_join
+    end
+  end
+
   def datatable_headers_for(model_class)
-    model_class.datatable_columns.values.map do |col|
+    output = model_class.datatable_columns.values.map do |col|
       content_tag(:th, col[:label], class: col[:className])
-    end.join.html_safe
+    end
+    safe_join output
   end
 
   def controls_html(record)
@@ -14,16 +40,5 @@ module DatatableHelper
       locals: { record: record },
       format: :html
     )
-  end
-
-  def vocal_range(record)
-    [
-      { part: "S", bool: record.soprano? },
-      { part: "A", bool: record.alto?    },
-      { part: "T", bool: record.tenor?   },
-      { part: "B", bool: record.bass?    },
-    ].map do |voice|
-      content_tag(:span, voice[:part], class: "label label-#{voice[:bool] ? 'success' : 'default'}")
-    end.join.html_safe
   end
 end

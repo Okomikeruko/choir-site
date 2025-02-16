@@ -10,7 +10,11 @@ module Admin
     def index
       respond_to do |format|
         format.html
-        format.json { render json: CategoryDatatable.new(params, view_context: view_context) }
+        format.json do
+          render json: BaseDatatable.new(params,
+                                         model_class: Category,
+                                         view_context: view_context)
+        end
       end
     end
 
