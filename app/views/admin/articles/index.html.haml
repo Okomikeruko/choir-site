@@ -6,15 +6,4 @@
 
 .row
   .col-xs-12
-    %table.table.table-hover
-      %thead
-        %tr
-          %th Title
-          %th Date
-          %th Status
-          %th Categories
-          %th Tags
-          %th.text-right Controls
-      %tbody
-        -@articles.each do |article|
-          =render article
+    = datatable_table_for Article

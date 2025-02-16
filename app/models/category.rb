@@ -2,6 +2,14 @@
 
 # Model for Category
 class Category < ApplicationRecord
+  include DatatableColumnsConcern
+
+  define_datatable_column :name
+  define_datatable_column :slug
+  define_datatable_column :articles_count,
+                          label: 'Uses'
+  define_controls_column formatter: ->(record) { CategoryPresenter.new(record).controls }
+
   belongs_to :parent_category,
              class_name: 'Category',
              optional: true,
@@ -11,7 +19,7 @@ class Category < ApplicationRecord
            dependent: :destroy,
            inverse_of: :parent_category
   has_many :article_categories, dependent: :destroy
-  has_many :articles, through: :article_categories
+  has_many :articles, through: :article_categories, counter_cache: true
 
   with_options(presence: true,
                length: { maximum: 30 },

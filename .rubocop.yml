@@ -13,10 +13,18 @@ Metrics/BlockLength:
     - 'db/schema.rb'
 
 Metrics/MethodLength:
+  CountAsOne:
+    - 'array'
+    - 'hash'
+    - 'method_call'
   Exclude:
     - 'config/environments/*'
     - 'db/schema.rb'
     - 'db/migrate/*'
+
+Naming/AccessorMethodName:
+  Exclude:
+    - 'app/datatables/*'
 
 Rails/BulkChangeTable:
   Enabled: false
@@ -33,6 +41,10 @@ Style/Documentation:
     - 'config/*'
     - 'db/schema.rb'
     - 'db/migrate/*'
+
+Style/MissingSuper:
+  Exclude:
+    - 'app/presenters/**/*'
 
 Style/MixinUsage:
   Exclude:

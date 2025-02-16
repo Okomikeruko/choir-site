@@ -48,10 +48,14 @@ Profile.create!(
   position: 3
 )
 
+tag_names = []
 tags = []
+while tag_names.length < 5
+  tag_names << Faker::Music.instrument
+  tag_names = tag_names.uniq
+end
 
-5.times do
-  name = Faker::Music.instrument
+tag_names.each do |name|
   tag = Tag.create!(
     name: name,
     slug: name.parameterize
@@ -76,7 +80,7 @@ end
     content: Faker::Lorem.paragraph,
     user_id: User.first.id,
     category_ids: categories.sample.id,
-    tag_ids: tags.sample(Random.rand(tags.count + 1)).map(&:id)
+    tag_ids: tags.sample(Random.rand((tags.count + 1).to_f)).map(&:id)
   )
 end
 
@@ -89,4 +93,24 @@ end
     message: Faker::Lorem.paragraphs.join(" \n "),
     read: Faker::Boolean.boolean
   )
+end
+
+# Members
+%w[Soprano Alto Tenor Bass].each do |voice|
+  6.times do
+    case voice
+    when 'Soprano', 'Alto'
+      name = "#{Faker::Name.female_first_name} #{Faker::Name.last_name}"
+    when 'Tenor', 'Bass'
+      name = "#{Faker::Name.male_first_name} #{Faker::Name.last_name}"
+    else
+      break # Exit the 'times' loop, continues with next voice in 'each' loop
+    end
+    Member.create!(
+      name: name,
+      email: Faker::Internet.email,
+      phone: Faker::PhoneNumber.cell_phone,
+      vocal_range: voice
+    )
+  end
 end

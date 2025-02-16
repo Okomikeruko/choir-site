@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_01_04_195525) do
+ActiveRecord::Schema.define(version: 2025_02_06_181123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 2024_01_04_195525) do
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "articles_count", default: 0
     t.index ["category_id"], name: "index_categories_on_category_id"
   end
 
@@ -192,6 +193,7 @@ ActiveRecord::Schema.define(version: 2024_01_04_195525) do
     t.integer "lilypond_file_size"
     t.datetime "lilypond_updated_at"
     t.integer "performances_count", default: 0
+    t.integer "instruments_count", default: 0
   end
 
   create_table "tags", force: :cascade do |t|

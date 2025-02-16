@@ -2,6 +2,17 @@
 
 # Model for Member
 class Member < ApplicationRecord
+  include DatatableColumnsConcern
+
+  define_datatable_column :name
+  define_datatable_column :email
+  define_datatable_column :phone
+  define_datatable_column :vocal_range,
+                          formatter: ->(record) { MemberPresenter.new(record).vocal_range }
+  define_datatable_column :talents,
+                          label: 'Other Musical Talents'
+  define_controls_column formatter: ->(record) { helpers.controls_html(record) }
+
   serialize :vocal_range
 
   with_options presence: true do
