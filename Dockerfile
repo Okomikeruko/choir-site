@@ -29,17 +29,8 @@ ENV RAILS_ENV=production \
 # Install specific bundler version
 RUN gem install bundler:2.2.33
 
-# Debug: List current directory before copy
-RUN pwd && ls -la
-
 # Copy all files
-COPY . /myapp/
-
-# Debug: List files after copy
-RUN echo "Contents of /myapp after COPY:" && \
-    ls -la /myapp/ && \
-    echo "Looking for Gemfile:" && \
-    find /myapp -name "Gemfile"
+COPY . .
 
 # Install dependencies
 RUN bundle config set --local without 'development test' && \
