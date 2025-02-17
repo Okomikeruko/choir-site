@@ -29,13 +29,17 @@ ENV RAILS_ENV=production \
 # Install specific bundler version
 RUN gem install bundler:2.2.33
 
-# Copy the entire application
-COPY . .
+# Copy dependency files first
+COPY Gemfile Gemfile.lock ./
+COPY package.json yarn.lock ./
 
 # Install dependencies
 RUN bundle config set --local without 'development test' && \
     bundle install --jobs 4 --retry 3 && \
     yarn install --production --frozen-lockfile
+
+# Copy the rest of the application code
+COPY . .
 
 # Final stage
 FROM ruby:3.0-slim
