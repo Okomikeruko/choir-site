@@ -5,8 +5,12 @@ AllCops:
   NewCops: enable
   TargetRubyVersion: 3.0
 
+Lint/MissingSuper:
+  AllowedParentClasses: ["ApplicationPresenter"]
+
 Metrics/BlockLength:
   Exclude:
+    - 'app/models/concerns/*'
     - 'config/environments/*'
     - 'config/routes.rb'
     - 'db/migrate/*'
@@ -42,9 +46,6 @@ Style/Documentation:
     - 'db/schema.rb'
     - 'db/migrate/*'
 
-Style/MissingSuper:
-  Exclude:
-    - 'app/presenters/**/*'
 
 Style/MixinUsage:
   Exclude:

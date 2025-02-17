@@ -7,9 +7,11 @@ class MemberPresenter < ApplicationPresenter
   end
 
   def vocal_range
-    vocal_parts.map do |voice|
+    output = vocal_parts.map do |voice|
       content_tag(:span, voice[:part], class: "label label-#{voice[:bool] ? 'success' : 'default'}")
-    end.join.html_safe
+    end
+
+    safe_join(output)
   end
 
   private
