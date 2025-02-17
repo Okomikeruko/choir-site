@@ -1,65 +1,67 @@
+# Base build stage
 FROM ruby:3.0-slim AS builder
 
-# Install system dependencies
+# Combine all system dependency installations into one layer
 RUN apt-get update -qq && \
-    apt-get install -y curl build-essential gnupg software-properties-common && \
-    curl -sL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - && \
-    add-apt-repository "deb https://deb.nodesource.com/node_16.x $(lsb_release -sc) main" && \
-    apt-get update -qq && \
+    apt-get install -y --no-install-recommends \
+    build-essential \
+    curl \
+    libpq-dev \
+    node-gyp \
+    pkg-config \
+    python-is-python3 && \
+    # Install Node.js
+    curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
     apt-get install -y nodejs && \
-    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
-    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
-    apt-get update -qq && \
-    apt-get install -y yarn postgresql libpq-dev && \
-    apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/*
+    # Install Yarn
+    npm install -g yarn && \
+    # Clean up
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 WORKDIR /myapp
 
-# Set environment variables
-ENV RAILS_ENV=production
-ENV NODE_ENV=production
-ENV BUNDLE_WITHOUT="development:test"
+# Set production environment
+ENV RAILS_ENV=production \
+    NODE_ENV=production \
+    BUNDLE_WITHOUT="development:test"
 
 # Install specific bundler version
-RUN gem uninstall bundler -aIx && \
-    gem install bundler:2.2.33
+RUN gem install bundler:2.2.33
 
-# Copy dependency files
+# Copy dependency files first for better caching
 COPY Gemfile* ./
 COPY package.json yarn.lock ./
 
-# Install production dependencies only
+# Install dependencies
 RUN bundle config set --local without 'development test' && \
     bundle install --jobs 4 --retry 3 && \
-    yarn install --production
+    yarn install --production --frozen-lockfile
 
 # Copy application code
 COPY . .
 
-# Precompile assets
-RUN bundle exec rails assets:precompile
-
-# Create production-optimized image
+# Final stage
 FROM ruby:3.0-slim
 
 # Install production-only dependencies
 RUN apt-get update -qq && \
-    apt-get install -y postgresql libpq-dev && \
-    apt-get clean && rm -rf /var/lib/apt/lists/*
+    apt-get install -y --no-install-recommends \
+    libpq-dev && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 WORKDIR /myapp
 
-# Copy built artifacts from builder stage
+# Copy built artifacts and code
 COPY --from=builder /usr/local/bundle /usr/local/bundle
 COPY --from=builder /myapp /myapp
 
-# Set production environment variables
-ENV RAILS_ENV=production
-ENV RAILS_SERVE_STATIC_FILES=true
-ENV RAILS_LOG_TO_STDOUT=true
+# Configure Rails for production
+ENV RAILS_ENV=production \
+    RAILS_SERVE_STATIC_FILES=true \
+    RAILS_LOG_TO_STDOUT=true
 
-# Expose production port
-EXPOSE 3000
+# No need to expose ports for Heroku
 
-# Start production server
 CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
