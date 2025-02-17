@@ -19,6 +19,7 @@ RUN apt-get update -qq && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+# Create and set working directory
 WORKDIR /myapp
 
 # Set production environment
@@ -29,17 +30,13 @@ ENV RAILS_ENV=production \
 # Install specific bundler version
 RUN gem install bundler:2.2.33
 
-# Copy dependency files first for better caching
-COPY Gemfile* ./
-COPY package.json yarn.lock ./
+# Copy the entire application from the context root
+COPY ../../ .
 
 # Install dependencies
 RUN bundle config set --local without 'development test' && \
     bundle install --jobs 4 --retry 3 && \
     yarn install --production --frozen-lockfile
-
-# Copy application code
-COPY . .
 
 # Final stage
 FROM ruby:3.0-slim
@@ -61,7 +58,5 @@ COPY --from=builder /myapp /myapp
 ENV RAILS_ENV=production \
     RAILS_SERVE_STATIC_FILES=true \
     RAILS_LOG_TO_STDOUT=true
-
-# No need to expose ports for Heroku
 
 CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
