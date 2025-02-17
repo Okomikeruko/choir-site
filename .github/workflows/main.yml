@@ -23,7 +23,7 @@ jobs:
       - name: Rubocop
         run: |
           bundle exec rubocop --parallel
-    
+
   test:
     runs-on: ubuntu-latest
     env:
@@ -45,13 +45,13 @@ jobs:
           --health-retries 5
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.0.7
           bundler-cache: true
-          
+
       - name: Setup test database
         run: |
           bundle exec rails db:create
@@ -68,18 +68,19 @@ jobs:
       - test
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Install Heroku CLI
-        run: |
-          curl https://cli-assets.heroku.com/install.sh | sh
 
-      - uses: akhileshns/heroku-deploy@v3.13.15
-        with:
-          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
-          heroku_email: ${{ secrets.HEROKU_EMAIL }}
-
-      - name: Run migrations (optional fallback)
-        if: always()
+      - name: Log in to Heroku Container Registry
         run: |
-          heroku run rails db:migrate --app ${{ secrets.HEROKU_APP_NAME }}
+          docker login --username=_ --password=${{ secrets.HEROKU_API_KEY }} registry.heroku.com
+
+      - name: Build and push Docker image
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+          HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
+        run: |
+          heroku container:push web -a ${{ secrets.HEROKU_APP_NAME }}
+          heroku container:release web -a ${{ secrets.HEROKU_APP_NAME }}
+
+      - name: Run migrations
+        run: |
+          heroku run rails db:migrate -a ${{ secrets.HEROKU_APP_NAME }}
