@@ -1,7 +1,7 @@
 # Base build stage
 FROM ruby:3.0-slim AS builder
 
-# Combine all system dependency installations into one layer
+# Install system dependencies
 RUN apt-get update -qq && \
     apt-get install -y --no-install-recommends \
     build-essential \
@@ -19,7 +19,6 @@ RUN apt-get update -qq && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# Create and set working directory
 WORKDIR /myapp
 
 # Set production environment
@@ -30,8 +29,8 @@ ENV RAILS_ENV=production \
 # Install specific bundler version
 RUN gem install bundler:2.2.33
 
-# Copy the entire application from the context root
-COPY ../../ .
+# Copy the entire application
+COPY . .
 
 # Install dependencies
 RUN bundle config set --local without 'development test' && \
