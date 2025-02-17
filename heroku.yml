@@ -1,8 +1,6 @@
 build:
   docker:
-    web:
-      dockerfile: .docker/production/Dockerfile
-      context: .
+    web: .docker/production/Dockerfile
 
 release:
   image: web
