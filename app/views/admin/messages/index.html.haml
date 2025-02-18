@@ -1,7 +1,5 @@
 %h1 Messages
 
-= will_paginate(@messages)
-
 = form_for :all_messages, url: { action: "do_to_all" } do |f|
   =f.hidden_field :page, value: params[:page] || 1
   =f.submit "Mark as Read", class: "btn btn-sm btn-default"
@@ -9,6 +7,8 @@
   =f.submit "Delete Messages", class: "btn btn-sm btn-default"
   .row
     .col-sm-12
+      = datatable_table_for Message
+
       %table.table.table-hover
         %thead
           %tr
@@ -34,8 +34,6 @@
               %td= message.email
               %td= message.subject
               %td= message.created_at.strftime("%l:%M %P - %b %-d, %Y")
-
-=will_paginate @messages
 
 :javascript
   $(document).ready(function(){

@@ -12,11 +12,11 @@ class BaseDatatable < AjaxDatatablesRails::ActiveRecord
   def initialize(params, opts = {})
     @model_class = opts.delete(:model_class) || opts.delete(:model_name)&.to_s&.classify&.constantize
     @view = opts[:view_context]
-    super(params, opts)
+    super
   end
 
   def view_columns
-    @view_columns ||= model_class.datatable_columns.transform_values do |config|
+    @view_columns ||= model_class.visible_datatable_columns.transform_values do |config|
       {
         source: config[:source],
         searchable: config[:searchable],
@@ -32,7 +32,13 @@ class BaseDatatable < AjaxDatatablesRails::ActiveRecord
         config[:formatter].call(record)
       end
 
-      data_hash.merge(DT_RowId: record.id)
+      data_hash.merge(
+        DT_RowId: record.id,
+        row_attributes: model_class.row_attributes_for(record)
+                                   .transform_keys(&:to_s)
+                                   .transform_values { |v| v.is_a?(Hash) ? v.transform_keys(&:to_s) : v }
+                                   .compact.to_json
+      )
     end
   end
 

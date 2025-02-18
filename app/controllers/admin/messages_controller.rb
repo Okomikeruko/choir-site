@@ -5,6 +5,14 @@ module Admin
   class MessagesController < AdminController
     def index
       @messages = Message.paginate(page: params[:page], per_page: 20)
+      respond_to do |format|
+        format.html
+        format.json do
+          render json: BaseDatatable.new(params,
+                                         model_class: Message,
+                                         view_context: view_context)
+        end
+      end
     end
 
     def show

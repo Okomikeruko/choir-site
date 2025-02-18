@@ -2,6 +2,19 @@
 
 # Model for Message
 class Message < ApplicationRecord
+  include DatatableColumnsConcern
+
+  define_row_attributes(
+    'class' => ->(record) { "clickable-row#{' info' unless record.read? }" },
+    'data' =>  ->(record) { { 'href' => Rails.application.routes.url_helpers.admin_message_path(record) } }
+  )
+  define_datatable_column :name
+  define_datatable_column :email
+  define_datatable_column :subject
+  define_datatable_column :created_at,
+                          label: "Date",
+                          formatter: ->(record) { record.created_at.strftime("%l:%M %P - %b %-d, %Y") }
+
   default_scope { order(created_at: :desc) }
 
   with_options presence: true do

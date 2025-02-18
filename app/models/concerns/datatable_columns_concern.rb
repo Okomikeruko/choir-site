@@ -6,7 +6,7 @@ module DatatableColumnsConcern
 
   class_methods do
     def for_datatable
-      all
+      all.unscoped
     end
 
     def helpers
@@ -19,8 +19,13 @@ module DatatableColumnsConcern
       @datatable_columns ||= {}
     end
 
+    def visible_datatable_columns
+      datatable_columns.select { |_, v| v[:visible] }
+    end
+
     def define_datatable_column(name, options = {})
       defaults = {
+        visible: true,
         source: "#{self.name}.#{name}",
         label: name.to_s.titleize,
         searchable: true,
@@ -46,8 +51,28 @@ module DatatableColumnsConcern
       datatable_columns[:controls] = defaults.merge(options)
     end
 
+    def define_row_attributes(options = {})
+      @row_attributes = options.compact
+    end
+
+    def row_attributes_for(record)
+      return {} unless @row_attributes
+
+      @row_attributes.transform_values do |value|
+        if value.is_a?(Proc)
+          begin
+            value.call(record)
+          rescue ArgumentError
+            value.call
+          end
+        else
+          value
+        end
+      end
+    end
+
     def javascript_column_config
-      datatable_columns.map do |key, config|
+      visible_datatable_columns.map do |key, config|
         {
           data: key.to_s,
           searchable: config[:searchable] != false,

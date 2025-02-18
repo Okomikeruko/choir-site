@@ -24,42 +24,131 @@
 // require datatables/extensions/Responsive/responsive.bootstrap4
 
 
-//Global setting and initializer
+// Parse row attributes from server response
+const parseRowAttributes = (data) => {
+  if (!data.row_attributes) return null;
+  return JSON.parse(data.row_attributes.replace(/&quot;/g, '"'));
+}
 
+// Apply attributes recursively to an element
+const applyAttributes = (element, attributes) => {
+  if (!attributes || typeof attributes !== 'object') return;
+
+  Object.entries(attributes).forEach(([key, value]) => {
+    // Skip null/undefined values
+    if (value == null) return;
+
+    // Handle special case for 'class' attribute
+    if (key === 'class') {
+      element.addClass(value);
+      return;
+    }
+
+    // Recursively handle nested objects
+    if (typeof value === 'object' && !Array.isArray(value)) {
+      // Handle special namespaces
+      switch(key) {
+        case 'data':
+          applyAttributes(element, Object.fromEntries(
+            Object.entries(value).map(([k, v]) => [`data-${k}`, v])
+          ));
+          break;
+        case 'aria':
+          applyAttributes(element, Object.fromEntries(
+            Object.entries(value).map(([k, v]) => [`aria-${k}`, v])
+          ));
+          break;
+        default:
+          // For other nested objects, use as namespace
+          const namespace = `${key}-`;
+          applyAttributes(element, Object.fromEntries(
+            Object.entries(value).map(([k, v]) => [`${namespace}${k}`, v])
+          ));
+      }
+      return;
+    }
+
+    // Handle attribute naming
+    let attrKey = key;
+    if (!key.startsWith('aria-') && !key.startsWith('data-')) {
+      attrKey = `data-${key}`;
+    }
+
+    // Set attribute
+    element.attr(attrKey, value);
+
+    // Set jQuery data for data attributes
+    if (key === 'data' || attrKey.startsWith('data-')) {
+      const dataKey = key === 'data' ? value : key.replace('data-', '');
+      element.data(dataKey, value);
+    }
+  });
+};
+
+//Global DataTable defaults
 $.extend( $.fn.dataTable.defaults, {
-  responsive: true,
-  pagingType: 'full',
-  //dom:
-  //  "<'row'<'col-sm-4 text-left'f><'right-action col-sm-8 text-right'<'buttons'B> <'select-info'> >>" +
-  //  "<'row'<'dttb col-12 px-0'tr>>" +
-  //  "<'row'<'col-sm-12 table-footer'lip>>"
+  pagingType: 'full_numbers',
+  processing: true,
+  responsive: true
 });
 
-
+// Handle AJAX URL from data-source attribute
 $(document).on('preInit.dt', function(e, settings) {
-  var api, table_id, url;
-  api = new $.fn.dataTable.Api(settings);
-  table_id = "#" + api.table().node().id;
-  url = $(table_id).data('source');
+  const api = new $.fn.dataTable.Api(settings);
+  const tableId = `#${api.table().node().id}`;
+  const url = $(tableId).data('source');
+
   if (url) {
     return api.ajax.url(url);
   }
 });
 
+// Initialize Datatables
+const initializeDataTables = () => {
+  $('table[data-source]').each((_, element) => {
+    const $table = $(element);
 
-// init on turbolinks load
-$(document).on('turbolinks:load', function() {
-  if (!$.fn.DataTable.isDataTable("table[id^=dttb-]")) {
-    $("table[id^=dttb-]").DataTable();
+    if ($.fn.DataTable.isDataTable($table)) {
+      return;
+    }
+
+    $table.DataTable({
+      ajax: {
+        url: $table.data('source')
+      },
+      serverSide: true,
+      columns: $table.data('columns'),
+      createdRow: (row, data, dataIndex) => {
+        const attrs = parseRowAttributes(data);
+        if (attrs) {
+          applyAttributes($(row), attrs);
+        }
+      }
+    });
+  });
+
+  // Handle client-side tables
+  $("table[id^=dttb-]").not('.dataTable').each((_, element) => {
+    $(element).DataTable();
+  });
+};
+
+// Handle clickable rows
+$(document).on('click', 'tr.clickable-row td:not(.checkbox-col)', function(e) {
+  const href = $(this).parent().data('href');
+  if (href) {
+    window.location = href;
   }
 });
 
-// turbolinks cache fix
+// Turbolinks support
+$(document).on('turbolinks:load', initializeDataTables);
+
+// Clean up before caching
 $(document).on('turbolinks:before-cache', function() {
-  var dataTable = $($.fn.dataTable.tables(true)).DataTable();
-  if (dataTable !== null) {
-    dataTable.clear();
-    dataTable.destroy();
-    return dataTable = null;
+  const tables = $($.fn.dataTable.tables(true)).DataTable();
+  if (tables) {
+    tables.clear();
+    tables.destroy();
   }
 });
