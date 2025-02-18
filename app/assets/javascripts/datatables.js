@@ -3,8 +3,8 @@
 // optional change '//' --> '//=' to enable
 
 // require datatables/extensions/AutoFill/dataTables.autoFill
-// require datatables/extensions/Buttons/dataTables.buttons
-// require datatables/extensions/Buttons/buttons.html5
+//= require datatables/extensions/Buttons/dataTables.buttons
+//= require datatables/extensions/Buttons/buttons.html5
 // require datatables/extensions/Buttons/buttons.print
 // require datatables/extensions/Buttons/buttons.colVis
 // require datatables/extensions/Buttons/buttons.flash
@@ -16,11 +16,11 @@
 // require datatables/extensions/RowGroup/dataTables.rowGroup
 // require datatables/extensions/RowReorder/dataTables.rowReorder
 // require datatables/extensions/Scroller/dataTables.scroller
-// require datatables/extensions/Select/dataTables.select
+//= require datatables/extensions/Select/dataTables.select
 
 //= require datatables/dataTables.bootstrap4
 // require datatables/extensions/AutoFill/autoFill.bootstrap4
-// require datatables/extensions/Buttons/buttons.bootstrap4
+//= require datatables/extensions/Buttons/buttons.bootstrap4
 // require datatables/extensions/Responsive/responsive.bootstrap4
 
 
@@ -87,6 +87,7 @@ const applyAttributes = (element, attributes) => {
 
 //Global DataTable defaults
 $.extend( $.fn.dataTable.defaults, {
+  dom: 'Bfrtip',
   pagingType: 'full_numbers',
   processing: true,
   responsive: true
@@ -116,9 +117,14 @@ const initializeDataTables = () => {
       ajax: {
         url: $table.data('source')
       },
+      buttons: $table.data('buttons'),
       serverSide: true,
       columns: $table.data('columns'),
       order: $table.data('order'),
+      select: {
+        style: 'multi',
+        selector: 'td.select-checkbox'
+      },
       createdRow: (row, data, _dataIndex) => {
         const attrs = parseRowAttributes(data);
         if (attrs) {
@@ -135,7 +141,7 @@ const initializeDataTables = () => {
 };
 
 // Handle clickable rows
-$(document).on('click', 'tr.clickable-row td:not(.checkbox-col)', function(e) {
+$(document).on('click', 'tr.clickable-row td:not(.select-checkbox)', function(e) {
   const href = $(this).parent().data('href');
   if (href) {
     window.location = href;
