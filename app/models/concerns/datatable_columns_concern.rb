@@ -31,10 +31,26 @@ module DatatableColumnsConcern
         searchable: true,
         sortable: true,
         orderable: true,
+        sort_order: nil,
+        sort_priority: nil,
         formatter: ->(record) { record.send(name) }
       }
 
       datatable_columns[name] = defaults.merge(options)
+    end
+
+    def initial_sort_order
+      sort_columns = datatable_columns
+        .select { |_, v| v[:sort_priority].present? }
+        .sort_by { |_, v| v[:sort_priority] }
+        .map do |key, config|
+        [
+          datatable_columns.keys.index(key),
+          config[:sort_order] || 'asc'
+        ]
+      end
+
+      sort_columns.presence || [[0, 'asc']]
     end
 
     def define_controls_column(options = {})

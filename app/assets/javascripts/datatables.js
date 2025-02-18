@@ -118,7 +118,8 @@ const initializeDataTables = () => {
       },
       serverSide: true,
       columns: $table.data('columns'),
-      createdRow: (row, data, dataIndex) => {
+      order: $table.data('order'),
+      createdRow: (row, data, _dataIndex) => {
         const attrs = parseRowAttributes(data);
         if (attrs) {
           applyAttributes($(row), attrs);

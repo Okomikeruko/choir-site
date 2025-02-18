@@ -13,6 +13,8 @@ class Message < ApplicationRecord
   define_datatable_column :subject
   define_datatable_column :created_at,
                           label: "Date",
+                          sort_priority: 1,
+                          sort_order: 'desc',
                           formatter: ->(record) { record.created_at.strftime("%l:%M %P - %b %-d, %Y") }
 
   default_scope { order(created_at: :desc) }

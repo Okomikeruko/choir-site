@@ -11,7 +11,8 @@ module DatatableHelper
                 class: 'table table-hover',
                 id: "#{model_class.name.downcase.pluralize}-datatable",
                 data: { columns: model_class.javascript_column_config.to_json,
-                        source: url_for([:admin, model_class, { format: :json }]) } do
+                        source: url_for([:admin, model_class, { format: :json }]),
+                        order: model_class.initial_sort_order } do
       safe_join(
         [
           content_tag(:thead) do
