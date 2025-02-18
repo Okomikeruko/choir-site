@@ -3,8 +3,8 @@
 // optional change '//' --> '//=' to enable
 
 // require datatables/extensions/AutoFill/dataTables.autoFill
-// require datatables/extensions/Buttons/dataTables.buttons
-// require datatables/extensions/Buttons/buttons.html5
+//= require datatables/extensions/Buttons/dataTables.buttons
+//= require datatables/extensions/Buttons/buttons.html5
 // require datatables/extensions/Buttons/buttons.print
 // require datatables/extensions/Buttons/buttons.colVis
 // require datatables/extensions/Buttons/buttons.flash
@@ -16,11 +16,11 @@
 // require datatables/extensions/RowGroup/dataTables.rowGroup
 // require datatables/extensions/RowReorder/dataTables.rowReorder
 // require datatables/extensions/Scroller/dataTables.scroller
-// require datatables/extensions/Select/dataTables.select
+//= require datatables/extensions/Select/dataTables.select
 
 //= require datatables/dataTables.bootstrap4
 // require datatables/extensions/AutoFill/autoFill.bootstrap4
-// require datatables/extensions/Buttons/buttons.bootstrap4
+//= require datatables/extensions/Buttons/buttons.bootstrap4
 // require datatables/extensions/Responsive/responsive.bootstrap4
 
 
@@ -87,10 +87,135 @@ const applyAttributes = (element, attributes) => {
 
 //Global DataTable defaults
 $.extend( $.fn.dataTable.defaults, {
+  dom: 'Bfrtlip',
   pagingType: 'full_numbers',
   processing: true,
   responsive: true
 });
+
+$.fn.dataTable.ext.buttons.selectAll = {
+  text: 'Select All',
+  className: 'btn btn-sm btn-outline-secondary',
+  action: function ( e, dt, node, config ) {
+    dt.rows().select();
+  }
+};
+
+$.fn.dataTable.ext.buttons.selectNone = {
+  text: 'Select None',
+  className: 'btn btn-sm btn-outline-secondary',
+  action: function ( e, dt, node, config ) {
+    dt.rows().deselect();
+  }
+};
+
+$.fn.dataTable.ext.buttons.markAsRead = {
+  text: 'Mark as Read',
+  className: 'btn btn-sm btn-primary',
+  action: function(e, dt, node, config) {
+    var rows = dt.rows({ selected: true });
+    if (rows.count() === 0) {
+      alert("Please select at least one message");
+      return;
+    }
+
+    var ids = rows.data().map(function(row) {
+      return row.DT_RowId;
+    }).toArray();
+
+    $.ajax({
+      url: "/admin/messages/do_to_all",
+      method: "POST",
+      data: {
+        all_messages: {
+          msgs: ids,
+        },
+        commit: "Mark as Read",
+        authenticity_token: $('meta[name="csrf-token"]').attr('content')
+      },
+      success: function() {
+        dt.rows().deselect();
+        dt.ajax.reload();
+      },
+      error: function(xhr, status, error) {
+        alert("Error updating messages: " + error);
+      }
+    });
+  }
+};
+
+$.fn.dataTable.ext.buttons.markAsUnread = {
+  text: 'Mark as Unread',
+  className: 'btn btn-sm btn-info',
+  action: function(e, dt, node, config) {
+    var rows = dt.rows({ selected: true });
+    if (rows.count() === 0) {
+      alert("Please select at least one message");
+      return;
+    }
+
+    var ids = rows.data().map(function(row) {
+      return row.DT_RowId;
+    }).toArray();
+
+    $.ajax({
+      url: "/admin/messages/do_to_all",
+      method: "POST",
+      data: {
+        all_messages: {
+          msgs: ids,
+        },
+        commit: "Mark as Unread",
+        authenticity_token: $('meta[name="csrf-token"]').attr('content')
+      },
+      success: function() {
+        dt.rows().deselect();
+        dt.ajax.reload();
+      },
+      error: function(xhr, status, error) {
+        alert("Error updating messages: " + error);
+      }
+    });
+  }
+};
+
+$.fn.dataTable.ext.buttons.deleteMessages = {
+  text: 'Delete',
+  className: 'btn btn-sm btn-danger',
+  action: function(e, dt, node, config) {
+    var rows = dt.rows({ selected: true });
+    if (rows.count() === 0) {
+      alert("Please select at least one message");
+      return;
+    }
+
+    if (!confirm("Are you sure you want to delete the selected messages?")) {
+      return;
+    }
+
+    var ids = rows.data().map(function(row) {
+      return row.DT_RowId;
+    }).toArray();
+
+    $.ajax({
+      url: "/admin/messages/do_to_all",
+      method: "POST",
+      data: {
+        all_messages: {
+          msgs: ids,
+        },
+        commit: "Delete Messages",
+        authenticity_token: $('meta[name="csrf-token"]').attr('content')
+      },
+      success: function() {
+        dt.ajax.reload();
+      },
+      error: function(xhr, status, error) {
+        alert("Error deleting messages: " + error);
+      }
+    });
+  }
+};
 
 // Handle AJAX URL from data-source attribute
 $(document).on('preInit.dt', function(e, settings) {
@@ -116,9 +241,14 @@ const initializeDataTables = () => {
       ajax: {
         url: $table.data('source')
       },
+      buttons: $table.data('buttons'),
       serverSide: true,
       columns: $table.data('columns'),
       order: $table.data('order'),
+      select: {
+        style: 'multi',
+        selector: 'td.select-checkbox'
+      },
       createdRow: (row, data, _dataIndex) => {
         const attrs = parseRowAttributes(data);
         if (attrs) {
@@ -135,7 +265,7 @@ const initializeDataTables = () => {
 };
 
 // Handle clickable rows
-$(document).on('click', 'tr.clickable-row td:not(.checkbox-col)', function(e) {
+$(document).on('click', 'tr.clickable-row td:not(.select-checkbox)', function(e) {
   const href = $(this).parent().data('href');
   if (href) {
     window.location = href;

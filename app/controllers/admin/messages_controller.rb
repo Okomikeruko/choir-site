@@ -29,7 +29,8 @@ module Admin
       when 'Delete Messages'
         @messages.destroy_all
       end
-      redirect_to admin_messages_path(page: params[:all_messages][:page])
+
+      head :ok
     end
   end
 end

@@ -4,17 +4,19 @@
 class Message < ApplicationRecord
   include DatatableColumnsConcern
 
+  define_table_buttons(%w[selectAll selectNone markAsRead markAsUnread deleteMessages])
   define_row_attributes(
     'class' => ->(record) { "clickable-row#{' info' unless record.read? }" },
     'data' =>  ->(record) { { 'href' => Rails.application.routes.url_helpers.admin_message_path(record) } }
   )
+  define_select_column
   define_datatable_column :name
   define_datatable_column :email
   define_datatable_column :subject
   define_datatable_column :created_at,
                           label: "Date",
-                          sort_priority: 1,
-                          sort_order: 'desc',
+                          sortPriority: 1,
+                          sortOrder: 'desc',
                           formatter: ->(record) { record.created_at.strftime("%l:%M %P - %b %-d, %Y") }
 
   default_scope { order(created_at: :desc) }

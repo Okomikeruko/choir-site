@@ -4,6 +4,20 @@
 module DatatableColumnsConcern
   extend ActiveSupport::Concern
 
+  BASE_COLUMN_DEFAULTS = {
+    className: nil,
+    label: nil,
+    orderable: false,
+    searchable: false,
+    sortable: false,
+    sortPriority: nil,
+    sortOrder: nil,
+    source: nil,
+    visible: true,
+
+    formatter: ->(_) { '' }
+  }
+
   class_methods do
     def for_datatable
       all.unscoped
@@ -19,50 +33,59 @@ module DatatableColumnsConcern
       @datatable_columns ||= {}
     end
 
+    def table_buttons
+      @table_buttons ||= []
+    end
+
+    def define_table_buttons(buttons)
+      @table_buttons = buttons.map{ |b| b.to_s.camelize(:lower) }
+    end
+
     def visible_datatable_columns
       datatable_columns.select { |_, v| v[:visible] }
     end
 
     def define_datatable_column(name, options = {})
-      defaults = {
-        visible: true,
+      defaults = BASE_COLUMN_DEFAULTS.merge({
         source: "#{self.name}.#{name}",
         label: name.to_s.titleize,
         searchable: true,
         sortable: true,
         orderable: true,
-        sort_order: nil,
-        sort_priority: nil,
         formatter: ->(record) { record.send(name) }
-      }
+      })
 
       datatable_columns[name] = defaults.merge(options)
     end
 
     def initial_sort_order
       sort_columns = datatable_columns
-        .select { |_, v| v[:sort_priority].present? }
-        .sort_by { |_, v| v[:sort_priority] }
+        .select { |_, v| v[:sortPriority].present? }
+        .sort_by { |_, v| v[:sortPriority] }
         .map do |key, config|
         [
           datatable_columns.keys.index(key),
-          config[:sort_order] || 'asc'
+          config[:sortOrder] || 'asc'
         ]
       end
 
       sort_columns.presence || [[0, 'asc']]
     end
 
+    def define_select_column(options = {})
+      defaults = BASE_COLUMN_DEFAULTS.merge({
+        label: '',
+        className: 'select-checkbox '
+      })
+
+      datatable_columns[:select] = defaults.merge(options)
+    end
+
     def define_controls_column(options = {})
-      defaults = {
-        source: nil,
+      defaults = BASE_COLUMN_DEFAULTS.merge({
         label: 'Controls',
-        searchable: false,
-        sortable: false,
-        orderable: false,
         className: 'text-right',
-        formatter: ->(_) {}
-      }
+      })
 
       datatable_columns[:controls] = defaults.merge(options)
     end
@@ -96,6 +119,10 @@ module DatatableColumnsConcern
           className: config[:className]
         }.compact
       end
+    end
+
+    def javascript_buttons_config
+      table_buttons
     end
   end
 end
