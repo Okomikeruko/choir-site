@@ -2,6 +2,7 @@
 
 source 'https://rubygems.org'
 
+gem 'actioncable'
 gem 'ajax-datatables-rails'
 gem 'bcrypt', '~> 3.1.12'
 gem 'bootstrap-sass', '~> 3.3'

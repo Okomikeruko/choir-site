@@ -4,6 +4,8 @@
 class Message < ApplicationRecord
   include DatatableColumnsConcern
 
+  after_commit :broadcast_unread_count
+
   define_table_buttons(%w[selectAll selectNone markAsRead markAsUnread deleteMessages])
   define_row_attributes(
     'class' => ->(record) { "clickable-row#{' info' unless record.read? }" },
@@ -51,5 +53,22 @@ class Message < ApplicationRecord
     def any_unread?
       unread.positive?
     end
+  end
+
+  private
+
+  def broadcast_unread_count
+    ActionCable.server.broadcast(
+      "message_channel",
+      {
+        any_unread: Message.any_unread?,
+        unread_count: Message.unread,
+        action: if destroyed?
+                  'destroyed'
+                else
+                  read_previously_changed? ? 'updated' : 'created'
+                end
+      }
+    )
   end
 end
