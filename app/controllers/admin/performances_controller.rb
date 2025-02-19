@@ -5,8 +5,10 @@ module Admin
   class PerformancesController < AdminController
     before_action :set_performance, only: %i[edit update destroy]
 
+    datatable_model Performance
+
     def index
-      @performances = Performance.all
+      respond_with_datatable
     end
 
     def new

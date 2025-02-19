@@ -28,8 +28,12 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  config.action_cable.url = "ws://localhost:3000/cable"
-  config.action_cable.allowed_request_origins = [ 'http://localhost:3000', /http:\/\/localhost:*/ ]
+  config.action_cable.url = "ws://0.0.0.0:3000/cable"
+  config.action_cable.allowed_request_origins = [
+    %r{http://localhost*},
+    %r{http://0.0.0.0*},
+    %r{http://127.0.0.1*}
+  ]
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true

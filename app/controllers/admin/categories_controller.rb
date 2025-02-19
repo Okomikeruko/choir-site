@@ -7,15 +7,10 @@ module Admin
     before_action :find_new_category, except: [:create]
     before_action :find_category, only: %i[update destroy]
 
+    datatable_model Category
+
     def index
-      respond_to do |format|
-        format.html
-        format.json do
-          render json: BaseDatatable.new(params,
-                                         model_class: Category,
-                                         view_context: view_context)
-        end
-      end
+      respond_with_datatable
     end
 
     def create

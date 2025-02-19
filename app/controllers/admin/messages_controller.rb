@@ -3,16 +3,10 @@
 module Admin
   # Controller for managing messages in the admin section.
   class MessagesController < AdminController
+    datatable_model Message
+
     def index
-      @messages = Message.paginate(page: params[:page], per_page: 20)
-      respond_to do |format|
-        format.html
-        format.json do
-          render json: BaseDatatable.new(params,
-                                         model_class: Message,
-                                         view_context: view_context)
-        end
-      end
+      respond_with_datatable
     end
 
     def show
@@ -28,6 +22,8 @@ module Admin
         @messages.find_each { |message| message.update(read: read) }
       when 'Delete Messages'
         @messages.destroy_all
+      else
+        head :bad_request
       end
 
       head :ok

@@ -5,15 +5,10 @@ module Admin
   class ArticlesController < AdminController
     before_action :find_article, only: %i[edit update destroy]
 
+    datatable_model Article
+
     def index
-      respond_to do |format|
-        format.html
-        format.json do
-          render json: BaseDatatable.new(params,
-                                         model_class: Article,
-                                         view_context: view_context)
-        end
-      end
+      respond_with_datatable
     end
 
     def new
