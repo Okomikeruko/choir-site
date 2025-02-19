@@ -8,18 +8,18 @@ class Message < ApplicationRecord
 
   define_table_buttons(%w[selectAll selectNone markAsRead markAsUnread deleteMessages])
   define_row_attributes(
-    'class' => ->(record) { "clickable-row#{' info' unless record.read? }" },
-    'data' =>  ->(record) { { 'href' => Rails.application.routes.url_helpers.admin_message_path(record) } }
+    'class' => ->(record) { "clickable-row#{' info' unless record.read?}" },
+    'data' => ->(record) { { 'href' => Rails.application.routes.url_helpers.admin_message_path(record) } }
   )
   define_select_column
   define_datatable_column :name
   define_datatable_column :email
   define_datatable_column :subject
   define_datatable_column :created_at,
-                          label: "Date",
+                          label: 'Date',
                           sortPriority: 1,
                           sortOrder: 'desc',
-                          formatter: ->(record) { record.created_at.strftime("%l:%M %P - %b %-d, %Y") }
+                          formatter: ->(record) { record.created_at.strftime('%l:%M %P - %b %-d, %Y') }
 
   default_scope { order(created_at: :desc) }
 
@@ -59,7 +59,7 @@ class Message < ApplicationRecord
 
   def broadcast_unread_count
     ActionCable.server.broadcast(
-      "message_channel",
+      'message_channel',
       {
         any_unread: Message.any_unread?,
         unread_count: Message.unread,

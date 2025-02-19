@@ -5,6 +5,11 @@ module Admin
   class MessagesController < AdminController
     datatable_model Message
 
+    MARK_AS_READ = 'Mark As Read'
+    MARK_AS_UNREAD = 'Mark As Unread'
+    DELETE_MESSAGES = 'Delete Messages'
+    VALID_ACTIONS = [MARK_AS_READ, MARK_AS_UNREAD, DELETE_MESSAGES].freeze
+
     def index
       respond_with_datatable
     end
@@ -16,17 +21,17 @@ module Admin
 
     def do_to_all
       @messages = Message.where id: params[:all_messages][:msgs]
-      case params[:commit]
-      when 'Mark as Read', 'Mark as Unread'
-        read = params[:commit] == 'Mark as Read'
-        @messages.find_each { |message| message.update(read: read) }
-      when 'Delete Messages'
-        @messages.destroy_all
-      else
-        head :bad_request
-      end
+      action = params[:commit].to_s
+      return head :bad_request unless VALID_ACTIONS.include?(action)
 
+      action == DELETE_MESSAGES ? @messages.destroy_all : update_read_status(@messages, action)
       head :ok
+    end
+
+    private
+
+    def update_read_status(messages, action)
+      messages.each { |message| message.update(read: action == MARK_AS_READ) }
     end
   end
 end

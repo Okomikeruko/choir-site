@@ -5,8 +5,8 @@ class Performance < ApplicationRecord
   include DatatableColumnsConcern
 
   define_datatable_column :date,
-                          label: "Performance Date",
-                          formatter: ->(record) { record.date.strftime("%m/%d/%Y") }
+                          label: 'Performance Date',
+                          formatter: ->(record) { record.date.strftime('%m/%d/%Y') }
   define_datatable_column :venue
   define_datatable_column :songs,
                           formatter: ->(record) { record.songs.map(&:title).to_sentence }

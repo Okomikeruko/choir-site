@@ -16,7 +16,7 @@ module DatatableColumnsConcern
     visible: true,
 
     formatter: ->(_) { '' }
-  }
+  }.freeze
 
   class_methods do
     def for_datatable
@@ -38,7 +38,7 @@ module DatatableColumnsConcern
     end
 
     def define_table_buttons(buttons)
-      @table_buttons = buttons.map{ |b| b.to_s.camelize(:lower) }
+      @table_buttons = buttons.map { |b| b.to_s.camelize(:lower) }
     end
 
     def visible_datatable_columns
@@ -47,22 +47,22 @@ module DatatableColumnsConcern
 
     def define_datatable_column(name, options = {})
       defaults = BASE_COLUMN_DEFAULTS.merge({
-        source: "#{self.name}.#{name}",
-        label: name.to_s.titleize,
-        searchable: true,
-        sortable: true,
-        orderable: true,
-        formatter: ->(record) { record.send(name) }
-      })
+                                              source: "#{self.name}.#{name}",
+                                              label: name.to_s.titleize,
+                                              searchable: true,
+                                              sortable: true,
+                                              orderable: true,
+                                              formatter: ->(record) { record.send(name) }
+                                            })
 
       datatable_columns[name] = defaults.merge(options)
     end
 
     def initial_sort_order
       sort_columns = datatable_columns
-        .select { |_, v| v[:sortPriority].present? }
-        .sort_by { |_, v| v[:sortPriority] }
-        .map do |key, config|
+                     .select { |_, v| v[:sortPriority].present? }
+                     .sort_by { |_, v| v[:sortPriority] }
+                     .map do |key, config|
         [
           datatable_columns.keys.index(key),
           config[:sortOrder] || 'asc'
@@ -74,18 +74,18 @@ module DatatableColumnsConcern
 
     def define_select_column(options = {})
       defaults = BASE_COLUMN_DEFAULTS.merge({
-        label: '',
-        className: 'select-checkbox '
-      })
+                                              label: '',
+                                              className: 'select-checkbox '
+                                            })
 
       datatable_columns[:select] = defaults.merge(options)
     end
 
     def define_controls_column(options = {})
       defaults = BASE_COLUMN_DEFAULTS.merge({
-        label: 'Controls',
-        className: 'text-right',
-      })
+                                              label: 'Controls',
+                                              className: 'text-right'
+                                            })
 
       datatable_columns[:controls] = defaults.merge(options)
     end
@@ -99,11 +99,7 @@ module DatatableColumnsConcern
 
       @row_attributes.transform_values do |value|
         if value.is_a?(Proc)
-          begin
-            value.call(record)
-          rescue ArgumentError
-            value.call
-          end
+          value.call(record)
         else
           value
         end

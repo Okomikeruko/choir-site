@@ -28,7 +28,7 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  config.action_cable.url = "ws://0.0.0.0:3000/cable"
+  config.action_cable.url = 'ws://0.0.0.0:3000/cable'
   config.action_cable.allowed_request_origins = [
     %r{http://localhost*},
     %r{http://0.0.0.0*},

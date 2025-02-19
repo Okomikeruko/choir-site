@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Concern for running Datatable rendering in controllers.
 module AdminDatatableConcern
   extend ActiveSupport::Concern
 

@@ -37,8 +37,8 @@ module DatatableHelper
   end
 
   def controls_html(record)
-    @renderer ||= ApplicationController.renderer
-    @renderer.render(
+    renderer ||= ApplicationController.renderer
+    renderer.render(
       partial: 'admin/shared/controls',
       locals: { record: record },
       format: :html
