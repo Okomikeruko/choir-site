@@ -3,11 +3,11 @@
 module Admin
   # Controller for managing rehearsals in the admin section.
   class RehearsalsController < AdminController
+    datatable_model Rehearsal
     before_action :find_rehearsal, only: %i[edit update destroy]
 
     def index
-      @rehearsals = Rehearsal.all
-                             .paginate(page: params[:page], per_page: 20)
+      respond_with_datatable
     end
 
     def new

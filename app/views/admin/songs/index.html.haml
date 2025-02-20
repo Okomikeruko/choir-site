@@ -5,14 +5,5 @@
     %span.glyphicon.glyphicon-plus
     Add New Song
 .row
-  .col-sm-10.col-sm-offset-1
-    %table.table
-      %thead
-        %tr
-          %th Song Title
-          %th Instruments
-          %th Performances
-          %th.text-right Controls
-      %tbody
-        -@songs.each do |song|
-          =render song
+  .col-xs-12
+    = datatable_table_for Song

@@ -4,16 +4,7 @@
   .col-sm-6
     %fieldset
       %legend Tags
-      %table.table.table-hover
-        %thead
-          %tr
-            %th Name
-            %th Slug
-            %th Uses
-            %th.text-right Controls
-        %tbody
-          -@tags.each do |tag|
-            =render tag
+      = datatable_table_for Tag
   .col-sm-6
     %fieldset
       %legend New Tag

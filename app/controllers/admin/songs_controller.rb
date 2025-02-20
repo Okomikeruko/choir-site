@@ -3,10 +3,11 @@
 module Admin
   # Controller for managing songs in the admin section.
   class SongsController < AdminController
+    datatable_model Song
     before_action :set_song, only: %i[edit update destroy]
 
     def index
-      @songs = Song.all
+      respond_with_datatable
     end
 
     def new
