@@ -114,3 +114,46 @@ end
     )
   end
 end
+
+# Songs
+song_titles = []
+songs = []
+while song_titles.length < 50
+  title = Faker::Lorem.sentence.titleize
+  next if song_titles.include? title
+
+  begin
+    song_titles << title
+    song = Song.create!(title: title)
+    %w[SATB\ w/\ Piano Piano Soprano Alto Tenor Bass].each do |name|
+      instrument = Instrument.create(name: name, song: song)
+      if instrument.errors.any?
+        puts "Failed to create #{name} for song #{song.title}: #{instrument.errors.full_messages}"
+      end
+    end
+
+    songs << song
+  rescue => e
+    puts "Error creating song #{title}: #{e.message}"
+  end
+end
+
+# Rehearsals
+104.times do |index|
+  Rehearsal.create!(
+    date: index.weeks.ago.end_of_week(start_day = :sunday),
+    venue: Faker::Address.street_address,
+    host: Faker::Name.name,
+    songs: songs.sample((1..3).to_a.sample),
+    time: "Noon"
+  )
+end
+
+# Performances
+36.times do |index|
+  Performance.create!(
+    date: (index - 12).months.ago.beginning_of_month.next_occurring(:sunday).advance(weeks: 2),
+    venue: Faker::Address.street_address,
+    songs: [songs.sample]
+  )
+end
