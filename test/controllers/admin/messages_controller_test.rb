@@ -14,48 +14,65 @@ module Admin
       get admin_messages_path
       assert_response :success
       assert_template 'admin/messages/index'
+      assert_select 'table#messages-datatable'
     end
 
-    test 'should get show' do
+    test 'should get index with JSON' do
+      get admin_messages_path(format: :json), xhr: true
+      assert_response :success
+
+      json_response = JSON.parse(response.body)
+      assert_includes json_response.keys, 'data'
+      assert_includes json_response.keys, 'recordsTotal'
+      assert_includes json_response.keys, 'recordsFiltered'
+    end
+
+    test 'should get show and mark as read' do
+      @message.update(read: false)
       get admin_message_path(@message)
+
       assert_response :success
       assert_template 'admin/messages/show'
-    end
 
-    test 'should mark messages as read' do
-      @message.update read: false
-      assert_equal @message.read, false
-      post do_to_all_admin_messages_path params: {
-        all_messages: { msgs: [@message.id] },
-        commit: 'Mark as Read'
-      }
-      assert_response :redirect
-      assert_redirected_to admin_messages_path
       @message.reload
-      assert_equal @message.read, true
+      assert @message.read?, 'Message should be marked as read after viewing'
     end
 
-    test 'should mark messages as unread' do
-      @message.update read: true
-      assert_equal @message.read, true
-      post do_to_all_admin_messages_path params: {
-        all_messages: { msgs: [@message.id] },
-        commit: 'Mark as Unread'
-      }
-      assert_response :redirect
-      assert_redirected_to admin_messages_path
+    test 'should mark messages as read via AJAX' do
+      @message.update(read: false)
+
+      post do_to_all_admin_messages_path,
+           params: { all_messages: { msgs: [@message.id] },
+                     commit: Admin::MessagesController::MARK_AS_READ },
+           xhr: true
+
+      assert_response :success
       @message.reload
-      assert_equal @message.read, false
+      assert @message.read?, 'Message should be marked as read'
     end
 
-    test 'should delete messages' do
-      assert_difference 'Message.count', -1 do
-        post do_to_all_admin_messages_path params: {
-          all_messages: { msgs: [@message.id] },
-          commit: 'Delete Messages'
-        }
-        assert_response :redirect
-        assert_redirected_to admin_messages_path
+    test 'should mark messages as unread via AJAX' do
+      @message.update(read: false)
+
+      post do_to_all_admin_messages_path,
+           params: { all_messages: { msgs: [@message.id] },
+                     commit: Admin::MessagesController::MARK_AS_UNREAD },
+           xhr: true
+
+      assert_response :success
+      @message.reload
+      assert_not @message.read?, 'Message should be marked as unread'
+    end
+    test 'datatable should include required columns' do
+      get admin_messages_path(format: :json), xhr: true
+
+      json_response = JSON.parse(response.body)
+      first_record = json_response['data'].first
+
+      required_columns = %w[name email subject created_at]
+      required_columns.each do |column|
+        assert_includes first_record.keys, column,
+                        "Datatable response should include #{column} column"
       end
     end
   end

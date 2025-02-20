@@ -125,27 +125,27 @@ while song_titles.length < 50
   begin
     song_titles << title
     song = Song.create!(title: title)
-    %w[SATB\ w/\ Piano Piano Soprano Alto Tenor Bass].each do |name|
+    ['SATB w/ Piano', 'Piano', 'Soprano', 'Alto', 'Tenor', 'Bass'].each do |name|
       instrument = Instrument.create(name: name, song: song)
       if instrument.errors.any?
-        puts "Failed to create #{name} for song #{song.title}: #{instrument.errors.full_messages}"
+        Rails.logger.debug { "Failed to create #{name} for song #{song.title}: #{instrument.errors.full_messages}" }
       end
     end
 
     songs << song
-  rescue => e
-    puts "Error creating song #{title}: #{e.message}"
+  rescue StandardError => e
+    Rails.logger.debug { "Error creating song #{title}: #{e.message}" }
   end
 end
 
 # Rehearsals
 104.times do |index|
   Rehearsal.create!(
-    date: index.weeks.ago.end_of_week(start_day = :sunday),
+    date: index.weeks.ago.end_of_week(:sunday),
     venue: Faker::Address.street_address,
     host: Faker::Name.name,
     songs: songs.sample((1..3).to_a.sample),
-    time: "Noon"
+    time: 'Noon'
   )
 end
 
