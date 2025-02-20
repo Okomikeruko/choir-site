@@ -18,7 +18,7 @@
             =f.label :"#{voice}" do
               =check_box_tag "member[vocal_range][]",
                              voice,
-                             member.vocal_range.include?(voice),
+                             member.vocal_range.to_s.include?(voice),
                              id: "member_vocal_range_#{voice}"
               =voice
       %br
