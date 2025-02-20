@@ -3,6 +3,15 @@
 # Model for Song
 class Song < ApplicationRecord
   # extend PaperclipToActiveStorage
+  include DatatableColumnsConcern
+
+  define_datatable_column :title,
+                          label: 'Song Title'
+  define_datatable_column :instruments_count,
+                          label: 'Instruments'
+  define_datatable_column :performances_count,
+                          label: 'Performances'
+  define_controls_column formatter: ->(record) { helpers.controls_html(record) }
 
   before_save :set_slug, :set_sort_order
 

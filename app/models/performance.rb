@@ -2,6 +2,16 @@
 
 # Model for Performance
 class Performance < ApplicationRecord
+  include DatatableColumnsConcern
+
+  define_datatable_column :date,
+                          label: 'Performance Date',
+                          formatter: ->(record) { record.date.strftime('%m/%d/%Y') }
+  define_datatable_column :venue
+  define_datatable_column :songs,
+                          formatter: ->(record) { record.songs.map(&:title).to_sentence }
+  define_controls_column formatter: ->(record) { helpers.controls_html(record) }
+
   default_scope { order(date: :desc) }
 
   has_many :performance_songs, dependent: :destroy

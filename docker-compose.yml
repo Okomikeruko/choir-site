@@ -13,7 +13,7 @@ services:
     stdin_open: true
     tty: true
     volumes:
-      - ../..:/myapp
+      - .:/myapp
       - gem_cache:/usr/local/bundle/gems
 
 networks:
@@ -22,4 +22,3 @@ networks:
 
 volumes:
   gem_cache:
-  pgdata:

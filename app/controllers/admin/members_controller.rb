@@ -5,17 +5,10 @@ module Admin
   class MembersController < AdminController
     before_action :find_member, only: %i[edit update destroy]
 
-    def index
-      @members = Member.all
+    datatable_model Member
 
-      respond_to do |format|
-        format.html
-        format.json do
-          render json: BaseDatatable.new(params,
-                                         model_class: Member,
-                                         view_context: view_context)
-        end
-      end
+    def index
+      respond_with_datatable
     end
 
     def new

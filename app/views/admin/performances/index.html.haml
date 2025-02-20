@@ -6,14 +6,4 @@
     Add New Performance
 .row
   .col-sm-12
-    %table.table
-      %thead
-        %tr
-          %th Performance Date
-          %th Venue
-          %th Songs
-          %th.text-right
-            Controls
-      %tbody
-        -@performances.each do |performance|
-          =render performance
+    = datatable_table_for Performance

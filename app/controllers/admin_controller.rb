@@ -2,6 +2,8 @@
 
 # Controller for managing admin.
 class AdminController < ApplicationController
+  include AdminDatatableConcern
+
   layout 'admin'
   before_action :authenticate_user!
 

@@ -6,17 +6,4 @@
     Add New Rehearsal
 .row
   .col-sm-12
-    %table.table
-      %thead
-        %tr
-          %th Date
-          %th Time
-          %th Host
-          %th Venue
-          %th Songs
-          %th Audio
-          %th.text-right Controls
-      %tbody
-        -@rehearsals.each do |rehearsal|
-          =render rehearsal
-  =will_paginate
+    = datatable_table_for Rehearsal

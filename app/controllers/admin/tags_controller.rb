@@ -3,11 +3,14 @@
 module Admin
   # Controller for managing tags in the admin section.
   class TagsController < AdminController
+    datatable_model Tag
     before_action :find_all_tags
     before_action :find_new_tag, except: [:create]
     before_action :find_tag, only: %i[update destroy]
 
-    def index; end
+    def index
+      respond_with_datatable
+    end
 
     def create
       @new_tag = Tag.new(tag_params)

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  mount ActionCable.server => '/cable'
+
   root to: 'static_pages#home'
 
   devise_for :users, controllers: {

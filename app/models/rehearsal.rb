@@ -2,6 +2,19 @@
 
 # Model for Rehearsal
 class Rehearsal < ApplicationRecord
+  include DatatableColumnsConcern
+
+  define_datatable_column :date,
+                          formatter: ->(record) { record.date.strftime('%m/%d/%Y') }
+  define_datatable_column :time,
+                          formatter: ->(record) { record.time.to_s }
+  define_datatable_column :host
+  define_datatable_column :venue
+  define_datatable_column :rehearsal_songs_count, label: 'Songs'
+  define_datatable_column :audio,
+                          formatter: ->(record) { record.audio.exists? ? 'Yes' : 'No' }
+  define_controls_column formatter: ->(record) { helpers.controls_html(record) }
+
   before_validation :set_date
 
   default_scope { order(date: :desc) }

@@ -11,7 +11,9 @@ module DatatableHelper
                 class: 'table table-hover',
                 id: "#{model_class.name.downcase.pluralize}-datatable",
                 data: { columns: model_class.javascript_column_config.to_json,
-                        source: url_for([:admin, model_class, { format: :json }]) } do
+                        source: url_for([:admin, model_class, { format: :json }]),
+                        order: model_class.initial_sort_order,
+                        buttons: model_class.javascript_buttons_config.to_json } do
       safe_join(
         [
           content_tag(:thead) do
@@ -28,14 +30,15 @@ module DatatableHelper
   end
 
   def datatable_headers_for(model_class)
-    output = model_class.datatable_columns.values.map do |col|
-      content_tag(:th, col[:label], class: col[:className])
+    output = model_class.visible_datatable_columns.values.map do |col|
+      content_tag(:th, col[:label], class: col[:className].presence)
     end
     safe_join output
   end
 
   def controls_html(record)
-    ApplicationController.renderer.render(
+    renderer ||= ApplicationController.renderer
+    renderer.render(
       partial: 'admin/shared/controls',
       locals: { record: record },
       format: :html

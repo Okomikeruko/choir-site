@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2025_02_06_181123) do
+ActiveRecord::Schema.define(version: 2025_02_20_185348) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 2025_02_06_181123) do
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "articles_count", default: 0
+    t.integer "article_categories_count", default: 0
     t.index ["category_id"], name: "index_categories_on_category_id"
   end
 
@@ -99,7 +99,6 @@ ActiveRecord::Schema.define(version: 2025_02_06_181123) do
     t.datetime "midi_updated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index "lower((name)::text)", name: "index_instruments_on_lower_name_and_song", unique: true
     t.index ["name", "song_id"], name: "index_instruments_on_name_and_song_id", unique: true
     t.index ["song_id"], name: "index_instruments_on_song_id"
   end
@@ -178,6 +177,7 @@ ActiveRecord::Schema.define(version: 2025_02_06_181123) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "time"
+    t.integer "rehearsal_songs_count", default: 0, null: false
   end
 
   create_table "songs", force: :cascade do |t|
@@ -201,6 +201,7 @@ ActiveRecord::Schema.define(version: 2025_02_06_181123) do
     t.string "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "article_tags_count", default: 0, null: false
   end
 
   create_table "users", force: :cascade do |t|
