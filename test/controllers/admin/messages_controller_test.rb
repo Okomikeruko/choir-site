@@ -21,7 +21,7 @@ module Admin
       get admin_messages_path(format: :json), xhr: true
       assert_response :success
 
-      json_response = JSON.parse(response.body)
+      json_response = response.parsed_body
       assert_includes json_response.keys, 'data'
       assert_includes json_response.keys, 'recordsTotal'
       assert_includes json_response.keys, 'recordsFiltered'
@@ -66,7 +66,7 @@ module Admin
     test 'datatable should include required columns' do
       get admin_messages_path(format: :json), xhr: true
 
-      json_response = JSON.parse(response.body)
+      json_response = response.parsed_body
       first_record = json_response['data'].first
 
       required_columns = %w[name email subject created_at]
