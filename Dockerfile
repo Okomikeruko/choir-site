@@ -4,16 +4,16 @@ FROM ruby:3.0-slim
 RUN apt-get update -qq && \
     apt-get install -y --no-install-recommends \
         curl build-essential gnupg software-properties-common \
-        postgresql-client git ca-certificates libpq-dev libv8-dev \
-        nodejs npm && \
-    # Install Yarn
+        postgresql-client git ca-certificates libpq-dev libv8-dev && \
+    # Install Node.js v16.x from NodeSource
+    curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
+    apt-get install -y nodejs && \
+    # Install Yarn globally
     npm install -g yarn && \
     # Verify versions
-    node --version && \
-    yarn --version && \
+    node --version && yarn --version && \
     # Cleanup
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
 WORKDIR /app
