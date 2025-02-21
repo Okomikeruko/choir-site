@@ -4,21 +4,13 @@ FROM ruby:3.0-slim
 RUN apt-get update -qq && \
     apt-get install -y --no-install-recommends \
         curl build-essential gnupg software-properties-common \
-        postgresql-client git ca-certificates libpq-dev libv8-dev && \
-    # Setup Node.js repository
-    mkdir -p /etc/apt/keyrings && \
-    curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg && \
-    echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_16.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list && \
-    # Setup Yarn repository
-    curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | tee /etc/apt/keyrings/yarn.gpg >/dev/null && \
-    echo "deb [signed-by=/etc/apt/keyrings/yarn.gpg] https://dl.yarnpkg.com/debian stable main" | tee /etc/apt/sources.list.d/yarn.list && \
-    # Install Node.js and Yarn
-    apt-get update -qq && \
-    apt-get install -y nodejs yarn && \
+        postgresql-client git ca-certificates libpq-dev libv8-dev \
+        nodejs npm && \
+    # Install Yarn
+    npm install -g yarn && \
     # Verify versions
     node --version && \
     yarn --version && \
-    curl --version && \
     # Cleanup
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
@@ -43,11 +35,8 @@ RUN yarn install --frozen-lockfile
 # Copy application code
 COPY . .
 
-# Update browserslist DB and precompile assets
-RUN npx browserslist@latest --update-db && \
-    SECRET_KEY_BASE=dummy \
-    RAILS_ENV=production \
-    bundle exec rake assets:precompile
+# Precompile assets
+RUN SECRET_KEY_BASE=dummy bundle exec rake assets:precompile
 
 # Start the server
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
