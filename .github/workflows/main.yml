@@ -85,6 +85,6 @@ jobs:
           heroku container:push web -a $HEROKU_APP_NAME
           heroku container:release web -a $HEROKU_APP_NAME || {
             echo "Release failed, checking logs..."
-            heroku logs --tail -a $HEROKU_APP_NAME
+            heroku logs -n 100 -a $HEROKU_APP_NAME  # Get last 100 lines
             exit 1
           }
