@@ -43,7 +43,12 @@ FROM ruby:3.0-slim
 # Install production-only dependencies
 RUN apt-get update -qq && \
     apt-get install -y --no-install-recommends \
+    curl \
     libpq-dev && \
+    # Inatall Node.js
+    curl -fsSL https:/deb.nodesource.com/setup_16.x | bash - && \
+    apt-get install -y nodejs && \
+    # Clean up
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
