@@ -1,6 +1,6 @@
 FROM ruby:3.0-slim
 
-# Install system dependencies
+# Install system dependencies and Node.js 16.x
 RUN apt-get update -qq && \
     apt-get install -y --no-install-recommends \
         curl \
@@ -20,10 +20,13 @@ RUN apt-get update -qq && \
         nodejs \
         yarn \
         libpq-dev && \
-    apt-get clean && \
+    # Install mini_racer for ExecJS
+    apt-get install -y --no-install-recommends \
+        libv8-dev && \
+    # Keep curl installed (don't remove it)
     rm -rf /var/lib/apt/lists/*
 
-# Verify Node.js version
+# Verify versions
 RUN node --version && \
     yarn --version
 
@@ -33,8 +36,7 @@ WORKDIR /app
 # Set Rails to run in production
 ENV RAILS_ENV=production \
     NODE_ENV=production \
-    BUNDLE_WITHOUT="development:test" \
-    BUNDLE_DEPLOYMENT="1"
+    BUNDLE_WITHOUT="development"
 
 # Install gems
 COPY Gemfile Gemfile.lock ./
@@ -48,7 +50,7 @@ RUN yarn install --frozen-lockfile
 # Copy application code
 COPY . .
 
-# Precompile assets with proper environment variables
+# Precompile assets
 RUN SECRET_KEY_BASE=dummy \
     RAILS_ENV=production \
     bundle exec rake assets:precompile

@@ -204,6 +204,7 @@ GEM
       railties (>= 3.2.16)
     json (2.7.1)
     language_server-protocol (3.17.0.3)
+    libv8-node (21.7.2.0-x86_64-linux)
     listen (3.8.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -223,6 +224,8 @@ GEM
     mime-types-data (3.2023.1205)
     mini_magick (4.12.0)
     mini_mime (1.1.5)
+    mini_racer (0.12.0)
+      libv8-node (~> 21.7.2.0)
     minitest (5.20.0)
     minitest-reporters (1.6.1)
       ansi
@@ -448,6 +451,7 @@ DEPENDENCIES
   listen
   mime-types
   mini_magick (~> 4.7)
+  mini_racer
   minitest-reporters
   multipart-post
   pg
