@@ -427,8 +427,11 @@ DEPENDENCIES
   carrierwave
   cocoon
   coffee-rails (~> 5.0.0)
+  coffee-script
+  coffee-script-source
   devise
   erb2haml
+  execjs
   faker
   fog-aws
   font-awesome-sass
@@ -460,6 +463,7 @@ DEPENDENCIES
   sass-rails
   sidekiq
   spring
+  sprockets
   turbolinks (~> 5)
   tzinfo-data
   uglifier (= 3.2.0)
