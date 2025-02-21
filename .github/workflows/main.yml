@@ -68,12 +68,16 @@ jobs:
       - test
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # This fetches all history
 
-      - name: Deploy to Heroku
+      - name: Log in to Heroku Container Registry
         env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        run: heroku container:login
+      
+      - name: Build and push
+        env:          
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
           HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
         run: |
-          git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git HEAD:main --force
+          heroku container:push web -a $HEROKU_APP_NAME
+          heroku container:release web -a $HEROKU_APP_NAME
