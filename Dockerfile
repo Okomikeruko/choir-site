@@ -46,7 +46,7 @@ RUN apt-get update -qq && \
     curl \
     libpq-dev && \
     # Inatall Node.js
-    curl -fsSL https:/deb.nodesource.com/setup_16.x | bash - && \
+    curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
     apt-get install -y nodejs && \
     # Clean up
     apt-get clean && \
