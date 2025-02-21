@@ -1,70 +1,23 @@
-# Base build stage
-FROM ruby:3.0-slim AS builder
+# Use Ruby 3.0.7
+FROM ruby:3.0.7
+
+# Set working directory
+WORKDIR /app
 
 # Install system dependencies
-RUN apt-get update -qq && \
-    apt-get install -y --no-install-recommends \
+RUN apt-get update -qq && apt-get install -y \
     build-essential \
-    curl \
     libpq-dev \
-    node-gyp \
-    pkg-config \
-    python-is-python3 && \
-    # Install Node.js
-    curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
-    apt-get install -y nodejs && \
-    # Install Yarn
-    npm install -g yarn && \
-    # Clean up
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    nodejs \
+    yarn
 
-WORKDIR /myapp
+# Install gems
+COPY Gemfile Gemfile.lock ./
+RUN gem install bundler && bundle install --jobs 4 --retry 3
 
-# Set production environment
-ENV RAILS_ENV=production \
-    NODE_ENV=production \
-    BUNDLE_WITHOUT="development:test"
-
-# Install specific bundler version
-RUN gem install bundler:2.2.33
-
-# Copy all files
+# Copy the app
 COPY . .
 
-# Install dependencies
-RUN bundle config set --local without 'development test' && \
-    bundle install --jobs 4 --retry 3 && \
-    yarn install --production --frozen-lockfile
-
-# Final stage
-FROM ruby:3.0-slim
-
-# Install production dependencies
-RUN apt-get update -qq && \
-    apt-get install -y --no-install-recommends \
-    curl \
-    gnupg2 \
-    libpq-dev && \
-    # Install Node.js
-    curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
-    apt-get install -y nodejs && \
-    # Clean up
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-WORKDIR /myapp
-
-# Copy built artifacts and code
-COPY --from=builder /usr/local/bundle /usr/local/bundle
-COPY --from=builder /myapp /myapp
-COPY --from=builder /usr/local/lib/node_modules /usr/local/lib/node_modules
-COPY --from=builder /usr/local/bin/yarn /usr/local/bin/yarn
-
-# Configure Rails for production
-ENV RAILS_ENV=production \
-    RAILS_SERVE_STATIC_FILES=true \
-    RAILS_LOG_TO_STDOUT=true \
-    NODE_ENV=production
-
-CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
+# Precompile assets
+ENV RAILS_ENV=production
+RUN bundle exec rails assets:precompile
