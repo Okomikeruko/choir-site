@@ -3,15 +3,8 @@ FROM ruby:3.0-slim
 # Install system dependencies
 RUN apt-get update -qq && \
     apt-get install -y --no-install-recommends \
-        curl \
-        build-essential \
-        gnupg \
-        software-properties-common \
-        postgresql-client \
-        git \
-        ca-certificates \
-        libpq-dev \
-        libv8-dev && \
+        curl build-essential gnupg software-properties-common \
+        postgresql-client git ca-certificates libpq-dev libv8-dev && \
     # Setup Node.js repository
     mkdir -p /etc/apt/keyrings && \
     curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg && \
@@ -25,6 +18,7 @@ RUN apt-get update -qq && \
     # Verify versions
     node --version && \
     yarn --version && \
+    curl --version && \
     # Cleanup
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
