@@ -5,8 +5,7 @@ build:
 release:
   image: web
   command:
-    - bundle exec rake db:migrate
-    - bundle exec rake assets:precompile
+    - bundle exec rails db:migrate
 
 run:
-  web: bundle exec rails server
+  web: bundle exec puma -C config/puma.rb
