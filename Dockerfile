@@ -58,10 +58,8 @@ WORKDIR /myapp
 # Copy built artifacts and code
 COPY --from=builder /usr/local/bundle /usr/local/bundle
 COPY --from=builder /myapp /myapp
-COPY --from=builder /usr/local/share/.config/yarn /usr/local/share/.config/yarn
 COPY --from=builder /usr/local/lib/node_modules /usr/local/lib/node_modules
 COPY --from=builder /usr/local/bin/yarn /usr/local/bin/yarn
-COPY --from=builder /usr/local/bin/yarnpkg /usr/local/bin/yarnpkg
 
 # Configure Rails for production
 ENV RAILS_ENV=production \
