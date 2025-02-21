@@ -9,15 +9,23 @@ RUN apt-get update -qq && \
         software-properties-common \
         postgresql-client \
         git \
-        nodejs && \
+        ca-certificates && \
+    # Add NodeSource repository for Node.js 16.x
+    curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
+    # Add Yarn repository
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
     apt-get update -qq && \
     apt-get install -y --no-install-recommends \
+        nodejs \
         yarn \
         libpq-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+
+# Verify Node.js version
+RUN node --version && \
+    yarn --version
 
 # Set working directory
 WORKDIR /app
@@ -35,7 +43,7 @@ RUN bundle config set --local without 'development test' && \
 
 # Install yarn packages
 COPY package.json yarn.lock ./
-RUN yarn install --production --frozen-lockfile
+RUN yarn install --frozen-lockfile
 
 # Copy application code
 COPY . .
