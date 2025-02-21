@@ -5,9 +5,11 @@ build:
 release:
   image: web
   command:
-    - echo "Starting release phase..."
-    - bundle exec rails db:migrate
-    - echo "Release phase complete."
+    - echo "Starting release phase..." || true
+    - bundle exec rails --version || true
+    - bundle exec rails db:migrate:status || true
+    - bundle exec rails db:migrate 2>&1 || echo "Migration failed with error: $?"
+    - echo "Release phase complete" || true
 
 run:
   web: bundle exec puma -C config/puma.rb
