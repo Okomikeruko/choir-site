@@ -5,7 +5,9 @@ build:
 release:
   image: web
   command:
+    - echo "Starting release phase..."
     - bundle exec rails db:migrate
+    - echo "Release phase complete."
 
 run:
   web: bundle exec puma -C config/puma.rb
