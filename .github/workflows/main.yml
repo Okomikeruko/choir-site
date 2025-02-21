@@ -83,4 +83,8 @@ jobs:
           HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
         run: |
           heroku container:push web -a $HEROKU_APP_NAME
-          heroku container:release web -a $HEROKU_APP_NAME
+          heroku container:release web -a $HEROKU_APP_NAME || {
+            echo "Release failed, checking logs..."
+            heroku logs --tail -a $HEROKU_APP_NAME
+            exit 1
+          }
