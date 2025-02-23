@@ -2,7 +2,6 @@
 
 # Model for Instrument
 class Instrument < ApplicationRecord
-  extend PaperclipToActiveStorage
 
   default_scope { order(position: :asc) }
   belongs_to :song, counter_cache: true
@@ -19,9 +18,7 @@ class Instrument < ApplicationRecord
                    length: { maximum: 60 },
                    uniqueness: { scope: :song, case_sensitive: false }
 
-  validate :correct_pdf_mime_type
-  validate :correct_midi_mime_type
-  validate :correct_mp3_mime_type
+  validate :correct_mime_types
 
   def empty?
     pdf_blob.nil? && mp3_blob.nil? && midi_blob.nil?
@@ -51,21 +48,16 @@ class Instrument < ApplicationRecord
 
   private
 
-  def correct_pdf_mime_type
-    return unless pdf.attached? && !pdf.content_type.in?(%w[application/pdf])
+  def correct_mime_types
+    {
+      pdf:  %w[application/pdf],
+      midi: %w[audio/midi],
+      mp3:  %w[audio/mpeg audio/mp3]
+    }.each do |attr, content_types|
+      obj = self.send(attr)
+      next unless obj.attached? && !content_types.include?(obj.content_type)
 
-    errors.add(:pdf, 'Must be a PDF file')
-  end
-
-  def correct_midi_mime_type
-    return unless midi.attached? && !midi.content_type.in?(%w[audio/midi])
-
-    errors.add(:midi, 'Must be a MIDI file')
-  end
-
-  def correct_mp3_mime_type
-    return unless mp3.attached? && !mp3.content_type.in?(%w[audio/mpeg audio/mp3])
-
-    errors.add(:mp3, 'Must be an MP3 file')
+      errors.add(attr, "Must be an #{attr.to_s.upcase} file")
+    end
   end
 end

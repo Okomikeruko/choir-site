@@ -2,6 +2,11 @@
 
 source 'https://rubygems.org'
 
+gem 'rails', '6.1.7.6'
+gem 'activesupport', '6.1.7.6'
+gem 'concurrent-ruby', '~> 1.1.9'
+gem 'logging', '~> 2.3.0'
+
 gem 'actioncable'
 gem 'ajax-datatables-rails'
 gem 'bcrypt', '~> 3.1.12'
@@ -18,9 +23,7 @@ gem 'jquery-datatables'
 gem 'jquery-rails'
 gem 'mime-types'
 gem 'mini_magick', '~> 4.7'
-gem 'mini_racer'
 gem 'puma', '~> 6'
-gem 'rails', '~> 6.1'
 gem 'sass-rails'
 gem 'sprockets'
 gem 'turbolinks', '~> 5'
@@ -44,16 +47,26 @@ gem 'sidekiq'
 gem 'wysiwyg-rails'
 
 group :development, :test do
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'byebug', platform: :mri
-  gem 'spring'
+  gem 'debug', require: false
+  gem 'rack-mini-profiler'
+  gem 'rdbg'
+  gem 'ruby-prof'
+  # gem 'spring'
 end
 
 group :development do
+  gem 'bullet'
   gem 'coffee-script'
   gem 'coffee-script-source'
+  gem 'dotenv'
   gem 'erb2haml'
   gem 'foreman'
   gem 'listen'
+  gem 'pg_query'
+  gem 'prosopite'
   gem 'rails_best_practices'
   gem 'rubocop', '~> 1.59'
   gem 'rubocop-capybara'

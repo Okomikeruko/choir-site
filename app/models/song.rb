@@ -2,7 +2,6 @@
 
 # Model for Song
 class Song < ApplicationRecord
-  # extend PaperclipToActiveStorage
   include DatatableColumnsConcern
 
   define_datatable_column :title,

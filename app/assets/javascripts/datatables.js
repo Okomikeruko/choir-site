@@ -105,10 +105,6 @@ const initializeDataTables = () => {
   $('table[data-source]').each((_, element) => {
     const $table = $(element);
 
-    if ($.fn.DataTable.isDataTable($table)) {
-      return;
-    }
-
     $table.DataTable({
       ajax: {
         url: $table.data('source')
