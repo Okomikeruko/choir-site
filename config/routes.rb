@@ -18,9 +18,9 @@ Rails.application.routes.draw do
             only: %i[index show]
   resources :rehearsals,
             only: [:index]
-  resources :contact,
-            controller: "messages",
-            only: %i[new create]
+  resources :contact, controller: :messages, only: ["new", "create"]
+  get  'contact', to: 'messages#new'
+  post 'contact', to: 'messages#create'
   get 'about-us', to: 'static_pages#about_us'
 
   resources :admin, only: [:index]

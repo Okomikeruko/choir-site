@@ -6,7 +6,6 @@ services:
     command: bundle exec rails server -b 0.0.0.0
     environment:
       - DATABASE_URL=postgres://choir_postgres:password@postgres13:5432
-      - RAILS_ENV=development
     networks:
       - postgres_network
     ports:

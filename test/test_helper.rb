@@ -4,7 +4,7 @@
 require File.expand_path('../config/environment', __dir__)
 require 'rails/test_help'
 require 'minitest/reporters'
-Minitest::Reporters.use!
+Minitest::Reporters.use! unless ENV['RM_INFO']
 
 # Module for ActiveSupport, providing testing facilities
 module ActiveSupport

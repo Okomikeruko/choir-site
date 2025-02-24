@@ -80,6 +80,7 @@ group :test do
   gem 'guard-minitest'
   gem 'minitest-reporters'
   gem 'rails-controller-testing'
+  # gem 'simple-cov'
 end
 
 group :production do

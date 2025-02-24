@@ -1,7 +1,7 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: <%= ENV.fetch('DATABASE_HOST', 'postgres13') %>
+  host: <%= ENV.fetch('DATABASE_HOST', '172.21.0.2') %>
   username: <%= ENV.fetch('POSTGRES_USER', 'choir_postgres') %>
   password: <%= ENV.fetch('POSTGRES_PASSWORD', 'password') %>
   port: <%= ENV.fetch("DATABASE_PORT") { 5432 } %>
