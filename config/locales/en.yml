@@ -1,6 +1,6 @@
 en:
   messages:
-    created:
+    create:
       success: 'Your message has been sent.'
   admin:
     articles:
