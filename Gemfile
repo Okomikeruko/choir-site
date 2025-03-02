@@ -80,7 +80,7 @@ group :test do
   gem 'guard-minitest'
   gem 'minitest-reporters'
   gem 'rails-controller-testing'
-  # gem 'simple-cov'
+  gem 'simplecov', require: false
 end
 
 group :production do

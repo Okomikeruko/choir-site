@@ -1,21 +1,36 @@
 services:
-  web:
+  # Base service configuration (not directly used)
+  web_base: &web_base
     build:
       context: .
       dockerfile: Dockerfile.dev
-    command: bundle exec rails server -b 0.0.0.0
     environment:
       - DATABASE_URL=postgres://choir_postgres:password@postgres13:5432
     networks:
       - postgres_network
-    ports:
-      - "3000:3000"
-      - "1234:1234"
     stdin_open: true
     tty: true
     volumes:
       - .:/myapp
       - gem_cache:/usr/local/bundle/gems
+
+  # Development service
+  web:
+    <<: *web_base
+    container_name: choir-site-web
+    command: bundle exec rails server -b 0.0.0.0
+    environment:
+      - RAILS_ENV=development
+    ports:
+      - "3000:3000"
+      - "1234:1234"
+
+  # Test service
+  test:
+    <<: *web_base
+    container_name: choir-site-test
+    environment:
+      - RAILS_ENV=test
 
 networks:
   postgres_network:
