@@ -13,7 +13,6 @@ require 'concerns/action_buttons_concern'
 #
 # @see https://github.com/jbox-web/ajax-datatables-rails
 class CategoryDatatable < AjaxDatatablesRails::ActiveRecord
-  include ::ActionButtonsConcern
   extend Forwardable
 
   def_delegators :@view, :polymorphic_path, :sanitize
