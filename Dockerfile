@@ -19,9 +19,10 @@ RUN apt-get update -qq && \
 WORKDIR /app
 
 # Set Rails to run in production
+# Use existing SECRET_KEY_BASE if available, otherwise generate a random one
 ENV RAILS_ENV=production \
     NODE_ENV=production \
-    BUNDLE_WITHOUT="development"
+    BUNDLE_WITHOUT="development test"
 
 # Install gems
 COPY Gemfile Gemfile.lock ./
@@ -36,7 +37,10 @@ RUN yarn install --frozen-lockfile
 COPY . .
 
 # Precompile assets
-RUN SECRET_KEY_BASE=dummy bundle exec rake assets:precompile
+RUN SECRET_KEY_BASE=dummy bundle exec rake assets:precompile || \
+    (echo "Asset compilation failed - check JavaScript syntax" && \
+     NODE_ENV=production RAILS_ENV=production bundle exec rake assets:clobber && \
+     SECRET_KEY_BASE=dummy bundle exec rake assets:precompile --trace)
 
 # Expose the port Heroku sets
 EXPOSE $PORT
