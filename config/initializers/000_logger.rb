@@ -4,14 +4,16 @@ require 'logger'
 require 'active_support'
 
 # Ensure Logger is loaded before it's used by ActiveSupport
-Logger.new(STDOUT) unless defined?(Logger)
+Logger.new($stdout) unless defined?(Logger)
 
 module ActiveSupport
+  # Module for handling Logger Thread Safe Level
   module LoggerThreadSafeLevel
     def self.included(base)
       base.extend(ClassMethods)
     end
 
+    # Module for handling Class methods for Logger Threads.
     module ClassMethods
       def local_level
         IsolatedExecutionState[:logger_thread_safe_level]

@@ -10,7 +10,12 @@ class BaseDatatable < AjaxDatatablesRails::ActiveRecord
   attr_reader :model_class, :view
 
   def initialize(params, opts = {})
-    @model_class = opts.delete(:model_class) || opts.delete(:model_name)&.to_s&.classify&.constantize
+    @model_class = opts.delete(:model_class)
+
+    if @model_class.nil?
+      model_name = opts.delete(:model_name)
+      @model_class = model_name.to_s.classify.constantize if model_name
+    end
     @view = opts[:view_context]
     super
   end

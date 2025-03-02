@@ -1,6 +1,8 @@
 # frozen_string_literal: true
+
 require 'test_helper'
 
+# Tests for the Messages Controller
 class MessagesControllerTest < ActionDispatch::IntegrationTest
   def setup
     # Store original configuration
@@ -30,7 +32,7 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
     assert_select 'input#message_choir_part', { count: 1 }
   end
 
-  test "can create message directly" do
+  test 'can create message directly' do
     assert_difference 'Message.count', 1 do
       Message.create!(
         name: 'Test User',
@@ -41,7 +43,7 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test "should create new message" do
+  test 'should create new message' do
     # Explicitly add the timestamp parameter that Invisible Captcha might be expecting
     timestamp = Time.current.to_i
 
@@ -104,7 +106,7 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
     assert_no_difference 'Message.count' do
       post contact_path, params: {
         message: {
-          name: '',  # Invalid: name is required
+          name: '', # Invalid: name is required
           email: 'not-an-email', # Invalid email format
           subject: 'Test Subject',
           message: 'Test Message'

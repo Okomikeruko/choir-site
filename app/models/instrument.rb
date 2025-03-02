@@ -2,7 +2,6 @@
 
 # Model for Instrument
 class Instrument < ApplicationRecord
-
   default_scope { order(position: :asc) }
   belongs_to :song, counter_cache: true
 
@@ -50,12 +49,12 @@ class Instrument < ApplicationRecord
 
   def correct_mime_types
     {
-      pdf:  %w[application/pdf],
+      pdf: %w[application/pdf],
       midi: %w[audio/midi],
-      mp3:  %w[audio/mpeg audio/mp3]
+      mp3: %w[audio/mpeg audio/mp3]
     }.each do |attr, content_types|
-      obj = self.send(attr)
-      next unless obj.attached? && !content_types.include?(obj.content_type)
+      obj = send(attr)
+      next unless obj.attached? && content_types.exclude?(obj.content_type)
 
       errors.add(attr, "Must be an #{attr.to_s.upcase} file")
     end

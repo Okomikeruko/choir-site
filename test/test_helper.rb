@@ -1,5 +1,10 @@
 # frozen_string_literal: true
 
+require 'simplecov'
+SimpleCov.start
+
+# Previous content of test helper now starts here
+
 # Load Rails environment and necessary testing libraries
 require File.expand_path('../config/environment', __dir__)
 require 'rails/test_help'

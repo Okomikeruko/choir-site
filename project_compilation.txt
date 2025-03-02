@@ -160,7 +160,7 @@ yarn-debug.log*
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="choirsite_dev@localhost" uuid="493465d0-c42a-4abc-be24-832dd909a455">
+    <data-source source="LOCAL" name="choirsite@localhost" uuid="493465d0-c42a-4abc-be24-832dd909a455">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
@@ -275,6 +275,143 @@ Style/Documentation:
 Style/MixinUsage:
   Exclude:
     - 'bin/*'
+/*******************************************************************************
+* File: .run/All tests in test_ choir-site.run.xml
+*******************************************************************************/
+
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="All tests in test: choir-site" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest">
+    <module name="choir-site" />
+    <predefined_log_file enabled="true" id="RUBY_TESTUNIT" />
+    <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-Itest" />
+    <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+    <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="true" />
+    <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="Remote: ruby-3.0.7-p220" />
+    <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+    <envs>
+      <env name="RAILS_ENV" value="test" />
+      <env name="JRUBY_OPTS" value="-X+O" />
+    </envs>
+    <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
+    <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov" />
+    <EXTENSION ID="RubyDockerContainerSettingsRunConfigurationExtension" dockerComposeCommand="EXEC" />
+    <EXTENSION ID="net.ashald.envfile">
+      <option name="IS_ENABLED" value="false" />
+      <option name="IS_SUBST" value="false" />
+      <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+      <option name="IS_IGNORE_MISSING_FILES" value="false" />
+      <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+      <ENTRIES>
+        <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+      </ENTRIES>
+    </EXTENSION>
+    <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
+    <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="$MODULE_DIR$/test" />
+    <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+    <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPTS_PATHS" VALUE="" />
+    <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/{*_test,test_*,*_spec}.rb" />
+    <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
+    <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="ALL_IN_FOLDER" />
+    <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+    <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+    <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+    <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
+    <method v="2" />
+  </configuration>
+</component>
+/*******************************************************************************
+* File: .run/Compile Project.run.xml
+*******************************************************************************/
+
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Compile Project" type="ShConfigurationType">
+    <option name="SCRIPT_TEXT" value="./compile_project.sh" />
+    <option name="INDEPENDENT_SCRIPT_PATH" value="false" />
+    <option name="SCRIPT_PATH" value="$PROJECT_DIR$/compile_project.sh" />
+    <option name="SCRIPT_OPTIONS" value="" />
+    <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+    <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+    <option name="INTERPRETER_PATH" value="powershell.exe" />
+    <option name="INTERPRETER_OPTIONS" value="" />
+    <option name="EXECUTE_IN_TERMINAL" value="true" />
+    <option name="EXECUTE_SCRIPT_FILE" value="false" />
+    <envs />
+    <method v="2" />
+  </configuration>
+</component>
+/*******************************************************************************
+* File: .run/Launch Choir-Site Web & Test.run.xml
+*******************************************************************************/
+
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Launch Choir-Site Web &amp; Test" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+    <deployment type="docker-compose.yml">
+      <settings>
+        <option name="containerName" value="" />
+        <option name="envFilePath" value="" />
+        <option name="services">
+          <list>
+            <option value="test" />
+            <option value="web" />
+          </list>
+        </option>
+        <option name="sourceFilePath" value="docker-compose.yml" />
+        <option name="upAttachDependencies" value="true" />
+        <option name="upDetach" value="false" />
+      </settings>
+    </deployment>
+    <method v="2">
+      <option name="RunConfigurationTask" enabled="true" run_configuration_name="Remove Server.pid" run_configuration_type="ShConfigurationType" />
+    </method>
+  </configuration>
+</component>
+/*******************************************************************************
+* File: .run/Rebuild Choir-Site Web & Test.run.xml
+*******************************************************************************/
+
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Rebuild Choir-Site Web &amp; Test" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+    <deployment type="docker-compose.yml">
+      <settings>
+        <option name="containerName" value="" />
+        <option name="envFilePath" value="" />
+        <option name="commandLineOptions" value="--build" />
+        <option name="services">
+          <list>
+            <option value="web" />
+            <option value="test" />
+          </list>
+        </option>
+        <option name="sourceFilePath" value="docker-compose.yml" />
+        <option name="upAttachDependencies" value="true" />
+        <option name="upDetach" value="false" />
+      </settings>
+    </deployment>
+    <method v="2" />
+  </configuration>
+</component>
+/*******************************************************************************
+* File: .run/Remove Server.pid.run.xml
+*******************************************************************************/
+
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Remove Server.pid" type="ShConfigurationType">
+    <option name="SCRIPT_TEXT" value="rm tmp/pids/server.pid" />
+    <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+    <option name="SCRIPT_PATH" value="" />
+    <option name="SCRIPT_OPTIONS" value="" />
+    <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+    <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+    <option name="INTERPRETER_PATH" value="powershell.exe" />
+    <option name="INTERPRETER_OPTIONS" value="" />
+    <option name="EXECUTE_IN_TERMINAL" value="true" />
+    <option name="EXECUTE_SCRIPT_FILE" value="false" />
+    <envs />
+    <method v="2" />
+  </configuration>
+</component>
 /*******************************************************************************
 * File: Dockerfile
 *******************************************************************************/
@@ -410,6 +547,7 @@ group :test do
   gem 'guard-minitest'
   gem 'minitest-reporters'
   gem 'rails-controller-testing'
+  gem 'simplecov', require: false
 end
 
 group :production do
@@ -420,35 +558,105 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 /*******************************************************************************
+* File: Makefile
+*******************************************************************************/
+
+# Rails Docker Development Commands
+
+# Default target when you just type 'make'
+.PHONY: default
+default: up
+
+# Start the application
+.PHONY: up
+up:
+	docker-compose up
+
+# Start the application in detached mode
+.PHONY: up-d
+up-d:
+	docker-compose up -d
+
+# Stop the application
+.PHONY: down
+down:
+	docker-compose down
+
+# Restart the application
+.PHONY: restart
+restart:
+	docker-compose restart
+
+# Update gems without rebuilding (fastest)
+.PHONY: bundle
+bundle:
+	docker-compose run --rm web bundle install
+	docker-compose restart web
+
+# Update gems with a full rebuild (slower but more thorough)
+.PHONY: bundle-rebuild
+bundle-rebuild:
+	docker-compose down
+	docker-compose build
+	docker-compose up -d
+
+# Clean update by removing Gemfile.lock and rebuilding
+.PHONY: bundle-clean
+bundle-clean:
+	docker-compose down
+	rm -f Gemfile.lock
+	docker-compose build
+	docker-compose up -d
+
+# Full rebuild of all containers
+.PHONY: rebuild
+rebuild:
+	docker-compose down
+	docker-compose build --no-cache
+	docker-compose up -d
+
+# Run Rails console
+.PHONY: console
+console:
+	docker-compose run --rm web rails console
+
+# Run tests
+.PHONY: test
+test:
+	docker-compose run --rm web bundle exec rails test
+
+# Show running containers
+.PHONY: ps
+ps:
+	docker-compose ps
+
+# Show logs
+.PHONY: logs
+logs:
+	docker-compose logs -f
+
+# Run database migrations
+.PHONY: migrate
+migrate:
+	docker-compose run --rm web rails db:migrate
+
+# Reset database
+.PHONY: db-reset
+db-reset:
+	docker-compose run --rm web rails db:drop db:create db:migrate db:seed
+/*******************************************************************************
 * File: README.md
 *******************************************************************************/
 
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## Set up development on Windows
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-https://www.tokyodev.com/2021/03/23/paperclip-activestorage/
+1. Install Windows Subsystem for Linux
+```
+> wsl --install
+```
+and follow the setup instructions.
 /*******************************************************************************
 * File: Rakefile
 *******************************************************************************/
@@ -2253,10 +2461,11 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:name,
-                                    :email,
-                                    :subject,
-                                    :message)
+    params.require(:message)
+          .permit(:name,
+                  :email,
+                  :subject,
+                  :message)
   end
 end
 
@@ -5375,9 +5584,9 @@ is_text_file() {
         *.txt|*.rb|*.py|*.js|*.jsx|*.ts|*.tsx|*.css|*.scss|*.sass|*.less|*.html|*.htm|*.haml|*.erb|*.slim|\
         *.yml|*.yaml|*.json|*.md|*.markdown|*.xml|*.conf|*.cfg|*.ini|*.sh|*.bash|*.zsh|*.fish|*.coffee|\
         *.rake|*.ru|*.gemspec|*.env|*.env.*|*.gitignore|*.dockerignore|*.editorconfig|*.eslintrc|\
-        *.prettier*|*.babel*|*.postcss*|*.stylelint*|*.npmrc|*.yarnrc|*.rspec|*.rubocop.yml|*.haml-lint.yml|\
-        *.jshintrc|*.babelrc|gemfile|rakefile|procfile|readme*|license*|changelog*|contributing*|dockerfile|\
-        *docker-compose.yml|*.service|*.sql|makefile|*.pp|*.eex|*.leex|*.heex|*.vue|*.svelte|*.php|\
+        *.prettier*|*.babel*|*.postcss*|*.stylelint*|*.npmrc|*.yarnrc|*.rspec|\
+        *.jshintrc|gemfile|rakefile|procfile|readme*|license*|changelog*|contributing*|dockerfile|\
+        *.service|*.sql|makefile|*.pp|*.eex|*.leex|*.heex|*.vue|*.svelte|*.php|\
         *.java|*.scala|*.kt|*.kts|*.go|*.rs|*.toml|*.c|*.h|*.cpp|*.hpp|*.cs|*.fs|*.ex|*.exs)
             return 0  # It's a text file
             ;;
@@ -5528,7 +5737,7 @@ production:
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: <%= ENV.fetch('DATABASE_HOST', 'postgres13') %>
+  host: <%= ENV.fetch('DATABASE_HOST', '172.21.0.2') %>
   username: <%= ENV.fetch('POSTGRES_USER', 'choir_postgres') %>
   password: <%= ENV.fetch('POSTGRES_PASSWORD', 'password') %>
   port: <%= ENV.fetch("DATABASE_PORT") { 5432 } %>
@@ -6162,6 +6371,25 @@ Rails.application.config.filter_parameters += [:password]
 # end
 
 /*******************************************************************************
+* File: config/initializers/invisible_captcha.rb
+*******************************************************************************/
+
+
+
+# In test mode, we want controllable behavior
+if Rails.env.test?
+  InvisibleCaptcha.setup do |config|
+    # Keep timestamp enabled for specific tests
+    # config.timestamp_enabled = true
+
+    # Set a predictable honeypot
+    config.honeypots = ['choir_part']
+
+    # Lower threshold to speed up tests
+    # config.timestamp_threshold = 1
+  end
+end
+/*******************************************************************************
 * File: config/initializers/mime_types.rb
 *******************************************************************************/
 
@@ -6275,7 +6503,7 @@ en:
 
 en:
   messages:
-    created:
+    create:
       success: 'Your message has been sent.'
   admin:
     articles:
@@ -6409,9 +6637,9 @@ Rails.application.routes.draw do
             only: %i[index show]
   resources :rehearsals,
             only: [:index]
-  resources :contact,
-            controller: "messages",
-            only: %i[new create]
+  resources :contact, controller: :messages, only: ["new", "create"]
+  get  'contact', to: 'messages#new'
+  post 'contact', to: 'messages#create'
   get 'about-us', to: 'static_pages#about_us'
 
   resources :admin, only: [:index]
@@ -7852,24 +8080,38 @@ end
 *******************************************************************************/
 
 services:
-  web:
+  # Base service configuration (not directly used)
+  web_base: &web_base
     build:
       context: .
       dockerfile: Dockerfile.dev
-    command: bundle exec rails server -b 0.0.0.0
     environment:
       - DATABASE_URL=postgres://choir_postgres:password@postgres13:5432
-      - RAILS_ENV=development
     networks:
       - postgres_network
-    ports:
-      - "3000:3000"
-      - "1234:1234"
     stdin_open: true
     tty: true
     volumes:
       - .:/myapp
       - gem_cache:/usr/local/bundle/gems
+
+  # Development service
+  web:
+    <<: *web_base
+    container_name: choir-site-web
+    command: bundle exec rails server -b 0.0.0.0
+    environment:
+      - RAILS_ENV=development
+    ports:
+      - "3000:3000"
+      - "1234:1234"
+
+  # Test service
+  test:
+    <<: *web_base
+    container_name: choir-site-test
+    environment:
+      - RAILS_ENV=test
 
 networks:
   postgres_network:
@@ -7877,7 +8119,6 @@ networks:
 
 volumes:
   gem_cache:
-
 /*******************************************************************************
 * File: heroku.yml
 *******************************************************************************/
@@ -8772,45 +9013,123 @@ end
 *******************************************************************************/
 
 # frozen_string_literal: true
-
 require 'test_helper'
 
-# Test class for MessagesController
 class MessagesControllerTest < ActionDispatch::IntegrationTest
+  def setup
+    # Store original configuration
+    @original_timestamp_enabled = InvisibleCaptcha.timestamp_enabled
+    @original_spinner_enabled = InvisibleCaptcha.spinner_enabled
+    @original_honeypots = InvisibleCaptcha.honeypots
+
+    # Configure for testing
+    InvisibleCaptcha.timestamp_enabled = false
+    InvisibleCaptcha.spinner_enabled = false
+    InvisibleCaptcha.honeypots = ['choir_part']
+  end
+
+  def teardown
+    # Restore original configuration
+    InvisibleCaptcha.timestamp_enabled = @original_timestamp_enabled
+    InvisibleCaptcha.spinner_enabled = @original_spinner_enabled
+    InvisibleCaptcha.honeypots = @original_honeypots
+  end
+
   test 'should get new' do
     get contact_path
     assert_response :success
     assert_template 'messages/new'
+    assert_select 'form'
+    # The honeypot might be using different styling - check for the field itself
+    assert_select 'input#message_choir_part', { count: 1 }
   end
 
-  test 'should create new message' do
+  test "can create message directly" do
     assert_difference 'Message.count', 1 do
-      post contact_path params: {
+      Message.create!(
+        name: 'Test User',
+        email: 'test@example.com',
+        subject: 'Test Subject',
+        message: 'Test message content'
+      )
+    end
+  end
+
+  test "should create new message" do
+    # Explicitly add the timestamp parameter that Invisible Captcha might be expecting
+    timestamp = Time.current.to_i
+
+    message_attrs = {
+      name: 'Test User',
+      email: 'test@example.com',
+      subject: 'Test Subject',
+      message: 'Test message body.'
+    }
+
+    assert_difference 'Message.count', 1 do
+      post contact_path, params: {
+        message: message_attrs,
+        timestamp: timestamp,
+        # Explicitly provide an empty honeypot field
+        choir_part: nil
+      }
+    end
+
+    assert_redirected_to contact_path
+  end
+
+  test 'should create new message with valid attributes' do
+    assert_difference 'Message.count', 1 do
+      post contact_path, params: {
         message: {
           name: 'Luke Skywalker',
           email: 'jedi@starwars.com',
-          choir_part: nil,
           subject: 'New Recruits',
           message: 'Know anybody who can use the force?'
         }
       }
-      assert_response :redirect
-      assert_redirected_to contact_path
     end
+
+    assert_redirected_to contact_path
+    assert_equal 'Your message has been sent.', flash[:success]
   end
 
-  test 'should block bots from sending messages' do
+  test 'should not create message when honeypot field is filled (bot detection)' do
+    # Turn timestamp validation off to isolate honeypot testing
+    InvisibleCaptcha.timestamp_enabled = false
+
     assert_no_difference 'Message.count' do
-      post contact_path params: {
+      post contact_path, params: {
         message: {
           name: 'R2D2',
           email: 'droid@starwars.com',
-          choir_part: 'Tenor',
           subject: 'Help me Obiwan',
-          message: "You're my only hope."
+          message: "You're my only hope.",
+          choir_part: 'Tenor' # This is your honeypot field
         }
       }
     end
+
+    # Per the Invisible Captcha gem, by default it responds with head(200)
+    assert_response :success
+  end
+
+  test 'should not create message with invalid attributes' do
+    assert_no_difference 'Message.count' do
+      post contact_path, params: {
+        message: {
+          name: '',  # Invalid: name is required
+          email: 'not-an-email', # Invalid email format
+          subject: 'Test Subject',
+          message: 'Test Message'
+        }
+      }
+    end
+
+    assert_response :success
+    assert_template 'messages/new'
+    # Check for error messages without assuming specific formatting
+    assert_select '#error-explanation'
   end
 end
 
@@ -9675,12 +9994,16 @@ end
 *******************************************************************************/
 
 # frozen_string_literal: true
+require 'simplecov'
+SimpleCov.start
+
+# Previous content of test helper now starts here
 
 # Load Rails environment and necessary testing libraries
 require File.expand_path('../config/environment', __dir__)
 require 'rails/test_help'
 require 'minitest/reporters'
-Minitest::Reporters.use!
+Minitest::Reporters.use! unless ENV['RM_INFO']
 
 # Module for ActiveSupport, providing testing facilities
 module ActiveSupport

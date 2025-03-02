@@ -1,4 +1,4 @@
-
+# frozen_string_literal: true
 
 # In test mode, we want controllable behavior
 if Rails.env.test?

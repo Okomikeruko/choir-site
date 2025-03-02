@@ -12,9 +12,9 @@ is_text_file() {
         *.txt|*.rb|*.py|*.js|*.jsx|*.ts|*.tsx|*.css|*.scss|*.sass|*.less|*.html|*.htm|*.haml|*.erb|*.slim|\
         *.yml|*.yaml|*.json|*.md|*.markdown|*.xml|*.conf|*.cfg|*.ini|*.sh|*.bash|*.zsh|*.fish|*.coffee|\
         *.rake|*.ru|*.gemspec|*.env|*.env.*|*.gitignore|*.dockerignore|*.editorconfig|*.eslintrc|\
-        *.prettier*|*.babel*|*.postcss*|*.stylelint*|*.npmrc|*.yarnrc|*.rspec|*.rubocop.yml|*.haml-lint.yml|\
-        *.jshintrc|*.babelrc|gemfile|rakefile|procfile|readme*|license*|changelog*|contributing*|dockerfile|\
-        *docker-compose.yml|*.service|*.sql|makefile|*.pp|*.eex|*.leex|*.heex|*.vue|*.svelte|*.php|\
+        *.prettier*|*.babel*|*.postcss*|*.stylelint*|*.npmrc|*.yarnrc|*.rspec|\
+        *.jshintrc|gemfile|rakefile|procfile|readme*|license*|changelog*|contributing*|dockerfile|\
+        *.service|*.sql|makefile|*.pp|*.eex|*.leex|*.heex|*.vue|*.svelte|*.php|\
         *.java|*.scala|*.kt|*.kts|*.go|*.rs|*.toml|*.c|*.h|*.cpp|*.hpp|*.cs|*.fs|*.ex|*.exs)
             return 0  # It's a text file
             ;;

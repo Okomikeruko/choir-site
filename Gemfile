@@ -2,10 +2,10 @@
 
 source 'https://rubygems.org'
 
-gem 'rails', '6.1.7.6'
 gem 'activesupport', '6.1.7.6'
 gem 'concurrent-ruby', '~> 1.1.9'
 gem 'logging', '~> 2.3.0'
+gem 'rails', '6.1.7.6'
 
 gem 'actioncable'
 gem 'ajax-datatables-rails'
@@ -80,7 +80,7 @@ group :test do
   gem 'guard-minitest'
   gem 'minitest-reporters'
   gem 'rails-controller-testing'
-  # gem 'simple-cov'
+  gem 'simplecov', require: false
 end
 
 group :production do
