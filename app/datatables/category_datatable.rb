@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'concerns/action_buttons_concern'
-
 # CategoryDatatable handles server-side processing for Category data tables
 #
 # @example Basic usage in controller
