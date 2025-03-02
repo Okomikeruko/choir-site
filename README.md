@@ -224,13 +224,6 @@ make migrate  # Run migrations
 - `db/` - Database migrations and seeds
 - `test/` - Test files
 
-## Contributing
-
-1. Create a feature branch from `master`
-2. Make your changes
-3. Run tests to ensure they pass
-4. Submit a pull request
-
 ## Deployment
 
 This application is configured for deployment to Heroku using Docker containers.
