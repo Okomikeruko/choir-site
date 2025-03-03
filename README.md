@@ -13,9 +13,10 @@ A Ruby on Rails web application for managing a choir's repertoire, performances,
 
 ## Technology Stack
 
-- Ruby 3.0.7
+- Ruby 3.2.7
 - Rails 6.1.7
 - PostgreSQL 13
+- Node 20
 - Docker for development
 - Bootstrap for UI
 - jQuery and DataTables for interactive components
