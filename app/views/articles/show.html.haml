@@ -11,7 +11,7 @@
       %strong.push-left=@article.author_name
       %span.date.pull-right.hidden-md.hidden-lg=@article.created_at.strftime("%m/%d/%Y")
     .article-content
-      =@article.content.html_safe
+      = sanitize @article.content
 
 .row
   .col-xs-12
