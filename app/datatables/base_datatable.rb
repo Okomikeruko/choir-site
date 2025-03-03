@@ -21,7 +21,7 @@ class BaseDatatable < AjaxDatatablesRails::ActiveRecord
   end
 
   def view_columns
-    @view_columns ||= model_class.visible_datatable_columns.transform_values do |config|
+    @view_columns ||= model_class&.visible_datatable_columns&.transform_values do |config|
       {
         source: config[:source],
         searchable: config[:searchable],
@@ -45,17 +45,19 @@ class BaseDatatable < AjaxDatatablesRails::ActiveRecord
   # Retrieve the base ActiveRecord scope for the datatable
   # @return [ActiveRecord::Relation] Base query with necessary includes
   def get_raw_records
-    model_class.for_datatable
+    model_class&.for_datatable
   end
 
   private
 
   def format_columns(record)
-    model_class.datatable_columns.transform_values { |config| config[:formatter].call(record) }
+    model_class&.datatable_columns&.transform_values { |config| config[:formatter].call(record) }
   end
 
   def format_row_attributes(record)
-    attrs = model_class.row_attributes_for(record)
+    attrs = model_class&.row_attributes_for(record)
+    return {} unless attrs
+    
     stringify_attributes(attrs).compact.to_json
   end
 

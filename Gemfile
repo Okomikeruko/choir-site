@@ -2,10 +2,11 @@
 
 source 'https://rubygems.org'
 
-gem 'activesupport', '~> 6.1.7'
+gem 'rails', '~> 7.1.0'
+
+gem 'activesupport', '~> 7.1.0'
 gem 'concurrent-ruby', '~> 1.1.9'
 gem 'logging', '~> 2.3.0'
-gem 'rails', '~> 6.1.7'
 
 gem 'actioncable'
 gem 'ajax-datatables-rails'

@@ -15,7 +15,7 @@ services:
     stdin_open: true
     tty: true
     volumes:
-      - .:/myapp
+      - .:/choir-site
       - gem_cache:/usr/local/bundle/gems
 networks:
   postgres_network:

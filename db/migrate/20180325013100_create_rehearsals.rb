@@ -7,7 +7,9 @@ class CreateRehearsals < ActiveRecord::Migration[5.1]
       t.integer :duration
       t.string :venue
       t.string :host
-      t.attachment :audio
+      # Commenting out this change. Paperclip has been depreciated.
+      #
+      # t.attachment :audio
 
       t.timestamps
     end

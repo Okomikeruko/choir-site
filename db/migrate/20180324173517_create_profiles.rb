@@ -6,7 +6,9 @@ class CreateProfiles < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :title
       t.text :bio
-      t.attachment :image
+      # Commenting out this change. Paperclip has been depreciated.
+      #
+      # t.attachment :image
 
       t.timestamps
     end

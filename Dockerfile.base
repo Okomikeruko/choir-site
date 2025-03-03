@@ -23,6 +23,10 @@ RUN curl -sL https://deb.nodesource.com/setup_20.x | bash - && \
 # Set working directory
 WORKDIR /choir-site
 
+# Install bundler
+RUN gem install bundler -v "~> 2.4.0" && \
+    bundle update --bundler
+
 # List of apt-get installs for Dev only
 #        python3 \
 #        g++ \
