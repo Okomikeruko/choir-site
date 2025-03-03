@@ -20,8 +20,8 @@ module Admin
     end
 
     def do_to_all
-      message_ids = params.require(:all_messages).permit(msgs: [])
-      @messages = Message.where id: message_ids
+      message_params = params.require(:all_messages).permit(msgs: [])
+      @messages = Message.where(id: message_params[:msgs])
       action = params[:commit].to_s
       return head :bad_request unless VALID_ACTIONS.include?(action)
 
