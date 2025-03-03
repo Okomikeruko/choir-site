@@ -331,11 +331,11 @@ Style/MixinUsage:
     <option name="SCRIPT_OPTIONS" value="" />
     <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
     <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-    <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
-    <option name="INTERPRETER_PATH" value="powershell.exe" />
+    <option name="INDEPENDENT_INTERPRETER_PATH" value="false" />
+    <option name="INTERPRETER_PATH" value="$PROJECT_DIR$/../../../../Program Files/Git/bin/sh.exe" />
     <option name="INTERPRETER_OPTIONS" value="" />
-    <option name="EXECUTE_IN_TERMINAL" value="true" />
-    <option name="EXECUTE_SCRIPT_FILE" value="false" />
+    <option name="EXECUTE_IN_TERMINAL" value="false" />
+    <option name="EXECUTE_SCRIPT_FILE" value="true" />
     <envs />
     <method v="2" />
   </configuration>
@@ -437,9 +437,10 @@ RUN apt-get update -qq && \
 WORKDIR /app
 
 # Set Rails to run in production
+# Use existing SECRET_KEY_BASE if available, otherwise generate a random one
 ENV RAILS_ENV=production \
     NODE_ENV=production \
-    BUNDLE_WITHOUT="development"
+    BUNDLE_WITHOUT="development test"
 
 # Install gems
 COPY Gemfile Gemfile.lock ./
@@ -454,7 +455,10 @@ RUN yarn install --frozen-lockfile
 COPY . .
 
 # Precompile assets
-RUN SECRET_KEY_BASE=dummy bundle exec rake assets:precompile
+RUN SECRET_KEY_BASE=dummy bundle exec rake assets:precompile || \
+    (echo "Asset compilation failed - check JavaScript syntax" && \
+     NODE_ENV=production RAILS_ENV=production bundle exec rake assets:clobber && \
+     SECRET_KEY_BASE=dummy bundle exec rake assets:precompile --trace)
 
 # Expose the port Heroku sets
 EXPOSE $PORT
@@ -469,10 +473,10 @@ CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
 
 source 'https://rubygems.org'
 
-gem 'rails', '6.1.7.6'
 gem 'activesupport', '6.1.7.6'
 gem 'concurrent-ruby', '~> 1.1.9'
 gem 'logging', '~> 2.3.0'
+gem 'rails', '6.1.7.6'
 
 gem 'actioncable'
 gem 'ajax-datatables-rails'
@@ -648,15 +652,285 @@ db-reset:
 * File: README.md
 *******************************************************************************/
 
+# Choir Site
 
+A Ruby on Rails web application for managing a choir's repertoire, performances, rehearsals, and communications.
 
-## Set up development on Windows
+## Features
 
-1. Install Windows Subsystem for Linux
+- Song library with sheet music and audio files
+- Performance and rehearsal scheduling
+- Member management
+- News articles
+- Contact form
+- Admin dashboard
+
+## Technology Stack
+
+- Ruby 3.0.7
+- Rails 6.1.7
+- PostgreSQL 13
+- Docker for development
+- Bootstrap for UI
+- jQuery and DataTables for interactive components
+- Action Cable for real-time updates
+- Active Storage for file uploads
+
+## Prerequisites
+
+### For All Platforms
+- [Docker](https://www.docker.com/get-started)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+- Git
+
+## Setup Instructions
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/your-username/choir-site.git
+cd choir-site
 ```
-> wsl --install
+
+## Setup for Mac OS
+
+### 1. Install Prerequisites
+
+Using Homebrew:
+
+```bash
+# Install Homebrew if not already installed
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Install Docker and Docker Compose
+brew install --cask docker
 ```
-and follow the setup instructions.
+
+### 2. Start Docker Desktop
+
+Launch Docker Desktop from your Applications folder or using Spotlight search.
+
+### 3. Create PostgreSQL Network
+
+```bash
+docker network create postgres_network
+```
+
+### 4. Start PostgreSQL Container
+
+```bash
+docker run --name postgres13 \
+  --network postgres_network \
+  -e POSTGRES_USER=choir_postgres \
+  -e POSTGRES_PASSWORD=password \
+  -p 5432:5432 \
+  -d postgres:13
+```
+
+### 5. Build and Start the Application
+
+```bash
+# Build the Docker images
+docker-compose build
+
+# Start the application services
+docker-compose up
+```
+
+### 6. Set Up the Database
+
+In a new terminal window:
+
+```bash
+docker-compose exec web rails db:create db:migrate db:seed
+```
+
+## Setup for Windows
+
+### 1. Install Prerequisites
+
+- Install [Docker Desktop for Windows](https://docs.docker.com/desktop/install/windows-install/)
+- If using WSL 2, ensure it's properly configured with Docker Desktop
+
+### 2. Start Docker Desktop
+
+Launch Docker Desktop from the Start menu.
+
+### 3. Open Windows PowerShell or Command Prompt as Administrator
+
+### 4. Create PostgreSQL Network
+
+```powershell
+docker network create postgres_network
+```
+
+### 5. Start PostgreSQL Container
+
+```powershell
+docker run --name postgres13 `
+  --network postgres_network `
+  -e POSTGRES_USER=choir_postgres `
+  -e POSTGRES_PASSWORD=password `
+  -p 5432:5432 `
+  -d postgres:13
+```
+
+### 6. Build and Start the Application
+
+```powershell
+# Build the Docker images
+docker-compose build
+
+# Start the application services
+docker-compose up
+```
+
+### 7. Set Up the Database
+
+In a new terminal window:
+
+```powershell
+docker-compose exec web rails db:create db:migrate db:seed
+```
+
+## Using WSL 2 (Windows Subsystem for Linux) on Windows
+
+If you're using WSL 2, you can also follow these Linux-like steps within your WSL 2 terminal:
+
+```bash
+# Install WSL 2 if not already installed
+wsl --install
+
+# Create PostgreSQL network
+docker network create postgres_network
+
+# Start PostgreSQL container
+docker run --name postgres13 \
+  --network postgres_network \
+  -e POSTGRES_USER=choir_postgres \
+  -e POSTGRES_PASSWORD=password \
+  -p 5432:5432 \
+  -d postgres:13
+
+# Start the application
+docker-compose up
+```
+
+## Accessing the Application
+
+Once the application is running:
+
+- Web application: http://localhost:3000
+- Admin interface: http://localhost:3000/admin
+
+Default admin credentials:
+- Email: test@email.com
+- Password: password
+
+## Development Workflow
+
+### Running Tests
+
+```bash
+# Run all tests
+docker-compose run --rm test rails test
+
+# Run specific test file
+docker-compose run --rm test rails test test/path/to/file
+```
+
+### Common Docker Commands
+
+```bash
+# View running containers
+docker-compose ps
+
+# Restart the application
+docker-compose restart
+
+# Stop containers
+docker-compose down
+
+# Run a Rails console
+docker-compose exec web rails console
+
+# Run migrations
+docker-compose exec web rails db:migrate
+
+# Using Makefile shortcuts
+make up       # Start the application
+make console  # Run Rails console
+make test     # Run tests
+make logs     # View logs
+make migrate  # Run migrations
+```
+
+## Project Structure
+
+- `app/` - Main application code
+    - `controllers/` - Request handlers
+    - `models/` - Database models
+    - `views/` - UI templates
+    - `assets/` - CSS, JavaScript, and images
+    - `datatables/` - DataTables configuration
+    - `presenters/` - View presenters
+- `config/` - Application configuration
+- `db/` - Database migrations and seeds
+- `test/` - Test files
+
+## Deployment
+
+This application is configured for deployment to Heroku using Docker containers.
+
+### Deploying to Heroku
+
+```bash
+# Login to Heroku
+heroku container:login
+
+# Create an app in Heroku
+heroku create your-app-name
+
+# Push and release the container
+heroku container:push web -a your-app-name
+heroku container:release web -a your-app-name
+
+# Run database migrations
+heroku run rails db:migrate -a your-app-name
+```
+
+## Troubleshooting
+
+### Database Connection Issues
+
+If you encounter database connection issues:
+
+```bash
+# Check if PostgreSQL container is running
+docker ps | grep postgres
+
+# Restart PostgreSQL container if needed
+docker restart postgres13
+
+# Check logs for errors
+docker logs postgres13
+```
+
+### Application Errors
+
+If the application fails to start:
+
+```bash
+# Check application logs
+docker-compose logs web
+
+# Remove server.pid if it exists (common issue after unexpected shutdown)
+rm tmp/pids/server.pid
+```
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
 /*******************************************************************************
 * File: Rakefile
 *******************************************************************************/
@@ -2611,7 +2885,12 @@ class BaseDatatable < AjaxDatatablesRails::ActiveRecord
   attr_reader :model_class, :view
 
   def initialize(params, opts = {})
-    @model_class = opts.delete(:model_class) || opts.delete(:model_name)&.to_s&.classify&.constantize
+    @model_class = opts.delete(:model_class)
+
+    if @model_class.nil?
+      model_name = opts.delete(:model_name)
+      @model_class = model_name.to_s.classify.constantize if model_name
+    end
     @view = opts[:view_context]
     super
   end
@@ -2668,8 +2947,6 @@ end
 
 # frozen_string_literal: true
 
-require 'concerns/action_buttons_concern'
-
 # CategoryDatatable handles server-side processing for Category data tables
 #
 # @example Basic usage in controller
@@ -2681,7 +2958,6 @@ require 'concerns/action_buttons_concern'
 #
 # @see https://github.com/jbox-web/ajax-datatables-rails
 class CategoryDatatable < AjaxDatatablesRails::ActiveRecord
-  include ::ActionButtonsConcern
   extend Forwardable
 
   def_delegators :@view, :polymorphic_path, :sanitize
@@ -3204,7 +3480,6 @@ end
 
 # Model for Instrument
 class Instrument < ApplicationRecord
-
   default_scope { order(position: :asc) }
   belongs_to :song, counter_cache: true
 
@@ -3252,12 +3527,12 @@ class Instrument < ApplicationRecord
 
   def correct_mime_types
     {
-      pdf:  %w[application/pdf],
+      pdf: %w[application/pdf],
       midi: %w[audio/midi],
-      mp3:  %w[audio/mpeg audio/mp3]
+      mp3: %w[audio/mpeg audio/mp3]
     }.each do |attr, content_types|
-      obj = self.send(attr)
-      next unless obj.attached? && !content_types.include?(obj.content_type)
+      obj = send(attr)
+      next unless obj.attached? && content_types.exclude?(obj.content_type)
 
       errors.add(attr, "Must be an #{attr.to_s.upcase} file")
     end
@@ -5705,6 +5980,7 @@ module Choir
     config.autoload_paths += Dir["#{config.root}/app/datatables/**/"]
   end
 end
+
 /*******************************************************************************
 * File: config/boot.rb
 *******************************************************************************/
@@ -5771,6 +6047,8 @@ Rails.application.initialize!
 * File: config/environments/development.rb
 *******************************************************************************/
 
+# frozen_string_literal: true
+
 # config/environments/development.rb
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
@@ -5813,6 +6091,7 @@ Rails.application.configure do
 
   config.active_storage.service = :local
 end
+
 /*******************************************************************************
 * File: config/environments/production.rb
 *******************************************************************************/
@@ -5999,14 +6278,16 @@ require 'logger'
 require 'active_support'
 
 # Ensure Logger is loaded before it's used by ActiveSupport
-Logger.new(STDOUT) unless defined?(Logger)
+Logger.new($stdout) unless defined?(Logger)
 
 module ActiveSupport
+  # Module for handling Logger Thread Safe Level
   module LoggerThreadSafeLevel
     def self.included(base)
       base.extend(ClassMethods)
     end
 
+    # Module for handling Class methods for Logger Threads.
     module ClassMethods
       def local_level
         IsolatedExecutionState[:logger_thread_safe_level]
@@ -6018,6 +6299,7 @@ module ActiveSupport
     end
   end
 end
+
 /*******************************************************************************
 * File: config/initializers/assets.rb
 *******************************************************************************/
@@ -6353,6 +6635,7 @@ Rails.application.config.filter_parameters += [:password]
 *******************************************************************************/
 
 # frozen_string_literal: true
+
 # Be sure to restart your server when you modify this file.
 
 # Add new inflection rules using the following format. Inflections
@@ -6374,7 +6657,7 @@ Rails.application.config.filter_parameters += [:password]
 * File: config/initializers/invisible_captcha.rb
 *******************************************************************************/
 
-
+# frozen_string_literal: true
 
 # In test mode, we want controllable behavior
 if Rails.env.test?
@@ -6389,11 +6672,13 @@ if Rails.env.test?
     # config.timestamp_threshold = 1
   end
 end
+
 /*******************************************************************************
 * File: config/initializers/mime_types.rb
 *******************************************************************************/
 
 # frozen_string_literal: true
+
 # Be sure to restart your server when you modify this file.
 
 # Add new mime types for use in respond_to blocks:
@@ -6637,7 +6922,6 @@ Rails.application.routes.draw do
             only: %i[index show]
   resources :rehearsals,
             only: [:index]
-  resources :contact, controller: :messages, only: ["new", "create"]
   get  'contact', to: 'messages#new'
   post 'contact', to: 'messages#create'
   get 'about-us', to: 'static_pages#about_us'
@@ -6722,6 +7006,7 @@ production:
 *******************************************************************************/
 
 # frozen_string_literal: true
+
 Spring.application_root = nil
 
 %w[
@@ -7644,7 +7929,9 @@ end
 
 class FixInstrumentsNameIndex < ActiveRecord::Migration[6.1]
   def change
-    remove_index :instruments, name: 'index_instruments_on_lower_name_and_song'
+    return unless index_exists?(:instruments, :name, name: 'index_instruments_on_lower_name_and_song')
+
+    remove_index :instruments, :name, name: 'index_instruments_on_lower_name_and_song'
   end
 end
 
@@ -8126,6 +8413,12 @@ volumes:
 build:
   docker:
     web: Dockerfile
+  config:
+    RAILS_ENV: production
+    NODE_ENV: production
+    RAILS_MASTER_KEY: ${RAILS_MASTER_KEY}
+    SECRET_KEY_BASE: ${SECRET_KEY_BASE}
+
 
 run:
   web: bundle exec puma -C config/puma.rb
@@ -8166,6 +8459,11 @@ module.exports = {
     })
   ]
 }
+
+/*******************************************************************************
+* File: project_compilation.txt
+*******************************************************************************/
+
 
 /*******************************************************************************
 * File: public/404.html
@@ -9013,8 +9311,10 @@ end
 *******************************************************************************/
 
 # frozen_string_literal: true
+
 require 'test_helper'
 
+# Tests for the Messages Controller
 class MessagesControllerTest < ActionDispatch::IntegrationTest
   def setup
     # Store original configuration
@@ -9044,7 +9344,7 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
     assert_select 'input#message_choir_part', { count: 1 }
   end
 
-  test "can create message directly" do
+  test 'can create message directly' do
     assert_difference 'Message.count', 1 do
       Message.create!(
         name: 'Test User',
@@ -9055,7 +9355,7 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test "should create new message" do
+  test 'should create new message' do
     # Explicitly add the timestamp parameter that Invisible Captcha might be expecting
     timestamp = Time.current.to_i
 
@@ -9118,7 +9418,7 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
     assert_no_difference 'Message.count' do
       post contact_path, params: {
         message: {
-          name: '',  # Invalid: name is required
+          name: '', # Invalid: name is required
           email: 'not-an-email', # Invalid email format
           subject: 'Test Subject',
           message: 'Test Message'
@@ -9994,10 +10294,9 @@ end
 *******************************************************************************/
 
 # frozen_string_literal: true
+
 require 'simplecov'
 SimpleCov.start
-
-# Previous content of test helper now starts here
 
 # Load Rails environment and necessary testing libraries
 require File.expand_path('../config/environment', __dir__)

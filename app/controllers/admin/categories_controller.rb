@@ -44,7 +44,7 @@ module Admin
     end
 
     def find_category
-      @category = Category.find params[:id]
+      @category = Category.find(params[:id])
     end
 
     def find_new_category

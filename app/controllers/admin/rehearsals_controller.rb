@@ -52,7 +52,7 @@ module Admin
     end
 
     def find_rehearsal
-      @rehearsal = Rehearsal.find params[:id]
+      @rehearsal = Rehearsal.find(params[:id])
     end
   end
 end

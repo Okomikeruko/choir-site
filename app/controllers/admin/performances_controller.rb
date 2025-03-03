@@ -58,7 +58,7 @@ module Admin
     end
 
     def set_performance
-      @performance = Performance.find params[:id]
+      @performance = Performance.find(params[:id])
     end
   end
 end

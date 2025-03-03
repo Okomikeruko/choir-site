@@ -43,7 +43,7 @@ module Admin
     end
 
     def find_tag
-      @tag = Tag.find params[:id]
+      @tag = Tag.find(params[:id])
     end
 
     def find_new_tag

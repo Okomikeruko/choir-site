@@ -15,12 +15,13 @@ module Admin
     end
 
     def show
-      @message = Message.find params[:id]
+      @message = Message.find(params[:id])
       @message.mark_as_read
     end
 
     def do_to_all
-      @messages = Message.where id: params[:all_messages][:msgs]
+      message_ids = params.require(:all_messages).permit(msgs: [])
+      @messages = Message.where id: message_ids
       action = params[:commit].to_s
       return head :bad_request unless VALID_ACTIONS.include?(action)
 

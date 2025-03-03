@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find params[:id]
+    @article = Article.find(params[:id])
     add_breadcrumb @article.title, news_path(@article)
   end
 end
