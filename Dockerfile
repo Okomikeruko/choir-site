@@ -1,22 +1,10 @@
-FROM ruby:3.0-slim
+FROM whittakertech/choir-base:latest
 
 # Install system dependencies, Node.js v16.x, and Yarn
 RUN apt-get update -qq && \
     apt-get install -y --no-install-recommends \
-        curl build-essential gnupg software-properties-common \
-        postgresql-client git ca-certificates libpq-dev libv8-dev && \
-    # Install Node.js v16.x from NodeSource
-    curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
-    apt-get install -y nodejs && \
-    # Install Yarn globally
-    npm install -g yarn && \
-    # Verify versions
-    node --version && yarn --version && \
-    # Cleanup
+        libv8-dev && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
-
-# Set working directory
-WORKDIR /app
 
 # Set Rails to run in production
 # Use existing SECRET_KEY_BASE if available, otherwise generate a random one
@@ -26,7 +14,7 @@ ENV RAILS_ENV=production \
 
 # Install gems
 COPY Gemfile Gemfile.lock ./
-RUN bundle config set --local without 'development test' && \
+RUN bundle config set --local without $BUNDLE_WITHOUT && \
     bundle install --jobs 4 --retry 3
 
 # Install Yarn packages
