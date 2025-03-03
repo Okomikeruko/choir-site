@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Pre-commit Checks" type="CompoundRunConfigurationType">
+    <toRun name="Brakeman" type="CommandRunConfigurationType" />
+    <toRun name="Rubocop" type="CommandRunConfigurationType" />
+    <toRun name="All tests in test: choir-site" type="TestUnitRunConfigurationType" />
+    <method v="2" />
+  </configuration>
+</component>
