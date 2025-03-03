@@ -7,3 +7,7 @@ one:
 two:
   name: "Also Songs"
   slug: "also-songs"
+
+deletable:
+  name: "Delete Me"
+  slug: "delete-me"

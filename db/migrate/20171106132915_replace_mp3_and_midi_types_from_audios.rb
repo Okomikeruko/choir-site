@@ -5,7 +5,9 @@ class ReplaceMp3AndMidiTypesFromAudios < ActiveRecord::Migration[5.1]
     remove_column :audios, :midi, :string
     remove_column :audios, :mp3,  :string
 
-    add_attachment :audios, :midi
-    add_attachment :audios, :mp3
+    # Commenting out this change. Paperclip has been depreciated.
+    #
+    # add_attachment :audios, :midi
+    # add_attachment :audios, :mp3
   end
 end

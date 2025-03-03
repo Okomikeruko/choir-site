@@ -40,8 +40,9 @@ module Admin
     end
 
     test 'should delete a category' do
+      category = categories :deletable
       assert_difference 'Category.count', -1 do
-        delete admin_category_path(@category)
+        delete admin_category_path(category)
         assert_response :redirect
         assert_redirected_to admin_categories_path
       end
