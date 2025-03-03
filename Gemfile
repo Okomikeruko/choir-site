@@ -49,6 +49,7 @@ gem 'wysiwyg-rails'
 group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'brakeman'
   gem 'byebug', platform: :mri
   gem 'debug', require: false
   gem 'rack-mini-profiler'
