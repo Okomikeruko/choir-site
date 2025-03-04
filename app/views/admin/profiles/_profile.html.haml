@@ -3,7 +3,7 @@
   .panel-body
     .row
       .col-sm-1
-        %span.glyphicon.glyphicon-resize-vertical.handle
+        %span.bi.bi-resize-vertical.handle
       .col-sm-3
         - url = profile.image.attached? ? profile.image : "portrait-placeholder.jpg"
         = image_tag url,
@@ -16,9 +16,9 @@
         =link_to admin_profile_path(profile),
                  method: :delete,
                  data: { confirm: "Are you sure?" },
-                 class: "btn btn-danger pull-right" do
-          %span.glyphicon.glyphicon-remove
+                 class: "btn btn-danger float-end" do
+          %span.bi.bi-x
         =link_to edit_admin_profile_path(profile),
-                 class: "btn btn-default pull-right",
+                 class: "btn btn-outline-secondary float-end",
                  style: "margin-right: 15px" do
-          %span.glyphicon.glyphicon-pencil
+          %span.bi.bi-pencil

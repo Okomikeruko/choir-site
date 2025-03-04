@@ -4,13 +4,13 @@
   %td= article.status
   %td= article.list_categories
   %td= article.list_tags
-  %td.text-right
+  %td.text-end
     =link_to edit_admin_article_path(article),
-             class: "btn btn-default btn-xs" do
-      %span.glyphicon.glyphicon-pencil
+             class: "btn btn-outline-secondary btn-xs" do
+      %span.bi.bi-pencil
     &nbsp;
     =link_to admin_article_path(article),
              method: :delete,
              data: { confirm: "Are you sure?" },
              class: "btn btn-danger btn-xs" do
-      %span.glyphicon.glyphicon-remove
+      %span.bi.bi-x

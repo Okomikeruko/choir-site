@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateSheetMusics < ActiveRecord::Migration[5.1]
   def change
     create_table :sheet_musics do |t|

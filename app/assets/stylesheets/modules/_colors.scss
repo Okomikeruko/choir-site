@@ -1,4 +1,7 @@
-$brand-primary: #CBA250; 
+@use 'sass:math';
+@use 'sass:color';
+
+$brand-primary: #CBA250;
 $brand-secondary: #424242;
 
 $original-blue: #4688f1;
@@ -9,8 +12,8 @@ $hue-rotate: $p - $o;
 
 $s1: saturation($brand-primary);
 $s2: saturation($original-blue);
-$hue-saturate: $s1 / ($s2 / 100%); 
+$hue-saturate: math.div($s1, math.div($s2, 100%));
 
 $b1: lightness($brand-primary);
 $b2: lightness($original-blue);
-$hue-lightness: $b1 / ($b2 / 100%);
+$hue-lightness: math.div($b1, math.div($b2, 100%));

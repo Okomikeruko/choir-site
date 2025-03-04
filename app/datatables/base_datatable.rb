@@ -57,7 +57,7 @@ class BaseDatatable < AjaxDatatablesRails::ActiveRecord
   def format_row_attributes(record)
     attrs = model_class&.row_attributes_for(record)
     return {} unless attrs
-    
+
     stringify_attributes(attrs).compact.to_json
   end
 

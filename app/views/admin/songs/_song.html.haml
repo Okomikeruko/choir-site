@@ -2,13 +2,13 @@
   %td= song.title
   %td= song.instruments.count
   %td= song.performances.count
-  %td.text-right
+  %td.text-end
     = link_to edit_admin_song_path(song),
-              class: "btn btn-default btn-xs",
+              class: "btn btn-outline-secondary btn-xs",
               style: "margin-right: 5px;" do
-      %span.glyphicon.glyphicon-pencil
+      %span.bi.bi-pencil
     = link_to admin_song_path(song),
               method: :delete,
               data: { confirm: "Are you sure? This cannot be undone." },
               class: "btn btn-danger btn-xs" do
-      %span.glyphicon.glyphicon-remove
+      %span.bi.bi-x

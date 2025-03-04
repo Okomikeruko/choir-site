@@ -1,3 +1,6 @@
+@use '../modules/colors' as colors;
+@use '../modules/media' as media;
+
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
 @import url('https://fonts.googleapis.com/css?family=Tangerine:400,700');
 
@@ -6,16 +9,16 @@ html, body{
     family: "Open Sans", sans-serif;
     size: 14px;
   }
-  color: $brand-secondary;
+  color: colors.$brand-secondary;
 }
 
 h1{
   font-weight: 600;
   
-  @media #{$xs-screen} {font-size: 36px;}
-  @media #{$sm-screen} {font-size: 48px;}
-  @media #{$md-screen} {font-size: 64px;}
-  @media #{$lg-screen} {font-size: 75px;}
+  @media #{media.$xs-screen} {font-size: 36px;}
+  @media #{media.$sm-screen} {font-size: 48px;}
+  @media #{media.$md-screen} {font-size: 64px;}
+  @media #{media.$lg-screen} {font-size: 75px;}
 }
 
 h2{
@@ -33,22 +36,22 @@ h3{
 }
 
 a{
-  color: $brand-primary;
+  color: colors.$brand-primary;
 
   &:hover{
-    color: lighten($brand-primary, 10);
+    color: lighten(colors.$brand-primary, 10);
     text-decoration: none;
   }
 
   &.secondary{
-    color: $brand-secondary;
+    color: colors.$brand-secondary;
 
     &:hover{
-      color: $brand-primary;
+      color: colors.$brand-primary;
     }
   }
 }
 
 .date{
-  color: $brand-primary;
+  color: colors.$brand-primary;
 }

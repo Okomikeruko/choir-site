@@ -84,7 +84,7 @@ module DatatableColumnsConcern
     def define_controls_column(options = {})
       defaults = BASE_COLUMN_DEFAULTS.merge({
                                               label: 'Controls',
-                                              className: 'text-right'
+                                              className: 'text-end'
                                             })
 
       datatable_columns[:controls] = defaults.merge(options)

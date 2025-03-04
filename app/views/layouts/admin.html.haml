@@ -10,8 +10,8 @@
     = action_cable_meta_tag
     %title Admin | Cascade Sixth Choir
     = csrf_meta_tags
-    = stylesheet_link_tag "admin", media: 'all', data: { "turbolinks-track": "reload" }
-    = javascript_include_tag "application", data: { "turbolinks-track": "reload" }
+    = stylesheet_link_tag "admin", media: 'all', "data-turbo-track": "reload"
+    = javascript_include_tag 'application', "data-turbo-track": "reload", type: "module"
   %body
     -if user_signed_in?
       = render "layouts/admin_header"
