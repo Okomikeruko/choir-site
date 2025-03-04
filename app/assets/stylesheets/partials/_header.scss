@@ -1,10 +1,13 @@
+@use '../modules/colors' as colors;
+@use '../modules/media' as media;
+
 /* Header */
 
 header{
-  background-color: $brand-secondary;
-  @media #{$xs-screen} {height: 40px; padding: 0 10px;}
-  @media #{$sm-screen} {height: 60px; padding: 0 20px;}
-  @media #{$md-screen-up} {height: 80px; padding: 0 30px;}
+  background-color: colors.$brand-secondary;
+  @media #{media.$xs-screen} {height: 40px; padding: 0 10px;}
+  @media #{media.$sm-screen} {height: 60px; padding: 0 20px;}
+  @media #{media.$md-screen-up} {height: 80px; padding: 0 30px;}
   width: 100%;
   display: table;
   
@@ -17,13 +20,13 @@ header{
     margin: 0;
     color: white;
     text-transform: uppercase;
-    @media #{$xs-screen} {font-size: 18px;}
-    @media #{$sm-screen} {font-size: 30px;}
-    @media #{$md-screen-up} {font-size: 36px;}
+    @media #{media.$xs-screen} {font-size: 18px;}
+    @media #{media.$sm-screen} {font-size: 30px;}
+    @media #{media.$md-screen-up} {font-size: 36px;}
   
     .choir{
       font-family: "Tangerine", sans-serif;
-      color: $brand-primary;
+      color: colors.$brand-primary;
       text-transform: none;
       font:{
         size: 1.1em;
@@ -46,38 +49,38 @@ header{
   vertical-align: middle;
   float: right;
   
-  @media #{$sm-screen-up} {display: none;}
+  @media #{media.$sm-screen-up} {display: none;}
 }
 
 #navbarCollapse{
-  background-color: $brand-primary;
+  background-color: colors.$brand-primary;
   position: absolute;
   top: 40px;
   width: 120px;
-  border: 1px solid darken($brand-primary, 10);
-  border-top-width: 0px;
-  @media #{$sm-screen-down}{
-    right: 0px;
+  border: 1px solid darken(colors.$brand-primary, 10);
+  border-top-width: 0;
+  @media #{media.$sm-screen-down}{
+    right: 0;
   }
   
-  @media #{$sm-screen-up} {
+  @media #{media.$sm-screen-up} {
     top: 60px;
     border-bottom-left-radius: 10px;
     width: auto;
   }
   
-  @media #{$md-screen-up} {
+  @media #{media.$md-screen-up} {
     top: 80px;
     border-bottom-right-radius: 10px;
     left: 50%;
     transform: translateX(-50%);
   }
   a{
-    color: $brand-secondary;
+    color: colors.$brand-secondary;
     
     &:hover, &:focus, &:active{
-      background-color: darken($brand-primary, 10);
-      color: $brand-secondary;
+      background-color: darken(colors.$brand-primary, 10);
+      color: colors.$brand-secondary;
     }
   }
 }

@@ -13,7 +13,7 @@ class CategoryPresenter < ApplicationPresenter
                 content_tag(:button,
                             content_tag(:span, '', class: 'glyphicon glyphicon-pencil'),
                             type: 'button',
-                            class: 'btn btn-default btn-xs',
+                            class: 'btn btn-outline-secondary btn-xs',
                             data: {
                               toggle: 'modal',
                               target: "#category_#{category.id}"

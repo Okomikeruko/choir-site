@@ -1,21 +1,23 @@
+@use "../modules/colors" as colors;
+
 .nav-tabs.song-sorting {
-  border-bottom-color: darken($brand-primary, 10);
+  border-bottom-color: darken(colors.$brand-primary, 10);
   
   & > li {
     & > a {
-      border-color: darken($brand-secondary, 10);
-      border-bottom-width: 0px;
+      border-color: darken(colors.$brand-secondary, 10);
+      border-bottom-width: 0;
       margin-bottom: 1px;
-      background-color: $brand-secondary;
+      background-color: colors.$brand-secondary;
       color: white;
       padding: 3px;
     }
     &.active > a,
     & > a:hover,
     & > a:focus {
-      border-color: darken($brand-primary, 10);
-      background-color: $brand-primary;
-      border-bottom-width: 0px;
+      border-color: darken(colors.$brand-primary, 10);
+      background-color: colors.$brand-primary;
+      border-bottom-width: 0;
       color: white;
     }
   }
@@ -23,15 +25,15 @@
 
 .letter-links{
   padding: 20px 0;
-  border-bottom: 2px solid $brand-secondary;
+  border-bottom: 2px solid colors.$brand-secondary;
 }
 
 .letter-block{
-  border-bottom: 2px solid $brand-secondary;
+  border-bottom: 2px solid colors.$brand-secondary;
   padding-bottom: 20px;
   
   .letter-header{
-    border-bottom: 1px solid $brand-primary;
+    border-bottom: 1px solid colors.$brand-primary;
     margin-bottom: 20px;
   }
 }
@@ -43,16 +45,16 @@
     
     & > li > a{
       color: white;
-      background-color: $brand-secondary;
+      background-color: colors.$brand-secondary;
       padding: 3px 8px;
-      margin: 0px 4px;
+      margin: 0 4px;
       
       &:focus, &:hover{
-        background-color: $brand-primary;
+        background-color: colors.$brand-primary;
       }
     }
     & > li.active > a {
-        background-color: $brand-primary;
+        background-color: colors.$brand-primary;
     }
   }
 }
@@ -60,7 +62,7 @@
 .song-listing{
   display: block;
   padding-bottom: 10px;
-  border-bottom: 1px solid $brand-primary;
+  border-bottom: 1px solid colors.$brand-primary;
   margin-top: 20px;
   audio{
     margin-top: 20px;
@@ -71,19 +73,19 @@ audio{
   width: 100%;
   &::-webkit-media-controls-volume-slider,
   &::-webkit-media-controls-timeline{
-    -webkit-filter: hue-rotate($hue-rotate)
-                    saturate($hue-saturate)
-                    brightness($hue-lightness*1.372);
-    filter: hue-rotate($hue-rotate)
-            saturate($hue-saturate)
-            brightness($hue-lightness*1.372);
+    -webkit-filter: hue-rotate(colors.$hue-rotate)
+                    saturate(colors.$hue-saturate)
+                    brightness(colors.$hue-lightness*1.372);
+    filter: hue-rotate(colors.$hue-rotate)
+            saturate(colors.$hue-saturate)
+            brightness(colors.$hue-lightness*1.372);
   }
 }
 
 .performance-block{
   padding: 10px 0 20px;
   border:{
-    top: 1px solid $brand-secondary;
-    bottom: 1px solid $brand-secondary;
+    top: 1px solid colors.$brand-secondary;
+    bottom: 1px solid colors.$brand-secondary;
   }
 }

@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile.dev
     container_name: choir-site-web
-    command: bundle exec rails server -b 0.0.0.0
+    command: foreman start -f Procfile.dev
     environment:
       - DATABASE_URL=postgresql://choir_postgres:password@postgres13:5432/
     networks:

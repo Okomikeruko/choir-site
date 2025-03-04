@@ -1,15 +1,35 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import "bootstrap-datepicker3";
-@import 'jquery-ui/sortable';
-@import "froala_editor.min";
-@import "froala_style.min";
-// @import "font-awesome-sprockets";
-@import "font-awesome";
-@import 'plugins/code_view.min.css';
-@import 'datatables';
+// Import Bootstrap and Bootstrap Icons
+@use 'bootstrap/scss/bootstrap';
+@use 'bootstrap-icons/font/bootstrap-icons';
+@use 'bootstrap-datepicker/dist/css/bootstrap-datepicker3';
+@use 'jquery-ui/themes/base/sortable';
+@use 'froala-editor/css/froala_editor.min';
+@use 'froala-editor/css/froala_style.min';
+@use 'font-awesome/scss/font-awesome';
+@use 'froala-editor/css/plugins/code_view.min';
 
-body{
+// DataTables styles (use @use instead of @import)
+@use 'datatables.net-bs4/css/dataTables.bootstrap4' as dt;
+@use 'datatables.net-select-bs4/css/select.bootstrap4' as dts;
+@use 'datatables.net-buttons-bs4/css/buttons.bootstrap4' as dtb;
+
+// Base modules
+@use 'modules/colors' as colors;
+@use 'modules/media' as media;
+
+// Partials
+@use 'partials/breadcrumbs';
+@use 'partials/buttons';
+@use 'partials/header';
+@use 'partials/misc';
+@use 'partials/music';
+@use 'partials/news';
+@use 'partials/profiles';
+@use 'partials/rehearsals';
+@use 'partials/title';
+@use 'partials/typography';
+
+body {
   padding-bottom: 60px;
 }
 
@@ -22,9 +42,9 @@ body{
 }
 
 .field_with_errors {
-  @extend .has-error;
+  @extend .has-error !optional;
   .form-control {
-    color: $state-danger-text;
+    color: var(--bs-danger);
   }
 }
 

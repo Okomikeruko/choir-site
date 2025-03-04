@@ -18,7 +18,7 @@ module Admin
     def edit; end
 
     def create
-      @performance = Performance.new(performance_params)
+      @performance = Performance.new(**performance_params)
       if @performance.save
         flash[:success] = t '.success'
         redirect_to admin_performances_path
@@ -28,7 +28,7 @@ module Admin
     end
 
     def update
-      if @performance.update(performance_params)
+      if @performance.update(**performance_params)
         flash[:success] = t '.success'
         redirect_to admin_performances_path
       else

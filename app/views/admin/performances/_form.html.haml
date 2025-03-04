@@ -3,10 +3,10 @@
     =form_for [:admin, performance] do |f|
       =render "shared/error_messages", object: performance
       .clearfix
-        =f.submit "Save", class: "btn btn-primary pull-right"
+        =f.submit "Save", class: "btn btn-primary float-end"
         =link_to "Cancel",
                  admin_performances_path,
-                 class: "btn btn-default pull-right",
+                 class: "btn btn-outline-secondary float-end",
                  style: "margin-right: 15px;"
       .row
         .col-sm-6
@@ -22,7 +22,7 @@
                             value: (performance.date.strftime("%m/%d/%Y") if performance.date?),
                             class: "form-control"
               .input-group-addon
-                %span.glyphicon.glyphicon-th
+                %span.bi.bi-th
             %br
             =f.label :details
             =f.text_area :details, rows: "6", class: "form-control"

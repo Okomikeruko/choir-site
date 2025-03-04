@@ -1,9 +1,11 @@
+@use '../modules/colors' as colors;
+
 /* MISC */
 
 /* Turbolinks */
 
 .turbolinks-progress-bar{
-  background-color: $brand-primary;
+  background-color: colors.$brand-primary;
 }
 
 /* White Space */

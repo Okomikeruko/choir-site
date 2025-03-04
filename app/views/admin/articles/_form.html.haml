@@ -3,16 +3,16 @@
   .clearfix
     -unless article.published?
       =f.submit "Publish",
-                class: "btn btn-primary pull-right",
+                class: "btn btn-primary float-end",
                 style: "margin-left: 1em;"
       =f.submit "Save Draft",
-                class: "btn btn-default pull-right"
+                class: "btn btn-outline-secondary float-end"
     -else
       =f.submit "Update",
-                class: "btn btn-primary pull-right",
+                class: "btn btn-primary float-end",
                 style: "margin-left: 1em;"
       =f.submit "Revert to Draft",
-                class: "btn btn-default pull-right"
+                class: "btn btn-outline-secondary float-end"
   .row
     .col-sm-8
       =f.label :title
@@ -25,8 +25,8 @@
         %legend.clearfix
           Categories
           =link_to admin_categories_path,
-                   class: "btn btn-primary pull-right" do
-            %span.glyphicon.glyphicon-plus
+                   class: "btn btn-primary float-end" do
+            %span.bi.bi-plus
         =f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |c|
           =c.label { c.check_box }
           =c.object.name
@@ -36,8 +36,8 @@
         %legend.clearfix
           Tags
           =link_to admin_tags_path,
-                   class: "btn btn-primary pull-right" do
-            %span.glyphicon.glyphicon-plus
+                   class: "btn btn-primary float-end" do
+            %span.bi.bi-plus
         =f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |t|
           =t.label { t.check_box }
           =t.object.name

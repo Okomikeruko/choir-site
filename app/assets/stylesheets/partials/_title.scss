@@ -1,13 +1,16 @@
+@use '../modules/colors' as colors;
+@use '../modules/media' as media;
+
 /* Title */
 
 .title_holder{
-  background-color: $brand-secondary;
+  background-color: colors.$brand-secondary;
   width: 100%;
   
-  @media #{ $xs-screen } { height: 140px; }
-  @media #{ $sm-screen } { height: 220px; }
-  @media #{ $md-screen } { height: 280px; }
-  @media #{ $lg-screen } { height: 320px; }
+  @media #{ media.$xs-screen } { height: 140px; }
+  @media #{ media.$sm-screen } { height: 220px; }
+  @media #{ media.$md-screen } { height: 280px; }
+  @media #{ media.$lg-screen } { height: 320px; }
   
   .title_image{
     height: 100%;
@@ -25,10 +28,8 @@
       h1{
         color: white;
         display: table-cell;
-        text: {
-          align: center;
-          transform: uppercase;
-        }
+        text-align: center;
+        text-transform: uppercase;
         vertical-align: middle;
       }
     }

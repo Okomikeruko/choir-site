@@ -57,7 +57,7 @@ class CategoryDatatable < AjaxDatatablesRails::ActiveRecord
   def controls(record)
     sanitize(
       <<-HTML,
-         <button type="button" data-toggle="modal" data-target="#category-#{record.id}" class="btn btn-default btn-xs">
+         <button type="button" data-toggle="modal" data-target="#category-#{record.id}" class="btn btn-outline-secondary btn-xs">
            <span class="glyphicon glyphicon-pencil"></span>
          </button>
          &nbsp;

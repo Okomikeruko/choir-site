@@ -7,7 +7,7 @@
   performances, listen to individualized parts, print off sheet music, and
   listen to past performances and rehearsals.
 .row
-  .col-sm-5.col-sm-push-7.col-md-4.col-md-push-8.col-lg-3.col-lg-push-9
+  .col-sm-5.col-md-4.col-lg-3.order-sm-2
     .performance-block
       %strong Upcoming Performances:
       %br
@@ -29,7 +29,7 @@
         %p
           There are no scheduled peformances at this time.
       .clearfix
-        =link_to music_index_path, class: "pull-right" do
+        =link_to music_index_path, class: "float-end" do
           More Music&hellip;
     .rehearsal-block
       %strong Next Rehearsal:
@@ -37,10 +37,10 @@
         %table
           %tr
             %td.text-primary= @next_rehearsal.date.strftime("%m/%d/%Y")
-            %td.text-right= @next_rehearsal.host
+            %td.text-end= @next_rehearsal.host
           %tr
             %td.text-primary= @next_rehearsal.time
-            %td.text-right= @next_rehearsal.venue
+            %td.text-end= @next_rehearsal.venue
       -else
         %p The next rehearsal has not yet been scheduled.
       %strong Last Rehearsal:
@@ -48,7 +48,7 @@
         %table
           %tr{style: "vertical-align: top"}
             %td.text-primary= @last_rehearsal.date.strftime("%m/%d/%Y")
-            %td.text-right= @last_rehearsal.song_list
+            %td.text-end= @last_rehearsal.song_list
         =link_to "Download",
                  @last_rehearsal.audio.url,
                  class: "btn btn-secondary btn-lg #{'disabled' unless @last_rehearsal.audio.exists? }"
@@ -56,13 +56,13 @@
         %p The last rehearsal cannot be found.
       %br
       .clearfix
-        =link_to rehearsals_path, class: "pull-right" do
+        =link_to rehearsals_path, class: "float-end" do
           More Rehearsals&hellip;
-  .col-sm-7.col-sm-pull-5.col-md-8.col-md-pull-4.col-lg-9.col-lg-pull-3
+  .col-sm-7.col-md-8col-lg-9.order-sm-1
     .news-block
       %strong Lastest News:
       -@articles.each do |article|
         =render article
       .clearfix
-        =link_to news_index_path, class: "pull-right" do
+        =link_to news_index_path, class: "float-end" do
           More News&hellip;

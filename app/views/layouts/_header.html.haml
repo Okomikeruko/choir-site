@@ -1,22 +1,22 @@
-%header
-  =link_to root_url do
-    %h1
-      Cascade Sixth
-      %span.choir
-        Choir
-  %button.navbar-toggle{:type => "button",
-                        :data => { target: "#navbarCollapse",
-                                   toggle: "collapse" },
-                        :style => "color: white;"}
-    %span.sr-only Toggle navigation
-    %span.icon-bar
-    %span.icon-bar
-    %span.icon-bar
-  #navbarCollapse.collapse.navbar-collapse
-    %ul.nav.navbar-nav
-      %li=link_to "Home", root_url
-      %li=link_to "Music", music_index_path
-      / %li=link_to "About Us", about_us_path
-      %li=link_to "News", news_index_path
-      %li=link_to "Rehearsals", rehearsals_path
-      %li=link_to "Contact", contact_path
+%header.navbar.navbar-dark.navbar-expand-sm.py-0
+  .container-fluid
+    =link_to root_url, class: "navbar-brand py-2" do
+      %h1.mb-0
+        Cascade Sixth
+        %span.choir
+          Choir
+    %button.navbar-toggler.my-2{:type => "button",
+                                :data => { "bs-target": "#navbarCollapse",
+                                           "bs-toggle": "collapse" },
+                                :aria => { controls: "navbarCollapse",
+                                           expanded: "false",
+                                           label: "Toggle navigation" }}
+      %span.navbar-toggler-icon
+    #navbarCollapse.collapse.navbar-collapse
+      %ul.navbar-nav.ms-auto.mb-0.gap-2
+        - [{name: "Home", url: root_url},
+           {name: "Music", url: music_index_path},
+           {name: "News", url: news_index_path},
+           {name: "Rehearsals", url: rehearsals_path},
+           {name: "Contact", url: contact_path}].each do |link|
+          %li.nav-item.px-2=link_to link[:name], link[:url], class: "nav-link"
