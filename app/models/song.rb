@@ -46,6 +46,10 @@ class Song < ApplicationRecord
     def unused
       where(performances_count: 0)
     end
+
+    def alphabetized
+      all.group_by { |song| song.sort_order.chr }
+    end
   end
 
   private

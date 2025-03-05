@@ -3,18 +3,15 @@
 .nav-tabs.song-sorting {
   border-bottom-color: darken(colors.$brand-primary, 10);
   
-  & > li {
-    & > a {
-      border-color: darken(colors.$brand-secondary, 10);
-      border-bottom-width: 0;
-      margin-bottom: 1px;
-      background-color: colors.$brand-secondary;
-      color: white;
-      padding: 3px;
-    }
-    &.active > a,
-    & > a:hover,
-    & > a:focus {
+  & > li.nav-item > a.nav-link {
+    border-color: darken(colors.$brand-secondary, 10);
+    border-bottom-width: 0;
+    margin-bottom: 1px;
+    background-color: colors.$brand-secondary;
+    color: white;
+    padding: 3px;
+
+    &.active, &:hover, &:focus {
       border-color: darken(colors.$brand-primary, 10);
       background-color: colors.$brand-primary;
       border-bottom-width: 0;
@@ -22,6 +19,7 @@
     }
   }
 }
+
 
 .letter-links{
   padding: 20px 0;
@@ -40,21 +38,14 @@
 
 .year-links{
   @extend .letter-links;
-  .nav-pills{
-    display: inline-block;
-    
-    & > li > a{
-      color: white;
-      background-color: colors.$brand-secondary;
-      padding: 3px 8px;
-      margin: 0 4px;
-      
-      &:focus, &:hover{
-        background-color: colors.$brand-primary;
-      }
-    }
-    & > li.active > a {
-        background-color: colors.$brand-primary;
+  .nav-pills > li.nav-item > a.nav-link{
+    color: white;
+    background-color: colors.$brand-secondary;
+    padding: 3px 8px;
+    margin: 0 4px;
+
+    &:focus, &:hover, &.active{
+      background-color: colors.$brand-primary;
     }
   }
 }

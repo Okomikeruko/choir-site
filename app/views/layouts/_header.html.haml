@@ -13,10 +13,10 @@
                                            label: "Toggle navigation" }}
       %span.navbar-toggler-icon
     #navbarCollapse.collapse.navbar-collapse
-      %ul.navbar-nav.ms-auto.mb-0.gap-2
+      %ul.navbar-nav.ms-auto.mb-0.gap-2.px-3
         - [{name: "Home", url: root_url},
            {name: "Music", url: music_index_path},
            {name: "News", url: news_index_path},
            {name: "Rehearsals", url: rehearsals_path},
            {name: "Contact", url: contact_path}].each do |link|
-          %li.nav-item.px-2=link_to link[:name], link[:url], class: "nav-link"
+          %li.nav-item= link_to link[:name], link[:url], class: "nav-link px-3"

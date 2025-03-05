@@ -1,9 +1,10 @@
 // Import jQuery and make it globally available
 import jQuery from 'jquery';
-window.$ = window.jQuery = jQuery;
+$ = window.$ = window.jQuery = jQuery;
 
 // Import Bootstrap
 import * as bootstrap from 'bootstrap';
+window.bootstrap = bootstrap
 
 // Import your DataTables configuration
 import './datatables';
@@ -13,12 +14,9 @@ import './channels';
 import './cable';
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize Bootstrap tooltips and popovers if needed
-    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    tooltipTriggerList.map((tooltipTriggerEl) => {
+    // Re-initialize bootstrap components after Turbo navigation
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
     });
-
-    // Your existing JavaScript initialization code
-    console.log('Hello World from application.js');
 });

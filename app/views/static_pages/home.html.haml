@@ -58,9 +58,9 @@
       .clearfix
         =link_to rehearsals_path, class: "float-end" do
           More Rehearsals&hellip;
-  .col-sm-7.col-md-8col-lg-9.order-sm-1
+  .col-sm-7.col-md-8.col-lg-9.order-sm-1
     .news-block
-      %strong Lastest News:
+      %strong Latest News:
       -@articles.each do |article|
         =render article
       .clearfix
