@@ -17795,6 +17795,23 @@ var require_buttons_html5 = __commonJS({
 // app/javascript/application.js
 var import_jquery5 = __toESM(require_jquery());
 
+// node_modules/bootstrap/dist/js/bootstrap.esm.js
+var bootstrap_esm_exports = {};
+__export(bootstrap_esm_exports, {
+  Alert: () => Alert,
+  Button: () => Button,
+  Carousel: () => Carousel,
+  Collapse: () => Collapse,
+  Dropdown: () => Dropdown,
+  Modal: () => Modal,
+  Offcanvas: () => Offcanvas,
+  Popover: () => Popover,
+  ScrollSpy: () => ScrollSpy,
+  Tab: () => Tab,
+  Toast: () => Toast,
+  Tooltip: () => Tooltip
+});
+
 // node_modules/@popperjs/core/lib/index.js
 var lib_exports = {};
 __export(lib_exports, {
@@ -24996,13 +25013,13 @@ cable_default.subscriptions.create("MessageChannel", {
 });
 
 // app/javascript/application.js
-window.$ = window.jQuery = import_jquery5.default;
+$ = window.$ = window.jQuery = import_jquery5.default;
+window.bootstrap = bootstrap_esm_exports;
 document.addEventListener("DOMContentLoaded", () => {
   const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-  tooltipTriggerList.map((tooltipTriggerEl) => {
+  tooltipTriggerList.map(function(tooltipTriggerEl) {
     return new Tooltip(tooltipTriggerEl);
   });
-  console.log("Hello World from application.js");
 });
 /*! Bundled license information:
 
