@@ -62,14 +62,12 @@
   
 audio{
   width: 100%;
-  &::-webkit-media-controls-volume-slider,
-  &::-webkit-media-controls-timeline{
-    -webkit-filter: hue-rotate(colors.$hue-rotate)
-                    saturate(colors.$hue-saturate)
-                    brightness(colors.$hue-lightness*1.372);
-    filter: hue-rotate(colors.$hue-rotate)
-            saturate(colors.$hue-saturate)
-            brightness(colors.$hue-lightness*1.372);
+  @supports (-webkit-appearance: none) {
+    &::-webkit-media-controls-volume-slider,
+    &::-webkit-media-controls-timeline {
+      -webkit-filter: hue-rotate(colors.$hue-rotate) saturate(colors.$hue-saturate) brightness(colors.$hue-lightness*1.372);
+      filter: hue-rotate(colors.$hue-rotate) saturate(colors.$hue-saturate) brightness(colors.$hue-lightness*1.372);
+    }
   }
 }
 
