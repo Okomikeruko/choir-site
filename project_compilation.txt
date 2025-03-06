@@ -94,7 +94,7 @@ jobs:
 
 /*******************************************************************************
 * File: .gitignore
-* Size: 890 bytes
+* Size: 910 bytes
 *******************************************************************************/
 
 # See https://help.github.com/articles/ignoring-files for more about ignoring files.
@@ -146,6 +146,8 @@ yarn-debug.log*
 /app/assets/builds/*
 !/app/assets/builds/.keep
 
+/config/master.key
+
 /*******************************************************************************
 * File: .idea/.gitignore
 * Size: 184 bytes
@@ -162,7 +164,7 @@ yarn-debug.log*
 
 /*******************************************************************************
 * File: .idea/choir-site.iml
-* Size: 51737 bytes
+* Size: 53561 bytes
 *******************************************************************************/
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -193,181 +195,183 @@ yarn-debug.log*
       <excludeFolder url="file://$MODULE_DIR$/vendor/bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/cache" />
     </content>
-    <orderEntry type="jdk" jdkName="Choir Site Web" jdkType="RUBY_SDK" />
+    <orderEntry type="jdk" jdkName="Remote: ruby-3.2.7-p253" jdkType="RUBY_SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="actioncable (v7.1.5.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actionmailbox (v7.1.5.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actionmailer (v7.1.5.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actionpack (v7.1.5.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actiontext (v7.1.5.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actionview (v7.1.5.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activejob (v7.1.5.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activemodel (v7.1.5.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activerecord (v7.1.5.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activestorage (v7.1.5.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activesupport (v7.1.5.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ajax-datatables-rails (v1.5.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ansi (v1.5.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ast (v2.4.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="autoprefixer-rails (v10.4.19.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="aws-eventstream (v1.3.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="aws-partitions (v1.1059.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-core (v3.219.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-kms (v1.99.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-s3 (v1.182.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="aws-sigv4 (v1.11.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="base64 (v0.2.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.20, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="benchmark (v0.4.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="better_errors (v2.10.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bigdecimal (v3.1.9, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bindex (v0.8.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="binding_of_caller (v1.0.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bootstrap-datepicker-rails (v1.10.0.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bootstrap-sass (v3.4.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bootstrap-will_paginate (v1.0.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="brakeman (v7.0.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="breadcrumbs_on_rails (v4.1.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="builder (v3.3.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bullet (v8.0.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bundler (v2.4.19, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="byebug (v11.1.3, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="cancan (v1.6.10, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="cocoon (v1.2.15, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="code_analyzer (v0.5.5, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="coderay (v1.1.3, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="concurrent-ruby (v1.1.10, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="connection_pool (v2.5.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="crass (v1.0.6, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="date (v3.4.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="debug (v1.10.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="debug_inspector (v1.2.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="devise (v4.9.4, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="docile (v1.4.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="dotenv (v3.1.7, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="drb (v2.2.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="erb2haml (v0.1.5, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="erubi (v1.13.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="erubis (v2.7.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="execjs (v2.10.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="faker (v3.5.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ffi (v1.17.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="font-awesome-sass (v6.7.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="foreman (v0.88.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="formatador (v1.1.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="globalid (v1.2.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="google-protobuf (v4.29.3, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="guard (v2.19.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="guard-compat (v1.2.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="guard-minitest (v2.4.6, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="haml (v6.3.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="haml-rails (v2.1.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="html2haml (v2.3.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="i18n (v1.14.7, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="invisible_captcha (v2.3.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="io-console (v0.8.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="irb (v1.15.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.13.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="jmespath (v1.6.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="jquery-ui-rails (v7.0.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="json (v2.10.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="language_server-protocol (v3.17.0.4, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="lint_roller (v1.1.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="listen (v3.9.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="little-plugger (v1.1.4, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="logger (v1.6.6, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="logging (v2.3.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="loofah (v2.24.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="lumberjack (v1.2.10, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="mail (v2.8.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="marcel (v1.0.4, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="method_source (v1.1.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="mime-types (v3.6.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="mime-types-data (v3.2025.0220, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="mini_magick (v4.13.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="mini_mime (v1.1.5, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="minitest (v5.25.4, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="minitest-reporters (v1.7.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.15.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="multipart-post (v2.4.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="mutex_m (v0.3.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="nenv (v0.3.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="net-imap (v0.5.6, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="net-pop (v0.1.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="net-protocol (v0.2.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="net-smtp (v0.5.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="nio4r (v2.7.4, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.18.3, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="notiffany (v0.1.3, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="orm_adapter (v0.5.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ostruct (v0.6.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="parallel (v1.26.3, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="parser (v3.3.7.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="pg (v1.5.9, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="pg_query (v6.0.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="pp (v0.6.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="prettyprint (v0.2.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="prosopite (v2.1.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="pry (v0.15.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="psych (v5.2.3, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="puma (v6.6.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="racc (v1.8.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rack (v3.1.10, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rack-mini-profiler (v3.3.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rack-session (v2.1.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rack-test (v2.2.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rackup (v2.2.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rails (v7.1.5.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rails-controller-testing (v1.0.5, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rails-dom-testing (v2.2.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rails-html-sanitizer (v1.6.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rails_best_practices (v1.23.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="railties (v7.1.5.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rainbow (v3.1.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rake (v13.2.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rb-fsevent (v0.11.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rb-inotify (v0.11.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rdbg (v0.1.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rdoc (v6.12.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="redis-client (v0.23.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="regexp_parser (v2.10.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="reline (v0.6.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="require_all (v3.0.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="responders (v3.1.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rouge (v4.5.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop (v1.73.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop-ast (v1.38.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop-capybara (v2.21.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop-minitest (v0.37.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop-rails (v2.30.3, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ruby-prof (v1.7.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ruby-progressbar (v1.13.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ruby_parser (v3.21.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="sassc (v2.4.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="securerandom (v0.4.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="sexp_processor (v4.17.3, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="shellany (v0.0.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="sidekiq (v7.3.9, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="simplecov (v0.22.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="simplecov-html (v0.13.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="simplecov_json_formatter (v0.1.4, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="stringio (v3.1.5, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="temple (v0.10.3, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="thor (v1.3.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="tilt (v2.6.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="timeout (v0.4.3, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="tzinfo (v2.0.6, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="uglifier (v3.2.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="unicode-display_width (v3.1.4, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="unicode-emoji (v4.0.4, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="uniform_notifier (v1.16.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="warden (v1.2.9, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="web-console (v4.2.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="websocket-driver (v0.7.7, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="websocket-extensions (v0.1.5, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="will_paginate (v4.0.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="wysiwyg-rails (v4.5.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="zeitwerk (v2.7.2, Choir Site Web) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actioncable (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actionmailbox (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actionmailer (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actionpack (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actiontext (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actionview (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activejob (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activemodel (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activerecord (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activestorage (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activesupport (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ajax-datatables-rails (v1.5.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ansi (v1.5.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ast (v2.4.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-eventstream (v1.3.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-partitions (v1.1059.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-core (v3.219.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-kms (v1.99.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-s3 (v1.182.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-sigv4 (v1.11.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="base64 (v0.2.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.20, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="benchmark (v0.4.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="better_errors (v2.10.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bigdecimal (v3.1.9, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bindex (v0.8.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="binding_of_caller (v1.0.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bootstrap-datepicker-rails (v1.10.0.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bootstrap-will_paginate (v1.0.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="brakeman (v7.0.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="breadcrumbs_on_rails (v4.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="builder (v3.3.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bullet (v8.0.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bundler (v2.4.19, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="byebug (v11.1.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="cancan (v1.6.10, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="cocoon (v1.2.15, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="code_analyzer (v0.5.5, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="coderay (v1.1.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="concurrent-ruby (v1.1.10, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="connection_pool (v2.5.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="crass (v1.0.6, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="cssbundling-rails (v1.4.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="date (v3.4.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="debug (v1.10.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="debug_inspector (v1.2.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="devise (v4.9.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="docile (v1.4.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="dotenv (v3.1.7, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="drb (v2.2.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="erb2haml (v0.1.5, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="erubi (v1.13.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="erubis (v2.7.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="execjs (v2.10.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="faker (v3.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ffi (v1.17.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="font-awesome-sass (v6.7.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="foreman (v0.88.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="formatador (v1.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="globalid (v1.2.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="google-protobuf (v4.29.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="guard (v2.19.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="guard-compat (v1.2.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="guard-minitest (v2.4.6, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="haml (v6.3.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="haml-rails (v2.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="html2haml (v2.3.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="i18n (v1.14.7, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="invisible_captcha (v2.3.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="io-console (v0.8.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="irb (v1.15.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.13.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="jmespath (v1.6.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="jquery-ui-rails (v7.0.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="jsbundling-rails (v1.3.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="json (v2.10.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="language_server-protocol (v3.17.0.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="lint_roller (v1.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="listen (v3.9.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="little-plugger (v1.1.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="logger (v1.6.6, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="logging (v2.3.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="loofah (v2.24.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="lumberjack (v1.2.10, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="mail (v2.8.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="marcel (v1.0.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="method_source (v1.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="mime-types (v3.6.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="mime-types-data (v3.2025.0220, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="mini_magick (v4.13.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="mini_mime (v1.1.5, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="minitest (v5.25.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="minitest-reporters (v1.7.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.15.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="multipart-post (v2.4.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="mutex_m (v0.3.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="nenv (v0.3.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="net-imap (v0.5.6, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="net-pop (v0.1.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="net-protocol (v0.2.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="net-smtp (v0.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="nio4r (v2.7.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.18.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="notiffany (v0.1.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="orm_adapter (v0.5.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ostruct (v0.6.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="parallel (v1.26.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="parser (v3.3.7.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="pg (v1.5.9, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="pg_query (v6.0.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="pp (v0.6.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="prettyprint (v0.2.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="propshaft (v1.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="prosopite (v2.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="pry (v0.15.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="psych (v5.2.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="puma (v6.6.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="racc (v1.8.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rack (v3.1.10, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rack-mini-profiler (v3.3.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rack-session (v2.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rack-test (v2.2.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rackup (v2.2.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rails (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rails-controller-testing (v1.0.5, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rails-dom-testing (v2.2.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rails-html-sanitizer (v1.6.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rails_best_practices (v1.23.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="railties (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rainbow (v3.1.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rake (v13.2.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rb-fsevent (v0.11.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rb-inotify (v0.11.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rdbg (v0.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rdoc (v6.12.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="redis-client (v0.23.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="regexp_parser (v2.10.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="reline (v0.6.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="require_all (v3.0.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="responders (v3.1.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rouge (v4.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubocop (v1.73.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubocop-ast (v1.38.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubocop-capybara (v2.21.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubocop-minitest (v0.37.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubocop-rails (v2.30.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ruby-prof (v1.7.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ruby-progressbar (v1.13.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ruby_parser (v3.21.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="sassc (v2.4.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="securerandom (v0.4.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="sexp_processor (v4.17.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="shellany (v0.0.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="sidekiq (v7.3.9, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="simplecov (v0.22.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="simplecov-html (v0.13.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="simplecov_json_formatter (v0.1.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="stringio (v3.1.5, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="temple (v0.10.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="thor (v1.3.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="tilt (v2.6.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="timeout (v0.4.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="turbo-rails (v2.0.13, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="tzinfo (v2.0.6, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="uglifier (v3.2.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="unicode-display_width (v3.1.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="unicode-emoji (v4.0.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="uniform_notifier (v1.16.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="warden (v1.2.9, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="web-console (v4.2.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="websocket-driver (v0.7.7, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="websocket-extensions (v0.1.5, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="will_paginate (v4.0.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="wysiwyg-rails (v4.5.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="zeitwerk (v2.7.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
   </component>
   <component name="RModuleSettingsStorage">
     <LOAD_PATH number="0" />
@@ -1001,7 +1005,7 @@ Style/MixinUsage:
     - 'bin/*'
 /*******************************************************************************
 * File: .run/All tests in test_ choir-site.run.xml
-* Size: 2563 bytes
+* Size: 2572 bytes
 *******************************************************************************/
 
 <component name="ProjectRunConfigurationManager">
@@ -1011,7 +1015,7 @@ Style/MixinUsage:
     <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-Itest" />
     <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
     <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="true" />
-    <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="Choir Site Web" />
+    <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="Remote: ruby-3.2.7-p253" />
     <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
     <envs>
       <env name="RAILS_ENV" value="test" />
@@ -1088,7 +1092,7 @@ Style/MixinUsage:
 </component>
 /*******************************************************************************
 * File: .run/Launch Choir-Site.run.xml
-* Size: 886 bytes
+* Size: 705 bytes
 *******************************************************************************/
 
 <component name="ProjectRunConfigurationManager">
@@ -1097,13 +1101,7 @@ Style/MixinUsage:
       <settings>
         <option name="containerName" value="" />
         <option name="envFilePath" value="" />
-        <option name="services">
-          <list>
-            <option value="web" />
-          </list>
-        </option>
         <option name="sourceFilePath" value="docker-compose.yml" />
-        <option name="upAttachDependencies" value="true" />
         <option name="upDetach" value="false" />
       </settings>
     </deployment>
@@ -1114,7 +1112,7 @@ Style/MixinUsage:
 </component>
 /*******************************************************************************
 * File: .run/Rebuild Choir-Site.run.xml
-* Size: 788 bytes
+* Size: 607 bytes
 *******************************************************************************/
 
 <component name="ProjectRunConfigurationManager">
@@ -1124,13 +1122,7 @@ Style/MixinUsage:
         <option name="containerName" value="" />
         <option name="envFilePath" value="" />
         <option name="commandLineOptions" value="--build" />
-        <option name="services">
-          <list>
-            <option value="web" />
-          </list>
-        </option>
         <option name="sourceFilePath" value="docker-compose.yml" />
-        <option name="upAttachDependencies" value="true" />
         <option name="upDetach" value="false" />
       </settings>
     </deployment>
@@ -1573,6 +1565,15 @@ migrate:
 .PHONY: db-reset
 db-reset:
 	docker-compose run --rm web rails db:drop db:create db:migrate db:seed
+/*******************************************************************************
+* File: Procfile.dev
+* Size: 109 bytes
+*******************************************************************************/
+
+web: env RUBY_DEBUG_OPEN=true bin/rails server -b 0.0.0.0 -p 3000
+css: yarn watch:css
+js: yarn build --watch
+
 /*******************************************************************************
 * File: README.md
 * Size: 5621 bytes
@@ -2289,7 +2290,7 @@ header{
 }
 /*******************************************************************************
 * File: app/assets/stylesheets/partials/_music.scss
-* Size: 1981 bytes
+* Size: 1831 bytes
 *******************************************************************************/
 
 @use "../modules/colors" as colors;
@@ -2297,18 +2298,15 @@ header{
 .nav-tabs.song-sorting {
   border-bottom-color: darken(colors.$brand-primary, 10);
   
-  & > li {
-    & > a {
-      border-color: darken(colors.$brand-secondary, 10);
-      border-bottom-width: 0;
-      margin-bottom: 1px;
-      background-color: colors.$brand-secondary;
-      color: white;
-      padding: 3px;
-    }
-    &.active > a,
-    & > a:hover,
-    & > a:focus {
+  & > li.nav-item > a.nav-link {
+    border-color: darken(colors.$brand-secondary, 10);
+    border-bottom-width: 0;
+    margin-bottom: 1px;
+    background-color: colors.$brand-secondary;
+    color: white;
+    padding: 3px;
+
+    &.active, &:hover, &:focus {
       border-color: darken(colors.$brand-primary, 10);
       background-color: colors.$brand-primary;
       border-bottom-width: 0;
@@ -2316,6 +2314,7 @@ header{
     }
   }
 }
+
 
 .letter-links{
   padding: 20px 0;
@@ -2334,21 +2333,14 @@ header{
 
 .year-links{
   @extend .letter-links;
-  .nav-pills{
-    display: inline-block;
-    
-    & > li > a{
-      color: white;
-      background-color: colors.$brand-secondary;
-      padding: 3px 8px;
-      margin: 0 4px;
-      
-      &:focus, &:hover{
-        background-color: colors.$brand-primary;
-      }
-    }
-    & > li.active > a {
-        background-color: colors.$brand-primary;
+  .nav-pills > li.nav-item > a.nav-link{
+    color: white;
+    background-color: colors.$brand-secondary;
+    padding: 3px 8px;
+    margin: 0 4px;
+
+    &:focus, &:hover, &.active{
+      background-color: colors.$brand-primary;
     }
   }
 }
@@ -2365,14 +2357,12 @@ header{
   
 audio{
   width: 100%;
-  &::-webkit-media-controls-volume-slider,
-  &::-webkit-media-controls-timeline{
-    -webkit-filter: hue-rotate(colors.$hue-rotate)
-                    saturate(colors.$hue-saturate)
-                    brightness(colors.$hue-lightness*1.372);
-    filter: hue-rotate(colors.$hue-rotate)
-            saturate(colors.$hue-saturate)
-            brightness(colors.$hue-lightness*1.372);
+  @supports (-webkit-appearance: none) {
+    &::-webkit-media-controls-volume-slider,
+    &::-webkit-media-controls-timeline {
+      -webkit-filter: hue-rotate(colors.$hue-rotate) saturate(colors.$hue-saturate) brightness(colors.$hue-lightness*1.372);
+      filter: hue-rotate(colors.$hue-rotate) saturate(colors.$hue-saturate) brightness(colors.$hue-lightness*1.372);
+    }
   }
 }
 
@@ -3367,7 +3357,7 @@ end
 
 /*******************************************************************************
 * File: app/controllers/songs_controller.rb
-* Size: 1242 bytes
+* Size: 690 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -3378,10 +3368,10 @@ class SongsController < ApplicationController
   add_breadcrumb 'Music', :music_index_path
 
   def index
-    load_songs
-    load_songs_pending
-    load_songs_history
-    load_songs_unused
+    @songs_by_title = Song.alphabetized
+    @unused_songs = Song.unused.alphabetized
+    @pending_performances = Performance.all_upcoming.group_by_month_and_year
+    @performance_history  = Performance.all_history.group_by_month_and_year
   end
 
   def show
@@ -3390,35 +3380,6 @@ class SongsController < ApplicationController
                           :performances)
                 .find_by(slug: params[:slug])
     add_breadcrumb @song.title, music_path(@song.slug)
-  end
-
-  private
-
-  def load_songs
-    songs = Song.includes(:performances).all
-    @songs_by_title = group_songs_by_title(songs)
-  end
-
-  def group_songs_by_title(songs)
-    songs.sort_by(&:sort_order)
-         .group_by { |s| s.sort_order.chr }
-  end
-
-  def load_songs_pending
-    @songs_pending = group_performances_by_month(Performance.all_upcoming)
-  end
-
-  def load_songs_history
-    @song_history = group_performances_by_month(Performance.all_history)
-  end
-
-  def group_performances_by_month(performances)
-    performances.group_by { |per| per.date.beginning_of_month }
-                .group_by { |m| m[0].year }
-  end
-
-  def load_songs_unused
-    @songs_unused = group_songs_by_title(Song.unused)
   end
 end
 
@@ -3553,7 +3514,7 @@ end
 
 /*******************************************************************************
 * File: app/datatables/category_datatable.rb
-* Size: 2318 bytes
+* Size: 2328 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -3615,7 +3576,7 @@ class CategoryDatatable < AjaxDatatablesRails::ActiveRecord
   def controls(record)
     sanitize(
       <<-HTML,
-         <button type="button" data-toggle="modal" data-target="#category-#{record.id}" class="btn btn-default btn-xs">
+         <button type="button" data-toggle="modal" data-target="#category-#{record.id}" class="btn btn-outline-secondary btn-xs">
            <span class="glyphicon glyphicon-pencil"></span>
          </button>
          &nbsp;
@@ -3695,6 +3656,33 @@ module DatatableHelper
 end
 
 /*******************************************************************************
+* File: app/javascript/application.js
+* Size: 687 bytes
+*******************************************************************************/
+
+// Import jQuery and make it globally available
+import jQuery from 'jquery';
+$ = window.$ = window.jQuery = jQuery;
+
+// Import Bootstrap
+import * as bootstrap from 'bootstrap';
+window.bootstrap = bootstrap
+
+// Import your DataTables configuration
+import './datatables';
+
+// Any other JavaScript imports
+import './channels';
+import './cable';
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Re-initialize bootstrap components after Turbo navigation
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    });
+});
+/*******************************************************************************
 * File: app/javascript/cable.js
 * Size: 111 bytes
 *******************************************************************************/
@@ -3703,6 +3691,14 @@ end
 import { createConsumer } from "@rails/actioncable"
 
 export default createConsumer()
+/*******************************************************************************
+* File: app/javascript/channels/index.js
+* Size: 117 bytes
+*******************************************************************************/
+
+// app/javascript/channels/index.js
+// Import all the channels to be used by Action Cable
+import './message_channel';
 /*******************************************************************************
 * File: app/javascript/channels/message_channel.js
 * Size: 681 bytes
@@ -4304,7 +4300,7 @@ end
 
 /*******************************************************************************
 * File: app/models/concerns/datatable_columns_concern.rb
-* Size: 3383 bytes
+* Size: 3381 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -4393,7 +4389,7 @@ module DatatableColumnsConcern
     def define_controls_column(options = {})
       defaults = BASE_COLUMN_DEFAULTS.merge({
                                               label: 'Controls',
-                                              className: 'text-right'
+                                              className: 'text-end'
                                             })
 
       datatable_columns[:controls] = defaults.merge(options)
@@ -4629,7 +4625,7 @@ end
 
 /*******************************************************************************
 * File: app/models/performance.rb
-* Size: 1511 bytes
+* Size: 1866 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -4666,23 +4662,38 @@ class Performance < ApplicationRecord
       all_upcoming.first(num)
     end
 
+    def with_songs
+      unscoped.includes(:songs)
+    end
+
     def all_upcoming
-      where(
-        'date > :d', d: DateTime.now.in_time_zone('Mountain Time (US & Canada)')
-      ).sort_by(&:date)
+      with_songs
+        .where(date: DateTime.now...)
+        .order(date: :asc)
     end
 
     def all_history
-      where(
-        'date < :d', d: DateTime.now.in_time_zone('Mountain Time (US & Canada)')
-      ).sort_by(&:date).reverse
+      with_songs
+        .where(date: ...DateTime.now)
+        .order(date: :desc)
+    end
+
+    def group_by_month_and_year
+      # First group by year
+      by_year = all.group_by { |record| record.date&.year }
+
+      # Then for each year, group by month
+      by_year.transform_values do |year_records|
+        year_records.group_by { |record| record.date&.month }
+                    .transform_keys { |month| Date::MONTHNAMES[month][0..2] }
+      end
     end
   end
 
   private
 
   def correct_mp3_mime_type
-    return unless audio.attached? && !mp3.content_type.in?(%w[audio/mpeg audio/mp3])
+    return unless audio.attached? && !audio.content_type.in?(%w[audio/mpeg audio/mp3])
 
     errors.add(:audio, 'Must be an MP3 file')
   end
@@ -4834,7 +4845,7 @@ end
 
 /*******************************************************************************
 * File: app/models/song.rb
-* Size: 1763 bytes
+* Size: 1843 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -4884,6 +4895,10 @@ class Song < ApplicationRecord
   class << self
     def unused
       where(performances_count: 0)
+    end
+
+    def alphabetized
+      all.group_by { |song| song.sort_order.chr }
     end
   end
 
@@ -4972,7 +4987,7 @@ end
 
 /*******************************************************************************
 * File: app/presenters/category_presenter.rb
-* Size: 972 bytes
+* Size: 982 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -4990,7 +5005,7 @@ class CategoryPresenter < ApplicationPresenter
                 content_tag(:button,
                             content_tag(:span, '', class: 'glyphicon glyphicon-pencil'),
                             type: 'button',
-                            class: 'btn btn-default btn-xs',
+                            class: 'btn btn-outline-secondary btn-xs',
                             data: {
                               toggle: 'modal',
                               target: "#category_#{category.id}"
@@ -5041,7 +5056,7 @@ end
 
 /*******************************************************************************
 * File: app/presenters/tag_presenter.rb
-* Size: 920 bytes
+* Size: 930 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -5059,7 +5074,7 @@ class TagPresenter < ApplicationPresenter
                 content_tag(:button,
                             content_tag(:span, '', class: 'glyphicon glyphicon-pencil'),
                             type: 'button',
-                            class: 'btn btn-default btn-xs',
+                            class: 'btn btn-outline-secondary btn-xs',
                             data: {
                               toggle: 'modal',
                               target: "#tag-#{tag.id}"
@@ -5077,7 +5092,7 @@ end
 
 /*******************************************************************************
 * File: app/views/admin/articles/_article.html.haml
-* Size: 518 bytes
+* Size: 493 bytes
 *******************************************************************************/
 
 %tr
@@ -5086,19 +5101,19 @@ end
   %td= article.status
   %td= article.list_categories
   %td= article.list_tags
-  %td.text-right
+  %td.text-end
     =link_to edit_admin_article_path(article),
-             class: "btn btn-default btn-xs" do
-      %span.glyphicon.glyphicon-pencil
+             class: "btn btn-outline-secondary btn-xs" do
+      %span.bi.bi-pencil
     &nbsp;
     =link_to admin_article_path(article),
              method: :delete,
              data: { confirm: "Are you sure?" },
              class: "btn btn-danger btn-xs" do
-      %span.glyphicon.glyphicon-remove
+      %span.bi.bi-x
 /*******************************************************************************
 * File: app/views/admin/articles/_form.html.haml
-* Size: 1614 bytes
+* Size: 1600 bytes
 *******************************************************************************/
 
 =form_for [:admin, article] do |f|
@@ -5106,16 +5121,16 @@ end
   .clearfix
     -unless article.published?
       =f.submit "Publish",
-                class: "btn btn-primary pull-right",
+                class: "btn btn-primary float-end",
                 style: "margin-left: 1em;"
       =f.submit "Save Draft",
-                class: "btn btn-default pull-right"
+                class: "btn btn-outline-secondary float-end"
     -else
       =f.submit "Update",
-                class: "btn btn-primary pull-right",
+                class: "btn btn-primary float-end",
                 style: "margin-left: 1em;"
       =f.submit "Revert to Draft",
-                class: "btn btn-default pull-right"
+                class: "btn btn-outline-secondary float-end"
   .row
     .col-sm-8
       =f.label :title
@@ -5128,8 +5143,8 @@ end
         %legend.clearfix
           Categories
           =link_to admin_categories_path,
-                   class: "btn btn-primary pull-right" do
-            %span.glyphicon.glyphicon-plus
+                   class: "btn btn-primary float-end" do
+            %span.bi.bi-plus
         =f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |c|
           =c.label { c.check_box }
           =c.object.name
@@ -5139,8 +5154,8 @@ end
         %legend.clearfix
           Tags
           =link_to admin_tags_path,
-                   class: "btn btn-primary pull-right" do
-            %span.glyphicon.glyphicon-plus
+                   class: "btn btn-primary float-end" do
+            %span.bi.bi-plus
         =f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |t|
           =t.label { t.check_box }
           =t.object.name
@@ -5155,23 +5170,23 @@ end
   });
 /*******************************************************************************
 * File: app/views/admin/articles/edit.html.haml
-* Size: 131 bytes
+* Size: 141 bytes
 *******************************************************************************/
 
 %h1 Edit Article
 =link_to "Back",
          admin_articles_path,
-         class: "btn btn-default"
+         class: "btn btn-outline-secondary"
 =render "form", article: @article
 /*******************************************************************************
 * File: app/views/admin/articles/index.html.haml
-* Size: 186 bytes
+* Size: 172 bytes
 *******************************************************************************/
 
 %h1 Articles
 =link_to new_admin_article_path,
          class: "btn btn-primary" do
-  %span.glyphicon.glyphicon-plus
+  %span.bi.bi-plus
   Add New Article
 
 .row
@@ -5179,36 +5194,36 @@ end
     = datatable_table_for Article
 /*******************************************************************************
 * File: app/views/admin/articles/new.html.haml
-* Size: 131 bytes
+* Size: 141 bytes
 *******************************************************************************/
 
 %h1 New Article
 =link_to "Back",
          admin_articles_path,
-         class: "btn btn-default"
+         class: "btn btn-outline-secondary"
 =render "form", article: @article
 
 /*******************************************************************************
 * File: app/views/admin/categories/_category.html.haml
-* Size: 523 bytes
+* Size: 498 bytes
 *******************************************************************************/
 
 %tr
   %td= category.name
   %td= category.slug
   %td= category.articles.count
-  %td.text-right
+  %td.text-end
     %button{ type:"button",
              data: { toggle: "modal",
                      target: "#category-#{category.id}" },
-             class: "btn btn-default btn-xs"}
-      %span.glyphicon.glyphicon-pencil
+             class: "btn btn-outline-secondary btn-xs"}
+      %span.bi.bi-pencil
     &nbsp;
     =link_to admin_category_path(category),
              method: :delete,
              data: { confirm: "Are you sure?" },
              class: "btn btn-danger btn-xs" do
-      %span.glyphicon.glyphicon-remove
+      %span.bi.bi-x
 /*******************************************************************************
 * File: app/views/admin/categories/_form.html.haml
 * Size: 268 bytes
@@ -5264,7 +5279,7 @@ end
     =render "modal", category: category
 /*******************************************************************************
 * File: app/views/admin/index.html.haml
-* Size: 2890 bytes
+* Size: 2826 bytes
 *******************************************************************************/
 
 %h1 Admin Dashboard
@@ -5274,8 +5289,8 @@ end
     .panel.panel-default
       .panel-heading.clearfix
         =link_to new_admin_article_path,
-                 class: "btn btn-primary pull-right" do
-          %span.glyphicon.glyphicon-plus
+                 class: "btn btn-primary float-end" do
+          %span.bi.bi-plus
         %h4 News
       .panel-body
         -@articles.each do |article|
@@ -5286,7 +5301,7 @@ end
                        length: 120,
                        separator: ' '
             %br
-            %span.pull-right
+            %span.float-end
               %strong= article.status
               |
               =link_to "View", news_path(article)
@@ -5297,8 +5312,8 @@ end
     .panel.panel-default
       .panel-heading.clearfix
         =link_to new_admin_song_path,
-                 class: "btn btn-primary pull-right" do
-          %span.glyphicon.glyphicon-plus
+                 class: "btn btn-primary float-end" do
+          %span.bi.bi-plus
         %h4 Songs
       .panel-body{style: "overflow-y: auto; height: 602px;"}
         -@songs.each do |song|
@@ -5306,7 +5321,7 @@ end
             %h4= song.title
             %p= song.instruments.map { |i| i.name }.to_sentence
             %br
-            %span.pull-right
+            %span.float-end
               =link_to "View", music_path(song.slug)
               |
               =link_to "Edit", edit_admin_song_path(song)
@@ -5315,8 +5330,8 @@ end
     .panel.panel-default
       .panel-heading.clearfix
         =link_to new_admin_performance_path,
-                 class: "btn btn-primary pull-right" do
-          %span.glyphicon.glyphicon-plus
+                 class: "btn btn-primary float-end" do
+          %span.bi.bi-plus
         %h4 Performances
       .panel-body{style: "overflow-y: auto; height: 250px;"}
         -@performances.each do |performance|
@@ -5324,7 +5339,7 @@ end
             %h4= performance.date.strftime("%m/%d/%Y")
             %p= performance.songs.map { |s| s.title }.to_sentence
             %br
-            %span.pull-right
+            %span.float-end
               %strong= performance.date.future? ? "Pending" : "Complete"
               |
               =link_to "Edit", edit_admin_performance_path(performance)
@@ -5333,8 +5348,8 @@ end
     .panel.panel-default
       .panel-heading.clearfix
         =link_to new_admin_rehearsal_path,
-                 class: "btn btn-primary pull-right" do
-          %span.glyphicon.glyphicon-plus
+                 class: "btn btn-primary float-end" do
+          %span.bi.bi-plus
         %h4 Rehearsals
       .panel-body{style: "overflow-y: auto; height: 250px"}
         -@rehearsals.each do |rehearsal|
@@ -5346,7 +5361,7 @@ end
               %br
               %strong Venue
               = rehearsal.venue
-            %span.pull-right
+            %span.float-end
               %strong= rehearsal.date.future? ? "Pending" : "Complete"
               |
               =link_to "Edit", edit_admin_rehearsal_path(rehearsal)
@@ -5386,7 +5401,7 @@ end
       =f.submit "Save", class: "btn btn-primary"
 /*******************************************************************************
 * File: app/views/admin/members/_member.html.haml
-* Size: 739 bytes
+* Size: 714 bytes
 *******************************************************************************/
 
 %tr
@@ -5403,35 +5418,35 @@ end
     %span{class: "#{'label label-success' if member.bass? }"}
       B
   %td= member.talents
-  %td.text-right
+  %td.text-end
     =link_to edit_admin_member_path(member),
-             class: "btn btn-default btn-xs" do
-      %span.glyphicon.glyphicon-pencil
+             class: "btn btn-outline-secondary btn-xs" do
+      %span.bi.bi-pencil
     &nbsp;
     =link_to admin_member_path(member),
              class: "btn btn-danger btn-xs",
              method: :delete,
              data: { confirm: "Are you sure?" } do
-      %span.glyphicon.glyphicon-remove
+      %span.bi.bi-x
 /*******************************************************************************
 * File: app/views/admin/members/edit.html.haml
-* Size: 127 bytes
+* Size: 137 bytes
 *******************************************************************************/
 
 %h1 Edit Member
 =link_to "Back",
          admin_members_path,
-         class: "btn btn-default"
+         class: "btn btn-outline-secondary"
 =render "form", member: @member
 /*******************************************************************************
 * File: app/views/admin/members/index.html.haml
-* Size: 182 bytes
+* Size: 168 bytes
 *******************************************************************************/
 
 %h1 Members
 =link_to new_admin_member_path,
          class: "btn btn-primary" do
-  %span.glyphicon.glyphicon-plus
+  %span.bi.bi-plus
   Add New Member
 
 .row
@@ -5439,13 +5454,13 @@ end
     = datatable_table_for Member
 /*******************************************************************************
 * File: app/views/admin/members/new.html.haml
-* Size: 126 bytes
+* Size: 136 bytes
 *******************************************************************************/
 
 %h1 New Member
 =link_to "Back",
          admin_members_path,
-         class: "btn btn-default"
+         class: "btn btn-outline-secondary"
 =render "form", member: @member
 /*******************************************************************************
 * File: app/views/admin/messages/index.html.haml
@@ -5459,22 +5474,22 @@ end
     = datatable_table_for Message
 /*******************************************************************************
 * File: app/views/admin/messages/show.html.haml
-* Size: 531 bytes
+* Size: 542 bytes
 *******************************************************************************/
 
 %h1 Message
 =link_to "Back",
          admin_messages_path,
-         class: "btn btn-default"
+         class: "btn btn-outline-secondary"
 .row{style: "padding-top: 30px;"}
   .col-lg-6.col-lg-offset-3.col-sm-8.col-sm-offset-2
     .panel.panel-default
       .panel-heading.clearfix
-        %h4.pull-left
+        %h4.float-start
           =@message.name
           %span.small
             =@message.email
-        %h4.pull-right
+        %h4.float-end
           %span.small
             =@message.created_at.strftime("%l:%M %P - %b %-d, %Y")
       .panel-body
@@ -5482,7 +5497,7 @@ end
         =simple_format @message.message
 /*******************************************************************************
 * File: app/views/admin/performances/_form.html.haml
-* Size: 1848 bytes
+* Size: 1842 bytes
 *******************************************************************************/
 
 .row
@@ -5490,10 +5505,10 @@ end
     =form_for [:admin, performance] do |f|
       =render "shared/error_messages", object: performance
       .clearfix
-        =f.submit "Save", class: "btn btn-primary pull-right"
+        =f.submit "Save", class: "btn btn-primary float-end"
         =link_to "Cancel",
                  admin_performances_path,
-                 class: "btn btn-default pull-right",
+                 class: "btn btn-outline-secondary float-end",
                  style: "margin-right: 15px;"
       .row
         .col-sm-6
@@ -5509,7 +5524,7 @@ end
                             value: (performance.date.strftime("%m/%d/%Y") if performance.date?),
                             class: "form-control"
               .input-group-addon
-                %span.glyphicon.glyphicon-th
+                %span.bi.bi-th
             %br
             =f.label :details
             =f.text_area :details, rows: "6", class: "form-control"
@@ -5536,63 +5551,63 @@ end
                 %br
 /*******************************************************************************
 * File: app/views/admin/performances/_performance.html.haml
-* Size: 506 bytes
+* Size: 481 bytes
 *******************************************************************************/
 
 %tr
   %td=performance.date.strftime("%m/%d/%Y")
   %td=performance.venue
   %td=performance.songs.map { |song| song.title}.to_sentence
-  %td.text-right
+  %td.text-end
     =link_to edit_admin_performance_path(performance),
-             class: "btn btn-default btn-xs" do
-      %span.glyphicon.glyphicon-pencil
+             class: "btn btn-outline-secondary btn-xs" do
+      %span.bi.bi-pencil
     =link_to admin_performance_path(performance),
              method: :delete,
              data: { confirm: "Are you sure?" },
              class: "btn btn-danger btn-xs" do
-      %span.glyphicon.glyphicon-remove
+      %span.bi.bi-x
 /*******************************************************************************
 * File: app/views/admin/performances/edit.html.haml
-* Size: 243 bytes
+* Size: 257 bytes
 *******************************************************************************/
 
 .clearfix
-  %h1.pull-left Edit Performance
+  %h1.float-start Edit Performance
   =link_to "Back",
            admin_performances_path,
-           class: "btn btn-default pull-left",
+           class: "btn btn-outline-secondary float-start",
            style: "margin-top: 23px; margin-left: 20px;"
 =render "form", performance: @performance
 /*******************************************************************************
 * File: app/views/admin/performances/index.html.haml
-* Size: 221 bytes
+* Size: 207 bytes
 *******************************************************************************/
 
 .clearfix
   %h1 Performances
   =link_to new_admin_performance_path,
            class: "btn btn-primary" do
-    %span.glyphicon.glyphicon-plus
+    %span.bi.bi-plus
     Add New Performance
 .row
   .col-sm-12
     = datatable_table_for Performance
 /*******************************************************************************
 * File: app/views/admin/performances/new.html.haml
-* Size: 242 bytes
+* Size: 256 bytes
 *******************************************************************************/
 
 .clearfix
-  %h1.pull-left New Performance
+  %h1.float-start New Performance
   =link_to "Back",
            admin_performances_path,
-           class: "btn btn-default pull-left",
+           class: "btn btn-outline-secondary float-start",
            style: "margin-top: 23px; margin-left: 20px;"
 =render "form", performance: @performance
 /*******************************************************************************
 * File: app/views/admin/profiles/_form.html.haml
-* Size: 922 bytes
+* Size: 930 bytes
 *******************************************************************************/
 
 .row
@@ -5600,10 +5615,10 @@ end
     =form_for [:admin, profile] do |f|
       =render "shared/error_messages", object: f.object
       .clearfix
-        =f.submit "Save", class: "btn btn-primary pull-right"
+        =f.submit "Save", class: "btn btn-primary float-end"
         =link_to "Cancel",
                   admin_profiles_path,
-                  class: "btn btn-default pull-right",
+                  class: "btn btn-outline-secondary float-end",
                   style: "margin-right: 15px;"
       %fieldset
         %legend Profile Info
@@ -5625,7 +5640,7 @@ end
                       class: "form-control"
 /*******************************************************************************
 * File: app/views/admin/profiles/_profile.html.haml
-* Size: 925 bytes
+* Size: 886 bytes
 *******************************************************************************/
 
 .panel.panel-default{:data => { :id => profile.id,
@@ -5633,7 +5648,7 @@ end
   .panel-body
     .row
       .col-sm-1
-        %span.glyphicon.glyphicon-resize-vertical.handle
+        %span.bi.bi-resize-vertical.handle
       .col-sm-3
         - url = profile.image.attached? ? profile.image : "portrait-placeholder.jpg"
         = image_tag url,
@@ -5646,12 +5661,12 @@ end
         =link_to admin_profile_path(profile),
                  method: :delete,
                  data: { confirm: "Are you sure?" },
-                 class: "btn btn-danger pull-right" do
-          %span.glyphicon.glyphicon-remove
+                 class: "btn btn-danger float-end" do
+          %span.bi.bi-x
         =link_to edit_admin_profile_path(profile),
-                 class: "btn btn-default pull-right",
+                 class: "btn btn-outline-secondary float-end",
                  style: "margin-right: 15px" do
-          %span.glyphicon.glyphicon-pencil
+          %span.bi.bi-pencil
 /*******************************************************************************
 * File: app/views/admin/profiles/index.html.haml
 * Size: 18 bytes
@@ -5660,7 +5675,7 @@ end
 = render @profiles
 /*******************************************************************************
 * File: app/views/admin/rehearsals/_form.html.haml
-* Size: 1609 bytes
+* Size: 1603 bytes
 *******************************************************************************/
 
 .row
@@ -5668,10 +5683,10 @@ end
     =form_for [:admin, rehearsal] do |f|
       =render "shared/error_messages", object: f.object
       .clearfix
-        =f.submit "Save", class: "btn btn-primary pull-right"
+        =f.submit "Save", class: "btn btn-primary float-end"
         =link_to "Cancel",
                  admin_rehearsals_path,
-                 class: "btn btn-default pull-right",
+                 class: "btn btn-outline-secondary float-end",
                  style: "margin-right: 25px;"
       .row
         .col-sm-6
@@ -5690,7 +5705,7 @@ end
                             value: (rehearsal.date.strftime("%m/%d/%Y") if rehearsal.date?),
                             class: "form-control"
               .input-group-addon
-                %span.glyphicon.glyphicon-th
+                %span.bi.bi-th
             %br
             =f.label :time
             =f.text_field :time, class: "form-control"
@@ -5708,7 +5723,7 @@ end
               %br
 /*******************************************************************************
 * File: app/views/admin/rehearsals/_rehearsal.html.haml
-* Size: 601 bytes
+* Size: 576 bytes
 *******************************************************************************/
 
 %tr
@@ -5718,71 +5733,71 @@ end
   %td= rehearsal.venue
   %td= rehearsal.songs.count
   %td= rehearsal.audio.exists? ? "Yes" : "No"
-  %td.text-right
+  %td.text-end
     =link_to edit_admin_rehearsal_path(rehearsal),
-             class: "btn btn-default btn-xs",
+             class: "btn btn-outline-secondary btn-xs",
              style: "margin-right: 1em;" do
-      %span.glyphicon.glyphicon-pencil
+      %span.bi.bi-pencil
     =link_to admin_rehearsal_path(rehearsal),
              method: :delete,
              data: { confirm: "Are you sure?" },
              class: "btn btn-danger btn-xs" do
-      %span.glyphicon.glyphicon-remove
+      %span.bi.bi-x
 /*******************************************************************************
 * File: app/views/admin/rehearsals/edit.html.haml
-* Size: 235 bytes
+* Size: 249 bytes
 *******************************************************************************/
 
 .clearfix
-  %h1.pull-left Edit Rehearsal
+  %h1.float-start Edit Rehearsal
   =link_to "Back",
            admin_rehearsals_path,
-           class: "btn btn-default pull-left",
+           class: "btn btn-outline-secondary float-start",
            style: "margin-top: 23px; margin-left: 20px;"
 =render "form", rehearsal: @rehearsal
 /*******************************************************************************
 * File: app/views/admin/rehearsals/index.html.haml
-* Size: 213 bytes
+* Size: 199 bytes
 *******************************************************************************/
 
 .clearfix
   %h1 Rehearsals
   =link_to new_admin_rehearsal_path,
            class: "btn btn-primary" do
-    %span.glyphicon.glyphicon-plus
+    %span.bi.bi-plus
     Add New Rehearsal
 .row
   .col-sm-12
     = datatable_table_for Rehearsal
 /*******************************************************************************
 * File: app/views/admin/rehearsals/new.html.haml
-* Size: 234 bytes
+* Size: 248 bytes
 *******************************************************************************/
 
 .clearfix
-  %h1.pull-left New Rehearsal
+  %h1.float-start New Rehearsal
   =link_to "Back",
            admin_rehearsals_path,
-           class: "btn btn-default pull-left",
+           class: "btn btn-outline-secondary float-start",
            style: "margin-top: 23px; margin-left: 20px;"
 =render "form", rehearsal: @rehearsal
 /*******************************************************************************
 * File: app/views/admin/shared/_controls.html.haml
-* Size: 295 bytes
+* Size: 272 bytes
 *******************************************************************************/
 
 =link_to [:edit, :admin, record],
-         class: "btn btn-default btn-xs" do
-  %span.glyphicon.glyphicon-pencil
+         class: "btn btn-outline-secondary btn-xs" do
+  %span.bi.bi-pencil
 &nbsp;
 =link_to [:admin, record],
          method: :delete,
          data: { confirm: "Are you sure?" },
          class: "btn btn-danger btn-xs" do
-  %span.glyphicon.glyphicon-remove
+  %span.bi.bi-x
 /*******************************************************************************
 * File: app/views/admin/songs/_form.html.haml
-* Size: 1897 bytes
+* Size: 1891 bytes
 *******************************************************************************/
 
 .row
@@ -5790,10 +5805,10 @@ end
     =form_for [:admin, song] do |f|
       =render "shared/error_messages", object: f.object
       .clearfix
-        =f.submit "Save", class: "btn btn-primary pull-right"
+        =f.submit "Save", class: "btn btn-primary float-end"
         =link_to "Cancel",
                  admin_songs_path,
-                 class: "btn btn-default pull-right",
+                 class: "btn btn-outline-secondary float-end",
                  style: "margin-right: 15px;"
       %fieldset
         %legend Main Info
@@ -5818,7 +5833,7 @@ end
             =render "instrument_fields", f: instruments
           .links
             =link_to_add_association f, :instruments, class: "btn btn-primary" do
-              %span.glyphicon.glyphicon-plus
+              %span.bi.bi-plus
               Add Instrument
 :javascript
   function update_positions(){
@@ -5845,7 +5860,7 @@ end
   })
 /*******************************************************************************
 * File: app/views/admin/songs/_instrument_fields.html.haml
-* Size: 1846 bytes
+* Size: 1812 bytes
 *******************************************************************************/
 
 .nested-fields
@@ -5854,7 +5869,7 @@ end
       .row
         =f.hidden_field :position
         .col-sm-1
-          %span.glyphicon.glyphicon-resize-vertical.handle
+          %span.bi.bi-resize-vertical.handle
         .col-sm-10
           =f.label :name
           =f.text_field :name, class: "form-control"
@@ -5890,64 +5905,64 @@ end
                         class: "form-control"
         .col-sm-1
           %br{style: "line-height: 1.95em;"}
-          =link_to_remove_association f, class: "btn btn-danger btn-sm pull-right" do
-            %span.glyphicon.glyphicon-remove
+          =link_to_remove_association f, class: "btn btn-danger btn-sm float-end" do
+            %span.bi.bi-x
 
 /*******************************************************************************
 * File: app/views/admin/songs/_song.html.haml
-* Size: 500 bytes
+* Size: 475 bytes
 *******************************************************************************/
 
 %tr
   %td= song.title
   %td= song.instruments.count
   %td= song.performances.count
-  %td.text-right
+  %td.text-end
     = link_to edit_admin_song_path(song),
-              class: "btn btn-default btn-xs",
+              class: "btn btn-outline-secondary btn-xs",
               style: "margin-right: 5px;" do
-      %span.glyphicon.glyphicon-pencil
+      %span.bi.bi-pencil
     = link_to admin_song_path(song),
               method: :delete,
               data: { confirm: "Are you sure? This cannot be undone." },
               class: "btn btn-danger btn-xs" do
-      %span.glyphicon.glyphicon-remove
+      %span.bi.bi-x
 /*******************************************************************************
 * File: app/views/admin/songs/edit.html.haml
-* Size: 215 bytes
+* Size: 229 bytes
 *******************************************************************************/
 
 .clearfix
-  %h1.pull-left Edit Song
+  %h1.float-start Edit Song
   =link_to "Back",
            admin_songs_path,
-           class: "btn btn-default pull-left",
+           class: "btn btn-outline-secondary float-start",
            style: "margin-top: 23px; margin-left: 20px;"
 =render "form", song: @song
 /*******************************************************************************
 * File: app/views/admin/songs/index.html.haml
-* Size: 193 bytes
+* Size: 179 bytes
 *******************************************************************************/
 
 .clearfix
   %h1 Songs
   =link_to new_admin_song_path,
            class: "btn btn-primary" do
-    %span.glyphicon.glyphicon-plus
+    %span.bi.bi-plus
     Add New Song
 .row
   .col-xs-12
     = datatable_table_for Song
 /*******************************************************************************
 * File: app/views/admin/songs/new.html.haml
-* Size: 214 bytes
+* Size: 228 bytes
 *******************************************************************************/
 
 .clearfix
-  %h1.pull-left New Song
+  %h1.float-start New Song
   =link_to "Back",
            admin_songs_path,
-           class: "btn btn-default pull-left",
+           class: "btn btn-outline-secondary float-start",
            style: "margin-top: 23px; margin-left: 20px;"
 =render "form", song: @song
 /*******************************************************************************
@@ -5986,25 +6001,25 @@ end
         =render "form", tag: tag
 /*******************************************************************************
 * File: app/views/admin/tags/_tag.html.haml
-* Size: 488 bytes
+* Size: 463 bytes
 *******************************************************************************/
 
 %tr
   %td= tag.name
   %td= tag.slug
   %td= tag.articles.count
-  %td.text-right
+  %td.text-end
     %button{ type:"button",
              data: { toggle: "modal",
                      target: "#tag-#{tag.id}" },
-             class: "btn btn-default btn-xs"}
-      %span.glyphicon.glyphicon-pencil
+             class: "btn btn-outline-secondary btn-xs"}
+      %span.bi.bi-pencil
     &nbsp;
     =link_to admin_tag_path(tag),
              method: :delete,
              data: { confirm: "Are you sure?" },
              class: "btn btn-danger btn-xs" do
-      %span.glyphicon.glyphicon-remove
+      %span.bi.bi-x
 /*******************************************************************************
 * File: app/views/admin/tags/index.html.haml
 * Size: 244 bytes
@@ -6026,18 +6041,18 @@ end
     =render "modal", tag: tag
 /*******************************************************************************
 * File: app/views/articles/_article.html.haml
-* Size: 567 bytes
+* Size: 555 bytes
 *******************************************************************************/
 
 .row{style: "margin-bottom: 30px;"}
   .col-xs-12
-    %span.date.hidden-xs.hidden-sm=article.created_at.strftime("%m/%d/%Y")
+    %span.date.d-none.d-lg-inline=article.created_at.strftime("%m/%d/%Y")
     =link_to news_path(article),
              class: "secondary" do
       %h2=article.title
     .clearfix
       %strong.push-left=article.author_name
-      %span.date.pull-right.hidden-md.hidden-lg=article.created_at.strftime("%m/%d/%Y")
+      %span.date.float-end.d-md-none=article.created_at.strftime("%m/%d/%Y")
     %p
       =truncate article.content.html_safe,
                 length: 120,
@@ -6076,14 +6091,14 @@ end
                 class: "nobreak"
 /*******************************************************************************
 * File: app/views/articles/index.html.haml
-* Size: 325 bytes
+* Size: 333 bytes
 *******************************************************************************/
 
 -provide :title, "News"
 -provide :bg, "night-vintage-music-bokeh.jpg"
 
 .row
-  .hidden-xs.col-sm-4.col-md-3.col-lg-2
+  .d-none.d-sm-block.col-sm-4.col-md-3.col-lg-2
     =render "sorters"
   .col-sm-8.col-md-9.col-lg-10
     -@articles.each do |article|
@@ -6094,21 +6109,21 @@ end
                :next_label => "»"
 /*******************************************************************************
 * File: app/views/articles/show.html.haml
-* Size: 649 bytes
+* Size: 645 bytes
 *******************************************************************************/
 
 -provide :title, @article.title
 -provide :bg, "night-vintage-music-bokeh.jpg"
 
 .row
-  .hidden-xs.col-sm-4.col-md-3.col-lg-2
+  .d-none.d-sm-block.col-sm-4.col-md-3.col-lg-2
     =render "sorters"
   .col-sm-8.col-md-9.col-lg-10
-    %span.date.hidden-xs.hidden-sm=@article.created_at.strftime("%m/%d/%Y")
+    %span.date.d-none.d-md-inline=@article.created_at.strftime("%m/%d/%Y")
     %h2=@article.title
     .clearfix
       %strong.push-left=@article.author_name
-      %span.date.pull-right.hidden-md.hidden-lg=@article.created_at.strftime("%m/%d/%Y")
+      %span.date.float-end.d-md-none=@article.created_at.strftime("%m/%d/%Y")
     .article-content
       = sanitize @article.content
 
@@ -6189,31 +6204,31 @@ end
                      method: :delete
 /*******************************************************************************
 * File: app/views/layouts/_header.html.haml
-* Size: 719 bytes
+* Size: 1058 bytes
 *******************************************************************************/
 
-%header
-  =link_to root_url do
-    %h1
-      Cascade Sixth
-      %span.choir
-        Choir
-  %button.navbar-toggle{:type => "button",
-                        :data => { target: "#navbarCollapse",
-                                   toggle: "collapse" },
-                        :style => "color: white;"}
-    %span.sr-only Toggle navigation
-    %span.icon-bar
-    %span.icon-bar
-    %span.icon-bar
-  #navbarCollapse.collapse.navbar-collapse
-    %ul.nav.navbar-nav
-      %li=link_to "Home", root_url
-      %li=link_to "Music", music_index_path
-      / %li=link_to "About Us", about_us_path
-      %li=link_to "News", news_index_path
-      %li=link_to "Rehearsals", rehearsals_path
-      %li=link_to "Contact", contact_path
+%header.navbar.navbar-dark.navbar-expand-sm.py-0
+  .container-fluid
+    =link_to root_url, class: "navbar-brand py-2" do
+      %h1.mb-0
+        Cascade Sixth
+        %span.choir
+          Choir
+    %button.navbar-toggler.my-2{:type => "button",
+                                :data => { "bs-target": "#navbarCollapse",
+                                           "bs-toggle": "collapse" },
+                                :aria => { controls: "navbarCollapse",
+                                           expanded: "false",
+                                           label: "Toggle navigation" }}
+      %span.navbar-toggler-icon
+    #navbarCollapse.collapse.navbar-collapse
+      %ul.navbar-nav.ms-auto.mb-0.gap-2.px-3
+        - [{name: "Home", url: root_url},
+           {name: "Music", url: music_index_path},
+           {name: "News", url: news_index_path},
+           {name: "Rehearsals", url: rehearsals_path},
+           {name: "Contact", url: contact_path}].each do |link|
+          %li.nav-item= link_to link[:name], link[:url], class: "nav-link px-3"
 /*******************************************************************************
 * File: app/views/layouts/_title.html.haml
 * Size: 218 bytes
@@ -6316,7 +6331,7 @@ You have a new message from choir.CascadeSixth.com
 =@message.message
 /*******************************************************************************
 * File: app/views/messages/new.html.haml
-* Size: 1093 bytes
+* Size: 1092 bytes
 *******************************************************************************/
 
 -provide :title, "Contact"
@@ -6349,7 +6364,7 @@ You have a new message from choir.CascadeSixth.com
       =f.label :message
       =f.text_area :message, rows: "6", class: "form-control"
       %br
-      =f.submit "Send", class: "btn btn-secondary btn-lg pull-right"
+      =f.submit "Send", class: "btn btn-secondary btn-lg float-end"
 /*******************************************************************************
 * File: app/views/rehearsals/_rehearsal.html.haml
 * Size: 344 bytes
@@ -6417,6 +6432,59 @@ You have a new message from choir.CascadeSixth.com
           &times;
       =message
 /*******************************************************************************
+* File: app/views/songs/_alphabetical_sort.html.haml
+* Size: 484 bytes
+*******************************************************************************/
+
+- prefix ||= "heading"
+- song_groups ||= []
+
+.row
+  .col-md-10.mx-auto
+    .letter-links.text-center
+      - song_groups.each_with_index do |(letter, _), index |
+        = ' | ' unless index.zero?
+        = link_to letter,
+                  "##{prefix}-#{letter}",
+                  'data-turbolinks': false
+    - song_groups.each do |letter, songs|
+      .letter-block
+        .letter-header{id: "#{prefix}-#{letter}"}
+          %h2= letter
+        = render songs, alphabetized: true
+/*******************************************************************************
+* File: app/views/songs/_date_sort.html.haml
+* Size: 1049 bytes
+*******************************************************************************/
+
+- tab_prefix ||= "history"
+- song_groups ||= []
+
+.row
+  .col-md-10.mx-auto
+    - if song_groups.any?
+      .year-links.text-center
+        %ul.nav.nav-pills.justify-content-center
+          - song_groups.each do |year, _|
+            %li.nav-item
+              %a.nav-link{'data-bs-toggle': 'tab',
+                          href: "##{tab_prefix}-#{year}",
+                          class: "#{'active' if year == DateTime.now.year}"}= year
+      .tab-content
+        - song_groups.each do |year, months|
+          .tab-pane.fade{:role => "tabpanel",
+                         :id => "#{tab_prefix}-#{year}",
+                         :class => "#{ 'active show' if year == DateTime.now.year}" }
+            - months.each do |month, performances|
+              .letter-block
+                .letter-header
+                  %h2= month
+                - performances.each do |performance|
+                  %h3.date= performance.date.strftime("%m/%d/%Y")
+                  = simple_format performance.details
+                  = render performance.songs
+
+/*******************************************************************************
 * File: app/views/songs/_song.html.haml
 * Size: 134 bytes
 *******************************************************************************/
@@ -6427,11 +6495,20 @@ You have a new message from choir.CascadeSixth.com
   %br
 /*******************************************************************************
 * File: app/views/songs/index.html.haml
-* Size: 4951 bytes
+* Size: 1568 bytes
 *******************************************************************************/
 
 -provide :title, "Music"
 -provide :bg, "pexels-photo-164821.jpeg"
+
+-tabs = [{id: "title", name: "By Title", partial: "alphabetical_sort", data: @songs_by_title, options: {prefix: "letter"}},
+         {id: "pending", name: "Upcoming Dates", partial: "date_sort", data: @pending_performances, options: {tab_prefix: 'pending'}},
+         {id: "history", name: "Performance History", partial: "date_sort", data: @performance_history, options: {tab_prefix: 'history'}},
+         {id: "unused", name: "Unscheduled Songs", partial: "alphabetical_sort", data: @unused_songs, options: {prefix: "unused"}}]
+
+-tab_ids = tabs.pluck(:id)
+-selected_tab = params[:tab].present? && tab_ids.include?(params[:tab]) ? params[:tab] : "title"
+-active_tab = "##{selected_tab}"
 
 %p
   Below you will find a complete list of all the songs and performances of the
@@ -6439,127 +6516,24 @@ You have a new message from choir.CascadeSixth.com
   and a listing of our upcoming performance dates with the songs we will be
   singing.
 
-%ul.nav.nav-tabs.song-sorting{:role => "tablist"}
-  %li{:role => "presentation",
-      :class => "active"}
-    %a{:role => "tab",
-       :aria => { controls: "title" },
-       :data => { toggle: "tab" },
-       :href => "#title" }
-      By Title
-  %li{:role => "presentation"}
-    %a{:role => "tab",
-       :aria => { controls: "pending" },
-       :data => { toggle: "tab" },
-       :href => "#pending" }
-      Upcoming Dates
-  %li{:role => "presentation"}
-    %a{:role => "tab",
-       :aria => { controls: "history" },
-       :data => { toggle: "tab" },
-       :href => "#history" }
-      Performance History
-  %li{:role => "presentation"}
-    %a{:role => "tab",
-       :aria => { controls: "unused" },
-       :data => { toggle: "tab" },
-       :href => "#unused" }
-      Unscheduled Songs
+%ul.nav.nav-tabs.song-sorting
+  - tabs.each do |tab|
+    %li.nav-item
+      = link_to tab[:name],
+                "##{tab[:id]}",
+                class: "nav-link #{active_tab == "##{tab[:id]}" ? 'active' : ''}",
+                data: {'bs-toggle': "tab"},
+                aria: {controls: tab[:id]}
 
 .tab-content
-  .tab-pane.fade.in.active#title{:role => "tabpanel"}
-    .row
-      .col-md-10.col-md-offset-1
-        .letter-links.text-center
-          -@songs_by_title.each do |letter|
-            = " | " unless letter == @songs_by_title.first
-            =link_to letter[0], "#heading-#{letter[0]}",
-                     :data => { turbolinks: false }
-        -@songs_by_title.each do |letter|
-          .letter-block
-            .letter-header{:id => "heading-#{letter[0]}" }
-              %h2= letter[0]
-            -letter[1].each do |song|
-              =render song, alphabetized: true
-  .tab-pane.fade#pending{:role => "tabpanel"}
-    .row
-      .col-md-10.col-md-offset-1
-        -if @songs_pending.any?
-          .year-links.text-center
-            %ul.nav.nav-pills
-              -@songs_pending.each do |year|
-                %li{:role => "presentation",
-                    :class => "#{ 'active' if year == @songs_pending.first }"}
-                  %a{:role => "tab",
-                     :aria => { controls: "pending-#{year[0]}" },
-                     :data => { toggle: "tab" },
-                     :href => "#pending-#{year[0]}" }
-                    =year[0]
-          .tab-content
-            -@songs_pending.each do |year|
-              .tab-pane.fade{:role => "tabpanel",
-                             :id => "pending-#{year[0]}",
-                             :class => "#{ 'active in' if year == @songs_pending.first}" }
-                -year[1].each do |month|
-                  .letter-block
-                    .letter-header
-                      %h2=month[0].strftime("%b")
-                    -month[1].each do |performance|
-                      %h3.date=performance.date.strftime("%m/%d/%Y")
-                      =simple_format performance.details
-                      -performance.songs.each do |song|
-                        =render song
-  .tab-pane.fade#history{:role => "tabpanel"}
-    .row
-      .col-md-10.col-md-offset-1
-        -if @song_history.any?
-          .year-links.text-center
-            %ul.nav.nav-pills
-              -@song_history.each do |year|
-                %li{:role => "presentation",
-                    :class => "#{ 'active' if year == @song_history.first }"}
-                  %a{:role => "tab",
-                     :aria => { controls: "history-#{year[0]}" },
-                     :data => { toggle: "tab" },
-                     :href => "#history-#{year[0]}" }
-                    =year[0]
-          .tab-content
-            -@song_history.each do |year|
-              .tab-pane.fade{:role => "tabpanel",
-                             :id => "history-#{year[0]}",
-                             :class => "#{ 'active in' if year == @song_history.first}" }
-                -year[1].each do |month|
-                  .letter-block
-                    .letter-header
-                      %h2=month[0].strftime("%b")
-                    -month[1].each do |performance|
-                      %h3.date=performance.date.strftime("%m/%d/%Y")
-                      =simple_format performance.details
-                      -performance.songs.each do |song|
-                        =render song
-  .tab-pane.fade#unused{ :role => "tabpanel"}
-    .row
-      .col-md-10.col-md-offset-1
-        .letter-links.text-center
-          -@songs_unused.each do |letter|
-            = " | " unless letter == @songs_unused.first
-            =link_to letter[0], "#heading-#{letter[0]}-unused",
-                     :data => { turbolinks: false }
-        -@songs_unused.each do |letter|
-          .letter-block
-            .letter-header{:id => "heading-#{letter[0]}-unused" }
-              %h2= letter[0]
-            -letter[1].each do |song|
-              =render song, alphabetized: true
-
-:javascript
-  $('.nav-tabs a').click(function (e) {
-    e.preventDefault();
-    $(this).tab('show');
-  });
+  - tabs.each do |tab|
+    .tab-pane.fade{id: tab[:id],
+                  role: "tabpanel",
+                  class: active_tab == "##{tab[:id]}" ? "show active" : ""}
+      = render tab[:partial], song_groups: tab[:data], **tab.fetch(:options, {})
 /*******************************************************************************
 * File: app/views/songs/show.html.haml
-* Size: 3728 bytes
+* Size: 3711 bytes
 *******************************************************************************/
 
 -provide :title, @song.title
@@ -6571,7 +6545,7 @@ You have a new message from choir.CascadeSixth.com
     =simple_format @song.description
   .col-sm-6.col-md-4
     %h3{:style => "margin: 5px 0;"}
-      %span.glyphicon.glyphicon-calendar
+      %span.bi.bi-calendar
       Performance Dates
     -@song.performances.each do |performance|
       %br
@@ -6594,9 +6568,9 @@ You have a new message from choir.CascadeSixth.com
     -@song.instruments.each do |instrument|
       .song-listing
         .clearfix
-          %h3.pull-left=instrument.name
+          %h3.float-start=instrument.name
           - unless instrument.empty?
-            .dropdown.pull-right
+            .dropdown.float-end
               %button{ :class => "btn btn-secondary dropdown-toggle",
                        :type => "button",
                        :id => "downloads#{instrument.id}",
@@ -6634,11 +6608,11 @@ You have a new message from choir.CascadeSixth.com
                 %source{:type => instrument.mp3_blob.content_type,
                         :src  => instrument.mp3_blob.service_url}
             .col-xs-2.col-sm-1
-              %button{ :class => "btn btn-default btn-repeat",
+              %button{ :class => "btn btn-outline-secondary btn-repeat",
                        :data  => { id: "audio-#{instrument.name.parameterize}" },
                        :style => "margin-top: 20px;",
                        :title => "Toggle to loop audio continuously" }
-                %span.glyphicon.glyphicon-refresh
+                %span.bi.bi-refresh
   .col-md-4
     %h2 Rehearsals
     -if @song.rehearsals.any?
@@ -6683,7 +6657,7 @@ You have a new message from choir.CascadeSixth.com
         %p=simple_format profile.bio
 /*******************************************************************************
 * File: app/views/static_pages/home.html.haml
-* Size: 2692 bytes
+* Size: 2620 bytes
 *******************************************************************************/
 
 %h2.text-center
@@ -6695,7 +6669,7 @@ You have a new message from choir.CascadeSixth.com
   performances, listen to individualized parts, print off sheet music, and
   listen to past performances and rehearsals.
 .row
-  .col-sm-5.col-sm-push-7.col-md-4.col-md-push-8.col-lg-3.col-lg-push-9
+  .col-sm-5.col-md-4.col-lg-3.order-sm-2
     .performance-block
       %strong Upcoming Performances:
       %br
@@ -6717,7 +6691,7 @@ You have a new message from choir.CascadeSixth.com
         %p
           There are no scheduled peformances at this time.
       .clearfix
-        =link_to music_index_path, class: "pull-right" do
+        =link_to music_index_path, class: "float-end" do
           More Music&hellip;
     .rehearsal-block
       %strong Next Rehearsal:
@@ -6725,10 +6699,10 @@ You have a new message from choir.CascadeSixth.com
         %table
           %tr
             %td.text-primary= @next_rehearsal.date.strftime("%m/%d/%Y")
-            %td.text-right= @next_rehearsal.host
+            %td.text-end= @next_rehearsal.host
           %tr
             %td.text-primary= @next_rehearsal.time
-            %td.text-right= @next_rehearsal.venue
+            %td.text-end= @next_rehearsal.venue
       -else
         %p The next rehearsal has not yet been scheduled.
       %strong Last Rehearsal:
@@ -6736,7 +6710,7 @@ You have a new message from choir.CascadeSixth.com
         %table
           %tr{style: "vertical-align: top"}
             %td.text-primary= @last_rehearsal.date.strftime("%m/%d/%Y")
-            %td.text-right= @last_rehearsal.song_list
+            %td.text-end= @last_rehearsal.song_list
         =link_to "Download",
                  @last_rehearsal.audio.url,
                  class: "btn btn-secondary btn-lg #{'disabled' unless @last_rehearsal.audio.exists? }"
@@ -6744,15 +6718,15 @@ You have a new message from choir.CascadeSixth.com
         %p The last rehearsal cannot be found.
       %br
       .clearfix
-        =link_to rehearsals_path, class: "pull-right" do
+        =link_to rehearsals_path, class: "float-end" do
           More Rehearsals&hellip;
-  .col-sm-7.col-sm-pull-5.col-md-8.col-md-pull-4.col-lg-9.col-lg-pull-3
+  .col-sm-7.col-md-8.col-lg-9.order-sm-1
     .news-block
-      %strong Lastest News:
+      %strong Latest News:
       -@articles.each do |article|
         =render article
       .clearfix
-        =link_to news_index_path, class: "pull-right" do
+        =link_to news_index_path, class: "float-end" do
           More News&hellip;
 /*******************************************************************************
 * File: app/views/users/sessions/new.html.haml
@@ -6887,6 +6861,23 @@ module.exports = function(api) {
 
 ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../Gemfile', __dir__)
 load Gem.bin_path('bundler', 'bundle')
+
+/*******************************************************************************
+* File: bin/dev
+* Size: 259 bytes
+*******************************************************************************/
+
+#!/usr/bin/env sh
+
+if gem list --no-installed --exact --silent foreman; then
+  echo "Installing foreman..."
+  gem install foreman
+fi
+
+# Default to port 3000 if not specified
+export PORT="${PORT:-3000}"
+
+exec foreman start -f Procfile.dev --env /dev/null "$@"
 
 /*******************************************************************************
 * File: bin/rails
@@ -8670,44 +8661,6 @@ Rails.application.routes.draw do
 end
 
 /*******************************************************************************
-* File: config/secrets.yml
-* Size: 1277 bytes
-*******************************************************************************/
-
-# Be sure to restart your server when you modify this file.
-
-# Your secret key is used for verifying the integrity of signed cookies.
-# If you change this key, all old signed cookies will become invalid!
-
-# Make sure the secret is at least 30 characters and all random,
-# no regular words or you'll be exposed to dictionary attacks.
-# You can use `rails secret` to generate a secure secret key.
-
-# Make sure the secrets in this file are kept private
-# if you're sharing your code publicly.
-
-# Shared secrets are available across all environments.
-
-# shared:
-#   api_key: a1B2c3D4e5F6
-
-# Environmental secrets are only available for that specific environment.
-
-development:
-  secret_key_base: 7ce046ad15853f462d6a34df40ec911ace7209cadaf533efe2d653272cf33b3de717e91767f37bb597c9c49659320e0157405751f782ed1bd740591d12e73db9
-
-test:
-  secret_key_base: 36a388988d3b9ab7f7f7b61cc537fc25d97ccef2e32f3eb03c137c9330d198a8a020c15bc8b82689dc5d526bdcf2a300d94f43209d170c92d245bdd5dceafb2c
-
-# Do not keep production secrets in the unencrypted secrets file.
-# Instead, either read values from the environment.
-# Or, use `bin/rails secrets:setup` to configure encrypted secrets
-# and move the `production:` environment over there.
-
-production:
-  secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
-
-/*******************************************************************************
 * File: config/sidekiq.yml
 * Size: 231 bytes
 *******************************************************************************/
@@ -10204,7 +10157,7 @@ end
 
 /*******************************************************************************
 * File: docker-compose.yml
-* Size: 526 bytes
+* Size: 520 bytes
 *******************************************************************************/
 
 services:
@@ -10213,7 +10166,7 @@ services:
       context: .
       dockerfile: Dockerfile.dev
     container_name: choir-site-web
-    command: bundle exec rails server -b 0.0.0.0
+    command: foreman start -f Procfile.dev
     environment:
       - DATABASE_URL=postgresql://choir_postgres:password@postgres13:5432/
     networks:
