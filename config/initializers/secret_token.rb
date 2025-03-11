@@ -7,5 +7,5 @@ Rails.application.config.secret_key_base = Rails.application.credentials.dig(Rai
 
 # Fall back to ENV variable for production if not found in credentials
 if Rails.env.production? && Rails.application.config.secret_key_base.nil?
-  Rails.application.config.secret_key_base = ENV.fetch("SECRET_KEY_BASE")
+  Rails.application.config.secret_key_base = ENV.fetch('SECRET_KEY_BASE')
 end

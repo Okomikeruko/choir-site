@@ -5,5 +5,8 @@
   .d-none.d-sm-block.col-sm-4.col-md-3.col-lg-2
     =render "sorters"
   .col-sm-8.col-md-9.col-lg-10
-    -@articles.each do |article|
-      =render article
+    = render @articles
+
+- if @pagy.pages > 1
+  .d-flex.justify-content-center
+    != pagy_bootstrap_nav(@pagy)

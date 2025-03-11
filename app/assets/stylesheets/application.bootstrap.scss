@@ -1,15 +1,18 @@
+// Base modules
+@use 'modules/colors' as colors;
+@use 'modules/media';
+
 // Import Bootstrap and Bootstrap Icons
-@use 'bootstrap/scss/bootstrap';
+@use 'bootstrap/scss/bootstrap' with (
+  $primary: colors.$primary,
+  $secondary: colors.$secondary
+);
 @use 'bootstrap-icons/font/bootstrap-icons';
 
 // DataTables styles (use @use instead of @import)
 @use 'datatables.net-bs4/css/dataTables.bootstrap4' as *;
 @use 'datatables.net-select-bs4/css/select.bootstrap4' as *;
 @use 'datatables.net-buttons-bs4/css/buttons.bootstrap4' as *;
-
-// Base modules
-@use 'modules/colors';
-@use 'modules/media';
 
 // Partials
 @use 'partials/breadcrumbs';
