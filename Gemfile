@@ -2,6 +2,8 @@
 
 source 'https://rubygems.org'
 
+ruby File.read('.ruby-version').strip
+
 gem 'rails', '~> 7.1.0'
 
 # gem 'activesupport', '~> 7.1.0'

@@ -39,6 +39,9 @@
     <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
     <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
     <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
-    <method v="2" />
+    <method v="2">
+      <option name="RunConfigurationTask" enabled="true" run_configuration_name="Rubocop" run_configuration_type="CommandRunConfigurationType" />
+      <option name="RunConfigurationTask" enabled="true" run_configuration_name="Brakeman" run_configuration_type="CommandRunConfigurationType" />
+    </method>
   </configuration>
 </component>

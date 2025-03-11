@@ -3,6 +3,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
+      args:
+        RUBY_VERSION: $(cat .ruby-version)
+        NODE_VERSION: $(cat .node-version)
     container_name: choir-site-web
     command: foreman start -f Procfile.dev
     environment:

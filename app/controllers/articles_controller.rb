@@ -8,7 +8,6 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.published
                        .filtered(params)
-                       .paginate(page: params[:page], per_page: 8)
   end
 
   def show
