@@ -24,6 +24,17 @@ module Admin
         }
         assert_response :redirect
         assert_redirected_to admin_categories_path
+        assert_not_empty flash
+      end
+    end
+
+    test 'should report error message if fails to create category' do
+      assert_no_difference 'Category.count' do
+        post admin_categories_path, params: {
+          category: { name: '', slug: '' }
+        }
+        assert_response :success
+        assert_template 'admin/categories/index'
       end
     end
 
@@ -37,6 +48,18 @@ module Admin
       @category.reload
       assert_equal 'New category Name', @category.name
       assert_equal 'new-category-name', @category.slug
+    end
+
+    test 'should fail to update a category' do
+      patch admin_category_path(@category), params: {
+        category: { name: '', slug: '' }
+      }
+      assert_response :redirect
+      assert_not_empty flash
+
+      @category.reload
+      assert_not_empty @category.name
+      assert_not_empty @category.slug
     end
 
     test 'should delete a category' do

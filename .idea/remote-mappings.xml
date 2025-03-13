@@ -10,6 +10,13 @@
             </list>
           </settings>
         </remote-mappings>
+        <remote-mappings server-id="ruby@docker-compose://[/Users/leewhittaker/RubymineProjects/choir-site/docker-compose.yml]:web//usr/local/bin/ruby">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$/coverage" remote-root="./coverage" />
+            </list>
+          </settings>
+        </remote-mappings>
       </list>
     </list>
   </component>

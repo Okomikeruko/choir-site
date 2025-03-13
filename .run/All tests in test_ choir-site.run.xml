@@ -12,12 +12,12 @@
       <env name="JRUBY_OPTS" value="-X+O" />
     </envs>
     <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
-    <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov">
+    <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
       <COVERAGE_PATTERN ENABLED="true">
         <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
       </COVERAGE_PATTERN>
     </EXTENSION>
-    <EXTENSION ID="RubyDockerContainerSettingsRunConfigurationExtension" dockerComposeCommand="RUN" />
+    <EXTENSION ID="RubyDockerContainerSettingsRunConfigurationExtension" dockerComposeCommand="EXEC" />
     <EXTENSION ID="net.ashald.envfile">
       <option name="IS_ENABLED" value="false" />
       <option name="IS_SUBST" value="false" />
@@ -39,9 +39,6 @@
     <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
     <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
     <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
-    <method v="2">
-      <option name="RunConfigurationTask" enabled="true" run_configuration_name="Rubocop" run_configuration_type="CommandRunConfigurationType" />
-      <option name="RunConfigurationTask" enabled="true" run_configuration_name="Brakeman" run_configuration_type="CommandRunConfigurationType" />
-    </method>
+    <method v="2" />
   </configuration>
 </component>

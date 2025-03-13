@@ -1,7 +1,22 @@
 # frozen_string_literal: true
 
 require 'simplecov'
-SimpleCov.start
+SimpleCov.start 'rails' do
+  enable_coverage :branch
+  coverage_dir ENV.fetch('RUBYMINE_SIMPLECOV_COVERAGE_PATH', 'coverage')
+  add_filter '/test/'
+  add_filter '/config/'
+  add_filter '/vendor/'
+  add_group 'Controllers', 'app/controllers'
+  add_group 'Models', 'app/models'
+  add_group 'Helpers', 'app/helpers'
+  add_group 'Mailers', 'app/mailers'
+  add_group 'Views', 'app/views'
+  add_group 'Jobs', 'app/jobs'
+  add_group 'Presenters', 'app/presenters'
+  add_group 'Model Concerns', 'app/models/concerns'
+  add_group 'Controller Concerns', 'app/controllers/concerns'
+end
 
 # Load Rails environment and necessary testing libraries
 require File.expand_path('../config/environment', __dir__)
