@@ -408,6 +408,9 @@ GEM
       simplecov-html (~> 0.11)
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.13.1)
+    simplecov-json (0.2.3)
+      json
+      simplecov
     simplecov_json_formatter (0.1.4)
     stringio (3.1.5)
     temple (0.10.3)
@@ -501,6 +504,7 @@ DEPENDENCIES
   ruby-prof
   sidekiq
   simplecov
+  simplecov-json
   turbo-rails
   tzinfo-data
   uglifier (= 3.2.0)

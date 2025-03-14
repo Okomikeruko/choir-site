@@ -20,8 +20,7 @@ services:
     volumes:
       - .:/choir-site
       - gem_cache:/usr/local/bundle/gems
-      - ./coverage:/choir-site/coverage
-      - /tmp:/choir-site/tmp
+
 networks:
   postgres_network:
     external: true

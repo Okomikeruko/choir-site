@@ -90,6 +90,7 @@ group :test do
   gem 'minitest-reporters'
   gem 'rails-controller-testing'
   gem 'simplecov', require: false
+  gem 'simplecov-json', require: false
 end
 
 # group :production do

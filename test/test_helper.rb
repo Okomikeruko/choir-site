@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
+# Only load and start SimpleCov if not disabled
 require 'simplecov'
+require 'simplecov-json'
+
 SimpleCov.start 'rails' do
-  enable_coverage :branch
-  coverage_dir ENV.fetch('RUBYMINE_SIMPLECOV_COVERAGE_PATH', 'coverage')
+  coverage_dir 'coverage'
+  formatter SimpleCov::Formatter::JSONFormatter
   add_filter '/test/'
   add_filter '/config/'
   add_filter '/vendor/'

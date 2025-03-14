@@ -185,6 +185,7 @@
     <orderEntry type="library" scope="PROVIDED" name="sidekiq (v7.3.9, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="simplecov (v0.22.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="simplecov-html (v0.13.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="simplecov-json (v0.2.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="simplecov_json_formatter (v0.1.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="stringio (v3.1.5, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="temple (v0.10.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
