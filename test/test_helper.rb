@@ -6,6 +6,7 @@ require 'simplecov-json'
 
 SimpleCov.start 'rails' do
   coverage_dir 'coverage'
+  enable_coverage :branch
   formatter SimpleCov::Formatter::JSONFormatter
   add_filter '/test/'
   add_filter '/config/'

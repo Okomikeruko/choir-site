@@ -25,6 +25,7 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should get new' do
     get contact_path
+
     assert_response :success
     assert_template 'messages/new'
     assert_select 'form'

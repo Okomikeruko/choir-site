@@ -9,21 +9,24 @@ class MemberTest < ActiveSupport::TestCase
   end
 
   test 'should be valid' do
-    assert @member.valid?
+    assert_predicate @member, :valid?
   end
 
   test 'should have a name' do
     @member.name = ''
+
     assert_not @member.valid?
   end
 
   test 'name should not be too long' do
     @member.name = 'a' * 61
+
     assert_not @member.valid?
   end
 
   test 'email should not be too long' do
     @member.email = "#{'a' * 244}@example.com"
+
     assert_not @member.valid?
   end
 
@@ -32,7 +35,8 @@ class MemberTest < ActiveSupport::TestCase
                          first.last@foo.jp alice+bob@baz.cn]
     valid_addresses.each do |valid_address|
       @member.email = valid_address
-      assert @member.valid?, "#{valid_address.inspect} should be valid"
+
+      assert_predicate @member, :valid?, "#{valid_address.inspect} should be valid"
     end
   end
 
@@ -41,12 +45,14 @@ class MemberTest < ActiveSupport::TestCase
                            foo@bar_baz.com foo@bar+baz.com]
     invalid_addresses.each do |invalid_address|
       @member.email = invalid_address
+
       assert_not @member.valid?, "#{invalid_address.inspect} should be invalid"
     end
   end
 
   test 'vocal_range should not be empty' do
     @member.vocal_range = []
+
     assert_not @member.valid?
   end
 end

@@ -12,12 +12,14 @@ module Admin
 
     test 'should get index' do
       get admin_performances_path
+
       assert_response :success
       assert_template 'admin/performances/index'
     end
 
     test 'should get new' do
       get new_admin_performance_path
+
       assert_response :success
       assert_template 'admin/performances/new'
     end
@@ -27,6 +29,7 @@ module Admin
         post admin_performances_path, params: { performance: { venue: 'Here',
                                                                date: 2.days.from_now.strftime('%m/%d/%Y'),
                                                                details: 'None' } }
+
         assert_response :redirect
         assert_redirected_to admin_performances_path
       end
@@ -34,6 +37,7 @@ module Admin
 
     test 'should get edit' do
       get edit_admin_performance_path(@performance)
+
       assert_response :success
       assert_template 'admin/performances/edit'
     end
@@ -47,9 +51,11 @@ module Admin
                 details: 'None'
               }
             }
+
       assert_response :redirect
       assert_redirected_to admin_performances_path
       @performance.reload
+
       assert_equal 'Here', @performance.venue
       assert_equal 'None', @performance.details
       assert_equal '03/25/2001', @performance.date.strftime('%m/%d/%Y')
@@ -58,6 +64,7 @@ module Admin
     test 'should delete peformance' do
       assert_difference 'Performance.count', -1 do
         delete admin_performance_path(@performance)
+
         assert_response :redirect
         assert_redirected_to admin_performances_path
       end

@@ -12,12 +12,14 @@ module Admin
 
     test 'should get index' do
       get admin_members_path
+
       assert_response :success
       assert_template 'admin/members/index'
     end
 
     test 'should get new' do
       get new_admin_member_path
+
       assert_response :success
       assert_template 'admin/members/new'
     end
@@ -33,6 +35,7 @@ module Admin
             talents: 'Piano, Conducting'
           }
         }
+
         assert_response :redirect
         assert_redirected_to admin_members_path
       end
@@ -40,6 +43,7 @@ module Admin
 
     test 'should get edit' do
       get edit_admin_member_path(@member)
+
       assert_response :success
       assert_template 'admin/members/edit'
     end
@@ -54,18 +58,21 @@ module Admin
           talents: 'Piano'
         }
       }
+
       assert_response :redirect
       assert_redirected_to admin_members_path
       @member.reload
+
       assert_equal 'Heather Taylor', @member.name
       assert_equal 'email@email.com', @member.email
-      assert @member.soprano?
+      assert_predicate @member, :soprano?
       assert_not @member.bass?
     end
 
     test 'delete should remove member record' do
       assert_difference 'Member.count', -1 do
         delete admin_member_path(@member)
+
         assert_response :redirect
         assert_redirected_to admin_members_path
       end

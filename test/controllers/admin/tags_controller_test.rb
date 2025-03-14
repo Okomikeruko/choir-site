@@ -12,6 +12,7 @@ module Admin
 
     test 'should get index' do
       get admin_tags_path
+
       assert_response :success
       assert_template 'admin/tags/index'
     end
@@ -22,6 +23,7 @@ module Admin
           tag: { name: 'New Tag',
                  slug: 'new-tag' }
         }
+
         assert_response :redirect
         assert_redirected_to admin_tags_path
       end
@@ -32,9 +34,11 @@ module Admin
         tag: { name: 'New Tag Name',
                slug: 'new-tag-name' }
       }
+
       assert_response :redirect
       assert_redirected_to admin_tags_path
       @tag.reload
+
       assert_equal 'New Tag Name', @tag.name
       assert_equal 'new-tag-name', @tag.slug
     end
@@ -42,6 +46,7 @@ module Admin
     test 'should delete a tag' do
       assert_difference 'Tag.count', -1 do
         delete admin_tag_path(@tag)
+
         assert_response :redirect
         assert_redirected_to admin_tags_path
       end
