@@ -7,6 +7,7 @@ class MessageMailerTest < ActionMailer::TestCase
   test 'contact_form' do
     @message = messages :one
     mail = MessageMailer.contact_form(@message)
+
     assert_equal @message.subject, mail.subject
     assert_equal ['whittakerlee81@gmail.com'], mail.to
     assert_equal [@message.email], mail.from

@@ -1,4 +1,6 @@
-FROM ruby:3.2-slim
+ARG RUBY_VERSION
+ARG NODE_VERSION
+FROM ruby:${RUBY_VERSION}-slim
 
 # Install system dependencies
 RUN apt-get update -qq && \
@@ -13,7 +15,8 @@ RUN apt-get update -qq && \
     rm -rf /var/lib/apt/lists/*
 
 # Setup NodeJS repository and install
-RUN curl -sL https://deb.nodesource.com/setup_20.x | bash - && \
+RUN NODE_MAJOR=${NODE_VERSION%%.*} && \
+    curl -sL https://deb.nodesource.com/setup_${NODE_MAJOR}.x | bash - && \
     apt-get update -qq && \
     apt-get install -y nodejs && \
     npm install -g yarn && \
@@ -23,14 +26,6 @@ RUN curl -sL https://deb.nodesource.com/setup_20.x | bash - && \
 # Set working directory
 WORKDIR /choir-site
 
-# List of apt-get installs for Dev only
-#        python3 \
-#        g++ \
-#        make \
-#        pkg-config \
-#        libyaml-dev \
-#        libffi-dev \
-#        vim && \
-
-# List of apt-get installs for Prod only
-#        libv8-dev
+# Install bundler
+RUN gem install bundler -v "~> 2.4.0" && \
+    bundle update --bundler

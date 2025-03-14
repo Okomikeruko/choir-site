@@ -1,0 +1,16 @@
+- prefix ||= "heading"
+- song_groups ||= []
+
+.row
+  .col-md-10.mx-auto
+    .letter-links.text-center
+      - song_groups.each_with_index do |(letter, _), index |
+        = ' | ' unless index.zero?
+        = link_to letter,
+                  "##{prefix}-#{letter}",
+                  'data-turbolinks': false
+    - song_groups.each do |letter, songs|
+      .letter-block
+        .letter-header{id: "#{prefix}-#{letter}"}
+          %h2= letter
+        = render songs, alphabetized: true

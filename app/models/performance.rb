@@ -32,23 +32,38 @@ class Performance < ApplicationRecord
       all_upcoming.first(num)
     end
 
+    def with_songs
+      unscoped.includes(:songs)
+    end
+
     def all_upcoming
-      where(
-        'date > :d', d: DateTime.now.in_time_zone('Mountain Time (US & Canada)')
-      ).sort_by(&:date)
+      with_songs
+        .where(date: DateTime.now...)
+        .order(date: :asc)
     end
 
     def all_history
-      where(
-        'date < :d', d: DateTime.now.in_time_zone('Mountain Time (US & Canada)')
-      ).sort_by(&:date).reverse
+      with_songs
+        .where(date: ...DateTime.now)
+        .order(date: :desc)
+    end
+
+    def group_by_month_and_year
+      # First group by year
+      by_year = all.group_by { |record| record.date&.year }
+
+      # Then for each year, group by month
+      by_year.transform_values do |year_records|
+        year_records.group_by { |record| record.date&.month }
+                    .transform_keys { |month| Date::MONTHNAMES[month][0..2] }
+      end
     end
   end
 
   private
 
   def correct_mp3_mime_type
-    return unless audio.attached? && !mp3.content_type.in?(%w[audio/mpeg audio/mp3])
+    return unless audio.attached? && !audio.content_type.in?(%w[audio/mpeg audio/mp3])
 
     errors.add(:audio, 'Must be an MP3 file')
   end

@@ -6,9 +6,7 @@ class ArticlesController < ApplicationController
   add_breadcrumb 'News', :news_index_path
 
   def index
-    @articles = Article.published
-                       .filtered(params)
-                       .paginate(page: params[:page], per_page: 8)
+    @pagy, @articles = pagy(Article.published.filtered(params), limit: 8)
   end
 
   def show

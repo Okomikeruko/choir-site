@@ -2,15 +2,15 @@
   %td= category.name
   %td= category.slug
   %td= category.articles.count
-  %td.text-right
+  %td.text-end
     %button{ type:"button",
              data: { toggle: "modal",
                      target: "#category-#{category.id}" },
-             class: "btn btn-default btn-xs"}
-      %span.glyphicon.glyphicon-pencil
+             class: "btn btn-outline-secondary btn-xs"}
+      %span.bi.bi-pencil
     &nbsp;
     =link_to admin_category_path(category),
              method: :delete,
              data: { confirm: "Are you sure?" },
              class: "btn btn-danger btn-xs" do
-      %span.glyphicon.glyphicon-remove
+      %span.bi.bi-x

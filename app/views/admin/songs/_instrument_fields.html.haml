@@ -4,7 +4,7 @@
       .row
         =f.hidden_field :position
         .col-sm-1
-          %span.glyphicon.glyphicon-resize-vertical.handle
+          %span.bi.bi-resize-vertical.handle
         .col-sm-10
           =f.label :name
           =f.text_field :name, class: "form-control"
@@ -40,5 +40,5 @@
                         class: "form-control"
         .col-sm-1
           %br{style: "line-height: 1.95em;"}
-          =link_to_remove_association f, class: "btn btn-danger btn-sm pull-right" do
-            %span.glyphicon.glyphicon-remove
+          =link_to_remove_association f, class: "btn btn-danger btn-sm float-end" do
+            %span.bi.bi-x

@@ -79,6 +79,7 @@ end
     title: Faker::Lorem.sentence.titleize,
     content: Faker::Lorem.paragraph,
     user_id: User.first.id,
+    published: [true, true, false].sample,
     category_ids: categories.sample.id,
     tag_ids: tags.sample(Random.rand((tags.count + 1).to_f)).map(&:id)
   )

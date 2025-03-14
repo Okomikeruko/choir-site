@@ -22,7 +22,7 @@ ENV RAILS_ENV=development
 ENV NODE_ENV=development
 
 # Copy and install dependencies
-COPY Gemfile* ./
+COPY Gemfile* .ruby-version .node-version ./
 
 # Install all gems including development and test
 RUN bundle config unset without && \

@@ -1,9 +1,10 @@
-.rehearsal-block.download-block
-  .row
-    .col-xs-6.col-sm-12
-      %h3=rehearsal.date.strftime("%m/%d/%Y")
-      %p{style: "height: 4em;"}=rehearsal.song_list
-    .col-xs-6.col-sm-12
-      =link_to "Download",
-               rehearsal.audio.url,
-               class: "btn btn-secondary btn-lg #{'disabled' unless rehearsal.audio.attached? }"
+.col-sm-4.col-md-3
+  .rehearsal-block.download-block
+    .row
+      .col-xs-6.col-sm-12
+        %h3=rehearsal.date.strftime("%m/%d/%Y")
+        %p{style: "height: 4em;"}=rehearsal.song_list
+      .col-xs-6.col-sm-12
+        =link_to "Download",
+                 rehearsal.audio.url,
+                 class: "btn btn-secondary btn-lg #{'disabled' unless rehearsal.audio.attached? }"

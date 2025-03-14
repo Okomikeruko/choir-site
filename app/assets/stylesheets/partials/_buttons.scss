@@ -1,13 +1,15 @@
+@use '../modules/colors' as colors;
+
 /* Buttons */
 
 .btn-secondary{
-  background-color: $brand-secondary;
-  border-color: darken($brand-secondary, 10);
+  background-color: colors.$brand-secondary;
+  border-color: darken(colors.$brand-secondary, 10);
   color: white;
   
   &:hover, &:active, &:focus {
-    background-color: darken($brand-secondary, 10);
-    border-color: darken($brand-secondary, 20);
+    background-color: darken(colors.$brand-secondary, 10);
+    border-color: darken(colors.$brand-secondary, 20);
     color: white;
   }
 }

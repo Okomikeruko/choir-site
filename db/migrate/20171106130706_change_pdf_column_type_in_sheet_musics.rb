@@ -2,6 +2,8 @@
 
 class ChangePdfColumnTypeInSheetMusics < ActiveRecord::Migration[5.1]
   def change
-    add_attachment :sheet_musics, :pdf
+    # Commenting out this change. Paperclip has been depreciated.
+    #
+    # add_attachment :sheet_musics, :pdf
   end
 end

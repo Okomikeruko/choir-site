@@ -26,203 +26,185 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/cache" />
     </content>
-    <orderEntry type="jdk" jdkName="Choir Site Web" jdkType="RUBY_SDK" />
+    <orderEntry type="jdk" jdkName="Remote: ruby-3.2.7-p253" jdkType="RUBY_SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="actioncable (v6.1.7.6, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actionmailbox (v6.1.7.6, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actionmailer (v6.1.7.6, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actionpack (v6.1.7.6, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actiontext (v6.1.7.6, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actionview (v6.1.7.6, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activejob (v6.1.7.6, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activemodel (v6.1.7.6, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activerecord (v6.1.7.6, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activestorage (v6.1.7.6, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activesupport (v6.1.7.6, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="addressable (v2.8.7, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ajax-datatables-rails (v1.5.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ansi (v1.5.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ast (v2.4.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="autoprefixer-rails (v10.4.19.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="aws-eventstream (v1.3.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="aws-partitions (v1.1058.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-core (v3.219.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-kms (v1.99.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-s3 (v1.182.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="aws-sigv4 (v1.11.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="base64 (v0.2.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.20, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="better_errors (v2.10.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bigdecimal (v3.1.9, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bindex (v0.8.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="binding_of_caller (v1.0.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bootstrap-datepicker-rails (v1.10.0.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bootstrap-sass (v3.4.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bootstrap-will_paginate (v1.0.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="brakeman (v6.2.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="breadcrumbs_on_rails (v4.1.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="builder (v3.3.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bullet (v8.0.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bundler (v2.2.33, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="byebug (v11.1.3, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="cancan (v1.6.10, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="carrierwave (v3.1.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="cocoon (v1.2.15, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="code_analyzer (v0.5.5, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="coderay (v1.1.3, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="coffee-rails (v5.0.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="coffee-script (v2.4.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="coffee-script-source (v1.12.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="concurrent-ruby (v1.1.10, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="connection_pool (v2.5.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="crass (v1.0.6, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="date (v3.4.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="debug (v1.10.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="debug_inspector (v1.2.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="devise (v4.9.4, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="docile (v1.4.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="dotenv (v3.1.7, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="erb2haml (v0.1.5, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="erubi (v1.13.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="erubis (v2.7.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="excon (v1.2.5, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="execjs (v2.10.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="faker (v3.5.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ffi (v1.17.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="fog-aws (v3.30.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="fog-core (v2.6.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="fog-json (v1.2.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="fog-xml (v0.1.5, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="font-awesome-sass (v6.7.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="foreman (v0.88.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="formatador (v1.1.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="globalid (v1.2.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="google-protobuf (v4.29.3, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="guard (v2.19.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="guard-compat (v1.2.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="guard-minitest (v2.4.6, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="haml (v6.3.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="haml-rails (v2.1.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="html2haml (v2.3.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="i18n (v1.14.7, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="image_processing (v1.14.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="invisible_captcha (v2.3.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="io-console (v0.8.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="irb (v1.15.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.13.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="jmespath (v1.6.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="jquery-datatables (v1.10.20, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="jquery-rails (v4.6.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="jquery-ui-rails (v7.0.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="json (v2.10.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="language_server-protocol (v3.17.0.4, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="lint_roller (v1.1.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="listen (v3.9.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="little-plugger (v1.1.4, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="logger (v1.6.6, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="logging (v2.3.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="loofah (v2.24.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="lumberjack (v1.2.10, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="mail (v2.8.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="marcel (v1.0.4, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="method_source (v1.1.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="mime-types (v3.6.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="mime-types-data (v3.2025.0220, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="mini_magick (v4.13.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="mini_mime (v1.1.5, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="minitest (v5.25.4, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="minitest-reporters (v1.7.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.15.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="multipart-post (v2.4.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="nenv (v0.3.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="net-imap (v0.4.19, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="net-pop (v0.1.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="net-protocol (v0.2.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="net-smtp (v0.5.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="nio4r (v2.7.4, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.17.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="notiffany (v0.1.3, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="orm_adapter (v0.5.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ostruct (v0.6.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="parallel (v1.26.3, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="parser (v3.3.7.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="pg (v1.5.9, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="pg_query (v6.0.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="pp (v0.6.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="prettyprint (v0.2.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="prosopite (v2.0.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="pry (v0.15.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="psych (v5.2.3, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="public_suffix (v6.0.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="puma (v6.6.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="racc (v1.8.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rack (v2.2.11, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rack-mini-profiler (v3.3.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rack-proxy (v0.7.7, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rack-test (v2.2.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rails (v6.1.7.6, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rails-controller-testing (v1.0.5, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rails-dom-testing (v2.2.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rails-html-sanitizer (v1.6.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rails_12factor (v0.0.3, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rails_best_practices (v1.23.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rails_serve_static_assets (v0.0.5, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rails_stdout_logging (v0.0.5, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="railties (v6.1.7.6, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rainbow (v3.1.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rake (v13.2.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rb-fsevent (v0.11.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rb-inotify (v0.11.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rdbg (v0.1.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rdoc (v6.12.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="redis-client (v0.23.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="regexp_parser (v2.10.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="reline (v0.6.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="require_all (v3.0.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="responders (v3.1.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rouge (v4.5.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop (v1.73.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop-ast (v1.38.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop-capybara (v2.21.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop-minitest (v0.37.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop-rails (v2.30.3, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ruby-prof (v1.7.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ruby-progressbar (v1.13.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ruby-vips (v2.2.3, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ruby_parser (v3.21.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="sass-rails (v6.0.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="sassc (v2.4.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="sassc-rails (v2.1.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="semantic_range (v3.1.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="sexp_processor (v4.17.3, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="shellany (v0.0.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="sidekiq (v7.3.9, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="simplecov (v0.22.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="simplecov-html (v0.13.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="simplecov_json_formatter (v0.1.4, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="sprockets (v4.2.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="sprockets-rails (v3.5.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ssrf_filter (v1.2.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="stringio (v3.1.5, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="temple (v0.10.3, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="thor (v1.3.2, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="tilt (v2.6.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="timeout (v0.4.3, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="turbolinks (v5.2.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="turbolinks-source (v5.2.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="tzinfo (v2.0.6, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="uglifier (v3.2.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="unicode-display_width (v3.1.4, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="unicode-emoji (v4.0.4, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="uniform_notifier (v1.16.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="warden (v1.2.9, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="web-console (v4.2.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="webpacker (v5.4.4, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="websocket-driver (v0.7.7, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="websocket-extensions (v0.1.5, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="will_paginate (v4.0.1, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="wysiwyg-rails (v4.5.0, Choir Site Web) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="zeitwerk (v2.6.18, Choir Site Web) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actioncable (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actionmailbox (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actionmailer (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actionpack (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actiontext (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actionview (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activejob (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activemodel (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activerecord (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activestorage (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activesupport (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ajax-datatables-rails (v1.5.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ansi (v1.5.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ast (v2.4.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-eventstream (v1.3.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-partitions (v1.1059.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-core (v3.219.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-kms (v1.99.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-s3 (v1.182.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-sigv4 (v1.11.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="base64 (v0.2.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.20, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="benchmark (v0.4.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="better_errors (v2.10.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bigdecimal (v3.1.9, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bindex (v0.8.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="binding_of_caller (v1.0.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bootstrap-datepicker-rails (v1.10.0.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bootstrap-will_paginate (v1.0.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="brakeman (v7.0.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="breadcrumbs_on_rails (v4.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="builder (v3.3.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bullet (v8.0.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bundler (v2.4.19, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="byebug (v11.1.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="cancan (v1.6.10, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="cocoon (v1.2.15, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="code_analyzer (v0.5.5, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="coderay (v1.1.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="concurrent-ruby (v1.1.10, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="connection_pool (v2.5.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="crass (v1.0.6, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="cssbundling-rails (v1.4.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="date (v3.4.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="debug (v1.10.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="debug_inspector (v1.2.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="devise (v4.9.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="docile (v1.4.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="dotenv (v3.1.7, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="drb (v2.2.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="erb2haml (v0.1.5, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="erubi (v1.13.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="erubis (v2.7.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="execjs (v2.10.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="faker (v3.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ffi (v1.17.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="font-awesome-sass (v6.7.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="foreman (v0.88.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="formatador (v1.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="globalid (v1.2.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="google-protobuf (v4.29.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="guard (v2.19.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="guard-compat (v1.2.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="guard-minitest (v2.4.6, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="haml (v6.3.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="haml-rails (v2.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="html2haml (v2.3.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="i18n (v1.14.7, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="invisible_captcha (v2.3.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="io-console (v0.8.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="irb (v1.15.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.13.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="jmespath (v1.6.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="jquery-ui-rails (v7.0.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="jsbundling-rails (v1.3.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="json (v2.10.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="language_server-protocol (v3.17.0.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="lint_roller (v1.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="listen (v3.9.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="little-plugger (v1.1.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="logger (v1.6.6, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="logging (v2.3.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="loofah (v2.24.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="lumberjack (v1.2.10, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="mail (v2.8.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="marcel (v1.0.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="method_source (v1.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="mime-types (v3.6.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="mime-types-data (v3.2025.0220, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="mini_magick (v4.13.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="mini_mime (v1.1.5, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="minitest (v5.25.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="minitest-reporters (v1.7.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.15.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="multipart-post (v2.4.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="mutex_m (v0.3.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="nenv (v0.3.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="net-imap (v0.5.6, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="net-pop (v0.1.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="net-protocol (v0.2.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="net-smtp (v0.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="nio4r (v2.7.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.18.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="notiffany (v0.1.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="orm_adapter (v0.5.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ostruct (v0.6.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="pagy (v9.3.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="parallel (v1.26.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="parser (v3.3.7.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="pg (v1.5.9, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="pg_query (v6.0.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="pp (v0.6.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="prettyprint (v0.2.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="propshaft (v1.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="prosopite (v2.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="pry (v0.15.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="psych (v5.2.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="puma (v6.6.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="racc (v1.8.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rack (v3.1.10, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rack-mini-profiler (v3.3.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rack-session (v2.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rack-test (v2.2.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rackup (v2.2.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rails (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rails-controller-testing (v1.0.5, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rails-dom-testing (v2.2.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rails-html-sanitizer (v1.6.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rails_best_practices (v1.23.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="railties (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rainbow (v3.1.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rake (v13.2.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rb-fsevent (v0.11.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rb-inotify (v0.11.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rdbg (v0.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rdoc (v6.12.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="redis-client (v0.23.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="regexp_parser (v2.10.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="reline (v0.6.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="require_all (v3.0.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="responders (v3.1.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rouge (v4.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubocop (v1.73.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubocop-ast (v1.38.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubocop-capybara (v2.21.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubocop-minitest (v0.37.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubocop-rails (v2.30.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ruby-prof (v1.7.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ruby-progressbar (v1.13.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ruby_parser (v3.21.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="sassc (v2.4.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="securerandom (v0.4.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="sexp_processor (v4.17.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="shellany (v0.0.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="sidekiq (v7.3.9, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="simplecov (v0.22.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="simplecov-html (v0.13.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="simplecov-json (v0.2.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="simplecov_json_formatter (v0.1.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="stringio (v3.1.5, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="temple (v0.10.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="thor (v1.3.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="tilt (v2.6.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="timeout (v0.4.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="turbo-rails (v2.0.13, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="tzinfo (v2.0.6, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="uglifier (v3.2.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="unicode-display_width (v3.1.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="unicode-emoji (v4.0.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="uniform_notifier (v1.16.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="warden (v1.2.9, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="web-console (v4.2.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="websocket-driver (v0.7.7, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="websocket-extensions (v0.1.5, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="will_paginate (v4.0.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="wysiwyg-rails (v4.5.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="zeitwerk (v2.7.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
   </component>
   <component name="RModuleSettingsStorage">
     <LOAD_PATH number="0" />
@@ -381,7 +363,7 @@
       <value>file://$MODULE_DIR$/lib/templates</value>
     </entry>
     <entry key="log">
-      <value>file://$MODULE_DIR$/log/test.log</value>
+      <value>file://$MODULE_DIR$/log/development.log</value>
     </entry>
     <entry key="public">
       <value>file://$MODULE_DIR$/public</value>
@@ -391,6 +373,10 @@
     </entry>
     <entry key="public/stylesheets">
       <value>file://$MODULE_DIR$/public/stylesheets</value>
+    </entry>
+    <entry key="test/mailers/previews">
+      <value>file://$MODULE_DIR$/test/mailers/previews</value>
+      <value>file:///choir-site/test/mailers/previews</value>
     </entry>
     <entry key="tmp">
       <value>file://$MODULE_DIR$/tmp</value>
@@ -406,7 +392,6 @@
     <option name="myRootTask">
       <RakeTaskImpl id="rake">
         <subtasks>
-          <RakeTaskImpl description="List versions of all Rails frameworks and the environment" fullCommand="about" id="about" />
           <RakeTaskImpl id="action_mailbox">
             <subtasks>
               <RakeTaskImpl id="ingress">
@@ -417,7 +402,7 @@
                   <RakeTaskImpl description="" fullCommand="action_mailbox:ingress:environment" id="environment" />
                 </subtasks>
               </RakeTaskImpl>
-              <RakeTaskImpl description="Installs Action Mailbox and its dependencies" fullCommand="action_mailbox:install" id="install" />
+              <RakeTaskImpl description="Install Action Mailbox and its dependencies" fullCommand="action_mailbox:install" id="install" />
               <RakeTaskImpl id="install">
                 <subtasks>
                   <RakeTaskImpl description="Copy migrations from action_mailbox to application" fullCommand="action_mailbox:install:migrations" id="migrations" />
@@ -448,13 +433,8 @@
           </RakeTaskImpl>
           <RakeTaskImpl id="app">
             <subtasks>
-              <RakeTaskImpl description="Applies the template supplied by LOCATION=(/path/to/template) or URL" fullCommand="app:template" id="template" />
+              <RakeTaskImpl description="Apply the template supplied by LOCATION=(/path/to/template) or URL" fullCommand="app:template" id="template" />
               <RakeTaskImpl description="Update configs and some other initially generated files (or use just update:configs or update:bin)" fullCommand="app:update" id="update" />
-              <RakeTaskImpl id="binstub">
-                <subtasks>
-                  <RakeTaskImpl description="" fullCommand="app:binstub:yarn" id="yarn" />
-                </subtasks>
-              </RakeTaskImpl>
               <RakeTaskImpl id="templates">
                 <subtasks>
                   <RakeTaskImpl description="" fullCommand="app:templates:copy" id="copy" />
@@ -472,10 +452,15 @@
           </RakeTaskImpl>
           <RakeTaskImpl id="assets">
             <subtasks>
-              <RakeTaskImpl description="Remove old compiled assets" fullCommand="assets:clean[keep]" id="clean[keep]" />
-              <RakeTaskImpl description="Remove compiled assets" fullCommand="assets:clobber" id="clobber" />
-              <RakeTaskImpl description="Load asset compile environment" fullCommand="assets:environment" id="environment" />
-              <RakeTaskImpl description="Compile all the assets named in config.assets.precompile" fullCommand="assets:precompile" id="precompile" />
+              <RakeTaskImpl description="Removes old files in config.assets.output_path" fullCommand="assets:clean[count]" id="clean[count]" />
+              <RakeTaskImpl description="Remove config.assets.output_path" fullCommand="assets:clobber" id="clobber" />
+              <RakeTaskImpl description="Compile all the assets from config.assets.paths" fullCommand="assets:precompile" id="precompile" />
+              <RakeTaskImpl description="Print all the assets available in config.assets.paths" fullCommand="assets:reveal" id="reveal" />
+              <RakeTaskImpl id="reveal">
+                <subtasks>
+                  <RakeTaskImpl description="Print the full path of assets available in config.assets.paths" fullCommand="assets:reveal:full" id="full" />
+                </subtasks>
+              </RakeTaskImpl>
               <RakeTaskImpl description="" fullCommand="assets:clean" id="clean" />
             </subtasks>
           </RakeTaskImpl>
@@ -485,10 +470,31 @@
               <RakeTaskImpl description="Lookup nested dependencies for TEMPLATE (like messages/show or comments/_comment.html)" fullCommand="cache_digests:nested_dependencies" id="nested_dependencies" />
             </subtasks>
           </RakeTaskImpl>
+          <RakeTaskImpl id="css">
+            <subtasks>
+              <RakeTaskImpl description="Build your CSS bundle" fullCommand="css:build" id="build" />
+              <RakeTaskImpl description="Remove CSS builds" fullCommand="css:clobber" id="clobber" />
+              <RakeTaskImpl description="Install CSS dependencies" fullCommand="css:install" id="install" />
+              <RakeTaskImpl id="install">
+                <subtasks>
+                  <RakeTaskImpl description="Install Bootstrap" fullCommand="css:install:bootstrap" id="bootstrap" />
+                  <RakeTaskImpl description="Install Bulma" fullCommand="css:install:bulma" id="bulma" />
+                  <RakeTaskImpl description="Install PostCSS" fullCommand="css:install:postcss" id="postcss" />
+                  <RakeTaskImpl description="Install Sass" fullCommand="css:install:sass" id="sass" />
+                  <RakeTaskImpl description="Install Tailwind" fullCommand="css:install:tailwind" id="tailwind" />
+                </subtasks>
+              </RakeTaskImpl>
+            </subtasks>
+          </RakeTaskImpl>
           <RakeTaskImpl id="db">
             <subtasks>
-              <RakeTaskImpl description="Creates the database from DATABASE_URL or config/database.yml for the current RAILS_ENV (use db:create:all to create all databases in the config). Without RAILS_ENV or when RAILS_ENV is development, it defaults to creating the development and test databases, except when DATABASE_URL is present" fullCommand="db:create" id="create" />
-              <RakeTaskImpl description="Drops the database from DATABASE_URL or config/database.yml for the current RAILS_ENV (use db:drop:all to drop all databases in the config). Without RAILS_ENV or when RAILS_ENV is development, it defaults to dropping the development and test databases, except when DATABASE_URL is present" fullCommand="db:drop" id="drop" />
+              <RakeTaskImpl description="Create the database from DATABASE_URL or config/database.yml for the current RAILS_ENV (use db:create:all to create all databases in the config). Without RAILS_ENV or when RAILS_ENV is development, it defaults to creating the development and test databases, except when DATABASE_URL is present" fullCommand="db:create" id="create" />
+              <RakeTaskImpl description="Drop the database from DATABASE_URL or config/database.yml for the current RAILS_ENV (use db:drop:all to drop all databases in the config). Without RAILS_ENV or when RAILS_ENV is development, it defaults to dropping the development and test databases, except when DATABASE_URL is present" fullCommand="db:drop" id="drop" />
+              <RakeTaskImpl id="encryption">
+                <subtasks>
+                  <RakeTaskImpl description="Generate a set of keys for configuring Active Record encryption in a given environment" fullCommand="db:encryption:init" id="init" />
+                </subtasks>
+              </RakeTaskImpl>
               <RakeTaskImpl id="environment">
                 <subtasks>
                   <RakeTaskImpl description="Set the environment value for the database" fullCommand="db:environment:set" id="set" />
@@ -496,51 +502,43 @@
               </RakeTaskImpl>
               <RakeTaskImpl id="fixtures">
                 <subtasks>
-                  <RakeTaskImpl description="Loads fixtures into the current environment's database" fullCommand="db:fixtures:load" id="load" />
+                  <RakeTaskImpl description="Load fixtures into the current environment's database" fullCommand="db:fixtures:load" id="load" />
                   <RakeTaskImpl description="" fullCommand="db:fixtures:identify" id="identify" />
                 </subtasks>
               </RakeTaskImpl>
               <RakeTaskImpl description="Migrate the database (options: VERSION=x, VERBOSE=false, SCOPE=blog)" fullCommand="db:migrate" id="migrate" />
               <RakeTaskImpl id="migrate">
                 <subtasks>
-                  <RakeTaskImpl description="Runs the &quot;down&quot; for a given migration VERSION" fullCommand="db:migrate:down" id="down" />
-                  <RakeTaskImpl description="Rolls back the database one migration and re-migrates up (options: STEP=x, VERSION=x)" fullCommand="db:migrate:redo" id="redo" />
+                  <RakeTaskImpl description="Run the &quot;down&quot; for a given migration VERSION" fullCommand="db:migrate:down" id="down" />
+                  <RakeTaskImpl description="Roll back the database one migration and re-migrate up (options: STEP=x, VERSION=x)" fullCommand="db:migrate:redo" id="redo" />
                   <RakeTaskImpl description="Display status of migrations" fullCommand="db:migrate:status" id="status" />
-                  <RakeTaskImpl description="Runs the &quot;up&quot; for a given migration VERSION" fullCommand="db:migrate:up" id="up" />
+                  <RakeTaskImpl description="Run the &quot;up&quot; for a given migration VERSION" fullCommand="db:migrate:up" id="up" />
                   <RakeTaskImpl description="" fullCommand="db:migrate:reset" id="reset" />
                 </subtasks>
               </RakeTaskImpl>
-              <RakeTaskImpl description="Runs setup if database does not exist, or runs migrations if it does" fullCommand="db:prepare" id="prepare" />
-              <RakeTaskImpl description="Drops and recreates the database from db/schema.rb for the current environment and loads the seeds" fullCommand="db:reset" id="reset" />
-              <RakeTaskImpl description="Rolls the schema back to the previous version (specify steps w/ STEP=n)" fullCommand="db:rollback" id="rollback" />
+              <RakeTaskImpl description="Run setup if database does not exist, or run migrations if it does" fullCommand="db:prepare" id="prepare" />
+              <RakeTaskImpl description="Drop and recreate all databases from their schema for the current environment and load the seeds" fullCommand="db:reset" id="reset" />
+              <RakeTaskImpl description="Roll the schema back to the previous version (specify steps w/ STEP=n)" fullCommand="db:rollback" id="rollback" />
               <RakeTaskImpl id="schema">
                 <subtasks>
                   <RakeTaskImpl id="cache">
                     <subtasks>
-                      <RakeTaskImpl description="Clears a db/schema_cache.yml file" fullCommand="db:schema:cache:clear" id="clear" />
-                      <RakeTaskImpl description="Creates a db/schema_cache.yml file" fullCommand="db:schema:cache:dump" id="dump" />
+                      <RakeTaskImpl description="Clear a db/schema_cache.yml file" fullCommand="db:schema:cache:clear" id="clear" />
+                      <RakeTaskImpl description="Create a db/schema_cache.yml file" fullCommand="db:schema:cache:dump" id="dump" />
                     </subtasks>
                   </RakeTaskImpl>
-                  <RakeTaskImpl description="Creates a database schema file (either db/schema.rb or db/structure.sql, depending on `config.active_record.schema_format`)" fullCommand="db:schema:dump" id="dump" />
-                  <RakeTaskImpl description="Loads a database schema file (either db/schema.rb or db/structure.sql, depending on `config.active_record.schema_format`) into the database" fullCommand="db:schema:load" id="load" />
-                  <RakeTaskImpl description="" fullCommand="db:schema:load_if_ruby" id="load_if_ruby" />
+                  <RakeTaskImpl description="Create a database schema file (either db/schema.rb or db/structure.sql, depending on `ENV['SCHEMA_FORMAT']` or `config.active_record.schema_format`)" fullCommand="db:schema:dump" id="dump" />
+                  <RakeTaskImpl description="Load a database schema file (either db/schema.rb or db/structure.sql, depending on `ENV['SCHEMA_FORMAT']` or `config.active_record.schema_format`) into the database" fullCommand="db:schema:load" id="load" />
                 </subtasks>
               </RakeTaskImpl>
-              <RakeTaskImpl description="Loads the seed data from db/seeds.rb" fullCommand="db:seed" id="seed" />
+              <RakeTaskImpl description="Load the seed data from db/seeds.rb" fullCommand="db:seed" id="seed" />
               <RakeTaskImpl id="seed">
                 <subtasks>
-                  <RakeTaskImpl description="Truncates tables of each database for current environment and loads the seeds" fullCommand="db:seed:replant" id="replant" />
+                  <RakeTaskImpl description="Truncate tables of each database for current environment and load the seeds" fullCommand="db:seed:replant" id="replant" />
                 </subtasks>
               </RakeTaskImpl>
-              <RakeTaskImpl description="Creates the database, loads the schema, and initializes with the seed data (use db:reset to also drop the database first)" fullCommand="db:setup" id="setup" />
-              <RakeTaskImpl id="structure">
-                <subtasks>
-                  <RakeTaskImpl description="Dumps the database structure to db/structure.sql" fullCommand="db:structure:dump" id="dump" />
-                  <RakeTaskImpl description="Recreates the databases from the structure.sql file" fullCommand="db:structure:load" id="load" />
-                  <RakeTaskImpl description="" fullCommand="db:structure:load_if_sql" id="load_if_sql" />
-                </subtasks>
-              </RakeTaskImpl>
-              <RakeTaskImpl description="Retrieves the current schema version number" fullCommand="db:version" id="version" />
+              <RakeTaskImpl description="Create all databases, load all schemas, and initialize with the seed data (use db:reset to also drop all databases first)" fullCommand="db:setup" id="setup" />
+              <RakeTaskImpl description="Retrieve the current schema version number" fullCommand="db:version" id="version" />
               <RakeTaskImpl description="" fullCommand="db:_dump" id="_dump" />
               <RakeTaskImpl description="" fullCommand="db:abort_if_pending_migrations" id="abort_if_pending_migrations" />
               <RakeTaskImpl description="" fullCommand="db:charset" id="charset" />
@@ -565,11 +563,19 @@
                   <RakeTaskImpl description="" fullCommand="db:purge:all" id="all" />
                 </subtasks>
               </RakeTaskImpl>
+              <RakeTaskImpl id="reset">
+                <subtasks>
+                  <RakeTaskImpl description="" fullCommand="db:reset:all" id="all" />
+                </subtasks>
+              </RakeTaskImpl>
+              <RakeTaskImpl id="setup">
+                <subtasks>
+                  <RakeTaskImpl description="" fullCommand="db:setup:all" id="all" />
+                </subtasks>
+              </RakeTaskImpl>
               <RakeTaskImpl id="test">
                 <subtasks>
-                  <RakeTaskImpl description="" fullCommand="db:test:load" id="load" />
                   <RakeTaskImpl description="" fullCommand="db:test:load_schema" id="load_schema" />
-                  <RakeTaskImpl description="" fullCommand="db:test:load_structure" id="load_structure" />
                   <RakeTaskImpl description="" fullCommand="db:test:prepare" id="prepare" />
                   <RakeTaskImpl description="" fullCommand="db:test:purge" id="purge" />
                 </subtasks>
@@ -584,21 +590,32 @@
               <RakeTaskImpl description="Perform bulk conversion of all html.erb files to Haml in views folder, then remove the converted html.erb files" fullCommand="haml:replace_erbs" id="replace_erbs" />
             </subtasks>
           </RakeTaskImpl>
-          <RakeTaskImpl id="log">
+          <RakeTaskImpl id="javascript">
             <subtasks>
-              <RakeTaskImpl description="Truncates all/specified *.log files in log/ to zero bytes (specify which logs with LOGS=test,development)" fullCommand="log:clear" id="clear" />
+              <RakeTaskImpl description="Build your JavaScript bundle" fullCommand="javascript:build" id="build" />
+              <RakeTaskImpl description="Remove JavaScript builds" fullCommand="javascript:clobber" id="clobber" />
+              <RakeTaskImpl description="Install JavaScript dependencies" fullCommand="javascript:install" id="install" />
+              <RakeTaskImpl id="install">
+                <subtasks>
+                  <RakeTaskImpl description="Install Bun" fullCommand="javascript:install:bun" id="bun" />
+                  <RakeTaskImpl description="Install esbuild" fullCommand="javascript:install:esbuild" id="esbuild" />
+                  <RakeTaskImpl description="Install rollup.js" fullCommand="javascript:install:rollup" id="rollup" />
+                  <RakeTaskImpl description="Install Webpack" fullCommand="javascript:install:webpack" id="webpack" />
+                </subtasks>
+              </RakeTaskImpl>
             </subtasks>
           </RakeTaskImpl>
-          <RakeTaskImpl description="Prints out your Rack middleware stack" fullCommand="middleware" id="middleware" />
-          <RakeTaskImpl description="Restart app by touching tmp/restart.txt" fullCommand="restart" id="restart" />
-          <RakeTaskImpl description="Generate a cryptographically secure secret key (this is typically used to generate a secret for cookie sessions)" fullCommand="secret" id="secret" />
+          <RakeTaskImpl id="log">
+            <subtasks>
+              <RakeTaskImpl description="Truncate all/specified *.log files in log/ to zero bytes (specify which logs with LOGS=test,development)" fullCommand="log:clear" id="clear" />
+            </subtasks>
+          </RakeTaskImpl>
           <RakeTaskImpl description="Report code statistics (KLOCs, etc) from the application or engine" fullCommand="stats" id="stats" />
-          <RakeTaskImpl description="Runs all tests in test folder except system ones" fullCommand="test" id="test" />
+          <RakeTaskImpl description="Run all tests in test folder except system ones" fullCommand="test" id="test" />
           <RakeTaskImpl id="test">
             <subtasks>
-              <RakeTaskImpl description="Runs all tests, including system tests" fullCommand="test:all" id="all" />
-              <RakeTaskImpl description="Run tests quickly, but also reset db" fullCommand="test:db" id="db" />
-              <RakeTaskImpl description="Run system tests only" fullCommand="test:system" id="system" />
+              <RakeTaskImpl description="Reset the database and run `bin/rails test`" fullCommand="test:db" id="db" />
+              <RakeTaskImpl description="" fullCommand="test:all" id="all" />
               <RakeTaskImpl description="" fullCommand="test:channels" id="channels" />
               <RakeTaskImpl description="" fullCommand="test:controllers" id="controllers" />
               <RakeTaskImpl description="" fullCommand="test:functionals" id="functionals" />
@@ -611,6 +628,7 @@
               <RakeTaskImpl description="" fullCommand="test:models" id="models" />
               <RakeTaskImpl description="" fullCommand="test:prepare" id="prepare" />
               <RakeTaskImpl description="" fullCommand="test:run" id="run" />
+              <RakeTaskImpl description="" fullCommand="test:system" id="system" />
               <RakeTaskImpl description="" fullCommand="test:units" id="units" />
             </subtasks>
           </RakeTaskImpl>
@@ -630,7 +648,7 @@
           <RakeTaskImpl id="tmp">
             <subtasks>
               <RakeTaskImpl description="Clear cache, socket and screenshot files from tmp/ (narrow w/ tmp:cache:clear, tmp:sockets:clear, tmp:screenshots:clear)" fullCommand="tmp:clear" id="clear" />
-              <RakeTaskImpl description="Creates tmp directories for cache, sockets, and pids" fullCommand="tmp:create" id="create" />
+              <RakeTaskImpl description="Create tmp directories for cache, sockets, and pids" fullCommand="tmp:create" id="create" />
               <RakeTaskImpl id="cache">
                 <subtasks>
                   <RakeTaskImpl description="" fullCommand="tmp:cache:clear" id="clear" />
@@ -651,36 +669,23 @@
                   <RakeTaskImpl description="" fullCommand="tmp:sockets:clear" id="clear" />
                 </subtasks>
               </RakeTaskImpl>
-            </subtasks>
-          </RakeTaskImpl>
-          <RakeTaskImpl description="Lists all available tasks in Webpacker" fullCommand="webpacker" id="webpacker" />
-          <RakeTaskImpl id="webpacker">
-            <subtasks>
-              <RakeTaskImpl description="Installs Webpacker binstubs in this application" fullCommand="webpacker:binstubs" id="binstubs" />
-              <RakeTaskImpl description="Verifies that webpack &amp; webpack-dev-server are present" fullCommand="webpacker:check_binstubs" id="check_binstubs" />
-              <RakeTaskImpl description="Verifies if Node.js is installed" fullCommand="webpacker:check_node" id="check_node" />
-              <RakeTaskImpl description="Verifies if Yarn is installed" fullCommand="webpacker:check_yarn" id="check_yarn" />
-              <RakeTaskImpl description="Remove old compiled webpacks" fullCommand="webpacker:clean[keep,age]" id="clean[keep,age]" />
-              <RakeTaskImpl description="Remove the webpack compiled output directory" fullCommand="webpacker:clobber" id="clobber" />
-              <RakeTaskImpl description="Compile JavaScript packs using webpack for production with digests" fullCommand="webpacker:compile" id="compile" />
-              <RakeTaskImpl description="Provide information on Webpacker's environment" fullCommand="webpacker:info" id="info" />
-              <RakeTaskImpl description="Install Webpacker in this application" fullCommand="webpacker:install" id="install" />
-              <RakeTaskImpl id="install">
+              <RakeTaskImpl id="storage">
                 <subtasks>
-                  <RakeTaskImpl description="Install everything needed for Angular" fullCommand="webpacker:install:angular" id="angular" />
-                  <RakeTaskImpl description="Install everything needed for Coffee" fullCommand="webpacker:install:coffee" id="coffee" />
-                  <RakeTaskImpl description="Install everything needed for Elm" fullCommand="webpacker:install:elm" id="elm" />
-                  <RakeTaskImpl description="Install everything needed for Erb" fullCommand="webpacker:install:erb" id="erb" />
-                  <RakeTaskImpl description="Install everything needed for React" fullCommand="webpacker:install:react" id="react" />
-                  <RakeTaskImpl description="Install everything needed for Stimulus" fullCommand="webpacker:install:stimulus" id="stimulus" />
-                  <RakeTaskImpl description="Install everything needed for Svelte" fullCommand="webpacker:install:svelte" id="svelte" />
-                  <RakeTaskImpl description="Install everything needed for Typescript" fullCommand="webpacker:install:typescript" id="typescript" />
-                  <RakeTaskImpl description="Install everything needed for Vue" fullCommand="webpacker:install:vue" id="vue" />
+                  <RakeTaskImpl description="" fullCommand="tmp:storage:clear" id="clear" />
                 </subtasks>
               </RakeTaskImpl>
-              <RakeTaskImpl description="Verifies if Webpacker is installed" fullCommand="webpacker:verify_install" id="verify_install" />
-              <RakeTaskImpl description="Support for older Rails versions" fullCommand="webpacker:yarn_install" id="yarn_install" />
-              <RakeTaskImpl description="" fullCommand="webpacker:clean" id="clean" />
+            </subtasks>
+          </RakeTaskImpl>
+          <RakeTaskImpl id="turbo">
+            <subtasks>
+              <RakeTaskImpl description="Install Turbo into the app" fullCommand="turbo:install" id="install" />
+              <RakeTaskImpl id="install">
+                <subtasks>
+                  <RakeTaskImpl description="Install Turbo into the app with bun" fullCommand="turbo:install:bun" id="bun" />
+                  <RakeTaskImpl description="Install Turbo into the app with asset pipeline" fullCommand="turbo:install:importmap" id="importmap" />
+                  <RakeTaskImpl description="Install Turbo into the app with webpacker" fullCommand="turbo:install:node" id="node" />
+                </subtasks>
+              </RakeTaskImpl>
             </subtasks>
           </RakeTaskImpl>
           <RakeTaskImpl id="yarn">
@@ -690,7 +695,7 @@
           </RakeTaskImpl>
           <RakeTaskImpl id="zeitwerk">
             <subtasks>
-              <RakeTaskImpl description="Checks project structure for Zeitwerk compatibility" fullCommand="zeitwerk:check" id="check" />
+              <RakeTaskImpl description="Check project structure for Zeitwerk compatibility" fullCommand="zeitwerk:check" id="check" />
             </subtasks>
           </RakeTaskImpl>
           <RakeTaskImpl description="" fullCommand="default" id="default" />

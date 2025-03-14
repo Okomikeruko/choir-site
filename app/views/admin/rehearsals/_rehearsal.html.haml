@@ -5,13 +5,13 @@
   %td= rehearsal.venue
   %td= rehearsal.songs.count
   %td= rehearsal.audio.exists? ? "Yes" : "No"
-  %td.text-right
+  %td.text-end
     =link_to edit_admin_rehearsal_path(rehearsal),
-             class: "btn btn-default btn-xs",
+             class: "btn btn-outline-secondary btn-xs",
              style: "margin-right: 1em;" do
-      %span.glyphicon.glyphicon-pencil
+      %span.bi.bi-pencil
     =link_to admin_rehearsal_path(rehearsal),
              method: :delete,
              data: { confirm: "Are you sure?" },
              class: "btn btn-danger btn-xs" do
-      %span.glyphicon.glyphicon-remove
+      %span.bi.bi-x

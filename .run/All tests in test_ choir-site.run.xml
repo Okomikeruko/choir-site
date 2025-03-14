@@ -5,19 +5,23 @@
     <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-Itest" />
     <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
     <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="true" />
-    <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="Choir Site Web" />
+    <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="Remote: ruby-3.2.7-p253" />
     <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
     <envs>
+      <env name="DISABLE_COVERAGE" value="true" />
+      <env name="JRUBY_OPTS" value="-X+" />
       <env name="RAILS_ENV" value="test" />
-      <env name="JRUBY_OPTS" value="-X+O" />
+      <env name="SIMPLECOV_COMMAND_NAME" value="rubymine-test" />
+      <env name="RUBYMINE_DISABLE_SIMPLECOV" value="true" />
+      <env name="NO_COVERAGE" value="true" />
     </envs>
     <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
-    <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov">
+    <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
       <COVERAGE_PATTERN ENABLED="true">
         <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
       </COVERAGE_PATTERN>
     </EXTENSION>
-    <EXTENSION ID="RubyDockerContainerSettingsRunConfigurationExtension" dockerComposeCommand="RUN" />
+    <EXTENSION ID="RubyDockerContainerSettingsRunConfigurationExtension" dockerComposeCommand="EXEC" />
     <EXTENSION ID="net.ashald.envfile">
       <option name="IS_ENABLED" value="false" />
       <option name="IS_SUBST" value="false" />

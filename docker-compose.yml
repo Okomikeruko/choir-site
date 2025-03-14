@@ -3,8 +3,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
+      args:
+        RUBY_VERSION: $(cat .ruby-version)
+        NODE_VERSION: $(cat .node-version)
     container_name: choir-site-web
-    command: bundle exec rails server -b 0.0.0.0
+    command: foreman start -f Procfile.dev
     environment:
       - DATABASE_URL=postgresql://choir_postgres:password@postgres13:5432/
     networks:
@@ -15,8 +18,9 @@ services:
     stdin_open: true
     tty: true
     volumes:
-      - .:/myapp
+      - .:/choir-site
       - gem_cache:/usr/local/bundle/gems
+
 networks:
   postgres_network:
     external: true

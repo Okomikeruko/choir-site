@@ -10,12 +10,14 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should get index' do
     get news_index_path
+
     assert_response :success
     assert_template 'articles/index'
   end
 
   test 'should get show' do
     get news_path(@article)
+
     assert_response :success
     assert_template 'articles/show'
   end
