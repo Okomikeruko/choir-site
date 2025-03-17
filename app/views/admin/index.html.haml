@@ -5,8 +5,8 @@
     .panel.panel-default
       .panel-heading.clearfix
         =link_to new_admin_article_path,
-                 class: "btn btn-primary pull-right" do
-          %span.glyphicon.glyphicon-plus
+                 class: "btn btn-primary float-end" do
+          %span.bi.bi-plus
         %h4 News
       .panel-body
         -@articles.each do |article|
@@ -17,7 +17,7 @@
                        length: 120,
                        separator: ' '
             %br
-            %span.pull-right
+            %span.float-end
               %strong= article.status
               |
               =link_to "View", news_path(article)
@@ -28,8 +28,8 @@
     .panel.panel-default
       .panel-heading.clearfix
         =link_to new_admin_song_path,
-                 class: "btn btn-primary pull-right" do
-          %span.glyphicon.glyphicon-plus
+                 class: "btn btn-primary float-end" do
+          %span.bi.bi-plus
         %h4 Songs
       .panel-body{style: "overflow-y: auto; height: 602px;"}
         -@songs.each do |song|
@@ -37,7 +37,7 @@
             %h4= song.title
             %p= song.instruments.map { |i| i.name }.to_sentence
             %br
-            %span.pull-right
+            %span.float-end
               =link_to "View", music_path(song.slug)
               |
               =link_to "Edit", edit_admin_song_path(song)
@@ -46,8 +46,8 @@
     .panel.panel-default
       .panel-heading.clearfix
         =link_to new_admin_performance_path,
-                 class: "btn btn-primary pull-right" do
-          %span.glyphicon.glyphicon-plus
+                 class: "btn btn-primary float-end" do
+          %span.bi.bi-plus
         %h4 Performances
       .panel-body{style: "overflow-y: auto; height: 250px;"}
         -@performances.each do |performance|
@@ -55,7 +55,7 @@
             %h4= performance.date.strftime("%m/%d/%Y")
             %p= performance.songs.map { |s| s.title }.to_sentence
             %br
-            %span.pull-right
+            %span.float-end
               %strong= performance.date.future? ? "Pending" : "Complete"
               |
               =link_to "Edit", edit_admin_performance_path(performance)
@@ -64,8 +64,8 @@
     .panel.panel-default
       .panel-heading.clearfix
         =link_to new_admin_rehearsal_path,
-                 class: "btn btn-primary pull-right" do
-          %span.glyphicon.glyphicon-plus
+                 class: "btn btn-primary float-end" do
+          %span.bi.bi-plus
         %h4 Rehearsals
       .panel-body{style: "overflow-y: auto; height: 250px"}
         -@rehearsals.each do |rehearsal|
@@ -77,7 +77,7 @@
               %br
               %strong Venue
               = rehearsal.venue
-            %span.pull-right
+            %span.float-end
               %strong= rehearsal.date.future? ? "Pending" : "Complete"
               |
               =link_to "Edit", edit_admin_rehearsal_path(rehearsal)

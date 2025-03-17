@@ -12,6 +12,7 @@ module Admin
 
     test 'should get index' do
       get admin_messages_path
+
       assert_response :success
       assert_template 'admin/messages/index'
       assert_select 'table#messages-datatable'
@@ -19,9 +20,11 @@ module Admin
 
     test 'should get index with JSON' do
       get admin_messages_path(format: :json), xhr: true
+
       assert_response :success
 
       json_response = response.parsed_body
+
       assert_includes json_response.keys, 'data'
       assert_includes json_response.keys, 'recordsTotal'
       assert_includes json_response.keys, 'recordsFiltered'
@@ -35,7 +38,8 @@ module Admin
       assert_template 'admin/messages/show'
 
       @message.reload
-      assert @message.read?, 'Message should be marked as read after viewing'
+
+      assert_predicate @message, :read?, 'Message should be marked as read after viewing'
     end
 
     test 'should mark messages as read via AJAX' do
@@ -48,7 +52,8 @@ module Admin
 
       assert_response :success
       @message.reload
-      assert @message.read?, 'Message should be marked as read'
+
+      assert_predicate @message, :read?, 'Message should be marked as read'
     end
 
     test 'should mark messages as unread via AJAX' do
@@ -61,6 +66,7 @@ module Admin
 
       assert_response :success
       @message.reload
+
       assert_not @message.read?, 'Message should be marked as unread'
     end
     test 'datatable should include required columns' do
@@ -70,6 +76,7 @@ module Admin
       first_record = json_response['data'].first
 
       required_columns = %w[name email subject created_at]
+
       required_columns.each do |column|
         assert_includes first_record.keys, column,
                         "Datatable response should include #{column} column"

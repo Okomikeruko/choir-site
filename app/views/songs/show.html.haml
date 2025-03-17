@@ -7,7 +7,7 @@
     =simple_format @song.description
   .col-sm-6.col-md-4
     %h3{:style => "margin: 5px 0;"}
-      %span.glyphicon.glyphicon-calendar
+      %span.bi.bi-calendar
       Performance Dates
     -@song.performances.each do |performance|
       %br
@@ -30,9 +30,9 @@
     -@song.instruments.each do |instrument|
       .song-listing
         .clearfix
-          %h3.pull-left=instrument.name
+          %h3.float-start=instrument.name
           - unless instrument.empty?
-            .dropdown.pull-right
+            .dropdown.float-end
               %button{ :class => "btn btn-secondary dropdown-toggle",
                        :type => "button",
                        :id => "downloads#{instrument.id}",
@@ -70,11 +70,11 @@
                 %source{:type => instrument.mp3_blob.content_type,
                         :src  => instrument.mp3_blob.service_url}
             .col-xs-2.col-sm-1
-              %button{ :class => "btn btn-default btn-repeat",
+              %button{ :class => "btn btn-outline-secondary btn-repeat",
                        :data  => { id: "audio-#{instrument.name.parameterize}" },
                        :style => "margin-top: 20px;",
                        :title => "Toggle to loop audio continuously" }
-                %span.glyphicon.glyphicon-refresh
+                %span.bi.bi-refresh
   .col-md-4
     %h2 Rehearsals
     -if @song.rehearsals.any?

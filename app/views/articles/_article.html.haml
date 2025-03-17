@@ -1,12 +1,12 @@
 .row{style: "margin-bottom: 30px;"}
   .col-xs-12
-    %span.date.hidden-xs.hidden-sm=article.created_at.strftime("%m/%d/%Y")
+    %span.date.d-none.d-lg-inline=article.created_at.strftime("%m/%d/%Y")
     =link_to news_path(article),
              class: "secondary" do
       %h2=article.title
     .clearfix
       %strong.push-left=article.author_name
-      %span.date.pull-right.hidden-md.hidden-lg=article.created_at.strftime("%m/%d/%Y")
+      %span.date.float-end.d-md-none=article.created_at.strftime("%m/%d/%Y")
     %p
       =truncate article.content.html_safe,
                 length: 120,

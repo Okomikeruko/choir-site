@@ -23,7 +23,7 @@ class Article < ApplicationRecord
   define_controls_column  formatter: ->(record) { helpers.controls_html(record) }
 
   scope :month, lambda { |date|
-    where(created_at: date.all_month) if date.present?
+    where(created_at: DateTime.parse(date).all_month) if date.present?
   }
   scope :tag,      ->(slug) { joins(:tags).where(tags: { slug: slug }) if slug.present? }
   scope :category, ->(slug) { joins(:categories).where(categories: { slug: slug }) if slug.present? }
@@ -55,6 +55,10 @@ class Article < ApplicationRecord
       month(params[:month])
         .tag(params[:tags])
         .category(params[:category])
+    end
+
+    def as_months
+      pluck(:created_at).map(&:beginning_of_month).tally
     end
 
     def for_datatable

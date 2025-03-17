@@ -1,35 +1,30 @@
 # frozen_string_literal: true
 
 require_relative 'boot'
+
 require 'rails/all'
-require 'fog/core'
 
-Fog::Logger[:deprecation] = nil
-
-# Require the gems listed in Gemfile
+# Require the gems listed in Gemfile, including any gems
+# you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
 module Choir
   class Application < Rails::Application
-    config.load_defaults 6.0
-    config.autoloader = :classic
-
-    config.generators do |g|
-      g.stylesheets = false
-      g.javascripts = false
-      g.skip_routes = true
-    end
-
-    config.serve_static_assets = true
+    # Initialize configuration defaults for originally generated Rails version.
+    config.load_defaults 7.0
     config.time_zone = 'Mountain Time (US & Canada)'
-    config.active_record.default_timezone = :local
-    config.action_view.sanitized_allowed_attributes = 'class', 'id', 'href', 'style', 'target', 'rel'
 
-    config.hosts << 'localhost'
-    config.hosts << '.vfs.cloud9.us-west-2.amazonaws.com'
-    config.hosts << ENV.fetch('DOMAIN', nil)
+    # Please, add to the `ignore` list any other `lib` subdirectories that do
+    # not contain `.rb` files, or that should not be reloaded or eager loaded.
+    # Common ones are `templates`, `generators`, or `middleware`, for example.
+    config.autoload_lib(ignore: %w[assets tasks])
 
-    config.active_job.queue_adapter = :sidekiq
-    config.autoload_paths += Dir["#{config.root}/app/datatables/**/"]
+    # Configuration for the application, engines, and railties goes here.
+    #
+    # These settings can be overridden in specific environments using the files
+    # in config/environments, which are processed later.
+    #
+    # config.time_zone = "Central Time (US & Canada)"
+    # config.eager_load_paths << Rails.root.join("extras")
   end
 end

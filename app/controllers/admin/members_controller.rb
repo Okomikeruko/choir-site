@@ -52,7 +52,7 @@ module Admin
     end
 
     def find_member
-      @member = Member.find params[:id]
+      @member = Member.find(params[:id])
     end
   end
 end

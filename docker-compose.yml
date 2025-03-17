@@ -1,36 +1,27 @@
 services:
-  # Base service configuration (not directly used)
-  web_base: &web_base
+  web:
     build:
       context: .
       dockerfile: Dockerfile.dev
+      args:
+        RUBY_VERSION: $(cat .ruby-version)
+        NODE_VERSION: $(cat .node-version)
+    container_name: choir-site-web
+    command: foreman start -f Procfile.dev
     environment:
-      - DATABASE_URL=postgres://choir_postgres:password@postgres13:5432
+      - DATABASE_URL=postgresql://choir_postgres:password@postgres13:5432/
+      - RAILS_ENV=development
+      - SOURCE_PATH=$PWD
     networks:
       - postgres_network
-    stdin_open: true
-    tty: true
-    volumes:
-      - .:/myapp
-      - gem_cache:/usr/local/bundle/gems
-
-  # Development service
-  web:
-    <<: *web_base
-    container_name: choir-site-web
-    command: bundle exec rails server -b 0.0.0.0
-    environment:
-      - RAILS_ENV=development
     ports:
       - "3000:3000"
       - "1234:1234"
-
-  # Test service
-  test:
-    <<: *web_base
-    container_name: choir-site-test
-    environment:
-      - RAILS_ENV=test
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/choir-site
+      - gem_cache:/usr/local/bundle/gems
 
 networks:
   postgres_network:

@@ -34,6 +34,8 @@ class Song < ApplicationRecord
   validates :title, presence: true,
                     length: { maximum: 60 }
 
+  attr_readonly :slug, :sort_order
+
   # do_not_validate_attachment_file_type :lilypond
 
   def primary_instrument
@@ -44,18 +46,22 @@ class Song < ApplicationRecord
     def unused
       where(performances_count: 0)
     end
+
+    def alphabetized
+      all.group_by { |song| song.sort_order.chr }
+    end
   end
 
   private
 
   def set_slug
-    self.slug = title.parameterize
+    self.slug = title&.parameterize
   end
 
   def set_sort_order
-    if title.starts_with?('The ', 'A ', 'An ')
-      word = title.partition(' ').first
-      self.sort_order = title["#{word} ".size..].concat(", #{word}")
+    if title&.starts_with?('The ', 'A ', 'An ')
+      word = title&.partition(' ')&.first
+      self.sort_order = title["#{word} ".size..].concat(", #{word}") if word
     else
       self.sort_order = title
     end

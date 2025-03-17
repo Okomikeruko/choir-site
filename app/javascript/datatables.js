@@ -1,27 +1,15 @@
 // =====================================================
 // 1. REQUIRED DEPENDENCIES
 // =====================================================
-// optional change '//' --> '//=' to enable
-//= require datatables/jquery.dataTables
-// require datatables/extensions/AutoFill/dataTables.autoFill
-//= require datatables/extensions/Buttons/dataTables.buttons
-//= require datatables/extensions/Buttons/buttons.html5
-// require datatables/extensions/Buttons/buttons.print
-// require datatables/extensions/Buttons/buttons.colVis
-// require datatables/extensions/Buttons/buttons.flash
-// require datatables/extensions/ColReorder/dataTables.colReorder
-// require datatables/extensions/FixedColumns/dataTables.fixedColumns
-// require datatables/extensions/FixedHeader/dataTables.fixedHeader
-// require datatables/extensions/KeyTable/dataTables.keyTable
-// require datatables/extensions/Responsive/dataTables.responsive
-// require datatables/extensions/RowGroup/dataTables.rowGroup
-// require datatables/extensions/RowReorder/dataTables.rowReorder
-// require datatables/extensions/Scroller/dataTables.scroller
-//= require datatables/extensions/Select/dataTables.select
-//= require datatables/dataTables.bootstrap4
-// require datatables/extensions/AutoFill/autoFill.bootstrap4
-//= require datatables/extensions/Buttons/buttons.bootstrap4
-// require datatables/extensions/Responsive/responsive.bootstrap4
+
+// Import jQuery and DataTables
+import $ from 'jquery';
+import 'datatables.net';
+import 'datatables.net-bs4';
+import 'datatables.net-select';
+import 'datatables.net-buttons';
+import 'datatables.net-buttons-bs4';
+import 'datatables.net-buttons/js/buttons.html5.js';
 
 // =====================================================
 // 2. UTILITY FUNCTIONS
@@ -52,19 +40,19 @@ const applyAttributes = (element, attributes) => {
       switch(key) {
         case 'data':
           applyAttributes(element, Object.fromEntries(
-            Object.entries(value).map(([k, v]) => [`data-${k}`, v])
+              Object.entries(value).map(([k, v]) => [`data-${k}`, v])
           ));
           break;
         case 'aria':
           applyAttributes(element, Object.fromEntries(
-            Object.entries(value).map(([k, v]) => [`aria-${k}`, v])
+              Object.entries(value).map(([k, v]) => [`aria-${k}`, v])
           ));
           break;
         default:
           // For other nested objects, use as namespace
           const namespace = `${key}-`;
           applyAttributes(element, Object.fromEntries(
-            Object.entries(value).map(([k, v]) => [`${namespace}${k}`, v])
+              Object.entries(value).map(([k, v]) => [`${namespace}${k}`, v])
           ));
       }
       return;
@@ -101,7 +89,7 @@ $.extend( $.fn.dataTable.defaults, {
 // 4. INITIALIZATION FUNCTIONS
 // =====================================================
 // Initialize Datatables
-const initializeDataTables = () => {
+export const initializeDataTables = () => {
   $('table[data-source]').each((_, element) => {
     const $table = $(element);
 
@@ -151,21 +139,6 @@ $(document).on('click', 'tr.clickable-row td:not(.select-checkbox)', function(e)
   const href = $(this).parent().data('href');
   if (href) {
     window.location = href;
-  }
-});
-
-// =====================================================
-// 6. TURBOLINKS INTEGRATION
-// =====================================================
-// Initialize on page load
-$(document).on('turbolinks:load', initializeDataTables);
-
-// Clean up before caching
-$(document).on('turbolinks:before-cache', function() {
-  const tables = $($.fn.dataTable.tables(true)).DataTable();
-  if (tables) {
-    tables.clear();
-    tables.destroy();
   }
 });
 
@@ -296,3 +269,18 @@ $.fn.dataTable.ext.buttons.selectNone = {
     dt.rows().deselect();
   }
 };
+
+// Initialize on page load - replacing Turbolinks with Turbo
+document.addEventListener('turbo:load', initializeDataTables);
+
+// Clean up before caching
+document.addEventListener('turbo:before-cache', function() {
+  const tables = $($.fn.dataTable.tables(true)).DataTable();
+  if (tables) {
+    tables.clear();
+    tables.destroy();
+  }
+});
+
+// Create a global reference for external access if needed
+window.initializeDataTables = initializeDataTables;

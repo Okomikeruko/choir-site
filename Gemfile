@@ -2,33 +2,41 @@
 
 source 'https://rubygems.org'
 
-gem 'activesupport', '6.1.7.6'
+ruby File.read('.ruby-version').strip
+
+gem 'rails', '~> 7.1.0'
+
+# gem 'activesupport', '~> 7.1.0'
 gem 'concurrent-ruby', '~> 1.1.9'
 gem 'logging', '~> 2.3.0'
-gem 'rails', '6.1.7.6'
 
 gem 'actioncable'
 gem 'ajax-datatables-rails'
 gem 'bcrypt', '~> 3.1.12'
-gem 'bootstrap-sass', '~> 3.3'
+# gem 'bootstrap-sass', '~> 3.3'
 gem 'bootstrap-will_paginate'
-gem 'carrierwave'
-gem 'coffee-rails', '~> 5.0.0'
+# gem 'carrierwave'
+# gem 'coffee-rails', '~> 5.0.0'
+gem 'cssbundling-rails'
 gem 'execjs'
 gem 'faker'
-gem 'fog-aws'
+# gem 'fog-aws'
 gem 'font-awesome-sass'
 gem 'jbuilder'
-gem 'jquery-datatables'
-gem 'jquery-rails'
+# gem 'jquery-datatables'
+# gem 'jquery-rails'
+gem 'jsbundling-rails'
 gem 'mime-types'
 gem 'mini_magick', '~> 4.7'
+gem 'pagy', '~> 9.0'
+gem 'propshaft'
 gem 'puma', '~> 6'
-gem 'sass-rails'
-gem 'sprockets'
-gem 'turbolinks', '~> 5'
+# gem 'sass-rails'
+# gem 'sprockets'
+gem 'turbo-rails'
+# gem 'turbolinks', '~> 5'
 gem 'uglifier', '3.2.0'
-gem 'webpacker'
+# gem 'webpacker'
 gem 'will_paginate', '~> 4.0.1'
 
 gem 'aws-sdk-s3', require: false
@@ -49,6 +57,7 @@ gem 'wysiwyg-rails'
 group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'brakeman'
   gem 'byebug', platform: :mri
   gem 'debug', require: false
   gem 'rack-mini-profiler'
@@ -59,12 +68,13 @@ end
 
 group :development do
   gem 'bullet'
-  gem 'coffee-script'
-  gem 'coffee-script-source'
+  # gem 'coffee-script'
+  # gem 'coffee-script-source'
   gem 'dotenv'
   gem 'erb2haml'
   gem 'foreman'
   gem 'listen'
+  gem 'meta_request', git: 'https://github.com/dejan/rails_panel.git'
   gem 'pg_query'
   gem 'prosopite'
   gem 'rails_best_practices'
@@ -81,11 +91,12 @@ group :test do
   gem 'minitest-reporters'
   gem 'rails-controller-testing'
   gem 'simplecov', require: false
+  gem 'simplecov-json', require: false
 end
 
-group :production do
-  gem 'rails_12factor'
-end
+# group :production do
+#   gem 'rails_12factor'
+# end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

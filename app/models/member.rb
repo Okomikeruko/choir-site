@@ -24,18 +24,18 @@ class Member < ApplicationRecord
                     format: { with: VALID_EMAIL_REGEX }
 
   def soprano?
-    vocal_range.include? 'Soprano'
+    vocal_range&.include? 'Soprano'
   end
 
   def alto?
-    vocal_range.include? 'Alto'
+    vocal_range&.include? 'Alto'
   end
 
   def tenor?
-    vocal_range.include? 'Tenor'
+    vocal_range&.include? 'Tenor'
   end
 
   def bass?
-    vocal_range.include? 'Bass'
+    vocal_range&.include? 'Bass'
   end
 end

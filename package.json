@@ -2,14 +2,45 @@
   "name": "choir",
   "private": true,
   "engines": {
-    "node": "16.x"
+    "node": "20.x"
   },
   "dependencies": {
-    "@rails/webpacker": "^5.4.3",
-    "webpack": "^4.46.0",
-    "webpack-cli": "^3.3.12"
+    "@popperjs/core": "^2.11.8",
+    "@rails/actioncable": "^8.0.100",
+    "bootstrap": "^5.3.3",
+    "bootstrap-datepicker": "^1.10.0",
+    "bootstrap-icons": "^1.11.3",
+    "datatables.net": "^2.2.2",
+    "datatables.net-bs4": "^2.2.2",
+    "datatables.net-buttons": "^3.2.2",
+    "datatables.net-buttons-bs4": "^3.2.2",
+    "datatables.net-select": "^3.0.0",
+    "datatables.net-select-bs4": "^3.0.0",
+    "font-awesome": "^4.7.0",
+    "froala-editor": "^4.5.0",
+    "jquery": "^3.7.1",
+    "jquery-ui": "^1.14.1"
   },
   "scripts": {
-    "dev": "docker-compose -f docker-compose.yml up"
+    "build": "esbuild app/javascript/application.js --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets",
+    "build:css:compile": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css ./app/assets/stylesheets/admin.bootstrap.scss:./app/assets/builds/admin.css --no-source-map --load-path=node_modules",
+    "build:css:prefix": "postcss ./app/assets/builds/*.css --use=autoprefixer --replace",
+    "build:css": "yarn build:css:compile && yarn build:css:prefix",
+    "dev": "docker-compose -f docker-compose.yml up",
+    "watch:css": "nodemon --watch ./app/assets/stylesheets/ --ext scss --exec \"yarn build:css\""
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "devDependencies": {
+    "@rails/webpacker": "^5.4.3",
+    "autoprefixer": "^10.4.20",
+    "esbuild": "^0.25.0",
+    "nodemon": "^3.1.9",
+    "postcss": "^8.5.3",
+    "postcss-cli": "^11.0.0",
+    "sass": "^1.85.1",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12"
   }
 }

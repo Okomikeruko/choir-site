@@ -1,9 +1,13 @@
-require:
+plugins:
   - rubocop-rails
+  - rubocop-minitest
+
+require:
+  - rubocop-capybara
 
 AllCops:
   NewCops: enable
-  TargetRubyVersion: 3.0
+  TargetRubyVersion: 3.2
 
 Lint/MissingSuper:
   AllowedParentClasses: ["ApplicationPresenter"]
@@ -26,6 +30,12 @@ Metrics/MethodLength:
     - 'db/schema.rb'
     - 'db/migrate/*'
 
+Minitest/MultipleAssertions:
+  Max: 8
+  Include:
+    - 'test/controllers/**/*_test.rb'
+    - 'test/mailers/**/*_test.rb'
+
 Naming/AccessorMethodName:
   Exclude:
     - 'app/datatables/*'
@@ -45,7 +55,6 @@ Style/Documentation:
     - 'config/*'
     - 'db/schema.rb'
     - 'db/migrate/*'
-
 
 Style/MixinUsage:
   Exclude:

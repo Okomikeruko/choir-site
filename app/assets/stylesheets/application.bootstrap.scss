@@ -1,0 +1,79 @@
+// Base modules
+@use 'modules/colors' as colors;
+@use 'modules/media';
+
+// Import Bootstrap and Bootstrap Icons
+@use 'bootstrap/scss/bootstrap' with (
+  $primary: colors.$primary,
+  $secondary: colors.$secondary
+);
+@use 'bootstrap-icons/font/bootstrap-icons';
+
+// DataTables styles (use @use instead of @import)
+@use 'datatables.net-bs4/css/dataTables.bootstrap4' as *;
+@use 'datatables.net-select-bs4/css/select.bootstrap4' as *;
+@use 'datatables.net-buttons-bs4/css/buttons.bootstrap4' as *;
+
+// Partials
+@use 'partials/breadcrumbs';
+@use 'partials/buttons';
+@use 'partials/header';
+@use 'partials/misc';
+@use 'partials/music';
+@use 'partials/news';
+@use 'partials/profiles';
+@use 'partials/rehearsals';
+@use 'partials/title';
+@use 'partials/typography';
+
+body {
+  padding-bottom: 60px;
+}
+
+a {
+  text-decoration: none;
+}
+
+#error-explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error !optional;
+  .form-control {
+    color: var(--bs-danger);
+  }
+}
+
+.ui-state-highlight {
+  border: 1px solid #ddd;
+  background: #e6e6e6;
+  margin-bottom: 20px;
+
+  &.sheet-music-highlight {
+    height: 89px;
+  }
+
+  &.audio-highlight {
+    height: 146px;
+  }
+}
+
+.panel-title .glyphicon {
+  transition: all 333ms linear;
+}
+
+a.collapsed .glyphicon {
+  transform: rotate(-180deg);
+}
+
+.panel-group .panel {
+  margin: {
+    top: 15px;
+    bottom: 15px;
+  }
+}

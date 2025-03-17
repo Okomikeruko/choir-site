@@ -1,0 +1,26 @@
+- tab_prefix ||= "history"
+- song_groups ||= []
+
+.row
+  .col-md-10.mx-auto
+    - if song_groups.any?
+      .year-links.text-center
+        %ul.nav.nav-pills.justify-content-center
+          - song_groups.each do |year, _|
+            %li.nav-item
+              %a.nav-link{'data-bs-toggle': 'tab',
+                          href: "##{tab_prefix}-#{year}",
+                          class: "#{'active' if year == DateTime.now.year}"}= year
+      .tab-content
+        - song_groups.each do |year, months|
+          .tab-pane.fade{:role => "tabpanel",
+                         :id => "#{tab_prefix}-#{year}",
+                         :class => "#{ 'active show' if year == DateTime.now.year}" }
+            - months.each do |month, performances|
+              .letter-block
+                .letter-header
+                  %h2= month
+                - performances.each do |performance|
+                  %h3.date= performance.date.strftime("%m/%d/%Y")
+                  = simple_format performance.details
+                  = render performance.songs

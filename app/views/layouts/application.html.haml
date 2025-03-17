@@ -8,8 +8,8 @@
     = favicon_link_tag 'choir_favicon.png', rel: 'apple-touch-icon', type: 'image/png'
     = favicon_link_tag
     = csrf_meta_tags
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'application', "data-turbo-track": "reload"
+    = javascript_include_tag 'application', "data-turbo-track": "reload", type: "module"
   %body
     = render "layouts/header"
     = render "layouts/title"

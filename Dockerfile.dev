@@ -1,15 +1,8 @@
-FROM ruby:3.0-slim
+FROM whittakertech/choir-base:latest
 
 # Install system dependencies
 RUN apt-get update -qq && \
     apt-get install -y --no-install-recommends \
-        build-essential \
-        curl \
-        git \
-        gnupg \
-        libpq-dev \
-        postgresql-client \
-        software-properties-common \
         python3 \
         g++ \
         make \
@@ -18,21 +11,6 @@ RUN apt-get update -qq && \
         libffi-dev \
         vim && \
     rm -rf /var/lib/apt/lists/*
-
-# Setup NodeJS repository and install
-RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - && \
-    apt-get update -qq && \
-    apt-get install -y nodejs && \
-    rm -rf /var/lib/apt/lists/*
-
-# Setup Yarn repository and install
-RUN curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
-    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
-    apt-get update -qq && \
-    apt-get install -y yarn && \
-    rm -rf /var/lib/apt/lists/*
-
-WORKDIR /myapp
 
 # Set environment variables
 ENV GEM_HOME=/usr/local/bundle
@@ -44,10 +22,11 @@ ENV RAILS_ENV=development
 ENV NODE_ENV=development
 
 # Copy and install dependencies
-COPY Gemfile* ./
+COPY Gemfile* .ruby-version .node-version ./
 
 # Install all gems including development and test
-RUN bundle config unset without && \
+RUN gem update --system 3.6.6 && \
+    bundle config unset without && \
     bundle install && \
     bundle config set --local with "development test"
 

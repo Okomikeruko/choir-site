@@ -1,7 +1,26 @@
 # frozen_string_literal: true
 
+# Only load and start SimpleCov if not disabled
 require 'simplecov'
-SimpleCov.start
+require 'simplecov-json'
+
+SimpleCov.start 'rails' do
+  coverage_dir 'coverage'
+  enable_coverage :branch
+  formatter SimpleCov::Formatter::JSONFormatter
+  add_filter '/test/'
+  add_filter '/config/'
+  add_filter '/vendor/'
+  add_group 'Controllers', 'app/controllers'
+  add_group 'Models', 'app/models'
+  add_group 'Helpers', 'app/helpers'
+  add_group 'Mailers', 'app/mailers'
+  add_group 'Views', 'app/views'
+  add_group 'Jobs', 'app/jobs'
+  add_group 'Presenters', 'app/presenters'
+  add_group 'Model Concerns', 'app/models/concerns'
+  add_group 'Controller Concerns', 'app/controllers/concerns'
+end
 
 # Load Rails environment and necessary testing libraries
 require File.expand_path('../config/environment', __dir__)

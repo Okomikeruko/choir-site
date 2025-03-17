@@ -1,127 +1,33 @@
 -provide :title, "Music"
 -provide :bg, "pexels-photo-164821.jpeg"
 
+-tabs = [{id: "title", name: "By Title", partial: "alphabetical_sort", data: @songs_by_title, options: {prefix: "letter"}},
+         {id: "pending", name: "Upcoming Dates", partial: "date_sort", data: @pending_performances, options: {tab_prefix: 'pending'}},
+         {id: "history", name: "Performance History", partial: "date_sort", data: @performance_history, options: {tab_prefix: 'history'}},
+         {id: "unused", name: "Unscheduled Songs", partial: "alphabetical_sort", data: @unused_songs, options: {prefix: "unused"}}]
+
+-tab_ids = tabs.pluck(:id)
+-selected_tab = params[:tab].present? && tab_ids.include?(params[:tab]) ? params[:tab] : "title"
+-active_tab = "##{selected_tab}"
+
 %p
   Below you will find a complete list of all the songs and performances of the
   Cascade Sixth Ward's Choir sorted alphabetically, by our performance history,
   and a listing of our upcoming performance dates with the songs we will be
   singing.
 
-%ul.nav.nav-tabs.song-sorting{:role => "tablist"}
-  %li{:role => "presentation",
-      :class => "active"}
-    %a{:role => "tab",
-       :aria => { controls: "title" },
-       :data => { toggle: "tab" },
-       :href => "#title" }
-      By Title
-  %li{:role => "presentation"}
-    %a{:role => "tab",
-       :aria => { controls: "pending" },
-       :data => { toggle: "tab" },
-       :href => "#pending" }
-      Upcoming Dates
-  %li{:role => "presentation"}
-    %a{:role => "tab",
-       :aria => { controls: "history" },
-       :data => { toggle: "tab" },
-       :href => "#history" }
-      Performance History
-  %li{:role => "presentation"}
-    %a{:role => "tab",
-       :aria => { controls: "unused" },
-       :data => { toggle: "tab" },
-       :href => "#unused" }
-      Unscheduled Songs
+%ul.nav.nav-tabs.song-sorting
+  - tabs.each do |tab|
+    %li.nav-item
+      = link_to tab[:name],
+                "##{tab[:id]}",
+                class: "nav-link #{active_tab == "##{tab[:id]}" ? 'active' : ''}",
+                data: {'bs-toggle': "tab"},
+                aria: {controls: tab[:id]}
 
 .tab-content
-  .tab-pane.fade.in.active#title{:role => "tabpanel"}
-    .row
-      .col-md-10.col-md-offset-1
-        .letter-links.text-center
-          -@songs_by_title.each do |letter|
-            = " | " unless letter == @songs_by_title.first
-            =link_to letter[0], "#heading-#{letter[0]}",
-                     :data => { turbolinks: false }
-        -@songs_by_title.each do |letter|
-          .letter-block
-            .letter-header{:id => "heading-#{letter[0]}" }
-              %h2= letter[0]
-            -letter[1].each do |song|
-              =render song, alphabetized: true
-  .tab-pane.fade#pending{:role => "tabpanel"}
-    .row
-      .col-md-10.col-md-offset-1
-        -if @songs_pending.any?
-          .year-links.text-center
-            %ul.nav.nav-pills
-              -@songs_pending.each do |year|
-                %li{:role => "presentation",
-                    :class => "#{ 'active' if year == @songs_pending.first }"}
-                  %a{:role => "tab",
-                     :aria => { controls: "pending-#{year[0]}" },
-                     :data => { toggle: "tab" },
-                     :href => "#pending-#{year[0]}" }
-                    =year[0]
-          .tab-content
-            -@songs_pending.each do |year|
-              .tab-pane.fade{:role => "tabpanel",
-                             :id => "pending-#{year[0]}",
-                             :class => "#{ 'active in' if year == @songs_pending.first}" }
-                -year[1].each do |month|
-                  .letter-block
-                    .letter-header
-                      %h2=month[0].strftime("%b")
-                    -month[1].each do |performance|
-                      %h3.date=performance.date.strftime("%m/%d/%Y")
-                      =simple_format performance.details
-                      -performance.songs.each do |song|
-                        =render song
-  .tab-pane.fade#history{:role => "tabpanel"}
-    .row
-      .col-md-10.col-md-offset-1
-        -if @song_history.any?
-          .year-links.text-center
-            %ul.nav.nav-pills
-              -@song_history.each do |year|
-                %li{:role => "presentation",
-                    :class => "#{ 'active' if year == @song_history.first }"}
-                  %a{:role => "tab",
-                     :aria => { controls: "history-#{year[0]}" },
-                     :data => { toggle: "tab" },
-                     :href => "#history-#{year[0]}" }
-                    =year[0]
-          .tab-content
-            -@song_history.each do |year|
-              .tab-pane.fade{:role => "tabpanel",
-                             :id => "history-#{year[0]}",
-                             :class => "#{ 'active in' if year == @song_history.first}" }
-                -year[1].each do |month|
-                  .letter-block
-                    .letter-header
-                      %h2=month[0].strftime("%b")
-                    -month[1].each do |performance|
-                      %h3.date=performance.date.strftime("%m/%d/%Y")
-                      =simple_format performance.details
-                      -performance.songs.each do |song|
-                        =render song
-  .tab-pane.fade#unused{ :role => "tabpanel"}
-    .row
-      .col-md-10.col-md-offset-1
-        .letter-links.text-center
-          -@songs_unused.each do |letter|
-            = " | " unless letter == @songs_unused.first
-            =link_to letter[0], "#heading-#{letter[0]}-unused",
-                     :data => { turbolinks: false }
-        -@songs_unused.each do |letter|
-          .letter-block
-            .letter-header{:id => "heading-#{letter[0]}-unused" }
-              %h2= letter[0]
-            -letter[1].each do |song|
-              =render song, alphabetized: true
-
-:javascript
-  $('.nav-tabs a').click(function (e) {
-    e.preventDefault();
-    $(this).tab('show');
-  });
+  - tabs.each do |tab|
+    .tab-pane.fade{id: tab[:id],
+                  role: "tabpanel",
+                  class: active_tab == "##{tab[:id]}" ? "show active" : ""}
+      = render tab[:partial], song_groups: tab[:data], **tab.fetch(:options, {})

@@ -6,6 +6,6 @@ class StaticPagesController < ApplicationController
     @performances   = Performance.find_next 2
     @last_rehearsal = Rehearsal.find_most_recent
     @next_rehearsal = Rehearsal.find_next
-    @articles       = Article.first 3
+    @articles       = Article.published.first 3
   end
 end

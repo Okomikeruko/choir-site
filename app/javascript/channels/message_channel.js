@@ -1,12 +1,14 @@
-App.messages = App.cable.subscriptions.create("MessageChannel", {
-  connected: function() {
+import consumer from '../cable'
+
+consumer.subscriptions.create("MessageChannel", {
+  connected() {
     console.log("Connected to MessageChannel");
   },
 
-  disconnected: function() {
+  disconnected() {
   },
 
-  received: function(data) {
+  received(data) {
     this.updateUnreadBadge(data.unread_count)
 
     const tableId = '#messages-datatable';
