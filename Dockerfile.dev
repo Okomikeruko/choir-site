@@ -25,7 +25,8 @@ ENV NODE_ENV=development
 COPY Gemfile* .ruby-version .node-version ./
 
 # Install all gems including development and test
-RUN bundle config unset without && \
+RUN gem update --system 3.6.6 && \
+    bundle config unset without && \
     bundle install && \
     bundle config set --local with "development test"
 

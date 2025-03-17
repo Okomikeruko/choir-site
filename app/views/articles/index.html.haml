@@ -3,7 +3,7 @@
 
 .row
   .d-none.d-sm-block.col-sm-4.col-md-3.col-lg-2
-    =render "sorters"
+    =render "sorters", tags: @tags, categories: @categories, months: @months
   .col-sm-8.col-md-9.col-lg-10
     = render @articles
 

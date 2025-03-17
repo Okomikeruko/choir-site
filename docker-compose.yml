@@ -10,6 +10,8 @@ services:
     command: foreman start -f Procfile.dev
     environment:
       - DATABASE_URL=postgresql://choir_postgres:password@postgres13:5432/
+      - RAILS_ENV=development
+      - SOURCE_PATH=$PWD
     networks:
       - postgres_network
     ports:

@@ -42,9 +42,9 @@
     <orderEntry type="library" scope="PROVIDED" name="ajax-datatables-rails (v1.5.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ansi (v1.5.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ast (v2.4.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="aws-eventstream (v1.3.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="aws-partitions (v1.1059.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-core (v3.219.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-eventstream (v1.3.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-partitions (v1.1067.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-core (v3.220.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="aws-sdk-kms (v1.99.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="aws-sdk-s3 (v1.182.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="aws-sigv4 (v1.11.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
@@ -88,7 +88,7 @@
     <orderEntry type="library" scope="PROVIDED" name="foreman (v0.88.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="formatador (v1.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="globalid (v1.2.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="google-protobuf (v4.29.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="google-protobuf (v4.30.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="guard (v2.19.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="guard-compat (v1.2.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="guard-minitest (v2.4.6, Remote: ruby-3.2.7-p253) [gem]" level="application" />
@@ -103,7 +103,7 @@
     <orderEntry type="library" scope="PROVIDED" name="jmespath (v1.6.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jquery-ui-rails (v7.0.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jsbundling-rails (v1.3.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="json (v2.10.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="json (v2.10.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="language_server-protocol (v3.17.0.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="lint_roller (v1.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="listen (v3.9.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
@@ -116,10 +116,10 @@
     <orderEntry type="library" scope="PROVIDED" name="marcel (v1.0.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="method_source (v1.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mime-types (v3.6.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="mime-types-data (v3.2025.0220, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="mime-types-data (v3.2025.0304, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mini_magick (v4.13.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mini_mime (v1.1.5, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="minitest (v5.25.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="minitest (v5.25.5, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="minitest-reporters (v1.7.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.15.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multipart-post (v2.4.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
@@ -130,7 +130,7 @@
     <orderEntry type="library" scope="PROVIDED" name="net-protocol (v0.2.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="net-smtp (v0.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nio4r (v2.7.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.18.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.18.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="notiffany (v0.1.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="orm_adapter (v0.5.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ostruct (v0.6.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
@@ -147,7 +147,8 @@
     <orderEntry type="library" scope="PROVIDED" name="psych (v5.2.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="puma (v6.6.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="racc (v1.8.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rack (v3.1.10, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rack (v3.1.12, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rack-contrib (v2.5.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-mini-profiler (v3.3.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-session (v2.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-test (v2.2.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
@@ -164,15 +165,15 @@
     <orderEntry type="library" scope="PROVIDED" name="rb-inotify (v0.11.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rdbg (v0.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rdoc (v6.12.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="redis-client (v0.23.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="redis-client (v0.24.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="regexp_parser (v2.10.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="reline (v0.6.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="require_all (v3.0.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="responders (v3.1.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rouge (v4.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop (v1.73.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop-ast (v1.38.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop-capybara (v2.21.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubocop (v1.74.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubocop-ast (v1.39.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubocop-capybara (v2.22.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubocop-minitest (v0.37.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubocop-rails (v2.30.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby-prof (v1.7.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
@@ -182,7 +183,7 @@
     <orderEntry type="library" scope="PROVIDED" name="securerandom (v0.4.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sexp_processor (v4.17.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="shellany (v0.0.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="sidekiq (v7.3.9, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="sidekiq (v8.0.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="simplecov (v0.22.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="simplecov-html (v0.13.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="simplecov-json (v0.2.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
@@ -213,76 +214,98 @@
   <component name="RailsGeneratorsCache">
     <option name="generators">
       <list>
-        <option value="active_record:migration" />
-        <option value="active_record:model" />
-        <option value="active_record:observer" />
-        <option value="active_record:session_migration" />
+        <option value="active_record:application_record" />
+        <option value="active_record:devise" />
+        <option value="active_record:multi_db" />
+        <option value="application_record" />
+        <option value="benchmark" />
+        <option value="bullet:install" />
+        <option value="cancan:ability" />
+        <option value="channel" />
+        <option value="cocoon:install" />
         <option value="controller" />
+        <option value="datatable" />
+        <option value="devise" />
+        <option value="devise:controllers" />
+        <option value="devise:install" />
+        <option value="devise:views" />
         <option value="erb:controller" />
         <option value="erb:mailer" />
         <option value="erb:scaffold" />
         <option value="generator" />
+        <option value="haml:application_layout" />
         <option value="helper" />
         <option value="integration_test" />
+        <option value="jbuilder" />
+        <option value="job" />
+        <option value="mailbox" />
         <option value="mailer" />
-        <option value="metal" />
         <option value="migration" />
         <option value="model" />
-        <option value="model_subclass" />
-        <option value="observer" />
-        <option value="performance_test" />
-        <option value="plugin" />
+        <option value="mongoid:devise" />
+        <option value="rack_mini_profiler:install" />
+        <option value="rack_profiler:install" />
         <option value="resource" />
+        <option value="responders:install" />
+        <option value="responders_controller" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
-        <option value="session_migration" />
-        <option value="stylesheets" />
-        <option value="test_unit:controller" />
-        <option value="test_unit:helper" />
-        <option value="test_unit:integration" />
-        <option value="test_unit:mailer" />
-        <option value="test_unit:model" />
-        <option value="test_unit:observer" />
-        <option value="test_unit:performance" />
+        <option value="sidekiq:job" />
+        <option value="system_test" />
+        <option value="task" />
+        <option value="test_unit:channel" />
+        <option value="test_unit:generator" />
+        <option value="test_unit:install" />
+        <option value="test_unit:mailbox" />
         <option value="test_unit:plugin" />
-        <option value="test_unit:scaffold" />
       </list>
     </option>
     <option name="myGenerators">
       <list>
-        <option value="active_record:migration" />
-        <option value="active_record:model" />
-        <option value="active_record:observer" />
-        <option value="active_record:session_migration" />
+        <option value="active_record:application_record" />
+        <option value="active_record:devise" />
+        <option value="active_record:multi_db" />
+        <option value="application_record" />
+        <option value="benchmark" />
+        <option value="bullet:install" />
+        <option value="cancan:ability" />
+        <option value="channel" />
+        <option value="cocoon:install" />
         <option value="controller" />
+        <option value="datatable" />
+        <option value="devise" />
+        <option value="devise:controllers" />
+        <option value="devise:install" />
+        <option value="devise:views" />
         <option value="erb:controller" />
         <option value="erb:mailer" />
         <option value="erb:scaffold" />
         <option value="generator" />
+        <option value="haml:application_layout" />
         <option value="helper" />
         <option value="integration_test" />
+        <option value="jbuilder" />
+        <option value="job" />
+        <option value="mailbox" />
         <option value="mailer" />
-        <option value="metal" />
         <option value="migration" />
         <option value="model" />
-        <option value="model_subclass" />
-        <option value="observer" />
-        <option value="performance_test" />
-        <option value="plugin" />
+        <option value="mongoid:devise" />
+        <option value="rack_mini_profiler:install" />
+        <option value="rack_profiler:install" />
         <option value="resource" />
+        <option value="responders:install" />
+        <option value="responders_controller" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
-        <option value="session_migration" />
-        <option value="stylesheets" />
-        <option value="test_unit:controller" />
-        <option value="test_unit:helper" />
-        <option value="test_unit:integration" />
-        <option value="test_unit:mailer" />
-        <option value="test_unit:model" />
-        <option value="test_unit:observer" />
-        <option value="test_unit:performance" />
+        <option value="sidekiq:job" />
+        <option value="system_test" />
+        <option value="task" />
+        <option value="test_unit:channel" />
+        <option value="test_unit:generator" />
+        <option value="test_unit:install" />
+        <option value="test_unit:mailbox" />
         <option value="test_unit:plugin" />
-        <option value="test_unit:scaffold" />
       </list>
     </option>
   </component>

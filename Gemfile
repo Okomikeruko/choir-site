@@ -74,6 +74,7 @@ group :development do
   gem 'erb2haml'
   gem 'foreman'
   gem 'listen'
+  gem 'meta_request', git: 'https://github.com/dejan/rails_panel.git'
   gem 'pg_query'
   gem 'prosopite'
   gem 'rails_best_practices'
