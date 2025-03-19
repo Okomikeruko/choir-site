@@ -1,20 +1,15 @@
 FROM whittakertech/choir-base:latest
 
-# Install system dependencies, Node.js v16.x, and Yarn
-RUN apt-get update -qq && \
-    apt-get install -y --no-install-recommends \
-        libv8-dev && \
-    apt-get clean && rm -rf /var/lib/apt/lists/*
-
 # Set Rails to run in production
-# Use existing SECRET_KEY_BASE if available, otherwise generate a random one
 ENV RAILS_ENV=production \
     NODE_ENV=production \
     BUNDLE_WITHOUT="development test"
+ARG SECRET_KEY_BASE=dummy
 
 # Install gems
-COPY Gemfile Gemfile.lock ./
-RUN bundle config set --local without $BUNDLE_WITHOUT && \
+COPY Gemfile* .ruby-version .node-version ./
+RUN bundle update --bundler && \
+    bundle config set --local without $BUNDLE_WITHOUT && \
     bundle install --jobs 4 --retry 3
 
 # Install Yarn packages
@@ -25,10 +20,7 @@ RUN yarn install --frozen-lockfile
 COPY . .
 
 # Precompile assets
-RUN SECRET_KEY_BASE=dummy bundle exec rake assets:precompile || \
-    (echo "Asset compilation failed - check JavaScript syntax" && \
-     NODE_ENV=production RAILS_ENV=production bundle exec rake assets:clobber && \
-     SECRET_KEY_BASE=dummy bundle exec rake assets:precompile --trace)
+RUN SECRET_KEY_BASE=$SECRET_KEY_BASE exec rake assets:precompile --trace
 
 # Expose the port Heroku sets
 EXPOSE $PORT

@@ -1,6 +1,8 @@
-ARG RUBY_VERSION
-ARG NODE_VERSION
+ARG RUBY_VERSION=3.2.7
+
 FROM ruby:${RUBY_VERSION}-slim
+
+ARG NODE_VERSION=20.18.3
 
 # Install system dependencies
 RUN apt-get update -qq && \
@@ -10,12 +12,14 @@ RUN apt-get update -qq && \
         git \
         gnupg \
         libpq-dev \
+        libyaml-dev \
         postgresql-client \
         software-properties-common && \
     rm -rf /var/lib/apt/lists/*
 
 # Setup NodeJS repository and install
-RUN NODE_MAJOR=${NODE_VERSION%%.*} && \
+RUN NODE_MAJOR=$(echo ${NODE_VERSION} | cut -d. -f1) && \
+    echo "Using Node.js major version: ${NODE_MAJOR}" && \
     curl -sL https://deb.nodesource.com/setup_${NODE_MAJOR}.x | bash - && \
     apt-get update -qq && \
     apt-get install -y nodejs && \
@@ -27,5 +31,4 @@ RUN NODE_MAJOR=${NODE_VERSION%%.*} && \
 WORKDIR /choir-site
 
 # Install bundler
-RUN gem install bundler -v "~> 2.4.0" && \
-    bundle update --bundler
+RUN gem install bundler -v "~> 2.4.0"

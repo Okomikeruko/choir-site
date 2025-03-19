@@ -13,14 +13,14 @@ $secondary-rgb: $brand-secondary-rgb;
 
 $original-blue: #4688f1;
 
-$p: hue($brand-primary);
-$o: hue($original-blue);
+$p: color.hue($brand-primary);
+$o: color.hue($original-blue);
 $hue-rotate: $p - $o;
 
-$s1: saturation($brand-primary);
-$s2: saturation($original-blue);
+$s1: color.saturation($brand-primary);
+$s2: color.saturation($original-blue);
 $hue-saturate: math.div($s1, math.div($s2, 100%));
 
-$b1: lightness($brand-primary);
-$b2: lightness($original-blue);
+$b1: color.lightness($brand-primary);
+$b2: color.lightness($original-blue);
 $hue-lightness: math.div($b1, math.div($b2, 100%));
