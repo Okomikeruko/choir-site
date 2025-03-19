@@ -58,7 +58,7 @@ should_exclude_path() {
   # Exclude files larger than 300KB
   if [[ -f "$file_path" ]]; then
     local file_size=$(stat -f "%z" "$file_path" 2>/dev/null || stat -c "%s" "$file_path" 2>/dev/null)
-    if [[ -n "$file_size" && "$file_size" -gt 307200 ]]; then
+    if [[ -n "$file_size" && "$file_size" -gt 8196 ]]; then
       echo "Skipping large file: $file_path ($file_size bytes)"
       return 0 # True, exclude this file
     fi

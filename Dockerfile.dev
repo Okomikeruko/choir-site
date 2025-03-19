@@ -7,7 +7,6 @@ RUN apt-get update -qq && \
         g++ \
         make \
         pkg-config \
-        libyaml-dev \
         libffi-dev \
         vim && \
     rm -rf /var/lib/apt/lists/*

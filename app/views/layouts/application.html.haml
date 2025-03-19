@@ -15,5 +15,6 @@
     = render "layouts/title"
     .container
       .breadcrumbs
-        = render_breadcrumbs :tag => :span, :seperator => " >> "
+        %ol.breadcrumb
+          = render_breadcrumbs tag: :span, separator: "&nbsp; >> &nbsp;"
       = yield

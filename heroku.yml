@@ -4,6 +4,7 @@ build:
   args:
     RUBY_VERSION: $(cat .ruby-version)
     NODE_VERSION: $(cat .node-version)
+    SECRET_KEY_BASE: ${SECRET_KEY_BASE}
   config:
     RAILS_ENV: production
     NODE_ENV: production

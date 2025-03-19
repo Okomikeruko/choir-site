@@ -2,7 +2,7 @@
 
 /*******************************************************************************
 * File: .github/workflows/main.yml
-* Size: 1995 bytes
+* Size: 1935 bytes
 *******************************************************************************/
 
 name: Rails CI Pipeline
@@ -24,7 +24,6 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.2.7
           bundler-cache: true
 
       - name: Rubocop
@@ -56,7 +55,6 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0.7
           bundler-cache: true
 
       - name: Setup test database
@@ -163,712 +161,6 @@ yarn-debug.log*
 /dataSources.local.xml
 
 /*******************************************************************************
-* File: .idea/choir-site.iml
-* Size: 53561 bytes
-*******************************************************************************/
-
-<?xml version="1.0" encoding="UTF-8"?>
-<module type="RUBY_MODULE" version="4">
-  <component name="FacetManager">
-    <facet type="RailsFacetType" name="Ruby on Rails">
-      <configuration>
-        <RAILS_FACET_CONFIG_ID NAME="RAILS_FACET_SUPPORT_REMOVED" VALUE="false" />
-        <RAILS_FACET_CONFIG_ID NAME="RAILS_TESTS_SOURCES_PATCHED" VALUE="true" />
-        <RAILS_FACET_CONFIG_ID NAME="RAILS_FACET_APPLICATION_ROOT" VALUE="$MODULE_DIR$" />
-      </configuration>
-    </facet>
-  </component>
-  <component name="ModuleRunConfigurationManager">
-    <shared />
-  </component>
-  <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/features" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
-      <excludeFolder url="file://$MODULE_DIR$/.bundle" />
-      <excludeFolder url="file://$MODULE_DIR$/components" />
-      <excludeFolder url="file://$MODULE_DIR$/log" />
-      <excludeFolder url="file://$MODULE_DIR$/public/packs" />
-      <excludeFolder url="file://$MODULE_DIR$/public/system" />
-      <excludeFolder url="file://$MODULE_DIR$/tmp" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/bundle" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/cache" />
-    </content>
-    <orderEntry type="jdk" jdkName="Remote: ruby-3.2.7-p253" jdkType="RUBY_SDK" />
-    <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="actioncable (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actionmailbox (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actionmailer (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actionpack (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actiontext (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actionview (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activejob (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activemodel (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activerecord (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activestorage (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activesupport (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ajax-datatables-rails (v1.5.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ansi (v1.5.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ast (v2.4.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="aws-eventstream (v1.3.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="aws-partitions (v1.1059.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-core (v3.219.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-kms (v1.99.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-s3 (v1.182.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="aws-sigv4 (v1.11.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="base64 (v0.2.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.20, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="benchmark (v0.4.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="better_errors (v2.10.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bigdecimal (v3.1.9, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bindex (v0.8.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="binding_of_caller (v1.0.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bootstrap-datepicker-rails (v1.10.0.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bootstrap-will_paginate (v1.0.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="brakeman (v7.0.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="breadcrumbs_on_rails (v4.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="builder (v3.3.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bullet (v8.0.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bundler (v2.4.19, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="byebug (v11.1.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="cancan (v1.6.10, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="cocoon (v1.2.15, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="code_analyzer (v0.5.5, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="coderay (v1.1.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="concurrent-ruby (v1.1.10, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="connection_pool (v2.5.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="crass (v1.0.6, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="cssbundling-rails (v1.4.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="date (v3.4.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="debug (v1.10.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="debug_inspector (v1.2.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="devise (v4.9.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="docile (v1.4.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="dotenv (v3.1.7, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="drb (v2.2.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="erb2haml (v0.1.5, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="erubi (v1.13.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="erubis (v2.7.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="execjs (v2.10.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="faker (v3.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ffi (v1.17.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="font-awesome-sass (v6.7.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="foreman (v0.88.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="formatador (v1.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="globalid (v1.2.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="google-protobuf (v4.29.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="guard (v2.19.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="guard-compat (v1.2.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="guard-minitest (v2.4.6, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="haml (v6.3.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="haml-rails (v2.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="html2haml (v2.3.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="i18n (v1.14.7, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="invisible_captcha (v2.3.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="io-console (v0.8.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="irb (v1.15.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.13.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="jmespath (v1.6.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="jquery-ui-rails (v7.0.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="jsbundling-rails (v1.3.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="json (v2.10.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="language_server-protocol (v3.17.0.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="lint_roller (v1.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="listen (v3.9.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="little-plugger (v1.1.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="logger (v1.6.6, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="logging (v2.3.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="loofah (v2.24.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="lumberjack (v1.2.10, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="mail (v2.8.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="marcel (v1.0.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="method_source (v1.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="mime-types (v3.6.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="mime-types-data (v3.2025.0220, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="mini_magick (v4.13.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="mini_mime (v1.1.5, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="minitest (v5.25.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="minitest-reporters (v1.7.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.15.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="multipart-post (v2.4.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="mutex_m (v0.3.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="nenv (v0.3.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="net-imap (v0.5.6, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="net-pop (v0.1.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="net-protocol (v0.2.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="net-smtp (v0.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="nio4r (v2.7.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.18.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="notiffany (v0.1.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="orm_adapter (v0.5.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ostruct (v0.6.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="parallel (v1.26.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="parser (v3.3.7.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="pg (v1.5.9, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="pg_query (v6.0.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="pp (v0.6.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="prettyprint (v0.2.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="propshaft (v1.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="prosopite (v2.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="pry (v0.15.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="psych (v5.2.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="puma (v6.6.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="racc (v1.8.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rack (v3.1.10, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rack-mini-profiler (v3.3.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rack-session (v2.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rack-test (v2.2.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rackup (v2.2.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rails (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rails-controller-testing (v1.0.5, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rails-dom-testing (v2.2.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rails-html-sanitizer (v1.6.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rails_best_practices (v1.23.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="railties (v7.1.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rainbow (v3.1.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rake (v13.2.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rb-fsevent (v0.11.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rb-inotify (v0.11.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rdbg (v0.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rdoc (v6.12.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="redis-client (v0.23.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="regexp_parser (v2.10.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="reline (v0.6.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="require_all (v3.0.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="responders (v3.1.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rouge (v4.5.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop (v1.73.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop-ast (v1.38.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop-capybara (v2.21.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop-minitest (v0.37.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop-rails (v2.30.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ruby-prof (v1.7.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ruby-progressbar (v1.13.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ruby_parser (v3.21.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="sassc (v2.4.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="securerandom (v0.4.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="sexp_processor (v4.17.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="shellany (v0.0.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="sidekiq (v7.3.9, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="simplecov (v0.22.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="simplecov-html (v0.13.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="simplecov_json_formatter (v0.1.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="stringio (v3.1.5, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="temple (v0.10.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="thor (v1.3.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="tilt (v2.6.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="timeout (v0.4.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="turbo-rails (v2.0.13, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="tzinfo (v2.0.6, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="uglifier (v3.2.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="unicode-display_width (v3.1.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="unicode-emoji (v4.0.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="uniform_notifier (v1.16.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="warden (v1.2.9, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="web-console (v4.2.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="websocket-driver (v0.7.7, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="websocket-extensions (v0.1.5, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="will_paginate (v4.0.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="wysiwyg-rails (v4.5.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="zeitwerk (v2.7.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-  </component>
-  <component name="RModuleSettingsStorage">
-    <LOAD_PATH number="0" />
-    <I18N_FOLDERS number="1" string0="$MODULE_DIR$/config/locales" />
-  </component>
-  <component name="RailsGeneratorsCache">
-    <option name="generators">
-      <list>
-        <option value="active_record:migration" />
-        <option value="active_record:model" />
-        <option value="active_record:observer" />
-        <option value="active_record:session_migration" />
-        <option value="controller" />
-        <option value="erb:controller" />
-        <option value="erb:mailer" />
-        <option value="erb:scaffold" />
-        <option value="generator" />
-        <option value="helper" />
-        <option value="integration_test" />
-        <option value="mailer" />
-        <option value="metal" />
-        <option value="migration" />
-        <option value="model" />
-        <option value="model_subclass" />
-        <option value="observer" />
-        <option value="performance_test" />
-        <option value="plugin" />
-        <option value="resource" />
-        <option value="scaffold" />
-        <option value="scaffold_controller" />
-        <option value="session_migration" />
-        <option value="stylesheets" />
-        <option value="test_unit:controller" />
-        <option value="test_unit:helper" />
-        <option value="test_unit:integration" />
-        <option value="test_unit:mailer" />
-        <option value="test_unit:model" />
-        <option value="test_unit:observer" />
-        <option value="test_unit:performance" />
-        <option value="test_unit:plugin" />
-        <option value="test_unit:scaffold" />
-      </list>
-    </option>
-    <option name="myGenerators">
-      <list>
-        <option value="active_record:migration" />
-        <option value="active_record:model" />
-        <option value="active_record:observer" />
-        <option value="active_record:session_migration" />
-        <option value="controller" />
-        <option value="erb:controller" />
-        <option value="erb:mailer" />
-        <option value="erb:scaffold" />
-        <option value="generator" />
-        <option value="helper" />
-        <option value="integration_test" />
-        <option value="mailer" />
-        <option value="metal" />
-        <option value="migration" />
-        <option value="model" />
-        <option value="model_subclass" />
-        <option value="observer" />
-        <option value="performance_test" />
-        <option value="plugin" />
-        <option value="resource" />
-        <option value="scaffold" />
-        <option value="scaffold_controller" />
-        <option value="session_migration" />
-        <option value="stylesheets" />
-        <option value="test_unit:controller" />
-        <option value="test_unit:helper" />
-        <option value="test_unit:integration" />
-        <option value="test_unit:mailer" />
-        <option value="test_unit:model" />
-        <option value="test_unit:observer" />
-        <option value="test_unit:performance" />
-        <option value="test_unit:plugin" />
-        <option value="test_unit:scaffold" />
-      </list>
-    </option>
-  </component>
-  <component name="RailsPaths" isManagedAutomatically="true">
-    <entry key="app">
-      <value>file://$MODULE_DIR$/app</value>
-    </entry>
-    <entry key="app/assets">
-      <value>file://$MODULE_DIR$/app/assets</value>
-    </entry>
-    <entry key="app/channels">
-      <value>file://$MODULE_DIR$/app/channels</value>
-    </entry>
-    <entry key="app/controllers">
-      <value>file://$MODULE_DIR$/app/controllers</value>
-    </entry>
-    <entry key="app/helpers">
-      <value>file://$MODULE_DIR$/app/helpers</value>
-    </entry>
-    <entry key="app/mailers">
-      <value>file://$MODULE_DIR$/app/mailers</value>
-    </entry>
-    <entry key="app/models">
-      <value>file://$MODULE_DIR$/app/models</value>
-    </entry>
-    <entry key="app/views">
-      <value>file://$MODULE_DIR$/app/views</value>
-    </entry>
-    <entry key="config">
-      <value>file://$MODULE_DIR$/config</value>
-    </entry>
-    <entry key="config/cable">
-      <value>file://$MODULE_DIR$/config/cable.yml</value>
-    </entry>
-    <entry key="config/database">
-      <value>file://$MODULE_DIR$/config/database.yml</value>
-    </entry>
-    <entry key="config/environment">
-      <value>file://$MODULE_DIR$/config/environment.rb</value>
-    </entry>
-    <entry key="config/environments">
-      <value>file://$MODULE_DIR$/config/environments</value>
-    </entry>
-    <entry key="config/initializers">
-      <value>file://$MODULE_DIR$/config/initializers</value>
-    </entry>
-    <entry key="config/locales">
-      <value>file://$MODULE_DIR$/config/locales</value>
-    </entry>
-    <entry key="config/routes">
-      <value>file://$MODULE_DIR$/config/routes</value>
-    </entry>
-    <entry key="config/routes.rb">
-      <value>file://$MODULE_DIR$/config/routes.rb</value>
-    </entry>
-    <entry key="config/secrets">
-      <value>file://$MODULE_DIR$/config</value>
-    </entry>
-    <entry key="db">
-      <value>file://$MODULE_DIR$/db</value>
-    </entry>
-    <entry key="db/migrate">
-      <value>file://$MODULE_DIR$/db/migrate</value>
-    </entry>
-    <entry key="db/seeds.rb">
-      <value>file://$MODULE_DIR$/db/seeds.rb</value>
-    </entry>
-    <entry key="lib">
-      <value>file://$MODULE_DIR$/lib</value>
-    </entry>
-    <entry key="lib/assets">
-      <value>file://$MODULE_DIR$/lib/assets</value>
-    </entry>
-    <entry key="lib/tasks">
-      <value>file://$MODULE_DIR$/lib/tasks</value>
-    </entry>
-    <entry key="lib/templates">
-      <value>file://$MODULE_DIR$/lib/templates</value>
-    </entry>
-    <entry key="log">
-      <value>file://$MODULE_DIR$/log/development.log</value>
-    </entry>
-    <entry key="public">
-      <value>file://$MODULE_DIR$/public</value>
-    </entry>
-    <entry key="public/javascripts">
-      <value>file://$MODULE_DIR$/public/javascripts</value>
-    </entry>
-    <entry key="public/stylesheets">
-      <value>file://$MODULE_DIR$/public/stylesheets</value>
-    </entry>
-    <entry key="test/mailers/previews">
-      <value>file://$MODULE_DIR$/test/mailers/previews</value>
-      <value>file:///choir-site/test/mailers/previews</value>
-    </entry>
-    <entry key="tmp">
-      <value>file://$MODULE_DIR$/tmp</value>
-    </entry>
-    <entry key="vendor">
-      <value>file://$MODULE_DIR$/vendor</value>
-    </entry>
-    <entry key="vendor/assets">
-      <value>file://$MODULE_DIR$/vendor/assets</value>
-    </entry>
-  </component>
-  <component name="RakeTasksCache-v2">
-    <option name="myRootTask">
-      <RakeTaskImpl id="rake">
-        <subtasks>
-          <RakeTaskImpl id="action_mailbox">
-            <subtasks>
-              <RakeTaskImpl id="ingress">
-                <subtasks>
-                  <RakeTaskImpl description="Relay an inbound email from Exim to Action Mailbox (URL and INGRESS_PASSWORD required)" fullCommand="action_mailbox:ingress:exim" id="exim" />
-                  <RakeTaskImpl description="Relay an inbound email from Postfix to Action Mailbox (URL and INGRESS_PASSWORD required)" fullCommand="action_mailbox:ingress:postfix" id="postfix" />
-                  <RakeTaskImpl description="Relay an inbound email from Qmail to Action Mailbox (URL and INGRESS_PASSWORD required)" fullCommand="action_mailbox:ingress:qmail" id="qmail" />
-                  <RakeTaskImpl description="" fullCommand="action_mailbox:ingress:environment" id="environment" />
-                </subtasks>
-              </RakeTaskImpl>
-              <RakeTaskImpl description="Install Action Mailbox and its dependencies" fullCommand="action_mailbox:install" id="install" />
-              <RakeTaskImpl id="install">
-                <subtasks>
-                  <RakeTaskImpl description="Copy migrations from action_mailbox to application" fullCommand="action_mailbox:install:migrations" id="migrations" />
-                </subtasks>
-              </RakeTaskImpl>
-            </subtasks>
-          </RakeTaskImpl>
-          <RakeTaskImpl id="action_text">
-            <subtasks>
-              <RakeTaskImpl description="Copy over the migration, stylesheet, and JavaScript files" fullCommand="action_text:install" id="install" />
-              <RakeTaskImpl id="install">
-                <subtasks>
-                  <RakeTaskImpl description="Copy migrations from action_text to application" fullCommand="action_text:install:migrations" id="migrations" />
-                </subtasks>
-              </RakeTaskImpl>
-            </subtasks>
-          </RakeTaskImpl>
-          <RakeTaskImpl id="active_storage">
-            <subtasks>
-              <RakeTaskImpl description="Copy over the migration needed to the application" fullCommand="active_storage:install" id="install" />
-              <RakeTaskImpl id="install">
-                <subtasks>
-                  <RakeTaskImpl description="" fullCommand="active_storage:install:migrations" id="migrations" />
-                </subtasks>
-              </RakeTaskImpl>
-              <RakeTaskImpl description="" fullCommand="active_storage:update" id="update" />
-            </subtasks>
-          </RakeTaskImpl>
-          <RakeTaskImpl id="app">
-            <subtasks>
-              <RakeTaskImpl description="Apply the template supplied by LOCATION=(/path/to/template) or URL" fullCommand="app:template" id="template" />
-              <RakeTaskImpl description="Update configs and some other initially generated files (or use just update:configs or update:bin)" fullCommand="app:update" id="update" />
-              <RakeTaskImpl id="templates">
-                <subtasks>
-                  <RakeTaskImpl description="" fullCommand="app:templates:copy" id="copy" />
-                </subtasks>
-              </RakeTaskImpl>
-              <RakeTaskImpl id="update">
-                <subtasks>
-                  <RakeTaskImpl description="" fullCommand="app:update:active_storage" id="active_storage" />
-                  <RakeTaskImpl description="" fullCommand="app:update:bin" id="bin" />
-                  <RakeTaskImpl description="" fullCommand="app:update:configs" id="configs" />
-                  <RakeTaskImpl description="" fullCommand="app:update:upgrade_guide_info" id="upgrade_guide_info" />
-                </subtasks>
-              </RakeTaskImpl>
-            </subtasks>
-          </RakeTaskImpl>
-          <RakeTaskImpl id="assets">
-            <subtasks>
-              <RakeTaskImpl description="Remove old compiled assets" fullCommand="assets:clean[keep]" id="clean[keep]" />
-              <RakeTaskImpl description="Remove compiled assets" fullCommand="assets:clobber" id="clobber" />
-              <RakeTaskImpl description="Load asset compile environment" fullCommand="assets:environment" id="environment" />
-              <RakeTaskImpl description="Compile all the assets named in config.assets.precompile" fullCommand="assets:precompile" id="precompile" />
-              <RakeTaskImpl description="" fullCommand="assets:clean" id="clean" />
-            </subtasks>
-          </RakeTaskImpl>
-          <RakeTaskImpl id="cache_digests">
-            <subtasks>
-              <RakeTaskImpl description="Lookup first-level dependencies for TEMPLATE (like messages/show or comments/_comment.html)" fullCommand="cache_digests:dependencies" id="dependencies" />
-              <RakeTaskImpl description="Lookup nested dependencies for TEMPLATE (like messages/show or comments/_comment.html)" fullCommand="cache_digests:nested_dependencies" id="nested_dependencies" />
-            </subtasks>
-          </RakeTaskImpl>
-          <RakeTaskImpl id="db">
-            <subtasks>
-              <RakeTaskImpl description="Create the database from DATABASE_URL or config/database.yml for the current RAILS_ENV (use db:create:all to create all databases in the config). Without RAILS_ENV or when RAILS_ENV is development, it defaults to creating the development and test databases, except when DATABASE_URL is present" fullCommand="db:create" id="create" />
-              <RakeTaskImpl description="Drop the database from DATABASE_URL or config/database.yml for the current RAILS_ENV (use db:drop:all to drop all databases in the config). Without RAILS_ENV or when RAILS_ENV is development, it defaults to dropping the development and test databases, except when DATABASE_URL is present" fullCommand="db:drop" id="drop" />
-              <RakeTaskImpl id="encryption">
-                <subtasks>
-                  <RakeTaskImpl description="Generate a set of keys for configuring Active Record encryption in a given environment" fullCommand="db:encryption:init" id="init" />
-                </subtasks>
-              </RakeTaskImpl>
-              <RakeTaskImpl id="environment">
-                <subtasks>
-                  <RakeTaskImpl description="Set the environment value for the database" fullCommand="db:environment:set" id="set" />
-                </subtasks>
-              </RakeTaskImpl>
-              <RakeTaskImpl id="fixtures">
-                <subtasks>
-                  <RakeTaskImpl description="Load fixtures into the current environment's database" fullCommand="db:fixtures:load" id="load" />
-                  <RakeTaskImpl description="" fullCommand="db:fixtures:identify" id="identify" />
-                </subtasks>
-              </RakeTaskImpl>
-              <RakeTaskImpl description="Migrate the database (options: VERSION=x, VERBOSE=false, SCOPE=blog)" fullCommand="db:migrate" id="migrate" />
-              <RakeTaskImpl id="migrate">
-                <subtasks>
-                  <RakeTaskImpl description="Run the &quot;down&quot; for a given migration VERSION" fullCommand="db:migrate:down" id="down" />
-                  <RakeTaskImpl description="Roll back the database one migration and re-migrate up (options: STEP=x, VERSION=x)" fullCommand="db:migrate:redo" id="redo" />
-                  <RakeTaskImpl description="Display status of migrations" fullCommand="db:migrate:status" id="status" />
-                  <RakeTaskImpl description="Run the &quot;up&quot; for a given migration VERSION" fullCommand="db:migrate:up" id="up" />
-                  <RakeTaskImpl description="" fullCommand="db:migrate:reset" id="reset" />
-                </subtasks>
-              </RakeTaskImpl>
-              <RakeTaskImpl description="Run setup if database does not exist, or run migrations if it does" fullCommand="db:prepare" id="prepare" />
-              <RakeTaskImpl description="Drop and recreate all databases from their schema for the current environment and load the seeds" fullCommand="db:reset" id="reset" />
-              <RakeTaskImpl description="Roll the schema back to the previous version (specify steps w/ STEP=n)" fullCommand="db:rollback" id="rollback" />
-              <RakeTaskImpl id="schema">
-                <subtasks>
-                  <RakeTaskImpl id="cache">
-                    <subtasks>
-                      <RakeTaskImpl description="Clear a db/schema_cache.yml file" fullCommand="db:schema:cache:clear" id="clear" />
-                      <RakeTaskImpl description="Create a db/schema_cache.yml file" fullCommand="db:schema:cache:dump" id="dump" />
-                    </subtasks>
-                  </RakeTaskImpl>
-                  <RakeTaskImpl description="Create a database schema file (either db/schema.rb or db/structure.sql, depending on `ENV['SCHEMA_FORMAT']` or `config.active_record.schema_format`)" fullCommand="db:schema:dump" id="dump" />
-                  <RakeTaskImpl description="Load a database schema file (either db/schema.rb or db/structure.sql, depending on `ENV['SCHEMA_FORMAT']` or `config.active_record.schema_format`) into the database" fullCommand="db:schema:load" id="load" />
-                </subtasks>
-              </RakeTaskImpl>
-              <RakeTaskImpl description="Load the seed data from db/seeds.rb" fullCommand="db:seed" id="seed" />
-              <RakeTaskImpl id="seed">
-                <subtasks>
-                  <RakeTaskImpl description="Truncate tables of each database for current environment and load the seeds" fullCommand="db:seed:replant" id="replant" />
-                </subtasks>
-              </RakeTaskImpl>
-              <RakeTaskImpl description="Create all databases, load all schemas, and initialize with the seed data (use db:reset to also drop all databases first)" fullCommand="db:setup" id="setup" />
-              <RakeTaskImpl description="Retrieve the current schema version number" fullCommand="db:version" id="version" />
-              <RakeTaskImpl description="" fullCommand="db:_dump" id="_dump" />
-              <RakeTaskImpl description="" fullCommand="db:abort_if_pending_migrations" id="abort_if_pending_migrations" />
-              <RakeTaskImpl description="" fullCommand="db:charset" id="charset" />
-              <RakeTaskImpl description="" fullCommand="db:check_protected_environments" id="check_protected_environments" />
-              <RakeTaskImpl description="" fullCommand="db:collation" id="collation" />
-              <RakeTaskImpl id="create">
-                <subtasks>
-                  <RakeTaskImpl description="" fullCommand="db:create:all" id="all" />
-                </subtasks>
-              </RakeTaskImpl>
-              <RakeTaskImpl id="drop">
-                <subtasks>
-                  <RakeTaskImpl description="" fullCommand="db:drop:_unsafe" id="_unsafe" />
-                  <RakeTaskImpl description="" fullCommand="db:drop:all" id="all" />
-                </subtasks>
-              </RakeTaskImpl>
-              <RakeTaskImpl description="" fullCommand="db:forward" id="forward" />
-              <RakeTaskImpl description="" fullCommand="db:load_config" id="load_config" />
-              <RakeTaskImpl description="" fullCommand="db:purge" id="purge" />
-              <RakeTaskImpl id="purge">
-                <subtasks>
-                  <RakeTaskImpl description="" fullCommand="db:purge:all" id="all" />
-                </subtasks>
-              </RakeTaskImpl>
-              <RakeTaskImpl id="reset">
-                <subtasks>
-                  <RakeTaskImpl description="" fullCommand="db:reset:all" id="all" />
-                </subtasks>
-              </RakeTaskImpl>
-              <RakeTaskImpl id="setup">
-                <subtasks>
-                  <RakeTaskImpl description="" fullCommand="db:setup:all" id="all" />
-                </subtasks>
-              </RakeTaskImpl>
-              <RakeTaskImpl id="test">
-                <subtasks>
-                  <RakeTaskImpl description="" fullCommand="db:test:load_schema" id="load_schema" />
-                  <RakeTaskImpl description="" fullCommand="db:test:prepare" id="prepare" />
-                  <RakeTaskImpl description="" fullCommand="db:test:purge" id="purge" />
-                </subtasks>
-              </RakeTaskImpl>
-              <RakeTaskImpl description="" fullCommand="db:truncate_all" id="truncate_all" />
-            </subtasks>
-          </RakeTaskImpl>
-          <RakeTaskImpl id="haml">
-            <subtasks>
-              <RakeTaskImpl description="Perform bulk conversion of all html.erb files to Haml in views folder" fullCommand="haml:convert_erbs" id="convert_erbs" />
-              <RakeTaskImpl description="Convert html.erb to html.haml each file in app/views" fullCommand="haml:erb2haml" id="erb2haml" />
-              <RakeTaskImpl description="Perform bulk conversion of all html.erb files to Haml in views folder, then remove the converted html.erb files" fullCommand="haml:replace_erbs" id="replace_erbs" />
-            </subtasks>
-          </RakeTaskImpl>
-          <RakeTaskImpl id="log">
-            <subtasks>
-              <RakeTaskImpl description="Truncate all/specified *.log files in log/ to zero bytes (specify which logs with LOGS=test,development)" fullCommand="log:clear" id="clear" />
-            </subtasks>
-          </RakeTaskImpl>
-          <RakeTaskImpl description="Report code statistics (KLOCs, etc) from the application or engine" fullCommand="stats" id="stats" />
-          <RakeTaskImpl description="Run all tests in test folder except system ones" fullCommand="test" id="test" />
-          <RakeTaskImpl id="test">
-            <subtasks>
-              <RakeTaskImpl description="Reset the database and run `bin/rails test`" fullCommand="test:db" id="db" />
-              <RakeTaskImpl description="" fullCommand="test:all" id="all" />
-              <RakeTaskImpl description="" fullCommand="test:channels" id="channels" />
-              <RakeTaskImpl description="" fullCommand="test:controllers" id="controllers" />
-              <RakeTaskImpl description="" fullCommand="test:functionals" id="functionals" />
-              <RakeTaskImpl description="" fullCommand="test:generators" id="generators" />
-              <RakeTaskImpl description="" fullCommand="test:helpers" id="helpers" />
-              <RakeTaskImpl description="" fullCommand="test:integration" id="integration" />
-              <RakeTaskImpl description="" fullCommand="test:jobs" id="jobs" />
-              <RakeTaskImpl description="" fullCommand="test:mailboxes" id="mailboxes" />
-              <RakeTaskImpl description="" fullCommand="test:mailers" id="mailers" />
-              <RakeTaskImpl description="" fullCommand="test:models" id="models" />
-              <RakeTaskImpl description="" fullCommand="test:prepare" id="prepare" />
-              <RakeTaskImpl description="" fullCommand="test:run" id="run" />
-              <RakeTaskImpl description="" fullCommand="test:system" id="system" />
-              <RakeTaskImpl description="" fullCommand="test:units" id="units" />
-            </subtasks>
-          </RakeTaskImpl>
-          <RakeTaskImpl id="time">
-            <subtasks>
-              <RakeTaskImpl description="List all time zones, list by two-letter country code (`bin/rails time:zones[US]`), or list by UTC offset (`bin/rails time:zones[-8]`)" fullCommand="time:zones[country_or_offset]" id="zones[country_or_offset]" />
-              <RakeTaskImpl description="" fullCommand="time:zones" id="zones" />
-              <RakeTaskImpl id="zones">
-                <subtasks>
-                  <RakeTaskImpl description="" fullCommand="time:zones:all" id="all" />
-                  <RakeTaskImpl description="" fullCommand="time:zones:local" id="local" />
-                  <RakeTaskImpl description="" fullCommand="time:zones:us" id="us" />
-                </subtasks>
-              </RakeTaskImpl>
-            </subtasks>
-          </RakeTaskImpl>
-          <RakeTaskImpl id="tmp">
-            <subtasks>
-              <RakeTaskImpl description="Clear cache, socket and screenshot files from tmp/ (narrow w/ tmp:cache:clear, tmp:sockets:clear, tmp:screenshots:clear)" fullCommand="tmp:clear" id="clear" />
-              <RakeTaskImpl description="Create tmp directories for cache, sockets, and pids" fullCommand="tmp:create" id="create" />
-              <RakeTaskImpl id="cache">
-                <subtasks>
-                  <RakeTaskImpl description="" fullCommand="tmp:cache:clear" id="clear" />
-                </subtasks>
-              </RakeTaskImpl>
-              <RakeTaskImpl id="pids">
-                <subtasks>
-                  <RakeTaskImpl description="" fullCommand="tmp:pids:clear" id="clear" />
-                </subtasks>
-              </RakeTaskImpl>
-              <RakeTaskImpl id="screenshots">
-                <subtasks>
-                  <RakeTaskImpl description="" fullCommand="tmp:screenshots:clear" id="clear" />
-                </subtasks>
-              </RakeTaskImpl>
-              <RakeTaskImpl id="sockets">
-                <subtasks>
-                  <RakeTaskImpl description="" fullCommand="tmp:sockets:clear" id="clear" />
-                </subtasks>
-              </RakeTaskImpl>
-              <RakeTaskImpl id="storage">
-                <subtasks>
-                  <RakeTaskImpl description="" fullCommand="tmp:storage:clear" id="clear" />
-                </subtasks>
-              </RakeTaskImpl>
-            </subtasks>
-          </RakeTaskImpl>
-          <RakeTaskImpl description="Lists all available tasks in Webpacker" fullCommand="webpacker" id="webpacker" />
-          <RakeTaskImpl id="webpacker">
-            <subtasks>
-              <RakeTaskImpl description="Installs Webpacker binstubs in this application" fullCommand="webpacker:binstubs" id="binstubs" />
-              <RakeTaskImpl description="Verifies that webpack &amp; webpack-dev-server are present" fullCommand="webpacker:check_binstubs" id="check_binstubs" />
-              <RakeTaskImpl description="Verifies if Node.js is installed" fullCommand="webpacker:check_node" id="check_node" />
-              <RakeTaskImpl description="Verifies if Yarn is installed" fullCommand="webpacker:check_yarn" id="check_yarn" />
-              <RakeTaskImpl description="Remove old compiled webpacks" fullCommand="webpacker:clean[keep,age]" id="clean[keep,age]" />
-              <RakeTaskImpl description="Remove the webpack compiled output directory" fullCommand="webpacker:clobber" id="clobber" />
-              <RakeTaskImpl description="Compile JavaScript packs using webpack for production with digests" fullCommand="webpacker:compile" id="compile" />
-              <RakeTaskImpl description="Provide information on Webpacker's environment" fullCommand="webpacker:info" id="info" />
-              <RakeTaskImpl description="Install Webpacker in this application" fullCommand="webpacker:install" id="install" />
-              <RakeTaskImpl id="install">
-                <subtasks>
-                  <RakeTaskImpl description="Install everything needed for Angular" fullCommand="webpacker:install:angular" id="angular" />
-                  <RakeTaskImpl description="Install everything needed for Coffee" fullCommand="webpacker:install:coffee" id="coffee" />
-                  <RakeTaskImpl description="Install everything needed for Elm" fullCommand="webpacker:install:elm" id="elm" />
-                  <RakeTaskImpl description="Install everything needed for Erb" fullCommand="webpacker:install:erb" id="erb" />
-                  <RakeTaskImpl description="Install everything needed for React" fullCommand="webpacker:install:react" id="react" />
-                  <RakeTaskImpl description="Install everything needed for Stimulus" fullCommand="webpacker:install:stimulus" id="stimulus" />
-                  <RakeTaskImpl description="Install everything needed for Svelte" fullCommand="webpacker:install:svelte" id="svelte" />
-                  <RakeTaskImpl description="Install everything needed for Typescript" fullCommand="webpacker:install:typescript" id="typescript" />
-                  <RakeTaskImpl description="Install everything needed for Vue" fullCommand="webpacker:install:vue" id="vue" />
-                </subtasks>
-              </RakeTaskImpl>
-              <RakeTaskImpl description="Verifies if Webpacker is installed" fullCommand="webpacker:verify_install" id="verify_install" />
-              <RakeTaskImpl description="Support for older Rails versions" fullCommand="webpacker:yarn_install" id="yarn_install" />
-              <RakeTaskImpl description="" fullCommand="webpacker:clean" id="clean" />
-            </subtasks>
-          </RakeTaskImpl>
-          <RakeTaskImpl id="yarn">
-            <subtasks>
-              <RakeTaskImpl description="Install all JavaScript dependencies as specified via Yarn" fullCommand="yarn:install" id="install" />
-            </subtasks>
-          </RakeTaskImpl>
-          <RakeTaskImpl id="zeitwerk">
-            <subtasks>
-              <RakeTaskImpl description="Check project structure for Zeitwerk compatibility" fullCommand="zeitwerk:check" id="check" />
-            </subtasks>
-          </RakeTaskImpl>
-          <RakeTaskImpl description="" fullCommand="default" id="default" />
-          <RakeTaskImpl description="" fullCommand="environment" id="environment" />
-          <RakeTaskImpl id="railties">
-            <subtasks>
-              <RakeTaskImpl id="install">
-                <subtasks>
-                  <RakeTaskImpl description="" fullCommand="railties:install:migrations" id="migrations" />
-                </subtasks>
-              </RakeTaskImpl>
-            </subtasks>
-          </RakeTaskImpl>
-          <RakeTaskImpl description="" fullCommand="tmp" id="tmp" />
-          <RakeTaskImpl description="" fullCommand="tmp/cache" id="tmp/cache" />
-          <RakeTaskImpl description="" fullCommand="tmp/cache/assets" id="tmp/cache/assets" />
-          <RakeTaskImpl description="" fullCommand="tmp/pids" id="tmp/pids" />
-          <RakeTaskImpl description="" fullCommand="tmp/sockets" id="tmp/sockets" />
-        </subtasks>
-      </RakeTaskImpl>
-    </option>
-  </component>
-</module>
-/*******************************************************************************
 * File: .idea/dataSources.xml
 * Size: 957 bytes
 *******************************************************************************/
@@ -916,7 +208,7 @@ yarn-debug.log*
 </project>
 /*******************************************************************************
 * File: .idea/remote-mappings.xml
-* Size: 535 bytes
+* Size: 891 bytes
 *******************************************************************************/
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -928,6 +220,13 @@ yarn-debug.log*
           <settings>
             <list>
               <mapping local-root="$PROJECT_DIR$" remote-root="/" />
+            </list>
+          </settings>
+        </remote-mappings>
+        <remote-mappings server-id="ruby@docker-compose://[/Users/leewhittaker/RubymineProjects/choir-site/docker-compose.yml]:web//usr/local/bin/ruby">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$/coverage" remote-root="./coverage" />
             </list>
           </settings>
         </remote-mappings>
@@ -948,11 +247,15 @@ yarn-debug.log*
 </project>
 /*******************************************************************************
 * File: .rubocop.yml
-* Size: 824 bytes
+* Size: 997 bytes
 *******************************************************************************/
 
 plugins:
   - rubocop-rails
+  - rubocop-minitest
+
+require:
+  - rubocop-capybara
 
 AllCops:
   NewCops: enable
@@ -979,6 +282,12 @@ Metrics/MethodLength:
     - 'db/schema.rb'
     - 'db/migrate/*'
 
+Minitest/MultipleAssertions:
+  Max: 8
+  Include:
+    - 'test/controllers/**/*_test.rb'
+    - 'test/mailers/**/*_test.rb'
+
 Naming/AccessorMethodName:
   Exclude:
     - 'app/datatables/*'
@@ -999,13 +308,12 @@ Style/Documentation:
     - 'db/schema.rb'
     - 'db/migrate/*'
 
-
 Style/MixinUsage:
   Exclude:
     - 'bin/*'
 /*******************************************************************************
 * File: .run/All tests in test_ choir-site.run.xml
-* Size: 2572 bytes
+* Size: 2856 bytes
 *******************************************************************************/
 
 <component name="ProjectRunConfigurationManager">
@@ -1018,16 +326,20 @@ Style/MixinUsage:
     <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="Remote: ruby-3.2.7-p253" />
     <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
     <envs>
+      <env name="DISABLE_COVERAGE" value="true" />
+      <env name="JRUBY_OPTS" value="-X+" />
       <env name="RAILS_ENV" value="test" />
-      <env name="JRUBY_OPTS" value="-X+O" />
+      <env name="SIMPLECOV_COMMAND_NAME" value="rubymine-test" />
+      <env name="RUBYMINE_DISABLE_SIMPLECOV" value="true" />
+      <env name="NO_COVERAGE" value="true" />
     </envs>
     <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
-    <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov">
+    <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
       <COVERAGE_PATTERN ENABLED="true">
         <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
       </COVERAGE_PATTERN>
     </EXTENSION>
-    <EXTENSION ID="RubyDockerContainerSettingsRunConfigurationExtension" dockerComposeCommand="RUN" />
+    <EXTENSION ID="RubyDockerContainerSettingsRunConfigurationExtension" dockerComposeCommand="EXEC" />
     <EXTENSION ID="net.ashald.envfile">
       <option name="IS_ENABLED" value="false" />
       <option name="IS_SUBST" value="false" />
@@ -1054,7 +366,7 @@ Style/MixinUsage:
 </component>
 /*******************************************************************************
 * File: .run/Brakeman.run.xml
-* Size: 1880 bytes
+* Size: 1979 bytes
 *******************************************************************************/
 
 <component name="ProjectRunConfigurationManager">
@@ -1063,15 +375,15 @@ Style/MixinUsage:
     <COMMAND_RUN_CONFIGURATION NAME="RUBY_ARGS" VALUE="" />
     <COMMAND_RUN_CONFIGURATION NAME="WORK DIR" VALUE="$MODULE_DIR$" />
     <COMMAND_RUN_CONFIGURATION NAME="SHOULD_USE_SDK" VALUE="true" />
-    <COMMAND_RUN_CONFIGURATION NAME="ALTERN_SDK_NAME" VALUE="Choir Site Web" />
+    <COMMAND_RUN_CONFIGURATION NAME="ALTERN_SDK_NAME" VALUE="Remote: ruby-3.2.7-p253" />
     <COMMAND_RUN_CONFIGURATION NAME="myPassParentEnvs" VALUE="true" />
     <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
-    <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov">
+    <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
       <COVERAGE_PATTERN ENABLED="true">
         <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
       </COVERAGE_PATTERN>
     </EXTENSION>
-    <EXTENSION ID="RubyDockerContainerSettingsRunConfigurationExtension" dockerComposeCommand="RUN" />
+    <EXTENSION ID="RubyDockerContainerSettingsRunConfigurationExtension" dockerComposeCommand="EXEC" />
     <EXTENSION ID="net.ashald.envfile">
       <option name="IS_ENABLED" value="false" />
       <option name="IS_SUBST" value="false" />
@@ -1085,7 +397,7 @@ Style/MixinUsage:
     <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
     <COMMAND_CONFIG_SETTINGS_ID NAME="GEM_NAME" VALUE="brakeman" />
     <COMMAND_CONFIG_SETTINGS_ID NAME="EXECUTABLE_NAME" VALUE="brakeman" />
-    <COMMAND_CONFIG_SETTINGS_ID NAME="EXECUTABLE_ARGS" VALUE="" />
+    <COMMAND_CONFIG_SETTINGS_ID NAME="EXECUTABLE_ARGS" VALUE="-w3" />
     <COMMAND_CONFIG_SETTINGS_ID NAME="WORKING_DIR" VALUE="$MODULE_DIR$" />
     <method v="2" />
   </configuration>
@@ -1153,7 +465,7 @@ Style/MixinUsage:
 </component>
 /*******************************************************************************
 * File: .run/Rubocop.run.xml
-* Size: 1877 bytes
+* Size: 1973 bytes
 *******************************************************************************/
 
 <component name="ProjectRunConfigurationManager">
@@ -1162,15 +474,15 @@ Style/MixinUsage:
     <COMMAND_RUN_CONFIGURATION NAME="RUBY_ARGS" VALUE="" />
     <COMMAND_RUN_CONFIGURATION NAME="WORK DIR" VALUE="$MODULE_DIR$" />
     <COMMAND_RUN_CONFIGURATION NAME="SHOULD_USE_SDK" VALUE="true" />
-    <COMMAND_RUN_CONFIGURATION NAME="ALTERN_SDK_NAME" VALUE="Choir Site Web" />
+    <COMMAND_RUN_CONFIGURATION NAME="ALTERN_SDK_NAME" VALUE="Remote: ruby-3.2.7-p253" />
     <COMMAND_RUN_CONFIGURATION NAME="myPassParentEnvs" VALUE="true" />
     <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
-    <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov">
+    <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
       <COVERAGE_PATTERN ENABLED="true">
         <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
       </COVERAGE_PATTERN>
     </EXTENSION>
-    <EXTENSION ID="RubyDockerContainerSettingsRunConfigurationExtension" dockerComposeCommand="RUN" />
+    <EXTENSION ID="RubyDockerContainerSettingsRunConfigurationExtension" dockerComposeCommand="EXEC" />
     <EXTENSION ID="net.ashald.envfile">
       <option name="IS_ENABLED" value="false" />
       <option name="IS_SUBST" value="false" />
@@ -1191,15 +503,14 @@ Style/MixinUsage:
 </component>
 /*******************************************************************************
 * File: Dockerfile
-* Size: 1154 bytes
+* Size: 1144 bytes
 *******************************************************************************/
 
 FROM whittakertech/choir-base:latest
 
 # Install system dependencies, Node.js v16.x, and Yarn
 RUN apt-get update -qq && \
-    apt-get install -y --no-install-recommends \
-        libv8-dev && \
+    apt-get install -y --no-install-recommends libv8-dev && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Set Rails to run in production
@@ -1233,10 +544,12 @@ EXPOSE $PORT
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
 /*******************************************************************************
 * File: Dockerfile.base
-* Size: 976 bytes
+* Size: 837 bytes
 *******************************************************************************/
 
-FROM ruby:3.2-slim
+ARG RUBY_VERSION
+ARG NODE_VERSION
+FROM ruby:${RUBY_VERSION}-slim
 
 # Install system dependencies
 RUN apt-get update -qq && \
@@ -1251,7 +564,8 @@ RUN apt-get update -qq && \
     rm -rf /var/lib/apt/lists/*
 
 # Setup NodeJS repository and install
-RUN curl -sL https://deb.nodesource.com/setup_20.x | bash - && \
+RUN NODE_MAJOR=${NODE_VERSION%%.*} && \
+    curl -sL https://deb.nodesource.com/setup_${NODE_MAJOR}.x | bash - && \
     apt-get update -qq && \
     apt-get install -y nodejs && \
     npm install -g yarn && \
@@ -1265,20 +579,9 @@ WORKDIR /choir-site
 RUN gem install bundler -v "~> 2.4.0" && \
     bundle update --bundler
 
-# List of apt-get installs for Dev only
-#        python3 \
-#        g++ \
-#        make \
-#        pkg-config \
-#        libyaml-dev \
-#        libffi-dev \
-#        vim && \
-
-# List of apt-get installs for Prod only
-#        libv8-dev
 /*******************************************************************************
 * File: Dockerfile.dev
-* Size: 1031 bytes
+* Size: 1094 bytes
 *******************************************************************************/
 
 FROM whittakertech/choir-base:latest
@@ -1305,10 +608,11 @@ ENV RAILS_ENV=development
 ENV NODE_ENV=development
 
 # Copy and install dependencies
-COPY Gemfile* ./
+COPY Gemfile* .ruby-version .node-version ./
 
 # Install all gems including development and test
-RUN bundle config unset without && \
+RUN gem update --system 3.6.6 && \
+    bundle config unset without && \
     bundle install && \
     bundle config set --local with "development test"
 
@@ -1326,12 +630,14 @@ EXPOSE 1234 3000
 CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
 /*******************************************************************************
 * File: Gemfile
-* Size: 1971 bytes
+* Size: 2140 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
+
+ruby File.read('.ruby-version').strip
 
 gem 'rails', '~> 7.1.0'
 
@@ -1357,6 +663,7 @@ gem 'jbuilder'
 gem 'jsbundling-rails'
 gem 'mime-types'
 gem 'mini_magick', '~> 4.7'
+gem 'pagy', '~> 9.0'
 gem 'propshaft'
 gem 'puma', '~> 6'
 # gem 'sass-rails'
@@ -1402,6 +709,7 @@ group :development do
   gem 'erb2haml'
   gem 'foreman'
   gem 'listen'
+  gem 'meta_request', git: 'https://github.com/dejan/rails_panel.git'
   gem 'pg_query'
   gem 'prosopite'
   gem 'rails_best_practices'
@@ -1418,6 +726,7 @@ group :test do
   gem 'minitest-reporters'
   gem 'rails-controller-testing'
   gem 'simplecov', require: false
+  gem 'simplecov-json', require: false
 end
 
 # group :production do
@@ -2004,21 +1313,24 @@ a.collapsed .glyphicon{
 }
 /*******************************************************************************
 * File: app/assets/stylesheets/application.bootstrap.scss
-* Size: 1325 bytes
+* Size: 1405 bytes
 *******************************************************************************/
 
+// Base modules
+@use 'modules/colors' as colors;
+@use 'modules/media';
+
 // Import Bootstrap and Bootstrap Icons
-@use 'bootstrap/scss/bootstrap';
+@use 'bootstrap/scss/bootstrap' with (
+  $primary: colors.$primary,
+  $secondary: colors.$secondary
+);
 @use 'bootstrap-icons/font/bootstrap-icons';
 
 // DataTables styles (use @use instead of @import)
 @use 'datatables.net-bs4/css/dataTables.bootstrap4' as *;
 @use 'datatables.net-select-bs4/css/select.bootstrap4' as *;
 @use 'datatables.net-buttons-bs4/css/buttons.bootstrap4' as *;
-
-// Base modules
-@use 'modules/colors';
-@use 'modules/media';
 
 // Partials
 @use 'partials/breadcrumbs';
@@ -2093,14 +1405,21 @@ a.collapsed .glyphicon {
 @use 'datatables.net-select-bs4/css/select.bootstrap4';
 /*******************************************************************************
 * File: app/assets/stylesheets/modules/_colors.scss
-* Size: 423 bytes
+* Size: 616 bytes
 *******************************************************************************/
 
 @use 'sass:math';
 @use 'sass:color';
 
 $brand-primary: #CBA250;
+$brand-primary-rgb: 303 162 80;
+$primary: $brand-primary;
+$primary-rgb: $brand-primary-rgb;
+
 $brand-secondary: #424242;
+$brand-secondary-rgb: 66 66 66;
+$secondary: $brand-secondary;
+$secondary-rgb: $brand-secondary-rgb;
 
 $original-blue: #4688f1;
 
@@ -2438,7 +1757,7 @@ audio{
 }
 /*******************************************************************************
 * File: app/assets/stylesheets/partials/_rehearsals.scss
-* Size: 625 bytes
+* Size: 637 bytes
 *******************************************************************************/
 
 @use '../modules/colors' as colors;
@@ -2468,12 +1787,12 @@ audio{
   }
 }
 
-.pagination {
-  display: table;
-  padding-left: 0;
-  margin: 20px auto;
-  border-radius: 4px;
-}
+//.pagination {
+//  display: table;
+//  padding-left: 0;
+//  margin: 20px auto;
+//  border-radius: 4px;
+//}
 /*******************************************************************************
 * File: app/assets/stylesheets/partials/_title.scss
 * Size: 813 bytes
@@ -3228,7 +2547,7 @@ end
 
 /*******************************************************************************
 * File: app/controllers/application_controller.rb
-* Size: 261 bytes
+* Size: 286 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -3236,6 +2555,8 @@ end
 # Controller for managing the overall application.
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  include Pagy::Backend
+
   # before_action do
   #   ActiveStorage::Current.host = request.base_url
   # end
@@ -3243,25 +2564,33 @@ end
 
 /*******************************************************************************
 * File: app/controllers/articles_controller.rb
-* Size: 473 bytes
+* Size: 576 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
 
 # Controller for managing articles.
 class ArticlesController < ApplicationController
+  before_action :fetch_sorters
+
   add_breadcrumb 'Home', :root_path
   add_breadcrumb 'News', :news_index_path
 
   def index
-    @articles = Article.published
-                       .filtered(params)
-                       .paginate(page: params[:page], per_page: 8)
+    @pagy, @articles = pagy(Article.includes(:author).published.filtered(params), limit: 8)
   end
 
   def show
     @article = Article.find(params[:id])
     add_breadcrumb @article.title, news_path(@article)
+  end
+
+  private
+
+  def fetch_sorters
+    @months = Article.as_months
+    @tags = Tag.all
+    @categories = Category.all
   end
 end
 
@@ -3338,7 +2667,7 @@ end
 
 /*******************************************************************************
 * File: app/controllers/rehearsals_controller.rb
-* Size: 381 bytes
+* Size: 294 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -3349,9 +2678,7 @@ class RehearsalsController < ApplicationController
   add_breadcrumb 'Rehearsals', :rehearsals_path
 
   def index
-    @rehearsals = Rehearsal.includes(:songs)
-                           .all_past
-                           .paginate(page: params[:page], per_page: 12)
+    @pagy, @rehearsals = pagy(Rehearsal.includes(:songs).all_past)
   end
 end
 
@@ -3385,7 +2712,7 @@ end
 
 /*******************************************************************************
 * File: app/controllers/static_pages_controller.rb
-* Size: 318 bytes
+* Size: 328 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -3396,7 +2723,7 @@ class StaticPagesController < ApplicationController
     @performances   = Performance.find_next 2
     @last_rehearsal = Rehearsal.find_most_recent
     @next_rehearsal = Rehearsal.find_next
-    @articles       = Article.first 3
+    @articles       = Article.published.first 3
   end
 end
 
@@ -3593,13 +2920,14 @@ end
 
 /*******************************************************************************
 * File: app/helpers/application_helper.rb
-* Size: 105 bytes
+* Size: 130 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
 
 # Module for helpers across the application.
 module ApplicationHelper
+  include Pagy::Frontend
 end
 
 /*******************************************************************************
@@ -4151,7 +3479,7 @@ end
 
 /*******************************************************************************
 * File: app/models/article.rb
-* Size: 2309 bytes
+* Size: 2409 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -4179,7 +3507,7 @@ class Article < ApplicationRecord
   define_controls_column  formatter: ->(record) { helpers.controls_html(record) }
 
   scope :month, lambda { |date|
-    where(created_at: date.all_month) if date.present?
+    where(created_at: DateTime.parse(date).all_month) if date.present?
   }
   scope :tag,      ->(slug) { joins(:tags).where(tags: { slug: slug }) if slug.present? }
   scope :category, ->(slug) { joins(:categories).where(categories: { slug: slug }) if slug.present? }
@@ -4211,6 +3539,10 @@ class Article < ApplicationRecord
       month(params[:month])
         .tag(params[:tags])
         .category(params[:category])
+    end
+
+    def as_months
+      pluck(:created_at).map(&:beginning_of_month).tally
     end
 
     def for_datatable
@@ -6061,37 +5393,28 @@ end
       =link_to "Read More", news_path(article), class: "nobreak"
 /*******************************************************************************
 * File: app/views/articles/_sorters.html.haml
-* Size: 882 bytes
+* Size: 497 bytes
 *******************************************************************************/
 
 .sort-group
   %h2 Sort by Month
-  -Article.pluck(:created_at).group_by { |d| d.beginning_of_month }.each do |key, value|
-    =link_to key.strftime("%B %Y") + " (" + value.count.to_s + ")",
-             news_index_path(params.permit(:month).merge(month: key.strftime("%Y-%m-%d")))
+  - months.each do |month, count|
+    =link_to "#{month.strftime("%B %Y")} (#{count.to_s})",
+             news_index_path(month: month.strftime("%Y-%m-%d"))
     %br
 .sort-group
   %h2 Categories
-  -Category.find_each do |cat|
+  -categories.each do |cat|
     =link_to cat.name,
-             news_index_path(params.permit(:categories).merge(categories: cat.slug)),
+             news_index_path(category: cat.slug),
              class: "nobreak"
     %br
 .sort_group
   %h2 Tags
-  -Tag.find_each do |tag|
-    -unless tag == Tag.last
-      = succeed "," do
-        = link_to tag.name,
-                  news_index_path(params.permit(:tags).merge(tags: tag.slug)),
-                  class: "nobreak"
-    -else
-      = link_to tag.name,
-                news_index_path(params.permit(:tags).merge(tags: tag.slug)),
-                class: "nobreak"
+  = safe_join(tags.map { |tag| link_to tag.name, news_index_path( tag: tag.slug ), class: 'nobreak' }, ", " )
 /*******************************************************************************
 * File: app/views/articles/index.html.haml
-* Size: 333 bytes
+* Size: 343 bytes
 *******************************************************************************/
 
 -provide :title, "News"
@@ -6099,17 +5422,17 @@ end
 
 .row
   .d-none.d-sm-block.col-sm-4.col-md-3.col-lg-2
-    =render "sorters"
+    =render "sorters", tags: @tags, categories: @categories, months: @months
   .col-sm-8.col-md-9.col-lg-10
-    -@articles.each do |article|
-      =render article
+    = render @articles
 
-=will_paginate @articles,
-               :previous_label => "«",
-               :next_label => "»"
+- if @pagy.pages > 1
+  .d-flex.justify-content-center
+    != pagy_bootstrap_nav(@pagy)
+
 /*******************************************************************************
 * File: app/views/articles/show.html.haml
-* Size: 645 bytes
+* Size: 700 bytes
 *******************************************************************************/
 
 -provide :title, @article.title
@@ -6117,7 +5440,7 @@ end
 
 .row
   .d-none.d-sm-block.col-sm-4.col-md-3.col-lg-2
-    =render "sorters"
+    =render "sorters", tags: @tags, categories: @categories, months: @months
   .col-sm-8.col-md-9.col-lg-10
     %span.date.d-none.d-md-inline=@article.created_at.strftime("%m/%d/%Y")
     %h2=@article.title
@@ -6367,42 +5690,36 @@ You have a new message from choir.CascadeSixth.com
       =f.submit "Send", class: "btn btn-secondary btn-lg float-end"
 /*******************************************************************************
 * File: app/views/rehearsals/_rehearsal.html.haml
-* Size: 344 bytes
+* Size: 381 bytes
 *******************************************************************************/
 
-.rehearsal-block.download-block
-  .row
-    .col-xs-6.col-sm-12
-      %h3=rehearsal.date.strftime("%m/%d/%Y")
-      %p{style: "height: 4em;"}=rehearsal.song_list
-    .col-xs-6.col-sm-12
-      =link_to "Download",
-               rehearsal.audio.url,
-               class: "btn btn-secondary btn-lg #{'disabled' unless rehearsal.audio.attached? }"
+.col-sm-4.col-md-3
+  .rehearsal-block.download-block
+    .row
+      .col-xs-6.col-sm-12
+        %h3=rehearsal.date.strftime("%m/%d/%Y")
+        %p{style: "height: 4em;"}=rehearsal.song_list
+      .col-xs-6.col-sm-12
+        =link_to "Download",
+                 rehearsal.audio.url,
+                 class: "btn btn-secondary btn-lg #{'disabled' unless rehearsal.audio.attached? }"
 /*******************************************************************************
 * File: app/views/rehearsals/index.html.haml
-* Size: 579 bytes
+* Size: 233 bytes
 *******************************************************************************/
 
-- provide :title, "Rehearsals"
+- provide :title, t('.title')
 - provide :bg, "pexels-photo-257904.jpg"
 
-%p
-  Here you can download and listen to all the previous rehearsals you may have
-  missed so you can practice along and get the notes and changes to the songs
-  you need to know before the next peformance.
-%p
-  Rehersals are sorted by date and links to the music we practiced are listed
-  in the description.
+- t('.welcome').lines.each do |line|
+  %p!= line
 
 .row
-  - @rehearsals.each do |rehearsal|
-    .col-sm-4.col-md-3
-      = render rehearsal
+  = render @rehearsals
 
-= will_paginate @rehearsals,
-                :previous_label => "«",
-                :next_label => "»"
+- if @pagy.pages > 1
+  .d-flex.justify-content-center!= pagy_bootstrap_nav(@pagy)
+
 /*******************************************************************************
 * File: app/views/shared/_error_messages.html.haml
 * Size: 226 bytes
@@ -7044,7 +6361,7 @@ end
 
 /*******************************************************************************
 * File: compile_project.sh
-* Size: 6239 bytes
+* Size: 6325 bytes
 *******************************************************************************/
 
 #!/usr/bin/env bash
@@ -7082,6 +6399,8 @@ excluded_files=(
   "yarn.lock"
   "package-lock.json"
   "Gemfile.lock"
+  "config/initializers/devise.rb"
+  "config/initializers/new_framework_defaults_7_1.rb"
 )
 
 # Function to check if a file should be excluded based on its path
@@ -7107,7 +6426,7 @@ should_exclude_path() {
   # Exclude files larger than 300KB
   if [[ -f "$file_path" ]]; then
     local file_size=$(stat -f "%z" "$file_path" 2>/dev/null || stat -c "%s" "$file_path" 2>/dev/null)
-    if [[ -n "$file_size" && "$file_size" -gt 307200 ]]; then
+    if [[ -n "$file_size" && "$file_size" -gt 8196 ]]; then
       echo "Skipping large file: $file_path ($file_size bytes)"
       return 0 # True, exclude this file
     fi
@@ -7327,6 +6646,12 @@ production:
   channel_prefix: choir_production
 
 /*******************************************************************************
+* File: config/credentials.yml.enc
+* Size: 880 bytes
+*******************************************************************************/
+
+9BXYVSzFfzsASzrs2+xqwXPg1g9my9TWAzDxMxqAjqv/92n9LzL9x84Ktnm7RGbd4pVUM9MvZhuxD79xVt4L30tDVLsEZAcTHXqjx6/0B4tZB8kIluAyfyvLiUsZJqjf38tBTIgOMTvGgKePbH2PbXQMEmDSnhQsrJPAzzsh3lmm1diiwzy+BYMkeThHvtpyuHM6rn4zcHrw/edzbEzKCbvJRMSv0xo3ofK3wKOXkrtH8Yhrtdb5e2tfkY+A2+bVpdzmf9WFmL874WmpgYKm6nrzVtJoyOE5890vLwcvVxjTS4omiA196DVDTf+wor3Sa2u04yqos3SrgKKmzzB+LHT4RgT/bTrW2ruu79wlyReFDxeRzW/UoaIGY633P9XFrsglVW3gQ4e5yRWZyG07UGyFy5Wx0L87OqiSPPn09cGZFTp1lfL3K3VSQ/ZciG2g+1bXNStP8W2fjvfo4GIxY3mlEtqILaWjKTWq7fzBWn+ryHIrrkW400f1p8Ku+2w9NXOeHik+zTUafiDE3PF7cVE7dRvwbNUr4aEHfsCOBpnzeqp6SKZnzWrjX3TA9Yv2TQFTREWjMDzXbxDIzMC1/IhdkukZ0n7LBcr1P9Uh2UmSmHrNr/aX2oaHHQ3gKR1WiHUz1QI1yxKWnNu0LmXwD+mhxl2dCZ9uMid6X389t7cO88+MUqyqDUx3FpG3ijS6LPOuVOmaQycULirwHZ9paMyRuKl+WVpX8okSy5SVmvqQRS8wm8JFGrtH4dwtIpsG9Srr6ihHFxjF6sybd6uK+fZ0FR6aThhbqbI71l8QUyl4/yYqlye+mEdJbxYpo8DRmV8M--UtnEfIpgZ+90mukh--2r6oEUh/gG17Icd7Y8snew==
+/*******************************************************************************
 * File: config/database.yml
 * Size: 493 bytes
 *******************************************************************************/
@@ -7367,7 +6692,7 @@ Rails.application.initialize!
 
 /*******************************************************************************
 * File: config/environments/development.rb
-* Size: 2703 bytes
+* Size: 2775 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -7447,11 +6772,13 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
+
+  config.web_console.allowed_ips = %w[127.0.0.0/0 ::1 192.168.65.0/24]
 end
 
 /*******************************************************************************
 * File: config/environments/production.rb
-* Size: 4388 bytes
+* Size: 4386 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -7476,7 +6803,7 @@ Rails.application.configure do
 
   # Ensures that a master key has been made available in ENV["RAILS_MASTER_KEY"], config/master.key, or an environment
   # key such as config/credentials/production.key. This key is used to decrypt credentials (and other encrypted files).
-  # config.require_master_key = true
+  config.require_master_key = true
 
   # Disable serving static files from `public/`, relying on NGINX/Apache to do so instead.
   # config.public_file_server.enabled = false
@@ -7728,291 +7055,6 @@ Rails.application.config.assets.build_paths = %w[app/assets/builds]
 Rails.application.config.action_dispatch.cookies_serializer = :json
 
 /*******************************************************************************
-* File: config/initializers/devise.rb
-* Size: 13431 bytes
-*******************************************************************************/
-
-# frozen_string_literal: true
-
-# Use this hook to configure devise mailer, warden hooks and so forth.
-# Many of these configuration options can be set straight in your model.
-Devise.setup do |config|
-  # The secret key used by Devise. Devise uses this key to generate
-  # random tokens. Changing this key will render invalid all existing
-  # confirmation, reset password and unlock tokens in the database.
-  # Devise will use the `secret_key_base` as its `secret_key`
-  # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'a' * 128
-
-  # ==> Mailer Configuration
-  # Configure the e-mail address which will be shown in Devise::Mailer,
-  # note that it will be overwritten if you use your own mailer class
-  # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
-
-  # Configure the class responsible to send e-mails.
-  # config.mailer = 'Devise::Mailer'
-
-  # Configure the parent class responsible to send e-mails.
-  # config.parent_mailer = 'ActionMailer::Base'
-
-  # ==> ORM configuration
-  # Load and configure the ORM. Supports :active_record (default) and
-  # :mongoid (bson_ext recommended) by default. Other ORMs may be
-  # available as additional gems.
-  require 'devise/orm/active_record'
-
-  # ==> Configuration for any authentication mechanism
-  # Configure which keys are used when authenticating a user. The default is
-  # just :email. You can configure it to use [:username, :subdomain], so for
-  # authenticating a user, both parameters are required. Remember that those
-  # parameters are used only when authenticating and not when retrieving from
-  # session. If you need permissions, you should implement that in a before filter.
-  # You can also supply a hash where the value is a boolean determining whether
-  # or not authentication should be aborted when the value is not present.
-  # config.authentication_keys = [:email]
-
-  # Configure parameters from the request object used for authentication. Each entry
-  # given should be a request method and it will automatically be passed to the
-  # find_for_authentication method and considered in your model lookup. For instance,
-  # if you set :request_keys to [:subdomain], :subdomain will be used on authentication.
-  # The same considerations mentioned for authentication_keys also apply to request_keys.
-  # config.request_keys = []
-
-  # Configure which authentication keys should be case-insensitive.
-  # These keys will be downcased upon creating or modifying a user and when used
-  # to authenticate or find a user. Default is :email.
-  config.case_insensitive_keys = [:email]
-
-  # Configure which authentication keys should have whitespace stripped.
-  # These keys will have whitespace before and after removed upon creating or
-  # modifying a user and when used to authenticate or find a user. Default is :email.
-  config.strip_whitespace_keys = [:email]
-
-  # Tell if authentication through request.params is enabled. True by default.
-  # It can be set to an array that will enable params authentication only for the
-  # given strategies, for example, `config.params_authenticatable = [:database]` will
-  # enable it only for database (email + password) authentication.
-  # config.params_authenticatable = true
-
-  # Tell if authentication through HTTP Auth is enabled. False by default.
-  # It can be set to an array that will enable http authentication only for the
-  # given strategies, for example, `config.http_authenticatable = [:database]` will
-  # enable it only for database authentication. The supported strategies are:
-  # :database      = Support basic authentication with authentication key + password
-  # config.http_authenticatable = false
-
-  # If 401 status code should be returned for AJAX requests. True by default.
-  # config.http_authenticatable_on_xhr = true
-
-  # The realm used in Http Basic Authentication. 'Application' by default.
-  # config.http_authentication_realm = 'Application'
-
-  # It will change confirmation, password recovery and other workflows
-  # to behave the same regardless if the e-mail provided was right or wrong.
-  # Does not affect registerable.
-  # config.paranoid = true
-
-  # By default Devise will store the user in session. You can skip storage for
-  # particular strategies by setting this option.
-  # Notice that if you are skipping storage for all authentication paths, you
-  # may want to disable generating routes to Devise's sessions controller by
-  # passing skip: :sessions to `devise_for` in your config/routes.rb
-  config.skip_session_storage = [:http_auth]
-
-  # By default, Devise cleans up the CSRF token on authentication to
-  # avoid CSRF token fixation attacks. This means that, when using AJAX
-  # requests for sign in and sign up, you need to get a new CSRF token
-  # from the server. You can disable this option at your own risk.
-  # config.clean_up_csrf_token_on_authentication = true
-
-  # When false, Devise will not attempt to reload routes on eager load.
-  # This can reduce the time taken to boot the app but if your application
-  # requires the Devise mappings to be loaded during boot time the application
-  # won't boot properly.
-  # config.reload_routes = true
-
-  # ==> Configuration for :database_authenticatable
-  # For bcrypt, this is the cost for hashing the password and defaults to 11. If
-  # using other algorithms, it sets how many times you want the password to be hashed.
-  #
-  # Limiting the stretches to just one in testing will increase the performance of
-  # your test suite dramatically. However, it is STRONGLY RECOMMENDED to not use
-  # a value less than 10 in other environments. Note that, for bcrypt (the default
-  # algorithm), the cost increases exponentially with the number of stretches (e.g.
-  # a value of 20 is already extremely slow: approx. 60 seconds for 1 calculation).
-  config.stretches = Rails.env.test? ? 1 : 11
-
-  # Set up a pepper to generate the hashed password.
-  # config.pepper = 'a' * 128
-
-  # Send a notification to the original email when the user's email is changed.
-  # config.send_email_changed_notification = false
-
-  # Send a notification email when the user's password is changed.
-  # config.send_password_change_notification = false
-
-  # ==> Configuration for :confirmable
-  # A period that the user is allowed to access the website even without
-  # confirming their account. For instance, if set to 2.days, the user will be
-  # able to access the website for two days without confirming their account,
-  # access will be blocked just in the third day. Default is 0.days, meaning
-  # the user cannot access the website without confirming their account.
-  # config.allow_unconfirmed_access_for = 2.days
-
-  # A period that the user is allowed to confirm their account before their
-  # token becomes invalid. For example, if set to 3.days, the user can confirm
-  # their account within 3 days after the mail was sent, but on the fourth day
-  # their account can't be confirmed with the token any more.
-  # Default is nil, meaning there is no restriction on how long a user can take
-  # before confirming their account.
-  # config.confirm_within = 3.days
-
-  # If true, requires any email changes to be confirmed (exactly the same way as
-  # initial account confirmation) to be applied. Requires additional unconfirmed_email
-  # db field (see migrations). Until confirmed, new email is stored in
-  # unconfirmed_email column, and copied to email column on successful confirmation.
-  config.reconfirmable = true
-
-  # Defines which key will be used when confirming an account
-  # config.confirmation_keys = [:email]
-
-  # ==> Configuration for :rememberable
-  # The time the user will be remembered without asking for credentials again.
-  # config.remember_for = 2.weeks
-
-  # Invalidates all the remember me tokens when the user signs out.
-  config.expire_all_remember_me_on_sign_out = true
-
-  # If true, extends the user's remember period when remembered via cookie.
-  # config.extend_remember_period = false
-
-  # Options to be passed to the created cookie. For instance, you can set
-  # secure: true in order to force SSL only cookies.
-  # config.rememberable_options = {}
-
-  # ==> Configuration for :validatable
-  # Range for password length.
-  config.password_length = 8..128
-
-  # Email regex used to validate email formats. It simply asserts that
-  # one (and only one) @ exists in the given string. This is mainly
-  # to give user feedback and not to assert the e-mail validity.
-  config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
-
-  # ==> Configuration for :timeoutable
-  # The time you want to timeout the user session without activity. After this
-  # time the user will be asked for credentials again. Default is 30 minutes.
-  # config.timeout_in = 30.minutes
-
-  # ==> Configuration for :lockable
-  # Defines which strategy will be used to lock an account.
-  # :failed_attempts = Locks an account after a number of failed attempts to sign in.
-  # :none            = No lock strategy. You should handle locking by yourself.
-  # config.lock_strategy = :failed_attempts
-
-  # Defines which key will be used when locking and unlocking an account
-  # config.unlock_keys = [:email]
-
-  # Defines which strategy will be used to unlock an account.
-  # :email = Sends an unlock link to the user email
-  # :time  = Re-enables login after a certain amount of time (see :unlock_in below)
-  # :both  = Enables both strategies
-  # :none  = No unlock strategy. You should handle unlocking by yourself.
-  # config.unlock_strategy = :both
-
-  # Number of authentication tries before locking an account if lock_strategy
-  # is failed attempts.
-  # config.maximum_attempts = 20
-
-  # Time interval to unlock the account if :time is enabled as unlock_strategy.
-  # config.unlock_in = 1.hour
-
-  # Warn on the last attempt before the account is locked.
-  # config.last_attempt_warning = true
-
-  # ==> Configuration for :recoverable
-  #
-  # Defines which key will be used when recovering the password for an account
-  # config.reset_password_keys = [:email]
-
-  # Time interval you can reset your password with a reset password key.
-  # Don't put a too small interval or your users won't have the time to
-  # change their passwords.
-  config.reset_password_within = 6.hours
-
-  # When set to false, does not sign a user in automatically after their password is
-  # reset. Defaults to true, so a user is signed in automatically after a reset.
-  # config.sign_in_after_reset_password = true
-
-  # ==> Configuration for :encryptable
-  # Allow you to use another hashing or encryption algorithm besides bcrypt (default).
-  # You can use :sha1, :sha512 or algorithms from others authentication tools as
-  # :clearance_sha1, :authlogic_sha512 (then you should set stretches above to 20
-  # for default behavior) and :restful_authentication_sha1 (then you should set
-  # stretches to 10, and copy REST_AUTH_SITE_KEY to pepper).
-  #
-  # Require the `devise-encryptable` gem when using anything other than bcrypt
-  # config.encryptor = :sha512
-
-  # ==> Scopes configuration
-  # Turn scoped views on. Before rendering "sessions/new", it will first check for
-  # "users/sessions/new". It's turned off by default because it's slower if you
-  # are using only default views.
-  # config.scoped_views = false
-
-  # Configure the default scope given to Warden. By default it's the first
-  # devise role declared in your routes (usually :user).
-  # config.default_scope = :user
-
-  # Set this configuration to false if you want /users/sign_out to sign out
-  # only the current scope. By default, Devise signs out all scopes.
-  # config.sign_out_all_scopes = true
-
-  # ==> Navigation configuration
-  # Lists the formats that should be treated as navigational. Formats like
-  # :html, should redirect to the sign in page when the user does not have
-  # access, but formats like :xml or :json, should return 401.
-  #
-  # If you have any extra navigational formats, like :iphone or :mobile, you
-  # should add them to the navigational formats lists.
-  #
-  # The "*/*" below is required to match Internet Explorer requests.
-  # config.navigational_formats = ['*/*', :html]
-
-  # The default HTTP method used to sign out a resource. Default is :delete.
-  config.sign_out_via = :delete
-
-  # ==> OmniAuth
-  # Add a new OmniAuth provider. Check the wiki for more information on setting
-  # up on your models and hooks.
-  # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-
-  # ==> Warden configuration
-  # If you want to use other strategies, that are not supported by Devise, or
-  # change the failure app, you can configure them inside the config.warden block.
-  #
-  # config.warden do |manager|
-  #   manager.intercept_401 = false
-  #   manager.default_strategies(scope: :user).unshift :some_external_strategy
-  # end
-
-  # ==> Mountable engine configurations
-  # When using Devise inside an engine, let's call it `MyEngine`, and this engine
-  # is mountable, there are some extra configurations to be taken into account.
-  # The following options are available, assuming the engine is mounted as:
-  #
-  #     mount MyEngine, at: '/my_engine'
-  #
-  # The router that invoked `devise_for`, in the example above, would be:
-  # config.router_name = :my_engine
-  #
-  # When using OmniAuth, Devise cannot automatically set OmniAuth path,
-  # so you need to do it manually. For the users scope, it would be:
-  # config.omniauth_path_prefix = '/my_engine/users/auth'
-end
-
-/*******************************************************************************
 * File: config/initializers/filter_parameter_logging.rb
 * Size: 464 bytes
 *******************************************************************************/
@@ -8086,292 +7128,18 @@ end
 # Mime::Type.register "text/richtext", :rtf
 
 /*******************************************************************************
-* File: config/initializers/new_framework_defaults_7_1.rb
-* Size: 12214 bytes
+* File: config/initializers/pagy.rb
+* Size: 187 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
 
-# Be sure to restart your server when you modify this file.
-#
-# This file eases your Rails 7.1 framework defaults upgrade.
-#
-# Uncomment each configuration one by one to switch to the new default.
-# Once your application is ready to run with all new defaults, you can remove
-# this file and set the `config.load_defaults` to `7.1`.
-#
-# Read the Guide for Upgrading Ruby on Rails for more info on each option.
-# https://guides.rubyonrails.org/upgrading_ruby_on_rails.html
+require 'pagy/extras/bootstrap'
+require 'pagy/extras/overflow'
+require 'pagy/extras/i18n'
 
-###
-# No longer add autoloaded paths into `$LOAD_PATH`. This means that you won't be able
-# to manually require files that are managed by the autoloader, which you shouldn't do anyway.
-#
-# This will reduce the size of the load path, making `require` faster if you don't use bootsnap, or reduce the size
-# of the bootsnap cache if you use it.
-#
-# To set this configuration, add the following line to `config/application.rb` (NOT this file):
-#   config.add_autoload_paths_to_load_path = false
-
-###
-# Remove the default X-Download-Options headers since it is used only by Internet Explorer.
-# If you need to support Internet Explorer, add back `"X-Download-Options" => "noopen"`.
-#++
-# Rails.application.config.action_dispatch.default_headers = {
-#   "X-Frame-Options" => "SAMEORIGIN",
-#   "X-XSS-Protection" => "0",
-#   "X-Content-Type-Options" => "nosniff",
-#   "X-Permitted-Cross-Domain-Policies" => "none",
-#   "Referrer-Policy" => "strict-origin-when-cross-origin"
-# }
-
-###
-# Do not treat an `ActionController::Parameters` instance
-# as equal to an equivalent `Hash` by default.
-#++
-# Rails.application.config.action_controller.allow_deprecated_parameters_hash_equality = false
-
-###
-# Active Record Encryption now uses SHA-256 as its hash digest algorithm.
-#
-# There are 3 scenarios to consider.
-#
-# 1. If you have data encrypted with previous Rails versions, and you have
-# +config.active_support.key_generator_hash_digest_class+ configured as SHA1 (the default
-# before Rails 7.0), you need to configure SHA-1 for Active Record Encryption too:
-#++
-# Rails.application.config.active_record.encryption.hash_digest_class = OpenSSL::Digest::SHA1
-#
-# 2. If you have +config.active_support.key_generator_hash_digest_class+ configured as SHA256 (the new default
-# in 7.0), then you need to configure SHA-256 for Active Record Encryption:
-#++
-# Rails.application.config.active_record.encryption.hash_digest_class = OpenSSL::Digest::SHA256
-#
-# 3. If you don't currently have data encrypted with Active Record encryption, you can disable this setting to
-# configure the default behavior starting 7.1+:
-#++
-# Rails.application.config.active_record.encryption.support_sha1_for_non_deterministic_encryption = false
-
-###
-# No longer run after_commit callbacks on the first of multiple Active Record
-# instances to save changes to the same database row within a transaction.
-# Instead, run these callbacks on the instance most likely to have internal
-# state which matches what was committed to the database, typically the last
-# instance to save.
-#++
-# Rails.application.config.active_record.run_commit_callbacks_on_first_saved_instances_in_transaction = false
-
-###
-# Configures SQLite with a strict strings mode, which disables double-quoted string literals.
-#
-# SQLite has some quirks around double-quoted string literals.
-# It first tries to consider double-quoted strings as identifier names, but if they don't exist
-# it then considers them as string literals. Because of this, typos can silently go unnoticed.
-# For example, it is possible to create an index for a non existing column.
-# See https://www.sqlite.org/quirks.html#double_quoted_string_literals_are_accepted for more details.
-#++
-# Rails.application.config.active_record.sqlite3_adapter_strict_strings_by_default = true
-
-###
-# Disable deprecated singular associations names.
-#++
-# Rails.application.config.active_record.allow_deprecated_singular_associations_name = false
-
-###
-# Enable the Active Job `BigDecimal` argument serializer, which guarantees
-# roundtripping. Without this serializer, some queue adapters may serialize
-# `BigDecimal` arguments as simple (non-roundtrippable) strings.
-#
-# When deploying an application with multiple replicas, old (pre-Rails 7.1)
-# replicas will not be able to deserialize `BigDecimal` arguments from this
-# serializer. Therefore, this setting should only be enabled after all replicas
-# have been successfully upgraded to Rails 7.1.
-#++
-# Rails.application.config.active_job.use_big_decimal_serializer = true
-
-###
-# Specify if an `ArgumentError` should be raised if `Rails.cache` `fetch` or
-# `write` are given an invalid `expires_at` or `expires_in` time.
-# Options are `true`, and `false`. If `false`, the exception will be reported
-# as `handled` and logged instead.
-#++
-# Rails.application.config.active_support.raise_on_invalid_cache_expiration_time = true
-
-###
-# Specify whether Query Logs will format tags using the SQLCommenter format
-# (https://open-telemetry.github.io/opentelemetry-sqlcommenter/), or using the legacy format.
-# Options are `:legacy` and `:sqlcommenter`.
-#++
-# Rails.application.config.active_record.query_log_tags_format = :sqlcommenter
-
-###
-# Specify the default serializer used by `MessageEncryptor` and `MessageVerifier`
-# instances.
-#
-# The legacy default is `:marshal`, which is a potential vector for
-# deserialization attacks in cases where a message signing secret has been
-# leaked.
-#
-# In Rails 7.1, the new default is `:json_allow_marshal` which serializes and
-# deserializes with `ActiveSupport::JSON`, but can fall back to deserializing
-# with `Marshal` so that legacy messages can still be read.
-#
-# In Rails 7.2, the default will become `:json` which serializes and
-# deserializes with `ActiveSupport::JSON` only.
-#
-# Alternatively, you can choose `:message_pack` or `:message_pack_allow_marshal`,
-# which serialize with `ActiveSupport::MessagePack`. `ActiveSupport::MessagePack`
-# can roundtrip some Ruby types that are not supported by JSON, and may provide
-# improved performance, but it requires the `msgpack` gem.
-#
-# For more information, see
-# https://guides.rubyonrails.org/v7.1/configuring.html#config-active-support-message-serializer
-#
-# If you are performing a rolling deploy of a Rails 7.1 upgrade, wherein servers
-# that have not yet been upgraded must be able to read messages from upgraded
-# servers, first deploy without changing the serializer, then set the serializer
-# in a subsequent deploy.
-#++
-# Rails.application.config.active_support.message_serializer = :json_allow_marshal
-
-###
-# Enable a performance optimization that serializes message data and metadata
-# together. This changes the message format, so messages serialized this way
-# cannot be read by older versions of Rails. However, messages that use the old
-# format can still be read, regardless of whether this optimization is enabled.
-#
-# To perform a rolling deploy of a Rails 7.1 upgrade, wherein servers that have
-# not yet been upgraded must be able to read messages from upgraded servers,
-# leave this optimization off on the first deploy, then enable it on a
-# subsequent deploy.
-#++
-# Rails.application.config.active_support.use_message_serializer_for_metadata = true
-
-###
-# Set the maximum size for Rails log files.
-#
-# `config.load_defaults 7.1` does not set this value for environments other than
-# development and test.
-#++
-# if Rails.env.local?
-#   Rails.application.config.log_file_size = 100 * 1024 * 1024
-# end
-
-###
-# Enable raising on assignment to attr_readonly attributes. The previous
-# behavior would allow assignment but silently not persist changes to the
-# database.
-#++
-# Rails.application.config.active_record.raise_on_assign_to_attr_readonly = true
-
-###
-# Enable validating only parent-related columns for presence when the parent is mandatory.
-# The previous behavior was to validate the presence of the parent record, which performed an extra query
-# to get the parent every time the child record was updated, even when parent has not changed.
-#++
-# Rails.application.config.active_record.belongs_to_required_validates_foreign_key = false
-
-###
-# Enable precompilation of `config.filter_parameters`. Precompilation can
-# improve filtering performance, depending on the quantity and types of filters.
-#++
-# Rails.application.config.precompile_filter_parameters = true
-
-###
-# Enable before_committed! callbacks on all enrolled records in a transaction.
-# The previous behavior was to only run the callbacks on the first copy of a record
-# if there were multiple copies of the same record enrolled in the transaction.
-#++
-# Rails.application.config.active_record.before_committed_on_all_records = true
-
-###
-# Disable automatic column serialization into YAML.
-# To keep the historic behavior, you can set it to `YAML`, however it is
-# recommended to explicitly define the serialization method for each column
-# rather than to rely on a global default.
-#++
-# Rails.application.config.active_record.default_column_serializer = nil
-
-###
-# Enable a performance optimization that serializes Active Record models
-# in a faster and more compact way.
-#
-# To perform a rolling deploy of a Rails 7.1 upgrade, wherein servers that have
-# not yet been upgraded must be able to read caches from upgraded servers,
-# leave this optimization off on the first deploy, then enable it on a
-# subsequent deploy.
-#++
-# Rails.application.config.active_record.marshalling_format_version = 7.1
-
-###
-# Run `after_commit` and `after_*_commit` callbacks in the order they are defined in a model.
-# This matches the behaviour of all other callbacks.
-# In previous versions of Rails, they ran in the inverse order.
-#++
-# Rails.application.config.active_record.run_after_transaction_callbacks_in_order_defined = true
-
-###
-# Whether a `transaction` block is committed or rolled back when exited via `return`, `break` or `throw`.
-#++
-# Rails.application.config.active_record.commit_transaction_on_non_local_return = true
-
-###
-# Controls when to generate a value for <tt>has_secure_token</tt> declarations.
-#++
-# Rails.application.config.active_record.generate_secure_token_on = :initialize
-
-###
-# ** Please read carefully, this must be configured in config/application.rb **
-#
-# Change the format of the cache entry.
-#
-# Changing this default means that all new cache entries added to the cache
-# will have a different format that is not supported by Rails 7.0
-# applications.
-#
-# Only change this value after your application is fully deployed to Rails 7.1
-# and you have no plans to rollback.
-# When you're ready to change format, add this to `config/application.rb` (NOT
-# this file):
-#   config.active_support.cache_format_version = 7.1
-
-###
-# Configure Action View to use HTML5 standards-compliant sanitizers when they are supported on your
-# platform.
-#
-# `Rails::HTML::Sanitizer.best_supported_vendor` will cause Action View to use HTML5-compliant
-# sanitizers if they are supported, else fall back to HTML4 sanitizers.
-#
-# In previous versions of Rails, Action View always used `Rails::HTML4::Sanitizer` as its vendor.
-#++
-# Rails.application.config.action_view.sanitizer_vendor = Rails::HTML::Sanitizer.best_supported_vendor
-
-###
-# Configure Action Text to use an HTML5 standards-compliant sanitizer when it is supported on your
-# platform.
-#
-# `Rails::HTML::Sanitizer.best_supported_vendor` will cause Action Text to use HTML5-compliant
-# sanitizers if they are supported, else fall back to HTML4 sanitizers.
-#
-# In previous versions of Rails, Action Text always used `Rails::HTML4::Sanitizer` as its vendor.
-#++
-# Rails.application.config.action_text.sanitizer_vendor = Rails::HTML::Sanitizer.best_supported_vendor
-
-###
-# Configure the log level used by the DebugExceptions middleware when logging
-# uncaught exceptions during requests.
-#++
-# Rails.application.config.action_dispatch.debug_exception_log_level = :error
-
-###
-# Configure the test helpers in Action View, Action Dispatch, and rails-dom-testing to use HTML5
-# parsers.
-#
-# Nokogiri::HTML5 isn't supported on JRuby, so JRuby applications must set this to :html4.
-#
-# In previous versions of Rails, these test helpers always used an HTML4 parser.
-#++
-# Rails.application.config.dom_testing_default_html_version = :html5
+Pagy::DEFAULT[:limit] = 12
+Pagy::DEFAULT[:overflow] = :last_page
 
 /*******************************************************************************
 * File: config/initializers/permissions_policy.rb
@@ -8393,6 +7161,23 @@ end
 #   policy.fullscreen  :self
 #   policy.payment     :self, "https://secure.example.com"
 # end
+
+/*******************************************************************************
+* File: config/initializers/secret_token.rb
+* Size: 522 bytes
+*******************************************************************************/
+
+# frozen_string_literal: true
+
+# Be sure to restart your server when you modify this file.
+
+# Configure the application's secret_key_base for verifying the integrity of signed cookies.
+Rails.application.config.secret_key_base = Rails.application.credentials.dig(Rails.env.to_sym, :secret_key_base)
+
+# Fall back to ENV variable for production if not found in credentials
+if Rails.env.production? && Rails.application.config.secret_key_base.nil?
+  Rails.application.config.secret_key_base = ENV.fetch('SECRET_KEY_BASE')
+end
 
 /*******************************************************************************
 * File: config/initializers/will_paginate_array_fix.rb
@@ -8497,10 +7282,11 @@ en:
 
 /*******************************************************************************
 * File: config/locales/en.yml
-* Size: 1553 bytes
+* Size: 2068 bytes
 *******************************************************************************/
 
 en:
+  # Controller Flash Messages
   messages:
     create:
       success: 'Your message has been sent.'
@@ -8549,6 +7335,23 @@ en:
       update:
         success: 'Tags were successfully updated.'
         error: 'There was an error updating the tags. Please try again.'
+
+  # Pagination
+  pagy:
+    prev: "«"
+    next: "»"
+
+  # Template Views
+  rehearsals:
+    index:
+      title: Rehearsals
+      welcome: >
+        Here you can download and listen to all the previous rehearsals you may have
+        missed so you can practice along and get the notes and changes to the songs
+        you need to know before the next performance.
+        
+        Rehearsals are sorted by date and links to the music we practiced are listed
+        in the description.
 /*******************************************************************************
 * File: config/puma.rb
 * Size: 2328 bytes
@@ -9776,223 +8579,8 @@ class RemoveNotNullOnActiveStorageBlobsChecksum < ActiveRecord::Migration[6.0]
 end
 
 /*******************************************************************************
-* File: db/schema.rb
-* Size: 8290 bytes
-*******************************************************************************/
-
-# This file is auto-generated from the current state of the database. Instead
-# of editing this file, please use the migrations feature of Active Record to
-# incrementally modify your database, and then regenerate this schema definition.
-#
-# This file is the source Rails uses to define your schema when running `bin/rails
-# db:schema:load`. When creating a new database, `bin/rails db:schema:load` tends to
-# be faster and is potentially less error prone than running all of your
-# migrations from scratch. Old migrations may fail to apply correctly if those
-# migrations use external dependencies or application code.
-#
-# It's strongly recommended that you check this file into your version control system.
-
-ActiveRecord::Schema[7.1].define(version: 2025_03_03_215719) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "active_storage_attachments", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "record_type", null: false
-    t.bigint "record_id", null: false
-    t.bigint "blob_id", null: false
-    t.datetime "created_at", precision: nil, null: false
-    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
-    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
-  end
-
-  create_table "active_storage_blobs", force: :cascade do |t|
-    t.string "key", null: false
-    t.string "filename", null: false
-    t.string "content_type"
-    t.text "metadata"
-    t.bigint "byte_size", null: false
-    t.string "checksum"
-    t.datetime "created_at", precision: nil, null: false
-    t.string "service_name", null: false
-    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
-  end
-
-  create_table "active_storage_variant_records", force: :cascade do |t|
-    t.bigint "blob_id", null: false
-    t.string "variation_digest", null: false
-    t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
-  end
-
-  create_table "article_categories", force: :cascade do |t|
-    t.bigint "article_id"
-    t.bigint "category_id"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
-    t.index ["article_id"], name: "index_article_categories_on_article_id"
-    t.index ["category_id"], name: "index_article_categories_on_category_id"
-  end
-
-  create_table "article_tags", force: :cascade do |t|
-    t.bigint "article_id"
-    t.bigint "tag_id"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
-    t.index ["article_id"], name: "index_article_tags_on_article_id"
-    t.index ["tag_id"], name: "index_article_tags_on_tag_id"
-  end
-
-  create_table "articles", force: :cascade do |t|
-    t.string "title"
-    t.text "content"
-    t.bigint "user_id"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
-    t.boolean "published", default: false, null: false
-    t.index ["user_id"], name: "index_articles_on_user_id"
-  end
-
-  create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.string "slug"
-    t.bigint "category_id"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
-    t.integer "article_categories_count", default: 0
-    t.index ["category_id"], name: "index_categories_on_category_id"
-  end
-
-  create_table "instruments", force: :cascade do |t|
-    t.string "name"
-    t.integer "position"
-    t.bigint "song_id"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
-    t.index ["name", "song_id"], name: "index_instruments_on_name_and_song_id", unique: true
-    t.index ["song_id"], name: "index_instruments_on_song_id"
-  end
-
-  create_table "members", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "phone"
-    t.string "talents"
-    t.text "vocal_range"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
-  end
-
-  create_table "messages", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "subject"
-    t.text "message"
-    t.boolean "read", default: false, null: false
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
-  end
-
-  create_table "performance_songs", force: :cascade do |t|
-    t.bigint "performance_id"
-    t.bigint "song_id"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
-    t.index ["performance_id"], name: "index_performance_songs_on_performance_id"
-    t.index ["song_id"], name: "index_performance_songs_on_song_id"
-  end
-
-  create_table "performances", force: :cascade do |t|
-    t.string "venue"
-    t.datetime "date", precision: nil
-    t.text "details"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
-  end
-
-  create_table "profiles", force: :cascade do |t|
-    t.string "name"
-    t.string "title"
-    t.text "bio"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
-    t.integer "position"
-  end
-
-  create_table "rehearsal_songs", force: :cascade do |t|
-    t.bigint "rehearsal_id"
-    t.bigint "song_id"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
-    t.index ["rehearsal_id"], name: "index_rehearsal_songs_on_rehearsal_id"
-    t.index ["song_id"], name: "index_rehearsal_songs_on_song_id"
-  end
-
-  create_table "rehearsals", force: :cascade do |t|
-    t.datetime "date", precision: nil
-    t.string "venue"
-    t.string "host"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
-    t.string "time"
-    t.integer "rehearsal_songs_count", default: 0, null: false
-  end
-
-  create_table "songs", force: :cascade do |t|
-    t.string "title"
-    t.datetime "performance_date", precision: nil
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
-    t.string "slug"
-    t.string "sort_order"
-    t.text "description"
-    t.integer "performances_count", default: 0
-    t.integer "instruments_count", default: 0
-  end
-
-  create_table "tags", force: :cascade do |t|
-    t.string "name"
-    t.string "slug"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
-    t.integer "article_tags_count", default: 0, null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at", precision: nil
-    t.datetime "remember_created_at", precision: nil
-    t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at", precision: nil
-    t.datetime "last_sign_in_at", precision: nil
-    t.string "current_sign_in_ip"
-    t.string "last_sign_in_ip"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
-    t.string "name"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "article_categories", "articles"
-  add_foreign_key "article_categories", "categories"
-  add_foreign_key "article_tags", "articles"
-  add_foreign_key "article_tags", "tags"
-  add_foreign_key "articles", "users"
-  add_foreign_key "categories", "categories"
-  add_foreign_key "instruments", "songs"
-  add_foreign_key "performance_songs", "performances"
-  add_foreign_key "performance_songs", "songs"
-  add_foreign_key "rehearsal_songs", "rehearsals"
-  add_foreign_key "rehearsal_songs", "songs"
-end
-
-/*******************************************************************************
 * File: db/seeds.rb
-* Size: 4334 bytes
+* Size: 4377 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -10076,6 +8664,7 @@ end
     title: Faker::Lorem.sentence.titleize,
     content: Faker::Lorem.paragraph,
     user_id: User.first.id,
+    published: [true, true, false].sample,
     category_ids: categories.sample.id,
     tag_ids: tags.sample(Random.rand((tags.count + 1).to_f)).map(&:id)
   )
@@ -10157,7 +8746,7 @@ end
 
 /*******************************************************************************
 * File: docker-compose.yml
-* Size: 520 bytes
+* Size: 674 bytes
 *******************************************************************************/
 
 services:
@@ -10165,10 +8754,15 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
+      args:
+        RUBY_VERSION: $(cat .ruby-version)
+        NODE_VERSION: $(cat .node-version)
     container_name: choir-site-web
     command: foreman start -f Procfile.dev
     environment:
       - DATABASE_URL=postgresql://choir_postgres:password@postgres13:5432/
+      - RAILS_ENV=development
+      - SOURCE_PATH=$PWD
     networks:
       - postgres_network
     ports:
@@ -10179,6 +8773,7 @@ services:
     volumes:
       - .:/choir-site
       - gem_cache:/usr/local/bundle/gems
+
 networks:
   postgres_network:
     external: true
@@ -10187,18 +8782,20 @@ volumes:
   gem_cache:
 /*******************************************************************************
 * File: heroku.yml
-* Size: 229 bytes
+* Size: 314 bytes
 *******************************************************************************/
 
 build:
   docker:
     web: Dockerfile
+  args:
+    RUBY_VERSION: $(cat .ruby-version)
+    NODE_VERSION: $(cat .node-version)
   config:
     RAILS_ENV: production
     NODE_ENV: production
     RAILS_MASTER_KEY: ${RAILS_MASTER_KEY}
     SECRET_KEY_BASE: ${SECRET_KEY_BASE}
-
 
 run:
   web: bundle exec puma -C config/puma.rb
@@ -10514,7 +9111,7 @@ end
 
 /*******************************************************************************
 * File: test/controllers/admin/articles_controller_test.rb
-* Size: 1846 bytes
+* Size: 1854 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -10532,12 +9129,14 @@ module Admin
 
     test 'should get index' do
       get admin_articles_path
+
       assert_response :success
       assert_template 'admin/articles/index'
     end
 
     test 'should get new' do
       get new_admin_article_path
+
       assert_response :success
       assert_template 'admin/articles/new'
     end
@@ -10549,15 +9148,18 @@ module Admin
                      content: 'Article Content',
                      user_id: @admin.id }
         }
+
         assert_response :redirect
 
         article = assigns :article
+
         assert_redirected_to edit_admin_article_path(article)
       end
     end
 
     test 'should get edit' do
       get edit_admin_article_path(@article)
+
       assert_response :success
       assert_template 'admin/articles/edit'
     end
@@ -10567,9 +9169,11 @@ module Admin
         article: { title: 'Updated Title',
                    content: 'Updated content.' }
       }
+
       assert_response :redirect
       assert_redirected_to edit_admin_article_path(@article)
       @article.reload
+
       assert_equal 'Updated Title',    @article.title
       assert_equal 'Updated content.', @article.content
     end
@@ -10577,6 +9181,7 @@ module Admin
     test 'should delete article' do
       assert_difference 'Article.count', -1 do
         delete admin_article_path(@article)
+
         assert_response :redirect
         assert_redirected_to admin_articles_path
       end
@@ -10586,7 +9191,7 @@ end
 
 /*******************************************************************************
 * File: test/controllers/admin/categories_controller_test.rb
-* Size: 1477 bytes
+* Size: 2153 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -10603,6 +9208,7 @@ module Admin
 
     test 'should get index' do
       get admin_categories_path
+
       assert_response :success
       assert_template 'admin/categories/index'
     end
@@ -10613,8 +9219,21 @@ module Admin
           category: { name: 'New category',
                       slug: 'new-category' }
         }
+
         assert_response :redirect
         assert_redirected_to admin_categories_path
+        assert_not_empty flash
+      end
+    end
+
+    test 'should report error message if fails to create category' do
+      assert_no_difference 'Category.count' do
+        post admin_categories_path, params: {
+          category: { name: '', slug: '' }
+        }
+
+        assert_response :success
+        assert_template 'admin/categories/index'
       end
     end
 
@@ -10623,17 +9242,34 @@ module Admin
         category: { name: 'New category Name',
                     slug: 'new-category-name' }
       }
+
       assert_response :redirect
       assert_redirected_to admin_categories_path
       @category.reload
+
       assert_equal 'New category Name', @category.name
       assert_equal 'new-category-name', @category.slug
+    end
+
+    test 'should fail to update a category' do
+      patch admin_category_path(@category), params: {
+        category: { name: '', slug: '' }
+      }
+
+      assert_response :redirect
+      assert_not_empty flash
+
+      @category.reload
+
+      assert_not_empty @category.name
+      assert_not_empty @category.slug
     end
 
     test 'should delete a category' do
       category = categories :deletable
       assert_difference 'Category.count', -1 do
         delete admin_category_path(category)
+
         assert_response :redirect
         assert_redirected_to admin_categories_path
       end
@@ -10643,7 +9279,7 @@ end
 
 /*******************************************************************************
 * File: test/controllers/admin/members_controller_test.rb
-* Size: 1987 bytes
+* Size: 2006 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -10660,12 +9296,14 @@ module Admin
 
     test 'should get index' do
       get admin_members_path
+
       assert_response :success
       assert_template 'admin/members/index'
     end
 
     test 'should get new' do
       get new_admin_member_path
+
       assert_response :success
       assert_template 'admin/members/new'
     end
@@ -10681,6 +9319,7 @@ module Admin
             talents: 'Piano, Conducting'
           }
         }
+
         assert_response :redirect
         assert_redirected_to admin_members_path
       end
@@ -10688,6 +9327,7 @@ module Admin
 
     test 'should get edit' do
       get edit_admin_member_path(@member)
+
       assert_response :success
       assert_template 'admin/members/edit'
     end
@@ -10702,18 +9342,21 @@ module Admin
           talents: 'Piano'
         }
       }
+
       assert_response :redirect
       assert_redirected_to admin_members_path
       @member.reload
+
       assert_equal 'Heather Taylor', @member.name
       assert_equal 'email@email.com', @member.email
-      assert @member.soprano?
+      assert_predicate @member, :soprano?
       assert_not @member.bass?
     end
 
     test 'delete should remove member record' do
       assert_difference 'Member.count', -1 do
         delete admin_member_path(@member)
+
         assert_response :redirect
         assert_redirected_to admin_members_path
       end
@@ -10723,7 +9366,7 @@ end
 
 /*******************************************************************************
 * File: test/controllers/admin/messages_controller_test.rb
-* Size: 2415 bytes
+* Size: 2446 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -10740,6 +9383,7 @@ module Admin
 
     test 'should get index' do
       get admin_messages_path
+
       assert_response :success
       assert_template 'admin/messages/index'
       assert_select 'table#messages-datatable'
@@ -10747,9 +9391,11 @@ module Admin
 
     test 'should get index with JSON' do
       get admin_messages_path(format: :json), xhr: true
+
       assert_response :success
 
       json_response = response.parsed_body
+
       assert_includes json_response.keys, 'data'
       assert_includes json_response.keys, 'recordsTotal'
       assert_includes json_response.keys, 'recordsFiltered'
@@ -10763,7 +9409,8 @@ module Admin
       assert_template 'admin/messages/show'
 
       @message.reload
-      assert @message.read?, 'Message should be marked as read after viewing'
+
+      assert_predicate @message, :read?, 'Message should be marked as read after viewing'
     end
 
     test 'should mark messages as read via AJAX' do
@@ -10776,7 +9423,8 @@ module Admin
 
       assert_response :success
       @message.reload
-      assert @message.read?, 'Message should be marked as read'
+
+      assert_predicate @message, :read?, 'Message should be marked as read'
     end
 
     test 'should mark messages as unread via AJAX' do
@@ -10789,6 +9437,7 @@ module Admin
 
       assert_response :success
       @message.reload
+
       assert_not @message.read?, 'Message should be marked as unread'
     end
     test 'datatable should include required columns' do
@@ -10798,6 +9447,7 @@ module Admin
       first_record = json_response['data'].first
 
       required_columns = %w[name email subject created_at]
+
       required_columns.each do |column|
         assert_includes first_record.keys, column,
                         "Datatable response should include #{column} column"
@@ -10808,7 +9458,7 @@ end
 
 /*******************************************************************************
 * File: test/controllers/admin/performances_controller_test.rb
-* Size: 2050 bytes
+* Size: 2057 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -10825,12 +9475,14 @@ module Admin
 
     test 'should get index' do
       get admin_performances_path
+
       assert_response :success
       assert_template 'admin/performances/index'
     end
 
     test 'should get new' do
       get new_admin_performance_path
+
       assert_response :success
       assert_template 'admin/performances/new'
     end
@@ -10840,6 +9492,7 @@ module Admin
         post admin_performances_path, params: { performance: { venue: 'Here',
                                                                date: 2.days.from_now.strftime('%m/%d/%Y'),
                                                                details: 'None' } }
+
         assert_response :redirect
         assert_redirected_to admin_performances_path
       end
@@ -10847,6 +9500,7 @@ module Admin
 
     test 'should get edit' do
       get edit_admin_performance_path(@performance)
+
       assert_response :success
       assert_template 'admin/performances/edit'
     end
@@ -10860,9 +9514,11 @@ module Admin
                 details: 'None'
               }
             }
+
       assert_response :redirect
       assert_redirected_to admin_performances_path
       @performance.reload
+
       assert_equal 'Here', @performance.venue
       assert_equal 'None', @performance.details
       assert_equal '03/25/2001', @performance.date.strftime('%m/%d/%Y')
@@ -10871,6 +9527,7 @@ module Admin
     test 'should delete peformance' do
       assert_difference 'Performance.count', -1 do
         delete admin_performance_path(@performance)
+
         assert_response :redirect
         assert_redirected_to admin_performances_path
       end
@@ -10880,7 +9537,7 @@ end
 
 /*******************************************************************************
 * File: test/controllers/admin/rehearsals_controller_test.rb
-* Size: 2120 bytes
+* Size: 2127 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -10897,12 +9554,14 @@ module Admin
 
     test 'should get index' do
       get admin_rehearsals_path
+
       assert_response :success
       assert_template 'admin/rehearsals/index'
     end
 
     test 'should get new' do
       get new_admin_rehearsal_path
+
       assert_response :success
       assert_template 'admin/rehearsals/new'
     end
@@ -10915,6 +9574,7 @@ module Admin
                        date_holder: '12/20/2020',
                        time: '1:00 PM - 5:00 PM' }
         }
+
         assert_response :redirect
         assert_redirected_to admin_rehearsals_path
       end
@@ -10922,6 +9582,7 @@ module Admin
 
     test 'should get edit' do
       get edit_admin_rehearsal_path(@rehearsal)
+
       assert_response :success
       assert_template 'admin/rehearsals/edit'
     end
@@ -10934,9 +9595,11 @@ module Admin
                            date_holder: '12/20/2020',
                            time: '1:00 PM - 5:00 PM' }
             }
+
       assert_response :redirect
       assert_redirected_to admin_rehearsals_path
       @rehearsal.reload
+
       assert_equal "Your's Truly",      @rehearsal.host
       assert_equal 'Wherever',          @rehearsal.venue
       assert_equal '12/20/2020',        @rehearsal.date.strftime('%m/%d/%Y')
@@ -10946,6 +9609,7 @@ module Admin
     test 'should destroy rehearsal' do
       assert_difference 'Rehearsal.count', -1 do
         delete admin_rehearsal_path(@rehearsal)
+
         assert_response :redirect
         assert_redirected_to admin_rehearsals_path
       end
@@ -10955,7 +9619,7 @@ end
 
 /*******************************************************************************
 * File: test/controllers/admin/songs_controller_test.rb
-* Size: 1550 bytes
+* Size: 1557 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -10972,12 +9636,14 @@ module Admin
 
     test 'should get index' do
       get admin_songs_path
+
       assert_response :success
       assert_template 'admin/songs/index'
     end
 
     test 'should get new' do
       get new_admin_song_path
+
       assert_response :success
       assert_template 'admin/songs/new'
       assert_template 'admin/songs/_form'
@@ -10986,6 +9652,7 @@ module Admin
     test 'should create new entry' do
       assert_difference 'Song.count', 1 do
         post admin_songs_path, params: { song: { title: 'Praise to the Man' } }
+
         assert_response :redirect
         assert_redirected_to edit_admin_song_path(assigns(:song))
       end
@@ -10993,6 +9660,7 @@ module Admin
 
     test 'should get edit' do
       get edit_admin_song_path(@song)
+
       assert_response :success
       assert_template 'admin/songs/edit'
       assert_template 'admin/songs/_form'
@@ -11000,15 +9668,18 @@ module Admin
 
     test 'should update song' do
       patch admin_song_path(@song), params: { song: { title: 'New Title' } }
+
       assert_response :redirect
       assert_redirected_to edit_admin_song_path(@song)
       @song.reload
+
       assert_equal 'New Title', @song.title
     end
 
     test 'should delete song' do
       assert_difference 'Song.count', -1 do
         delete admin_song_path(@song)
+
         assert_response :redirect
         assert_redirected_to admin_songs_path
       end
@@ -11018,7 +9689,7 @@ end
 
 /*******************************************************************************
 * File: test/controllers/admin/tags_controller_test.rb
-* Size: 1270 bytes
+* Size: 1275 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -11035,6 +9706,7 @@ module Admin
 
     test 'should get index' do
       get admin_tags_path
+
       assert_response :success
       assert_template 'admin/tags/index'
     end
@@ -11045,6 +9717,7 @@ module Admin
           tag: { name: 'New Tag',
                  slug: 'new-tag' }
         }
+
         assert_response :redirect
         assert_redirected_to admin_tags_path
       end
@@ -11055,9 +9728,11 @@ module Admin
         tag: { name: 'New Tag Name',
                slug: 'new-tag-name' }
       }
+
       assert_response :redirect
       assert_redirected_to admin_tags_path
       @tag.reload
+
       assert_equal 'New Tag Name', @tag.name
       assert_equal 'new-tag-name', @tag.slug
     end
@@ -11065,6 +9740,7 @@ module Admin
     test 'should delete a tag' do
       assert_difference 'Tag.count', -1 do
         delete admin_tag_path(@tag)
+
         assert_response :redirect
         assert_redirected_to admin_tags_path
       end
@@ -11074,7 +9750,7 @@ end
 
 /*******************************************************************************
 * File: test/controllers/admin_controller_test.rb
-* Size: 480 bytes
+* Size: 482 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -11085,6 +9761,7 @@ require 'test_helper'
 class AdminControllerTest < ActionDispatch::IntegrationTest
   test 'should redirect to login page if not signed in' do
     get admin_index_path
+
     assert_response :redirect
     assert_redirected_to new_user_session_path
   end
@@ -11092,6 +9769,7 @@ class AdminControllerTest < ActionDispatch::IntegrationTest
   test 'should get index if logged in' do
     sign_in users :admin
     get admin_index_path
+
     assert_response :success
     assert_template 'admin/index'
   end
@@ -11099,7 +9777,7 @@ end
 
 /*******************************************************************************
 * File: test/controllers/articles_controller_test.rb
-* Size: 458 bytes
+* Size: 460 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -11114,12 +9792,14 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should get index' do
     get news_index_path
+
     assert_response :success
     assert_template 'articles/index'
   end
 
   test 'should get show' do
     get news_path(@article)
+
     assert_response :success
     assert_template 'articles/show'
   end
@@ -11127,7 +9807,7 @@ end
 
 /*******************************************************************************
 * File: test/controllers/messages_controller_test.rb
-* Size: 3586 bytes
+* Size: 3587 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -11157,6 +9837,7 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should get new' do
     get contact_path
+
     assert_response :success
     assert_template 'messages/new'
     assert_select 'form'
@@ -11255,7 +9936,7 @@ end
 
 /*******************************************************************************
 * File: test/controllers/rehearsals_controller_test.rb
-* Size: 288 bytes
+* Size: 289 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -11266,6 +9947,7 @@ require 'test_helper'
 class RehearsalsControllerTest < ActionDispatch::IntegrationTest
   test 'should get index' do
     get rehearsals_path
+
     assert_response :success
     assert_template 'rehearsals/index'
   end
@@ -11273,7 +9955,7 @@ end
 
 /*******************************************************************************
 * File: test/controllers/songs_controller_test.rb
-* Size: 423 bytes
+* Size: 425 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -11284,6 +9966,7 @@ require 'test_helper'
 class SongsControllerTest < ActionDispatch::IntegrationTest
   test 'should get index' do
     get music_index_path
+
     assert_response :success
     assert_template 'songs/index'
   end
@@ -11291,6 +9974,7 @@ class SongsControllerTest < ActionDispatch::IntegrationTest
   test 'should get show' do
     song = songs :one
     get music_path(song.slug)
+
     assert_response :success
     assert_template 'songs/show'
   end
@@ -11298,7 +9982,7 @@ end
 
 /*******************************************************************************
 * File: test/controllers/static_pages_controller_test.rb
-* Size: 284 bytes
+* Size: 285 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -11309,6 +9993,7 @@ require 'test_helper'
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   test 'should get home' do
     get root_path
+
     assert_response :success
     assert_template 'static_pages/home'
   end
@@ -11569,7 +10254,7 @@ end
 
 /*******************************************************************************
 * File: test/mailers/message_mailer_test.rb
-* Size: 812 bytes
+* Size: 813 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -11581,6 +10266,7 @@ class MessageMailerTest < ActionMailer::TestCase
   test 'contact_form' do
     @message = messages :one
     mail = MessageMailer.contact_form(@message)
+
     assert_equal @message.subject, mail.subject
     assert_equal ['whittakerlee81@gmail.com'], mail.to
     assert_equal [@message.email], mail.from
@@ -11644,7 +10330,7 @@ end
 
 /*******************************************************************************
 * File: test/models/article_test.rb
-* Size: 756 bytes
+* Size: 773 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -11658,38 +10344,43 @@ class ArticleTest < ActiveSupport::TestCase
   end
 
   test 'should be valid' do
-    assert @article.valid?
+    assert_predicate @article, :valid?
   end
 
   test 'should have a title' do
     @article.title = ''
+
     assert_not @article.valid?
   end
 
   test 'title should not be too long' do
     @article.title = 'a' * 121
+
     assert_not @article.valid?
   end
 
   test 'should have content' do
     @article.content = ''
+
     assert_not @article.valid?
   end
 
   test 'content should not be too long' do
     @article.content = 'a' * 5001
+
     assert_not @article.valid?
   end
 
   test 'should have author' do
     @article.author = nil
+
     assert_not @article.valid?
   end
 end
 
 /*******************************************************************************
 * File: test/models/category_test.rb
-* Size: 1008 bytes
+* Size: 1026 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -11703,16 +10394,18 @@ class CategoryTest < ActiveSupport::TestCase
   end
 
   test 'should be valid' do
-    assert @category.valid?
+    assert_predicate @category, :valid?
   end
 
   test 'should have a name' do
     @category.name = ''
+
     assert_not @category.valid?
   end
 
   test 'name should not be too long' do
     @category.name = 'a' * 31
+
     assert_not @category.valid?
   end
 
@@ -11720,16 +10413,19 @@ class CategoryTest < ActiveSupport::TestCase
     duplicate_category = @category.dup
     duplicate_category.slug += '1'
     @category.save
+
     assert_not duplicate_category.valid?
   end
 
   test 'should have a slug' do
     @category.slug = ''
+
     assert_not @category.valid?
   end
 
   test 'slug should not be too long' do
     @category.slug = 'a' * 31
+
     assert_not @category.valid?
   end
 
@@ -11737,13 +10433,14 @@ class CategoryTest < ActiveSupport::TestCase
     duplicate_category = @category.dup
     duplicate_category.name += '1'
     @category.save
+
     assert_not duplicate_category.valid?
   end
 end
 
 /*******************************************************************************
 * File: test/models/instrument_test.rb
-* Size: 760 bytes
+* Size: 789 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -11757,35 +10454,40 @@ class InstrumentTest < ActiveSupport::TestCase
   end
 
   test 'should be valid' do
-    assert @instrument.valid?
+    assert_predicate @instrument, :valid?
   end
 
   test 'should have a name' do
     @instrument.name = ''
+
     assert_not @instrument.valid?
   end
 
   test 'name should not be too long' do
     @instrument.name = 'a' * 61
+
     assert_not @instrument.valid?
   end
 
   test 'name should be unique to a song' do
     @instrument.name = 'tenor'
+
     assert_not @instrument.valid?
     @instrument.song = songs :two
-    assert @instrument.valid?
+
+    assert_predicate @instrument, :valid?
   end
 
   test 'should belong to a song' do
     @instrument.song = nil
+
     assert_not @instrument.valid?
   end
 end
 
 /*******************************************************************************
 * File: test/models/member_test.rb
-* Size: 1414 bytes
+* Size: 1444 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -11799,21 +10501,24 @@ class MemberTest < ActiveSupport::TestCase
   end
 
   test 'should be valid' do
-    assert @member.valid?
+    assert_predicate @member, :valid?
   end
 
   test 'should have a name' do
     @member.name = ''
+
     assert_not @member.valid?
   end
 
   test 'name should not be too long' do
     @member.name = 'a' * 61
+
     assert_not @member.valid?
   end
 
   test 'email should not be too long' do
     @member.email = "#{'a' * 244}@example.com"
+
     assert_not @member.valid?
   end
 
@@ -11822,7 +10527,8 @@ class MemberTest < ActiveSupport::TestCase
                          first.last@foo.jp alice+bob@baz.cn]
     valid_addresses.each do |valid_address|
       @member.email = valid_address
-      assert @member.valid?, "#{valid_address.inspect} should be valid"
+
+      assert_predicate @member, :valid?, "#{valid_address.inspect} should be valid"
     end
   end
 
@@ -11831,19 +10537,21 @@ class MemberTest < ActiveSupport::TestCase
                            foo@bar_baz.com foo@bar+baz.com]
     invalid_addresses.each do |invalid_address|
       @member.email = invalid_address
+
       assert_not @member.valid?, "#{invalid_address.inspect} should be invalid"
     end
   end
 
   test 'vocal_range should not be empty' do
     @member.vocal_range = []
+
     assert_not @member.valid?
   end
 end
 
 /*******************************************************************************
 * File: test/models/message_test.rb
-* Size: 1965 bytes
+* Size: 2000 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -11857,26 +10565,30 @@ class MessageTest < ActiveSupport::TestCase
   end
 
   test 'should be valid' do
-    assert @message.valid?
+    assert_predicate @message, :valid?
   end
 
   test 'should have a name' do
     @message.name = ''
+
     assert_not @message.valid?
   end
 
   test 'name should not be too long' do
     @message.name = 'a' * 61
+
     assert_not @message.valid?
   end
 
   test 'should have an email address' do
     @message.email = ''
+
     assert_not @message.valid?
   end
 
   test 'email should not be too long' do
     @message.email = "#{'a' * 244}@example.com"
+
     assert_not @message.valid?
   end
 
@@ -11885,7 +10597,8 @@ class MessageTest < ActiveSupport::TestCase
                          first.last@foo.jp alice+bob@baz.cn]
     valid_addresses.each do |valid_address|
       @message.email = valid_address
-      assert @message.valid?, "#{valid_address.inspect} should be valid"
+
+      assert_predicate @message, :valid?, "#{valid_address.inspect} should be valid"
     end
   end
 
@@ -11894,32 +10607,38 @@ class MessageTest < ActiveSupport::TestCase
                            foo@bar_baz.com foo@bar+baz.com]
     invalid_addresses.each do |invalid_address|
       @message.email = invalid_address
+
       assert_not @message.valid?, "#{invalid_address.inspect} should be invalid"
     end
   end
 
   test 'subject should be present' do
     @message.subject = ''
+
     assert_not @message.valid?
   end
 
   test 'subject should not be too long' do
     @message.subject = 'a' * 121
+
     assert_not @message.valid?
   end
 
   test 'message should be present' do
     @message.message = ''
+
     assert_not @message.valid?
   end
 
   test 'message should not be too long' do
     @message.message = 'a' * 5001
+
     assert_not @message.valid?
   end
 
   test 'read should be either true or false' do
     @message.read = nil
+
     assert_not @message.valid?
   end
 end
@@ -11942,7 +10661,7 @@ end
 
 /*******************************************************************************
 * File: test/models/performance_test.rb
-* Size: 640 bytes
+* Size: 655 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -11956,21 +10675,24 @@ class PerformanceTest < ActiveSupport::TestCase
   end
 
   test 'performance should be valid' do
-    assert @performance.valid?
+    assert_predicate @performance, :valid?
   end
 
   test 'performance should have a date' do
     @performance.date = nil
+
     assert_not @performance.valid?
   end
 
   test 'performance should have a venue' do
     @performance.venue = ''
+
     assert_not @performance.valid?
   end
 
   test 'performance details should not be too long' do
     @performance.details = 'a' * 5001
+
     assert_not @performance.valid?
   end
 end
@@ -11992,7 +10714,7 @@ end
 
 /*******************************************************************************
 * File: test/models/rehearsal_test.rb
-* Size: 783 bytes
+* Size: 800 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -12006,38 +10728,43 @@ class RehearsalTest < ActiveSupport::TestCase
   end
 
   test 'should be valid' do
-    assert @rehearsal.valid?
+    assert_predicate @rehearsal, :valid?
   end
 
   test 'should have date' do
     @rehearsal.date = nil
+
     assert_not @rehearsal.valid?
   end
 
   test 'should have a time' do
     @rehearsal.time = ''
+
     assert_not @rehearsal.valid?
   end
 
   test 'time should not be too long' do
     @rehearsal.time = 'a' * 21
+
     assert_not @rehearsal.valid?
   end
 
   test 'venue should not be too long' do
     @rehearsal.venue = 'a' * 121
+
     assert_not @rehearsal.valid?
   end
 
   test 'host should not be too long' do
     @rehearsal.host = 'a' * 61
+
     assert_not @rehearsal.valid?
   end
 end
 
 /*******************************************************************************
 * File: test/models/song_test.rb
-* Size: 771 bytes
+* Size: 787 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -12051,35 +10778,39 @@ class SongTest < ActiveSupport::TestCase
   end
 
   test 'should be valid' do
-    assert @song.valid?
+    assert_predicate @song, :valid?
   end
 
   test 'should have a title' do
     @song.title = ''
+
     assert_not @song.valid?
   end
 
   test 'title should not be too long' do
     @song.title = 'a' * 61
+
     assert_not @song.valid?
   end
 
   test 'sort_order should be set before save' do
     @song.title = 'The Long and Winding Road'
     @song.save
-    assert_equal @song.sort_order, 'Long and Winding Road, The'
+
+    assert_equal 'Long and Winding Road, The', @song.sort_order
   end
 
   test 'slug should be set before save' do
     @song.title = 'The Long and Winding Road'
     @song.save
-    assert_equal @song.slug, 'the-long-and-winding-road'
+
+    assert_equal 'the-long-and-winding-road', @song.slug
   end
 end
 
 /*******************************************************************************
 * File: test/models/tag_test.rb
-* Size: 928 bytes
+* Size: 946 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
@@ -12093,16 +10824,18 @@ class TagTest < ActiveSupport::TestCase
   end
 
   test 'should be valid' do
-    assert @tag.valid?
+    assert_predicate @tag, :valid?
   end
 
   test 'should have a name' do
     @tag.name = ''
+
     assert_not @tag.valid?
   end
 
   test 'name should not be too long' do
     @tag.name = 'a' * 31
+
     assert_not @tag.valid?
   end
 
@@ -12110,16 +10843,19 @@ class TagTest < ActiveSupport::TestCase
     duplicate_category = @tag.dup
     duplicate_category.slug += '1'
     @tag.save
+
     assert_not duplicate_category.valid?
   end
 
   test 'should have a slug' do
     @tag.slug = ''
+
     assert_not @tag.valid?
   end
 
   test 'slug should not be too long' do
     @tag.slug = 'a' * 31
+
     assert_not @tag.valid?
   end
 
@@ -12127,6 +10863,7 @@ class TagTest < ActiveSupport::TestCase
     duplicate_category = @tag.dup
     duplicate_category.name += '1'
     @tag.save
+
     assert_not duplicate_category.valid?
   end
 end
@@ -12149,13 +10886,32 @@ end
 
 /*******************************************************************************
 * File: test/test_helper.rb
-* Size: 1336 bytes
+* Size: 1970 bytes
 *******************************************************************************/
 
 # frozen_string_literal: true
 
+# Only load and start SimpleCov if not disabled
 require 'simplecov'
-SimpleCov.start
+require 'simplecov-json'
+
+SimpleCov.start 'rails' do
+  coverage_dir 'coverage'
+  enable_coverage :branch
+  formatter SimpleCov::Formatter::JSONFormatter
+  add_filter '/test/'
+  add_filter '/config/'
+  add_filter '/vendor/'
+  add_group 'Controllers', 'app/controllers'
+  add_group 'Models', 'app/models'
+  add_group 'Helpers', 'app/helpers'
+  add_group 'Mailers', 'app/mailers'
+  add_group 'Views', 'app/views'
+  add_group 'Jobs', 'app/jobs'
+  add_group 'Presenters', 'app/presenters'
+  add_group 'Model Concerns', 'app/models/concerns'
+  add_group 'Controller Concerns', 'app/controllers/concerns'
+end
 
 # Load Rails environment and necessary testing libraries
 require File.expand_path('../config/environment', __dir__)

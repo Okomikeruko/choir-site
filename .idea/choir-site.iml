@@ -114,6 +114,7 @@
     <orderEntry type="library" scope="PROVIDED" name="lumberjack (v1.2.10, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.8.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="marcel (v1.0.4, Remote: ruby-3.2.7-p253) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="meta_request (v0.8.5@fed66f, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="method_source (v1.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mime-types (v3.6.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mime-types-data (v3.2025.0304, Remote: ruby-3.2.7-p253) [gem]" level="application" />
@@ -141,7 +142,6 @@
     <orderEntry type="library" scope="PROVIDED" name="pg_query (v6.0.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pp (v0.6.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="prettyprint (v0.2.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="propshaft (v1.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="prosopite (v2.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pry (v0.15.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="psych (v5.2.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
@@ -214,98 +214,76 @@
   <component name="RailsGeneratorsCache">
     <option name="generators">
       <list>
-        <option value="active_record:application_record" />
-        <option value="active_record:devise" />
-        <option value="active_record:multi_db" />
-        <option value="application_record" />
-        <option value="benchmark" />
-        <option value="bullet:install" />
-        <option value="cancan:ability" />
-        <option value="channel" />
-        <option value="cocoon:install" />
+        <option value="active_record:migration" />
+        <option value="active_record:model" />
+        <option value="active_record:observer" />
+        <option value="active_record:session_migration" />
         <option value="controller" />
-        <option value="datatable" />
-        <option value="devise" />
-        <option value="devise:controllers" />
-        <option value="devise:install" />
-        <option value="devise:views" />
         <option value="erb:controller" />
         <option value="erb:mailer" />
         <option value="erb:scaffold" />
         <option value="generator" />
-        <option value="haml:application_layout" />
         <option value="helper" />
         <option value="integration_test" />
-        <option value="jbuilder" />
-        <option value="job" />
-        <option value="mailbox" />
         <option value="mailer" />
+        <option value="metal" />
         <option value="migration" />
         <option value="model" />
-        <option value="mongoid:devise" />
-        <option value="rack_mini_profiler:install" />
-        <option value="rack_profiler:install" />
+        <option value="model_subclass" />
+        <option value="observer" />
+        <option value="performance_test" />
+        <option value="plugin" />
         <option value="resource" />
-        <option value="responders:install" />
-        <option value="responders_controller" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
-        <option value="sidekiq:job" />
-        <option value="system_test" />
-        <option value="task" />
-        <option value="test_unit:channel" />
-        <option value="test_unit:generator" />
-        <option value="test_unit:install" />
-        <option value="test_unit:mailbox" />
+        <option value="session_migration" />
+        <option value="stylesheets" />
+        <option value="test_unit:controller" />
+        <option value="test_unit:helper" />
+        <option value="test_unit:integration" />
+        <option value="test_unit:mailer" />
+        <option value="test_unit:model" />
+        <option value="test_unit:observer" />
+        <option value="test_unit:performance" />
         <option value="test_unit:plugin" />
+        <option value="test_unit:scaffold" />
       </list>
     </option>
     <option name="myGenerators">
       <list>
-        <option value="active_record:application_record" />
-        <option value="active_record:devise" />
-        <option value="active_record:multi_db" />
-        <option value="application_record" />
-        <option value="benchmark" />
-        <option value="bullet:install" />
-        <option value="cancan:ability" />
-        <option value="channel" />
-        <option value="cocoon:install" />
+        <option value="active_record:migration" />
+        <option value="active_record:model" />
+        <option value="active_record:observer" />
+        <option value="active_record:session_migration" />
         <option value="controller" />
-        <option value="datatable" />
-        <option value="devise" />
-        <option value="devise:controllers" />
-        <option value="devise:install" />
-        <option value="devise:views" />
         <option value="erb:controller" />
         <option value="erb:mailer" />
         <option value="erb:scaffold" />
         <option value="generator" />
-        <option value="haml:application_layout" />
         <option value="helper" />
         <option value="integration_test" />
-        <option value="jbuilder" />
-        <option value="job" />
-        <option value="mailbox" />
         <option value="mailer" />
+        <option value="metal" />
         <option value="migration" />
         <option value="model" />
-        <option value="mongoid:devise" />
-        <option value="rack_mini_profiler:install" />
-        <option value="rack_profiler:install" />
+        <option value="model_subclass" />
+        <option value="observer" />
+        <option value="performance_test" />
+        <option value="plugin" />
         <option value="resource" />
-        <option value="responders:install" />
-        <option value="responders_controller" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
-        <option value="sidekiq:job" />
-        <option value="system_test" />
-        <option value="task" />
-        <option value="test_unit:channel" />
-        <option value="test_unit:generator" />
-        <option value="test_unit:install" />
-        <option value="test_unit:mailbox" />
+        <option value="session_migration" />
+        <option value="stylesheets" />
+        <option value="test_unit:controller" />
+        <option value="test_unit:helper" />
+        <option value="test_unit:integration" />
+        <option value="test_unit:mailer" />
+        <option value="test_unit:model" />
+        <option value="test_unit:observer" />
+        <option value="test_unit:performance" />
         <option value="test_unit:plugin" />
+        <option value="test_unit:scaffold" />
       </list>
     </option>
   </component>
@@ -411,7 +389,8 @@
       <value>file://$MODULE_DIR$/vendor/assets</value>
     </entry>
   </component>
-  <component name="RakeTasksCache-v2">
+  <component name="RakeTasksCache-v2" failedReloadsCounter="1">
+    <option name="failedReloadsCounter" value="1" />
     <option name="myRootTask">
       <RakeTaskImpl id="rake">
         <subtasks>
