@@ -6,7 +6,7 @@ ARG SECRET_KEY_BASE
 # Set Rails to run in production
 ENV RAILS_ENV=production \
     NODE_ENV=production \
-    BUNDLE_WITHOUT="development test" \
+    BUNDLE_WITHOUT="development test"
 
 # Install gems
 COPY Gemfile* .ruby-version .node-version ./
