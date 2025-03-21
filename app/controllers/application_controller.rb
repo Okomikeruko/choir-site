@@ -24,6 +24,7 @@ class ApplicationController < ActionController::Base
       "img-src 'self' data: #{s3}",
       "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com #{s3}",
       "object-src 'self' #{s3}",
+      "media-src 'self' #{s3}",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com",
       "connect-src 'self'",

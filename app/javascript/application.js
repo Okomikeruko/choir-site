@@ -20,21 +20,23 @@ document.addEventListener('DOMContentLoaded', () => {
     return new bootstrap.Tooltip(tooltipTriggerEl)
   });
 
-  const repeatButtons = document.querySelector('.bin-repeat');
-  repeatButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const id = this.dataset.id;
-      this.classList.toggle('active');
+  const repeatButtons = document.querySelectorAll('.btn-repeat');
+  if (repeatButtons && repeatButtons.length > 0) {
+    repeatButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const id = this.dataset.id;
+        this.classList.toggle('active');
 
-      const audioElement = document.getElementById(id);
-      if (audioElement) {
-        audioElement.setAttribute(
-          'data-repeat',
-          this.classList.contains('active') ? 'true' : 'false'
-        );
-      }
-    })
-  })
+        const audioElement = document.getElementById(id);
+        if (audioElement) {
+          audioElement.setAttribute(
+            'data-repeat',
+            this.classList.contains('active') ? 'true' : 'false'
+          );
+        }
+      });
+    });
+  }
 });
 
 function replay(audio) {
