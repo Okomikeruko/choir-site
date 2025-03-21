@@ -51,6 +51,7 @@ gem 'invisible_captcha'
 gem 'jquery-ui-rails'
 gem 'multipart-post'
 gem 'pg'
+gem 'redis'
 gem 'sidekiq'
 gem 'wysiwyg-rails'
 

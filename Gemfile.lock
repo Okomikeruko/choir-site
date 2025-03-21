@@ -362,6 +362,8 @@ GEM
       debug (>= 1.2.2)
     rdoc (6.12.0)
       psych (>= 4.0.0)
+    redis (5.4.0)
+      redis-client (>= 0.22.0)
     redis-client (0.24.0)
       connection_pool
     regexp_parser (2.10.0)
@@ -509,6 +511,7 @@ DEPENDENCIES
   rails-controller-testing
   rails_best_practices
   rdbg
+  redis
   rubocop (~> 1.59)
   rubocop-capybara
   rubocop-minitest
