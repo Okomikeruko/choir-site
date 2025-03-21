@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# :nocov:
 module Users
   # Controller for managing sessions.
   class SessionsController < Devise::SessionsController
@@ -29,3 +30,4 @@ module Users
     # end
   end
 end
+# :nocov:

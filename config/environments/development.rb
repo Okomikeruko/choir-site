@@ -77,4 +77,13 @@ Rails.application.configure do
   config.action_controller.raise_on_missing_callback_actions = true
 
   config.web_console.allowed_ips = %w[127.0.0.0/0 ::1 192.168.65.0/24]
+
+  config.after_initialize do
+    Bullet.enable = true
+    Bullet.alert = true
+    Bullet.bullet_logger = true
+    Bullet.console = true
+    Bullet.rails_logger = true
+    Bullet.add_footer = true
+  end
 end

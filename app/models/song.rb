@@ -50,6 +50,14 @@ class Song < ApplicationRecord
     def alphabetized
       all.group_by { |song| song.sort_order.chr }
     end
+
+    def for_display
+      includes(
+        { instruments: %i[pdf_attachment pdf_blob mp3_attachment mp3_blob midi_attachment midi_blob] },
+        { rehearsals: [:songs, { audio_attachment: :blob }] },
+        :performances
+      )
+    end
   end
 
   private
