@@ -48,7 +48,7 @@
         %table
           %tr{style: "vertical-align: top"}
             %td.text-primary= @last_rehearsal.date.strftime("%m/%d/%Y")
-            %td.text-end= @last_rehearsal.song_list
+            %td.text-end= rehearsal_song_list @last_rehearsal
         =link_to "Download",
                  @last_rehearsal.audio.url,
                  class: "btn btn-secondary btn-lg #{'disabled' unless @last_rehearsal.audio.exists? }"

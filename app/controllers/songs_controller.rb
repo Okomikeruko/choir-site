@@ -13,10 +13,7 @@ class SongsController < ApplicationController
   end
 
   def show
-    @song = Song.includes(:instruments,
-                          :rehearsals,
-                          :performances)
-                .find_by(slug: params[:slug])
+    @song = Song.for_display.find_by(slug: params[:slug])
     add_breadcrumb @song.title, music_path(@song.slug)
   end
 end

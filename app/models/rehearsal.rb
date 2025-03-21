@@ -51,16 +51,6 @@ class Rehearsal < ApplicationRecord
     end
   end
 
-  def song_list
-    song_names = songs.map do |s|
-      ActionController::Base.helpers.link_to(
-        s.title,
-        Rails.application.routes.url_helpers.music_path(s.slug)
-      )
-    end
-    ActionController::Base.helpers.safe_join(song_names, ', ')
-  end
-
   private
 
   def set_date

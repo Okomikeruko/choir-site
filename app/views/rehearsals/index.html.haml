@@ -5,7 +5,8 @@
   %p!= line
 
 .row
-  = render @rehearsals
+  - @rehearsals.each do |rehearsal|
+    .col-sm-4.col-md-3= render rehearsal
 
 - if @pagy.pages > 1
   .d-flex.justify-content-center!= pagy_bootstrap_nav(@pagy)
