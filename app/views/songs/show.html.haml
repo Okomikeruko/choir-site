@@ -21,7 +21,7 @@
         %audio{:controls => "controls",
                :controlsList => "nodownload"}
           %source{:type => performance.audio_content_type,
-                  :src => performance.audio.url }
+                  :src => url_for(performance.audio) }
 .row{:style => "margin-top: 20px;"}
   .col-md-8
     %h2 Parts
@@ -44,20 +44,17 @@
               %ul.dropdown-menu{:aria => { labelledby: "downloads#{instrument.id}" } }
                 - unless instrument.pdf_blob.nil?
                   %li
-                    %a{:href => instrument.pdf_blob.service_url,
-                       :target => "_blank" }
+                    = link_to url_for(instrument.pdf_blob), target: "_blank" do
                       Sheet Music - PDF
                 -if instrument.pdf_and_audio?
                   %li.divider{:role => "separator"}
                 - unless instrument.mp3_blob.nil?
                   %li
-                    %a{:href => instrument.mp3_blob.service_url,
-                       :target => "_blank" }
+                    = link_to url_for(insturment.mp3_blob), target: "_blank" do
                       Audio File - MP3
                 -unless instrument.midi_blob.nil?
                   %li
-                    %a{:href => instrument.midi_blob.service_url,
-                       :target => "_blank" }
+                    = link_to url_for(instrument.midi_blob), target: "_blank" do
                       Audio File - MIDI
         -unless instrument.mp3_blob.nil?
           .row
@@ -68,7 +65,7 @@
                      :data         => { repeat: false },
                      :onended      => "replay(this)"}
                 %source{:type => instrument.mp3_blob.content_type,
-                        :src  => instrument.mp3_blob.service_url}
+                        :src  => url_for(instrument.mp3_blob) }
             .col-xs-2.col-sm-1
               %button{ :class => "btn btn-outline-secondary btn-repeat",
                        :data  => { id: "audio-#{instrument.name.parameterize}" },
@@ -84,15 +81,3 @@
             = render rehearsal
     -else
       %p No rehearsals yet.
-:javascript
-  $(".btn-repeat").on("click", function(){
-    var id = $(this).data("id");
-    $(this).toggleClass("active");
-    $("audio#" + id).data("repeat", $(this).hasClass("active"));
-  });
-
-  function replay(audio){
-    if( $(audio).data("repeat") ){
-      $(audio)[0].play();
-    }
-  }
