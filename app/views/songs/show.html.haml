@@ -50,7 +50,7 @@
                   %li.divider{:role => "separator"}
                 - unless instrument.mp3_blob.nil?
                   %li
-                    = link_to url_for(insturment.mp3_blob), target: "_blank" do
+                    = link_to url_for(instrument.mp3_blob), target: "_blank" do
                       Audio File - MP3
                 -unless instrument.midi_blob.nil?
                   %li
