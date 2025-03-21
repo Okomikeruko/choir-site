@@ -34,7 +34,8 @@
     "build": "webpack --config webpack.config.js",
     "build:css:compile": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css ./app/assets/stylesheets/admin.bootstrap.scss:./app/assets/builds/admin.css --no-source-map --load-path=node_modules",
     "build:css:prefix": "postcss ./app/assets/builds/*.css --use=autoprefixer --replace",
-    "build:css": "yarn build:css:compile && yarn build:css:prefix",
+    "build:css": "yarn copy-fonts && yarn build:css:compile && yarn build:css:prefix",
+    "copy-fonts": "mkdir -p app/assets/builds/fonts && cp ./app/assets/fonts/* ./app/assets/builds/fonts/",
     "dev": "docker-compose -f docker-compose.yml up",
     "watch:css": "nodemon --watch ./app/assets/stylesheets/ --ext scss --exec \"yarn build:css\""
   },
