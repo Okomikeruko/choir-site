@@ -74,7 +74,15 @@ jobs:
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         run: heroku container:login
-      
+
+      - name: Fetch config from Heroku
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+          HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
+        run: |
+          echo "RAILS_MASTER_KEY=$(heroku config:get RAILS_MASTER_KEY -a $HEROKU_APP_NAME)" >> $GITHUB_ENV
+          echo "SECRET_KEY_BASE=$(heroku config:get SECRET_KEY_BASE -a $HEROKU_APP_NAME)" >> $GITHUB_ENV
+
       - name: Build and push
         env:          
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
