@@ -32,30 +32,7 @@
         .clearfix
           %h3.float-start=instrument.name
           - unless instrument.empty?
-            .dropdown.float-end
-              %button{ :class => "btn btn-secondary dropdown-toggle",
-                       :type => "button",
-                       :id => "downloads#{instrument.id}",
-                       :data => { toggle: "dropdown" },
-                       :aria => { haspopup: "true",
-                                  expanded: "true" } }
-                Downloads
-                %span.caret
-              %ul.dropdown-menu{:aria => { labelledby: "downloads#{instrument.id}" } }
-                - unless instrument.pdf_blob.nil?
-                  %li
-                    = link_to url_for(instrument.pdf_blob), target: "_blank" do
-                      Sheet Music - PDF
-                -if instrument.pdf_and_audio?
-                  %li.divider{:role => "separator"}
-                - unless instrument.mp3_blob.nil?
-                  %li
-                    = link_to url_for(instrument.mp3_blob), target: "_blank" do
-                      Audio File - MP3
-                -unless instrument.midi_blob.nil?
-                  %li
-                    = link_to url_for(instrument.midi_blob), target: "_blank" do
-                      Audio File - MIDI
+            = render "download_button", instrument:
         -unless instrument.mp3_blob.nil?
           .row
             .col-xs-10.col-sm-11
