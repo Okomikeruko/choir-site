@@ -2,7 +2,10 @@
 
 # Default target when you just type 'make'
 .PHONY: default
-default: up
+default:
+	docker build --build-arg RUBY_VERSION=$(cat .ruby-version) --build-arg NODE_VERSION=$(cat .node-version) -t whittakertech/choir-base: -f Dockerfile.base .
+	docker-compose build --no-cache
+	docker-compose up -d
 
 # Start the application
 .PHONY: up

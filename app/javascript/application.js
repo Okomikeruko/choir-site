@@ -24,14 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
   if (repeatButtons && repeatButtons.length > 0) {
     repeatButtons.forEach(button => {
       button.addEventListener('click', () => {
-        const id = this.dataset.id;
-        this.classList.toggle('active');
+        const id = button.dataset.id;
+        button.classList.toggle('active');
 
         const audioElement = document.getElementById(id);
         if (audioElement) {
           audioElement.setAttribute(
             'data-repeat',
-            this.classList.contains('active') ? 'true' : 'false'
+            button.classList.contains('active') ? 'true' : 'false'
           );
         }
       });
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-function replay(audio) {
+window.replay = function(audio) {
   // Check if the audio element has the repeat attribute set to "true"
   if (audio.getAttribute('data-repeat') === 'true') {
     audio.play();
