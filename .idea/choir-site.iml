@@ -142,7 +142,6 @@
     <orderEntry type="library" scope="PROVIDED" name="pg_query (v6.0.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pp (v0.6.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="prettyprint (v0.2.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="propshaft (v1.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="prosopite (v2.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pry (v0.15.2, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="psych (v5.2.3, Remote: ruby-3.2.7-p253) [gem]" level="application" />
@@ -166,7 +165,6 @@
     <orderEntry type="library" scope="PROVIDED" name="rb-inotify (v0.11.1, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rdbg (v0.1.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rdoc (v6.12.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="redis (v5.4.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="redis-client (v0.24.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="regexp_parser (v2.10.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="reline (v0.6.0, Remote: ruby-3.2.7-p253) [gem]" level="application" />

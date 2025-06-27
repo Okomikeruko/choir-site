@@ -1,43 +1,56 @@
 // Import jQuery and make it globally available
 import jQuery from 'jquery';
-$ = window.$ = window.jQuery = jQuery;
+// Explicitly set globals before any other imports
+if (typeof window !== 'undefined') {
+  window.$ = jQuery;
+  window.jQuery = jQuery;
+}
+if (typeof global !== 'undefined') {
+  global.$ = jQuery;
+  global.jQuery = jQuery;
+}
+$ = jQuery;
 
 // Import Bootstrap
 import * as bootstrap from 'bootstrap';
-window.bootstrap = bootstrap
+window.bootstrap = bootstrap;
 
-// Import your DataTables configuration
+import 'jquery-ui/ui/widgets/sortable';
 import './datatables';
-
-// Any other JavaScript imports
 import './channels';
 import './cable';
+import './admin/songs';
 
-document.addEventListener('DOMContentLoaded', () => {
-// Re-initialize bootstrap components after Turbo navigation
+document.addEventListener('DOMContentLoaded', async () => {
+
+  await import('@nathanvda/cocoon');
+
+  // Re-initialize bootstrap components after Turbo navigation
   const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
   tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
   });
 
-  const repeatButtons = document.querySelectorAll('.btn-repeat');
-  if (repeatButtons && repeatButtons.length > 0) {
-    repeatButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const id = button.dataset.id;
-        button.classList.toggle('active');
-
-        const audioElement = document.getElementById(id);
-        if (audioElement) {
-          audioElement.setAttribute(
-            'data-repeat',
-            button.classList.contains('active') ? 'true' : 'false'
-          );
-        }
-      });
-    });
-  }
+  initializeRepeatButtons();
 });
+
+function initializeRepeatButtons() {
+  const repeatButtons = document.querySelectorAll('.btn-repeat');
+  repeatButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const id = button.dataset.id;
+      button.classList.toggle('active');
+
+      const audioElement = document.getElementById(id);
+      if (audioElement) {
+        audioElement.setAttribute(
+          'data-repeat',
+          button.classList.contains('active') ? 'true' : 'false'
+        );
+      }
+    });
+  });
+}
 
 window.replay = function(audio) {
   // Check if the audio element has the repeat attribute set to "true"
