@@ -18,9 +18,6 @@ RUN yarn install --frozen-lockfile
 # Copy the rest of the application code
 COPY . .
 
-# Set up Master Key
-RUN echo "${RAILS_MASTER_KEY}" > config/master.key
-
 # Precompile assets
 RUN exec rake assets:precompile --trace
 
