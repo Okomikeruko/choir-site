@@ -1,12 +1,10 @@
 FROM whittakertech/choir-base:latest
 
-ARG RAILS_MASTER_KEY
-ARG SECRET_KEY_BASE
-
 # Set Rails to run in production
 ENV RAILS_ENV=production \
     NODE_ENV=production \
     BUNDLE_WITHOUT="development test"
+ARG SECRET_KEY_BASE=dummy
 
 # Install gems
 COPY Gemfile* .ruby-version .node-version ./
@@ -22,7 +20,7 @@ RUN yarn install --frozen-lockfile
 COPY . .
 
 # Precompile assets
-RUN exec rake assets:precompile --trace
+RUN SECRET_KEY_BASE=$SECRET_KEY_BASE exec rake assets:precompile --trace
 
 # Expose the port Heroku sets
 EXPOSE $PORT

@@ -1,64 +1,52 @@
-%header
-  %nav.navbar.navbar-inverse
+:ruby
+  links = [{name: "Main Site", path: root_path, controller: nil},
+           {name: "Dashboard", path: admin_index_path, controller: "admin"},
+           {name: "Members", path: admin_members_path, controller: "members"},
+           {name: "Profiles", path: admin_profiles_path, controller: "profiles"}]
+  dropdowns = { music: %w[songs rehearsals performances],
+                news: %w[articles categories tags] }
+
+%header.d-flex.align-items-center
+  %nav.navbar.navbar-expand-lg.navbar-dark.w-100
     .container-fluid
       .navbar-header
-        %button{ :type => "button",
-                 :class => "navbar-toggle collapsed",
-                 :data => { toggle: "collapse",
-                            target: "#admin-menu" },
-                 :aria => { expanded: false } }
-          %span.sr-only Toggle navigation
-          %span.icon-bar
-          %span.icon-bar
-          %span.icon-bar
-        =link_to admin_index_path, :class => "navbar-brand" do
+        =link_to admin_index_path, :class => "navbar-brand text-white" do
           Cascade Sixth Choir
-      #admin-menu.collapse.navbar-collapse
-        %ul.nav.navbar-nav.navbar-right
-          %li
-            =link_to "Main Site", root_path
-          %li
-            =link_to "Dashboard", admin_index_path
-          %li{ class: "#{'active' if controller_name == 'messages'}" }
-            =link_to admin_messages_path do
+        %button{ :type => "button",
+                 :class => "navbar-toggler",
+                 :data => { "bs-toggle": "collapse",
+                            "bs=target": "#admin-menu" },
+                 :aria => { controls: "admin-menu",
+                            expanded: false,
+                            label: "Toggle navigation" } }
+          %span.navbar-toggler-icon
+      #admin-menu.collapse.navbar-collapse.mb-2.mb-lg-0
+        %ul.navbar-nav.ms-auto
+          - links.each do |link|
+            %li.nav-item
+              = link_to link[:name],
+                        link[:path],
+                        class: "nav-link#{' active' if link[:controller] == controller_name}"
+          %li.nav-item
+            =link_to admin_messages_path,
+                     class: "nav-link#{' active' if controller_name == 'messages'}"do
               Messages
-              %span#unread-messages-badge{class: "label label-success #{'d-none' unless Message.any_unread?}"}
-                = Message.unread
-          %li{class: "#{'active' if %w[songs rehearsals performances].include?(controller_name)}" }
-            =link_to "#",
-                     class:"dropdown-toggle",
-                     data: {toggle: "dropdown"},
-                     role: "button",
-                     aria: {haspopup:"true", expanded: "false"} do
-              Music
-              %span.caret
-            %ul.dropdown-menu
-              %li
-                =link_to "Songs", admin_songs_path
-              %li
-                =link_to "Rehearsals", admin_rehearsals_path
-              %li
-                =link_to "Performances", admin_performances_path
-          %li{ class: "#{'active' if %w(articles tags categories).include?(controller_name)}" }
-            =link_to "#",
-                     class:"dropdown-toggle",
-                     data: {toggle: "dropdown"},
-                     role: "button",
-                     aria: {haspopup:"true", expanded: "false"} do
-              News
-              %span.caret
+              = unread_message_badge
+          - dropdowns.each do |name, resources|
+            %li.nav-item.dropdown
+              =link_to "#",
+                       class:"nav-link dropdown-toggle#{' active' if resources.include?(controller_name)}",
+                       data: {"bs-toggle": "dropdown"},
+                       role: "button",
+                       aria: {expanded: "false"} do
+                = name.to_s.titleize
               %ul.dropdown-menu
-                %li
-                  =link_to "Articles", admin_articles_path
-                %li
-                  =link_to "Categories", admin_categories_path
-                %li
-                  =link_to "Tags", admin_tags_path
-          %li{ :class => "#{'active' if controller_name == 'members'}"}
-            =link_to "Members", admin_members_path
-          %li{ :class => "#{'active' if controller_name == 'profiles'}" }
-            =link_to "Profiles", admin_profiles_path
-          %li
+                - resources.each do |resource|
+                  %li
+                    =link_to public_send("admin_#{resource}_path"), class: "dropdown-item" do
+                      = resource.titleize
+          %li.nav-item
             =link_to 'Logout',
                      destroy_user_session_path,
-                     method: :delete
+                     method: :delete,
+                     class: "nav-link"
