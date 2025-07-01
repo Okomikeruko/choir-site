@@ -29,3 +29,4 @@ RUN RAILS_MASTER_KEY=$RAILS_MASTER_KEY SECRET_KEY_BASE=$SECRET_KEY_BASE exec rak
 EXPOSE $PORT
 
 # Start the server
+CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"
