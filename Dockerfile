@@ -20,7 +20,10 @@ RUN yarn install --frozen-lockfile
 COPY . .
 
 # Precompile assets
-RUN SECRET_KEY_BASE=$SECRET_KEY_BASE exec rake assets:precompile --trace
+RUN SECRET_KEY_BASE=dummy bundle exec rake assets:precompile || \
+    (echo "Asset compilation failed - check JavaScript syntax" && \Add commentMore actions
+     NODE_ENV=production RAILS_ENV=production bundle exec rake assets:clobber && \
+     SECRET_KEY_BASE=dummy bundle exec rake assets:precompile --trace)
 
 # Expose the port Heroku sets
 EXPOSE $PORT
