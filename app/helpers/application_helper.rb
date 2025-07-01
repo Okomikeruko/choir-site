@@ -13,4 +13,10 @@ module ApplicationHelper
 
     safe_join(song_links, ', ')
   end
+
+  def unread_message_badge
+    return unless Message.any_unread?
+
+    content_tag(:span, Message.unread, class: 'badge rounded-pill text-bg-danger')
+  end
 end
