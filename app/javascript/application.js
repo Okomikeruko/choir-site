@@ -12,6 +12,8 @@ import './datatables';
 // Any other JavaScript imports
 import './channels';
 import './cable';
+// import {initialize} from "esbuild";
+import {initializeDataTables} from "./datatables";
 
 document.addEventListener('DOMContentLoaded', () => {
     // Re-initialize bootstrap components after Turbo navigation
@@ -19,4 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
     });
+
+    // Trigger DataTable Initialization
+    initializeDataTables();
 });
