@@ -33,26 +33,3 @@
             =link_to_add_association f, :instruments, class: "btn btn-primary" do
               %span.bi.bi-plus
               Add Instrument
-:javascript
-  function update_positions(){
-    var index = 0;
-    $.each( $(".instruments .panel"), function(index, panel){
-      $(panel).find("input[id$='_position']").val(index);
-    });
-  }
-
-  $( function() {
-    $('.instruments').sortable({
-      handle: ".handle",
-      placeholder: "ui-state-highlight sheet-music-highlight",
-      update: function(event, ui) { update_positions() }
-    });
-  });
-
-  $(".instruments").on('cocoon:after-insert', function() {
-    update_positions();
-  })
-
-  $(".instruments").on('cocoon:after-remove', function() {
-    update_positions();
-  })

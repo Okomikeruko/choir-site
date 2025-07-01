@@ -20,10 +20,9 @@
               %h2= song.title
             -unless song.primary_instrument.blank?
               -unless song.primary_instrument.mp3_blob.nil?
-                %audio{:controls => "controls",
-                       :controlsList => "nodownload"}
+                %audio{:controls => "controls", :controlsList => "nodownload"}
                   %source{:type => song.primary_instrument.mp3_blob.content_type,
-                          :src => song.primary_instrument.mp3_blob.service_url }
+                          :src => url_for(song.primary_instrument.mp3_blob) }
           %br
       -else
         %p

@@ -1,0 +1,16 @@
+.dropdown.float-end
+  %button{ class: "btn btn-secondary dropdown-toggle",
+           type: "button",
+           id: "downloads#{instrument.id}",
+           "data-bs-toggle": "dropdown",
+           aria: { expanded: false } } Downloads
+  %ul.dropdown-menu{ aria: { labelledby: "downloads#{instrument.id}" } }
+    - if instrument.pdf.attached?
+      %li= link_to("Sheet Music - PDF", url_for(instrument.pdf), class: 'dropdown-item', target: '_blank')
+    - if instrument.pdf_and_audio?
+      %li
+        %hr.dropdown-divider
+    - if instrument.mp3.attached?
+      %li= link_to("Audio File - MP3", url_for(instrument.mp3), class: 'dropdown-item', target: '_blank')
+    - if instrument.midi.attached?
+      %li= link_to("Audio File - MIDI", url_for(instrument.midi), class: 'dropdown-item', target: '_blank')

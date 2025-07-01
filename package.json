@@ -5,8 +5,10 @@
     "node": "20.x"
   },
   "dependencies": {
+    "@nathanvda/cocoon": "^1.2.14",
     "@popperjs/core": "^2.11.8",
     "@rails/actioncable": "^8.0.100",
+    "@rails/webpacker": "^5.4.3",
     "autoprefixer": "^10.4.20",
     "bootstrap": "^5.3.3",
     "bootstrap-datepicker": "^1.10.0",
@@ -22,25 +24,23 @@
     "froala-editor": "^4.5.0",
     "jquery": "^3.7.1",
     "jquery-ui": "^1.14.1",
+    "nodemon": "^3.1.9",
     "postcss": "^8.5.3",
     "postcss-cli": "^11.0.0",
-    "sass": "^1.86.0"
+    "sass": "^1.86.0",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1"
   },
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "build:css:compile": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css ./app/assets/stylesheets/admin.bootstrap.scss:./app/assets/builds/admin.css --no-source-map --load-path=node_modules",
     "build:css:prefix": "postcss ./app/assets/builds/*.css --use=autoprefixer --replace",
-    "build:css": "yarn build:css:compile && yarn build:css:prefix",
+    "build:css": "yarn copy-fonts && yarn build:css:compile && yarn build:css:prefix",
+    "copy-fonts": "mkdir -p app/assets/builds/fonts && cp ./app/assets/fonts/* ./app/assets/builds/fonts/",
     "dev": "docker-compose -f docker-compose.yml up",
     "watch:css": "nodemon --watch ./app/assets/stylesheets/ --ext scss --exec \"yarn build:css\""
   },
   "browserslist": [
     "defaults"
-  ],
-  "devDependencies": {
-    "@rails/webpacker": "^5.4.3",
-    "nodemon": "^3.1.9",
-    "webpack": "^5.98.0",
-    "webpack-cli": "^6.0.1"
-  }
+  ]
 }
