@@ -1,5 +1,9 @@
 FROM whittakertech/choir-base:latest
 
+# Accept build arguments
+ARG RAILS_MASTER_KEY
+ARG SECRET_KEY_BASE
+
 # Set Rails to run in production
 ENV RAILS_ENV=production \
     NODE_ENV=production \
@@ -19,7 +23,7 @@ RUN yarn install --frozen-lockfile
 COPY . .
 
 # Precompile assets
-RUN exec rake assets:precompile --trace
+RUN RAILS_MASTER_KEY=$RAILS_MASTER_KEY SECRET_KEY_BASE=$SECRET_KEY_BASE exec rake assets:precompile --trace
 
 # Expose the port Heroku sets
 EXPOSE $PORT
