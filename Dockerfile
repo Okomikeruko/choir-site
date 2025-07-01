@@ -26,4 +26,3 @@ RUN SECRET_KEY_BASE=$SECRET_KEY_BASE exec rake assets:precompile --trace
 EXPOSE $PORT
 
 # Start the server
-CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
